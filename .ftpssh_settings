@@ -1,0 +1,6 @@
+protocol = ftp
+user = ahmed
+password = snowball
+host = ftp.fsmg.co.uk
+path = public_html/
+cli_options =

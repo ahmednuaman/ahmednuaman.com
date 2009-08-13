@@ -1,0 +1,7 @@
+ExpiresActive On
+ExpiresDefault "access plus 10 years"
+
+Options -Indexes
+
+RewriteEngine On
+RewriteRule ^/new.*$ http://www.ahmednuaman.com [L]
