@@ -35,8 +35,8 @@ else
 
 $recommendations = simplexml_load_file( 'assets/xml/recommendations.xml' );
 $work = simplexml_load_file( 'assets/xml/work.xml' );
-$blog = simplexml_load_file( 'blog.xml' );
-$twitter = simplexml_load_file( 'twitter.xml' );
+$blog = simplexml_load_file( 'assets/xml/blog.xml' );
+$twitter = simplexml_load_file( 'assets/xml/twitter.xml' );
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

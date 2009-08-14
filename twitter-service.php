@@ -3,7 +3,7 @@ $feed = @file_get_contents( 'http://twitter.com/statuses/user_timeline/ahmednuam
 
 if ( $feed )
 {
-	file_put_contents( 'twitter.xml', $feed );
+	file_put_contents( 'assets/xml/twitter.xml', $feed );
 }
 
 exit();
