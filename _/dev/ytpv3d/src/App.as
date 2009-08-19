@@ -9,6 +9,7 @@ package
 	import gs.TweenLite;
 	import gs.easing.Strong;
 	
+	import org.papervision3d.cameras.CameraType;
 	import org.papervision3d.materials.MovieMaterial;
 	import org.papervision3d.objects.primitives.Plane;
 	import org.papervision3d.view.BasicView;
@@ -20,9 +21,9 @@ package
 		private var plane:Plane;
 		private var player:YouTubePlayer;
 		
-		public function App(width:Number=580, height:Number=400, scaleToStage:Boolean=true, interactive:Boolean=true, camera:String='Target')
+		public function App()
 		{
-			super( width, height, scaleToStage, interactive, camera );
+			super( 580, 400, true, true, CameraType.TARGET );
 			
 			Security.allowDomain( '*' );
 			
@@ -42,7 +43,7 @@ package
 			player.playerWidth		= 400;
 			player.wrapperURL		= 'assets/swf/PlayerWrapper.swf';
 			
-			player.play( 'TAZT-btyFAA' );
+			player.play( 'Sqz5dbs5zmo' );
 			
 			mat = new MovieMaterial( player, false, true, true, new Rectangle( 0, 0, 400, 300 ) );
 			
