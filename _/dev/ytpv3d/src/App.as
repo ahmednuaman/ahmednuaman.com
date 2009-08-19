@@ -2,6 +2,7 @@ package
 {
 	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayer;
 	
+	import flash.display.LoaderInfo;
 	import flash.events.Event;
 	import flash.geom.Rectangle;
 	import flash.system.Security;
@@ -41,7 +42,7 @@ package
 			player.mouseEnabled		= true;
 			player.playerHeight		= 300;
 			player.playerWidth		= 400;
-			player.wrapperURL		= 'assets/swf/PlayerWrapper.swf';
+			player.wrapperURL		= ( LoaderInfo( root.loaderInfo ).parameters.wrapper ||= 'assets/swf/PlayerWrapper.swf' );
 			
 			player.play( 'Sqz5dbs5zmo' );
 			
