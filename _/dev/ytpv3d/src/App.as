@@ -1,6 +1,7 @@
 package 
 {
 	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayer;
+	import com.firestartermedia.lib.as3.events.YouTubePlayerEvent;
 	
 	import flash.display.LoaderInfo;
 	import flash.events.Event;
@@ -27,6 +28,10 @@ package
 			super( 580, 400, true, true, CameraType.TARGET );
 			
 			Security.allowDomain( '*' );
+			Security.allowDomain( 'www.youtube.com' );  
+			Security.allowDomain( 'youtube.com' );  
+			Security.allowDomain( 's.ytimg.com' );  
+			Security.allowDomain( 'i.ytimg.com' );
 			
 			init();
 		}
@@ -38,8 +43,7 @@ package
 			player = new YouTubePlayer();
 			
 			player.autoPlay			= true;
-			player.mouseChildren	= true;
-			player.mouseEnabled		= true;
+			player.chromeless		= true;
 			player.playerHeight		= 300;
 			player.playerWidth		= 400; 
 			player.wrapperURL		= ( LoaderInfo( root.loaderInfo ).parameters.wrapper ||= 'assets/swf/YouTubePlayerWrapper.swf' );
