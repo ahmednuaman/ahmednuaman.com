@@ -41,8 +41,8 @@ package
 			player.mouseChildren	= true;
 			player.mouseEnabled		= true;
 			player.playerHeight		= 300;
-			player.playerWidth		= 400;
-			player.wrapperURL		= ( LoaderInfo( root.loaderInfo ).parameters.wrapper ||= 'assets/swf/PlayerWrapper.swf' );
+			player.playerWidth		= 400; 
+			player.wrapperURL		= ( LoaderInfo( root.loaderInfo ).parameters.wrapper ||= 'assets/swf/YouTubePlayerWrapper.swf' );
 			
 			player.play( 'Sqz5dbs5zmo' );
 			
