@@ -1,7 +1,7 @@
 package 
 {
-	import com.firestartermedia.lib.as3.display.Mainfeature;
-	import com.firestartermedia.lib.as3.events.MainfeatureEvent;
+	import com.firestartermedia.lib.as3.display.carousel.CarouselMainfeature;
+	import com.firestartermedia.lib.as3.events.CarouselEvent;
 	import com.firestartermedia.lib.as3.utils.GoogleUtil;
 	
 	import flash.display.LoaderInfo;
@@ -15,7 +15,7 @@ package
 	import flash.net.URLRequest;
 	import flash.text.TextFormat;
 
-	[SWF( width='1000', height='450', frameRate='30', backgroundColor='#000000' )]
+	[SWF( width='1000', height='450', frameRate='30', backgroundColor='#FFFFFF' )]
 	
 	public class App extends Sprite
 	{
@@ -40,7 +40,7 @@ package
 		
 		private function build(e:Event):void
 		{
-			var mainfeature:Mainfeature = new Mainfeature();
+			var mainfeature:CarouselMainfeature = new CarouselMainfeature();
 			
 			mainfeature.arrowsOutside = true;
 			mainfeature.arrowLeft = new SideArrowLeft();
@@ -51,26 +51,26 @@ package
 			mainfeature.baseWidth = 900;
 			mainfeature.baseHeight = 450;
 			
-			mainfeature.addEventListener( MainfeatureEvent.CLICKED_ARROW_LEFT, handleClickArrowLeft );
-			mainfeature.addEventListener( MainfeatureEvent.CLICKED_ARROW_RIGHT, handleClickArrowRight );
-			mainfeature.addEventListener( MainfeatureEvent.CLICKED_FEATURE, handleClickFeature );
+			mainfeature.addEventListener( CarouselEvent.CLICKED_ARROW_LEFT, handleClickArrowLeft );
+			mainfeature.addEventListener( CarouselEvent.CLICKED_ARROW_RIGHT, handleClickArrowRight );
+			mainfeature.addEventListener( CarouselEvent.CLICKED_FEATURE, handleClickFeature );
 			
 			mainfeature.init( new XML( e.target.data ) );
 			
 			addChild( mainfeature );
 		}
 		
-		private function handleClickArrowLeft(e:MainfeatureEvent):void
+		private function handleClickArrowLeft(e:CarouselEvent):void
 		{
 			GoogleUtil.trackClick( 'mainfeaturePreviousArrow' );
 		}
 		
-		private function handleClickArrowRight(e:MainfeatureEvent):void
+		private function handleClickArrowRight(e:CarouselEvent):void
 		{
 			GoogleUtil.trackClick( 'mainfeatureNextArrow' );
 		}
 		
-		private function handleClickFeature(e:MainfeatureEvent):void
+		private function handleClickFeature(e:CarouselEvent):void
 		{
 			ExternalInterface.call( 'scrollTo', e.data.target );
 		}
