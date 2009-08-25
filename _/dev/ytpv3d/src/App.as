@@ -1,8 +1,8 @@
 package 
 {
-	import com.firestartermedia.lib.as3.display.component.interaction.ButtonSimple;
 	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayer;
 	
+	import flash.display.LoaderInfo;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -47,7 +47,7 @@ package
 		{
 			var mat:MovieMaterial;
 			var test:Sprite = new Sprite();
-			var button:ButtonSimple = new ButtonSimple();
+			/* var button:ButtonSimple = new ButtonSimple();
 			
 			button.addEventListener( MouseEvent.CLICK, handleClick );
 			
@@ -57,17 +57,19 @@ package
 			
 			button.draw();
 			
-			test.addChild( button );
+			test.addChild( button ); */
 			
-			/* player = new YouTubePlayer();
+			player = new YouTubePlayer();
 			
 			player.autoPlay			= true;
-			player.chromeless		= true;
+			//player.chromeless		= true;
 			player.playerHeight		= 300;
 			player.playerWidth		= 400; 
 			player.wrapperURL		= ( LoaderInfo( root.loaderInfo ).parameters.wrapper ||= 'assets/swf/YouTubePlayerWrapper.swf' );
 			
-			player.play( 'Sqz5dbs5zmo' ); */
+			player.play( 'Sqz5dbs5zmo' ); 
+			
+			test.addChild( player );
 			
 			//mat = new MovieMaterial( player, false, true, true, new Rectangle( 0, 0, 400, 300 ) );
 			mat = new MovieMaterial( test, true, true, true, new Rectangle( 0, 0, 400, 300 ) );
