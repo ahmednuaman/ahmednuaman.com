@@ -1,11 +1,14 @@
 package 
 {
+	import com.firestartermedia.lib.as3.display.component.interaction.ButtonSimple;
 	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayer;
 	
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
 	import flash.system.Security;
+	import flash.text.Font;
 	
 	import gs.TweenLite;
 	import gs.easing.Strong;
@@ -19,6 +22,9 @@ package
 	
 	public class App extends BasicView
 	{
+		[Embed( systemFont='Arial', fontName='Arial', unicodeRange='U+0020-U+002F,U+0030-U+0039,U+003A-U+0040,U+0041-U+005A,U+005B-U+0060,U+0061-U+007A,U+007B-U+007E', mimeType='application/x-font' )] 
+		private var _Arial:Class;
+		
 		private var plane:Plane;
 		private var player:YouTubePlayer;
 		
@@ -32,6 +38,8 @@ package
 			Security.allowDomain( 's.ytimg.com' );  
 			Security.allowDomain( 'i.ytimg.com' );
 			
+			Font.registerFont( _Arial );
+			
 			init();
 		}
 		
@@ -39,8 +47,17 @@ package
 		{
 			var mat:MovieMaterial;
 			var test:Sprite = new Sprite();
+			var button:ButtonSimple = new ButtonSimple();
 			
+			button.addEventListener( MouseEvent.CLICK, handleClick );
 			
+			button.buttonText	= 'asddaskadskadskasdkasdkasdkasdkaskaskadskasd';
+			button.x			= 100;
+			button.y			= 100;
+			
+			button.draw();
+			
+			test.addChild( button );
 			
 			/* player = new YouTubePlayer();
 			
@@ -53,7 +70,7 @@ package
 			player.play( 'Sqz5dbs5zmo' ); */
 			
 			//mat = new MovieMaterial( player, false, true, true, new Rectangle( 0, 0, 400, 300 ) );
-			mat = new MovieMaterial( player, false, true, true, new Rectangle( 0, 0, 400, 300 ) );
+			mat = new MovieMaterial( test, true, true, true, new Rectangle( 0, 0, 400, 300 ) );
 			
 			mat.interactive		= true;
 			mat.smooth 			= true;
@@ -68,7 +85,12 @@ package
 			
 			startRendering();
 			
-			addEventListener( Event.ENTER_FRAME, handleEnterFrame );
+			//addEventListener( Event.ENTER_FRAME, handleEnterFrame );
+		}
+		
+		private function handleClick(e:MouseEvent):void
+		{
+			trace('clicked');
 		}
 		
 		private function handleEnterFrame(e:Event):void
