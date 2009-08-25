@@ -1,9 +1,8 @@
 package 
 {
 	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayer;
-	import com.firestartermedia.lib.as3.events.YouTubePlayerEvent;
 	
-	import flash.display.LoaderInfo;
+	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.geom.Rectangle;
 	import flash.system.Security;
@@ -39,8 +38,11 @@ package
 		private function init():void
 		{
 			var mat:MovieMaterial;
+			var test:Sprite = new Sprite();
 			
-			player = new YouTubePlayer();
+			
+			
+			/* player = new YouTubePlayer();
 			
 			player.autoPlay			= true;
 			player.chromeless		= true;
@@ -48,8 +50,9 @@ package
 			player.playerWidth		= 400; 
 			player.wrapperURL		= ( LoaderInfo( root.loaderInfo ).parameters.wrapper ||= 'assets/swf/YouTubePlayerWrapper.swf' );
 			
-			player.play( 'Sqz5dbs5zmo' );
+			player.play( 'Sqz5dbs5zmo' ); */
 			
+			//mat = new MovieMaterial( player, false, true, true, new Rectangle( 0, 0, 400, 300 ) );
 			mat = new MovieMaterial( player, false, true, true, new Rectangle( 0, 0, 400, 300 ) );
 			
 			mat.interactive		= true;

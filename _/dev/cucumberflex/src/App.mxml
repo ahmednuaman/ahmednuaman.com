@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute">
+	<mx:Number id="index">0</mx:Number>
+	
+	<mx:VBox width="300" height="200" backgroundColor="white">
+		<mx:HBox width="100%" height="30">			
+			<mx:Button id="buttonDecrement" label="-" width="100%" click="index--" />
+			<mx:Button id="buttonIncrement" label="+" width="100%" click="index++" />
+			
+		</mx:HBox>
+		
+		<mx:HBox width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+			<mx:Label id="myLabel" text="{index}"/>		
+				
+		</mx:HBox>
+		
+	</mx:VBox>
+	
+</mx:Application>

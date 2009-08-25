@@ -152,21 +152,24 @@ function initBadCSS()
 
 function initMainfeature()
 {
-	$('#mainfeatureInner').flash(
-		{
-			src: '/assets/flash/mainfeature.swf',
-			width: 1000,
-			height: 450,
-			flashvars: { 
-				xmlURL: '/gzip-service.php?f=assets/xml/work.xml' 
+	if ( $('#mainfeatureInner').length > 0 )
+	{
+		$('#mainfeatureInner').flash(
+			{
+				src: '/assets/flash/mainfeature.swf',
+				width: 1000,
+				height: 450,
+				flashvars: { 
+					xmlURL: '/gzip-service.php?f=assets/xml/work.xml' 
+				},
+				wmode: 'transparent'
 			},
-			wmode: 'transparent'
-		},
-		{ 
-			version: 9,
-			update: false
-		}
-	);
+			{ 
+				version: 9,
+				update: false
+			}
+		);
+	}
 }
 
 function initBlogMainfeature()
