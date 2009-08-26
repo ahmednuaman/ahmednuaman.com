@@ -1,17 +1,11 @@
 package 
 {
-	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayer;
+	import com.firestartermedia.lib.as3.display.component.interaction.ButtonSimple;
 	
-	import flash.display.LoaderInfo;
 	import flash.display.Sprite;
-	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
-	import flash.system.Security;
 	import flash.text.Font;
-	
-	import gs.TweenLite;
-	import gs.easing.Strong;
 	
 	import org.papervision3d.cameras.CameraType;
 	import org.papervision3d.materials.MovieMaterial;
@@ -26,17 +20,10 @@ package
 		private var _Arial:Class;
 		
 		private var plane:Plane;
-		private var player:YouTubePlayer;
 		
 		public function App()
 		{
 			super( 580, 400, true, true, CameraType.TARGET );
-			
-			Security.allowDomain( '*' );
-			Security.allowDomain( 'www.youtube.com' );  
-			Security.allowDomain( 'youtube.com' );  
-			Security.allowDomain( 's.ytimg.com' );  
-			Security.allowDomain( 'i.ytimg.com' );
 			
 			Font.registerFont( _Arial );
 			
@@ -47,7 +34,7 @@ package
 		{
 			var mat:MovieMaterial;
 			var test:Sprite = new Sprite();
-			/* var button:ButtonSimple = new ButtonSimple();
+			var button:ButtonSimple = new ButtonSimple();
 			
 			button.addEventListener( MouseEvent.CLICK, handleClick );
 			
@@ -57,21 +44,8 @@ package
 			
 			button.draw();
 			
-			test.addChild( button ); */
+			test.addChild( button ); 
 			
-			player = new YouTubePlayer();
-			
-			player.autoPlay			= true;
-			//player.chromeless		= true;
-			player.playerHeight		= 300;
-			player.playerWidth		= 400; 
-			player.wrapperURL		= ( LoaderInfo( root.loaderInfo ).parameters.wrapper ||= 'assets/swf/YouTubePlayerWrapper.swf' );
-			
-			player.play( 'Sqz5dbs5zmo' ); 
-			
-			test.addChild( player );
-			
-			//mat = new MovieMaterial( player, false, true, true, new Rectangle( 0, 0, 400, 300 ) );
 			mat = new MovieMaterial( test, true, true, true, new Rectangle( 0, 0, 400, 300 ) );
 			
 			mat.interactive		= true;
@@ -86,20 +60,15 @@ package
 			scene.addChild( plane );
 			
 			startRendering();
-			
-			//addEventListener( Event.ENTER_FRAME, handleEnterFrame );
 		}
 		
 		private function handleClick(e:MouseEvent):void
 		{
-			trace('clicked');
-		}
-		
-		private function handleEnterFrame(e:Event):void
-		{	
-			TweenLite.killTweensOf( plane );
+			var button:ButtonSimple = e.target as ButtonSimple;
 			
-			TweenLite.to( plane, 1, { rotationX: stage.mouseX * .01, rotationY: stage.mouseY * .01, ease: Strong.easeOut } );
+			button.buttonText = 'You clicked on me';
+			
+			button.draw();						
 		}
 	}
 }
