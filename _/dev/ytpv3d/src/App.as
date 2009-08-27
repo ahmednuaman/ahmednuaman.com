@@ -1,11 +1,10 @@
 package 
 {
-	import com.firestartermedia.lib.as3.display.component.interaction.ButtonSimple;
+	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayer;
 	
+	import flash.display.LoaderInfo;
 	import flash.display.Sprite;
-	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
-	import flash.text.Font;
 	
 	import org.papervision3d.cameras.CameraType;
 	import org.papervision3d.materials.MovieMaterial;
@@ -16,16 +15,12 @@ package
 	
 	public class App extends BasicView
 	{
-		[Embed( systemFont='Arial', fontName='Arial', unicodeRange='U+0020-U+002F,U+0030-U+0039,U+003A-U+0040,U+0041-U+005A,U+005B-U+0060,U+0061-U+007A,U+007B-U+007E', mimeType='application/x-font' )] 
-		private var _Arial:Class;
-		
+		private var player:YouTubePlayer;
 		private var plane:Plane;
 		
 		public function App()
 		{
 			super( 580, 400, true, true, CameraType.TARGET );
-			
-			Font.registerFont( _Arial );
 			
 			init();
 		}
@@ -33,20 +28,18 @@ package
 		private function init():void
 		{
 			var mat:MovieMaterial;
-			var test:Sprite = new Sprite();
-			var button:ButtonSimple = new ButtonSimple();
+			var fakePlayer:Sprite;
 			
-			button.addEventListener( MouseEvent.CLICK, handleClick );
+			player = new YouTubePlayer();
 			
-			button.buttonText	= 'asddaskadskadskasdkasdkasdkasdkaskaskadskasd';
-			button.x			= 100;
-			button.y			= 100;
+			player.autoPlay			= false;
+			player.playerHeight		= 240;
+			player.playerWidth		= 320;
+			player.wrapperURL		= ( LoaderInfo( root ).parameters.url ||= 'asset/swf/YouTubePlayerWrapper.swf' );
+
+			player.play( 'i1Crvwldkcs' );
 			
-			button.draw();
-			
-			test.addChild( button ); 
-			
-			mat = new MovieMaterial( test, true, true, true, new Rectangle( 0, 0, 400, 300 ) );
+			mat = new MovieMaterial( fakePlayer, true, true, true, new Rectangle( 0, 0, 400, 300 ) );
 			
 			mat.interactive		= true;
 			mat.smooth 			= true;
@@ -60,15 +53,6 @@ package
 			scene.addChild( plane );
 			
 			startRendering();
-		}
-		
-		private function handleClick(e:MouseEvent):void
-		{
-			var button:ButtonSimple = e.target as ButtonSimple;
-			
-			button.buttonText = 'You clicked on me';
-			
-			button.draw();						
 		}
 	}
 }

@@ -20,6 +20,7 @@
 <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/framework.swc" useDefaultLinkType="false"/>
 </excludedEntries>
 </libraryPathEntry>
+<libraryPathEntry kind="3" linkType="1" path="/Volumes/Sites/__Useful Stuff/Flash/SWC/Papervision3D_2.1.920.swc" useDefaultLinkType="false"/>
 </libraryPath>
 <sourceAttachmentPath/>
 </compiler>
