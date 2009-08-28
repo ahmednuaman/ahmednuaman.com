@@ -9,6 +9,7 @@ package
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
+	import flash.system.Security;
 	
 	import gs.TweenLite;
 	import gs.easing.Strong;
@@ -34,6 +35,15 @@ package
 		{
 			super( 580, 400, true, true, CameraType.TARGET );
 			
+			Security.allowDomain( '*' );
+			Security.allowDomain( 'www.youtube.com' );		
+			Security.allowDomain( 'youtube.com' );		
+			Security.allowDomain( 's.ytimg.com' );
+			Security.allowDomain( 'i.ytimg.com' );
+			
+			Security.loadPolicyFile( 'http://img.youtube.com/crossdomain.xml' );
+			Security.loadPolicyFile( 'http://gdata.youtube.com/crossdomain.xml' );
+			
 			init();
 		}
 		
@@ -53,7 +63,7 @@ package
 			
 			fakePlayer.addEventListener( MouseEvent.CLICK, handleFakePlayerClick ); 
 			
-			DisplayObjectUtil.loadMovie( 'http://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg', fakePlayer );
+			DisplayObjectUtil.loadMovie( 'http://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg', fakePlayer, null, null, true );
 			
 			fakePlayer.addChild( controls );
 			
