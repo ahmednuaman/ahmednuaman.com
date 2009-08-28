@@ -1,10 +1,17 @@
 package 
 {
 	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayer;
+	import com.firestartermedia.lib.as3.display.tools.ScaleObject;
+	import com.firestartermedia.lib.as3.utils.DisplayObjectUtil;
 	
 	import flash.display.LoaderInfo;
 	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
+	
+	import gs.TweenLite;
+	import gs.easing.Strong;
 	
 	import org.papervision3d.cameras.CameraType;
 	import org.papervision3d.materials.MovieMaterial;
@@ -15,6 +22,11 @@ package
 	
 	public class App extends BasicView
 	{
+		[Embed( source='assets/img/yt_controls.jpg' )]
+		private var ytControls:Class;
+		
+		private var videoId:String								= 'i1Crvwldkcs';
+		
 		private var player:YouTubePlayer;
 		private var plane:Plane;
 		
@@ -28,16 +40,22 @@ package
 		private function init():void
 		{
 			var mat:MovieMaterial;
+			var controls:Sprite;
 			var fakePlayer:Sprite;
 			
-			player = new YouTubePlayer();
+			controls = new ScaleObject( new ytControls(), new Rectangle( 50, 10, 1, 1 ) );
 			
-			player.autoPlay			= false;
-			player.playerHeight		= 240;
-			player.playerWidth		= 320;
-			player.wrapperURL		= ( LoaderInfo( root ).parameters.url ||= 'asset/swf/YouTubePlayerWrapper.swf' );
-
-			player.play( 'i1Crvwldkcs' );
+			controls.width		= 400;
+			controls.x			= 0;
+			controls.y			= 300 - controls.height;
+			
+			fakePlayer = new Sprite();
+			
+			fakePlayer.addEventListener( MouseEvent.CLICK, handleFakePlayerClick ); 
+			
+			DisplayObjectUtil.loadMovie( 'http://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg', fakePlayer );
+			
+			fakePlayer.addChild( controls );
 			
 			mat = new MovieMaterial( fakePlayer, true, true, true, new Rectangle( 0, 0, 400, 300 ) );
 			
@@ -52,7 +70,45 @@ package
 			
 			scene.addChild( plane );
 			
+			player = new YouTubePlayer();
+			
+			player.autoPlay			= true;
+			player.playerHeight		= 345;
+			player.playerWidth		= 460;
+			player.wrapperURL		= ( LoaderInfo( loaderInfo ).parameters.url ||= 'assets/swf/YouTubePlayerWrapper.swf' );
+			player.visible			= false;
+			player.x				= ( stage.stageWidth / 2 ) - ( player.playerWidth / 2 );
+			player.y				= ( stage.stageHeight / 2 ) - ( player.playerHeight / 2 );
+			
+			addChild( player );
+			
 			startRendering();
+			
+			addEventListener( Event.ENTER_FRAME, handleEnterFrame );  
+		}
+		
+		private function handleFakePlayerClick(e:MouseEvent):void
+		{
+			removeEventListener( Event.ENTER_FRAME, handleEnterFrame );
+			
+			TweenLite.to( plane, 1, { rotationX: 0, rotationY: 0, ease: Strong.easeOut, onComplete: playVideo } );
+		}
+				
+		private function handleEnterFrame(e:Event):void
+		{
+			TweenLite.to( plane, 1, { rotationX: stage.mouseX * .1, rotationY: stage.mouseY * .1, ease: Strong.easeOut } );
+		}
+		
+		private function playVideo():void
+		{
+			stopRendering();
+			
+			TweenLite.to( player, 1, { autoAlpha: 1, ease: Strong.easeOut, onComplete: startVideo } );
+		}
+		
+		private function startVideo():void
+		{
+			player.play( videoId );
 		}
 	}
 }
