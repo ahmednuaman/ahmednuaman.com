@@ -22,22 +22,22 @@
 			}
 		}
 		
-		function getToken()
+		function getVideoId()
 		{
-			var token = getURLVar( 'token' );
+			var token = getURLVar( 'id' );
 			
 			return token;
 		}
 	-->
 	</script>
-	<title>Auth Response</title>
+	<title>Upload Response</title>
 </head>
 <body>
 	Please wait...
 	
 	<script type="text/javascript">
 	<!--
-		parent.handleLogin( getToken() );
+		parent.handleUpload( getVideoId() );
 	-->
 	</script>
 </body>
