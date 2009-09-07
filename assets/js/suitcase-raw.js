@@ -22,7 +22,7 @@ function ready()
 	{
 		initMainfeature();
 		initRecommendations();
-		//initFeeds();
+		initTweets();
 	}
 	else
 	{
@@ -265,12 +265,16 @@ function showPreviousRecommendation()
 	}
 }
 
-/*
-function initFeeds()
+function initTweets()
 {
-	$.get( '/blog-service.php' );
-	$.get( '/twitter-service.php' );
-}*/
+	$('#twitterEntries').tweet({
+		avatar_size: 0,
+		count: 5,
+		join_text: 'auto',
+		loading_text: 'Loading tweets...',
+		username: 'ahmednuaman'
+	});
+}
 
 function visitThisLink(t)
 {

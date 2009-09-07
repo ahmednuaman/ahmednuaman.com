@@ -1,20 +1,4 @@
 <?
-function twitter_description($str)
-{
-	$str = str_replace( 
-				array( 'ahmednuaman: ', '&' ),
-				array( '', '&amp;' ), 
-				$str 
-			);
-	$str = preg_replace(
-				array( '/http:\/\/([^\s]+)/', '/@(\w+)/', '/#(\w+)/' ),
-				array( '<a href="http://$1">http://$1</a>', '<a href="http://twitter.com/$1">@$1</a>', '<a href="http://twitter.com/#search?q=%23$1">#$1</a>' ),
-				$str
-			);
-			
-	return $str;
-}
-
 if ( strstr( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) || strstr( $_SERVER['HTTP_USER_AGENT'], 'iPod' ) || strstr( $_SERVER['HTTP_USER_AGENT'], 'Android' ) )
 {
 	header( 'Location: /mobile.php' );
@@ -36,7 +20,6 @@ else
 $recommendations = simplexml_load_file( 'assets/xml/recommendations.xml' );
 $work = simplexml_load_file( 'assets/xml/work.xml' );
 $blog = simplexml_load_file( 'assets/xml/blog.xml' );
-$twitter = simplexml_load_file( 'assets/xml/twitter.xml' );
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -54,7 +37,7 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 	<link type="application/rss+xml" rel="alternate" title="Ahmed Nuaman &mdash; Freelance Designer and Developer &mdash; Blog RSS Feed" href="http://ahmednuaman.com/blog/feed/" />
 	<link type="application/atom+xml" rel="alternate" title="Ahmed Nuaman &mdash; Freelance Designer and Developer &mdash; Blog Atom Feed" href="http://ahmednuaman.com/blog/feed/atom/" />
 	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://ahmednuaman.com/blog/wp-includes/wlwmanifest.xml" />
-	<script type="text/javascript" src="/gzip-service.php?f=assets/js/jquery.js,assets/js/jquery-easing.js,assets/js/jquery-flash.js,assets/js/jquery-scrollTo.js,assets/js/jquery-ui.js,assets/js/suitcase.js"></script>
+	<script type="text/javascript" src="/gzip-service.php?f=assets/js/jquery.js,assets/js/jquery-easing.js,assets/js/jquery-flash.js,assets/js/jquery-scrollTo.js,assets/js/jquery-tweet.js,assets/js/jquery-ui.js,assets/js/suitcase.js"></script>
 	<title>Ahmed Nuaman &mdash; Freelance Designer and Developer &mdash; Portfolio</title>
 </head>
 <body>
@@ -128,22 +111,9 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 				<? endforeach; ?>
 			</ul>
 			<br />
-			<? if ( $twitter ): ?>
-				<h2>Tweets</h2>
-				<ul id="twitterEntries">
-					<? //foreach ( $twitter->channel->item as $tweet ): ?>
-					<? for ( $i = 0; $i < 10; $i++ ): ?>
-					<? $tweet = $twitter->channel->item[ $i ]; ?>
-					<li>
-						<p>
-							&#x201C;<?=twitter_description( $tweet->description );?>&#x201D;<br />
-							<em>&mdash; <?=strftime( '%H:%M on %A, %e %B' , strtotime( $tweet->pubDate ) );?></em>
-						</p>
-					</li>
-					<? //endforeach; ?>
-					<? endfor; ?>
-				</ul>
-			<? endif; ?>
+			<h2>Tweets</h2>
+			<div id="twitterEntries">
+			</div>
 		</div>
 		<div id="leftCol">
 			<h2>My Notable Work</h2>
