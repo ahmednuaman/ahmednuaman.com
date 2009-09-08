@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ytas3</name>
+	<name>_ahmednuaman.com YouTube Player AS3 Tests</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,9 +16,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>[source path] AS3</name>
+			<name>[source path] AS3_OS</name>
 			<type>2</type>
-			<location>/Volumes/Sites/__Useful Stuff/Flash/AS3</location>
+			<location>/Volumes/Sites/__Useful Stuff/Flash/AS3_OS</location>
 		</link>
 	</linkedResources>
 </projectDescription>
