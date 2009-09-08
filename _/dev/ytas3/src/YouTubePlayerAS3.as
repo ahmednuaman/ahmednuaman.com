@@ -1,6 +1,10 @@
 package
 {
+	import flash.display.DisplayObject;
+	import flash.display.Loader;
 	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.net.URLRequest;
 	import flash.system.Security;
 
 	public class YouTubePlayerAS3 extends Sprite
@@ -22,7 +26,7 @@ package
 			Security.allowDomain( 'i.ytimg.com' );
 		}
 		
-		private function play(videoId:String):void
+		public function play(videoId:String):void
 		{
 			this.videoId = videoId;
 			
@@ -57,11 +61,16 @@ package
 		
 		private function handlePlayerReady(e:Event):void
 		{
-			player:Object = e.target;
-			
-			player.loadVideoById( videoId );
+			player = e.target;
 			
 			player.setSize( playerWidth, playerHeight );
+			
+			playVideo();
+		}
+		
+		private function playVideo():void
+		{
+			player.loadVideoById( videoId );
 		}
 		
 		override public function set height(value:Number):void
