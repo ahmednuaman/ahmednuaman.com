@@ -2,6 +2,7 @@ package
 {
 	import flash.events.Event;
 	import flash.geom.Rectangle;
+	import flash.system.Security;
 	
 	import org.papervision3d.cameras.CameraType;
 	import org.papervision3d.materials.MovieMaterial;
@@ -27,6 +28,12 @@ package
 		public function App3D()
 		{
 			super( 640, 480, true, true, CameraType.TARGET );
+			
+			Security.allowDomain( '*' );
+			Security.allowDomain( 'www.youtube.com' );  
+			Security.allowDomain( 'youtube.com' );  
+			Security.allowDomain( 's.ytimg.com' );  
+			Security.allowDomain( 'i.ytimg.com' );
 			
 			init();
 		}
