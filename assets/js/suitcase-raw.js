@@ -269,9 +269,14 @@ function initTweets()
 {
 	$('#twitterEntries').tweet({
 		avatar_size: 0,
-		count: 5,
+		count: 10,
 		join_text: 'auto',
 		loading_text: 'Loading tweets...',
+		auto_join_text_default: 'I said:', 
+		auto_join_text_ed: 'I',
+		auto_join_text_ing: 'I was',
+		auto_join_text_reply: 'I replied to',
+		auto_join_text_url: 'I was checking out',
 		username: 'ahmednuaman'
 	});
 }
