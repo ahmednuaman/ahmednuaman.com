@@ -1,16 +1,17 @@
 package {
+	import com.firestartermedia.lib.as3.display.threedee.shape.Rectangle3D;
+	
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.geom.Point;
-	import flash.system.Security;
 	
 	[SWF( width='580', height='500', frameRate='30', backgroundColor='#FFFFFF' )]
 
 	public class App3D1 extends Sprite
 	{
-		private var cube:Sprite;
+		private var cube:Rectangle3D;
 		
 		public function App3D1()
 		{
@@ -24,40 +25,18 @@ package {
 		{
 			transform.perspectiveProjection.fieldOfView	= 45;
 			
-			cube = new Sprite();
+			cube = new Rectangle3D();
+			
+			cube.faceFront 		= createFace( 0x333333, 'front' );
+			cube.faceBack 		= createFace( 0x333333, 'front' );
+			cube.faceLeft 		= createFace( 0x3333FF, 'front' );
+			cube.faceRight 		= createFace( 0x333333, 'front' );
+			cube.faceTop 		= createFace( 0x333333, 'front' );
+			cube.faceBottom 	= createFace( 0x333333, 'front' );
+			
+			cube.build();
 			
 			addChild( cube );
-			
-			var front:Sprite 	= createFace( 0x333333, 'front' );
-			var back:Sprite 	= createFace( 0x333333, 'back' );
-			var right:Sprite 	= createFace( 0x333333, 'right' );
-			var left:Sprite 	= createFace( 0x333333, 'left' );
-			var top:Sprite 		= createFace( 0x333333, 'top' );
-			var bottom:Sprite 	= createFace( 0x333333, 'bottom' );
-			
-			cube.addChild( back );
-			cube.addChild( right );
-			cube.addChild( left );
-			cube.addChild( top );
-			cube.addChild( bottom );
-			cube.addChild( front );
-			
-			back.rotationY 		= 180;
-			back.x				= 300;
-			back.z				= 300;
-			
-			right.rotationY 	= 90;
-			right.x				= 300;
-			right.z				= 300;
-			
-			left.rotationY 		= 270;
-			left.x				= 0;
-			
-			top.rotationX 		= 270;
-			top.y				= 300;
-			top.z				= 300;
-			
-			bottom.rotationX 	= 90;
 			
 			addEventListener( Event.ENTER_FRAME, handleEnterFrame );
 		}
@@ -66,7 +45,7 @@ package {
 		{
 			var face:Sprite = new Sprite();
 			
-			face.graphics.beginFill( colour, .3 );
+			face.graphics.beginFill( colour );
 			face.graphics.lineStyle( 1, colour );
 			face.graphics.drawRect( 0, 0, 300, 300 );
 			face.graphics.endFill();
