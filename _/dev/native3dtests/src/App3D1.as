@@ -1,4 +1,5 @@
-package {
+package 
+{
 	import com.firestartermedia.lib.as3.display.threedee.shape.Rectangle3D;
 	
 	import flash.display.Sprite;
