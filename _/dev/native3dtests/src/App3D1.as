@@ -53,7 +53,7 @@ package
 			cube.y 		= ( stage.stageHeight / 2 );
 			cube.z		= 1000;
 			
-			cube.rotationX = 89
+			cube.rotationX = 75;
 			
 			addEventListener( Event.ENTER_FRAME, handleEnterFrame );
 		}
@@ -82,7 +82,7 @@ package
 		
 		private function handleEnterFrame(e:Event):void
 		{			
-			cube.rotationX 	+= 1; // up
+			//cube.rotationX 	+= 1; // up
 			//cube.rotationY 	+= 1; // across
 			//cube.rotationZ 	+= 1; // pitch
 		}
