@@ -11,6 +11,7 @@ package
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	import flash.text.TextFormat;
+	import flash.utils.setInterval;
 	
 	[SWF( width='580', height='500', frameRate='30', backgroundColor='#FFFFFF' )]
 
@@ -49,11 +50,9 @@ package
 			
 			addChild( cube );
 			
-			cube.x 		= ( stage.stageWidth / 2 );
-			cube.y 		= ( stage.stageHeight / 2 );
+			cube.x 		= ( stage.stageWidth / 2 ) - ( cube.width / 2 );
+			cube.y 		= ( stage.stageHeight / 2 ) - ( cube.height / 2 );
 			cube.z		= 1000;
-			
-			cube.rotationX = 75;
 			
 			addEventListener( Event.ENTER_FRAME, handleEnterFrame );
 		}
@@ -80,11 +79,11 @@ package
 			return face;
 		}
 		
-		private function handleEnterFrame(e:Event):void
+		private function handleEnterFrame(e:Event=null):void
 		{			
-			//cube.rotationX 	+= 1; // up
-			//cube.rotationY 	+= 1; // across
-			//cube.rotationZ 	+= 1; // pitch
+			cube.rotationX 	+= 1; // pitch
+			//cube.rotationY 	+= 1; // scope
+			//cube.rotationZ 	+= 1; // roll
 		}
 	}
 }
