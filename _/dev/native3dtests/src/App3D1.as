@@ -39,7 +39,7 @@ package
 			transform.perspectiveProjection.projectionCenter = new Point( stage.stageWidth / 2, stage.stageHeight / 2 );
 			transform.perspectiveProjection.fieldOfView	= 45;
 			
-			cube1 = new Rectangle3D();
+			/* cube1 = new Rectangle3D();
 			
 			cube1.faceFront 	= createFace( 0x333333, 'front' );
 			cube1.faceBack 		= createFace( 0x333333, 'back' );
@@ -54,7 +54,7 @@ package
 			
 			cube1.x 			= -400;
 			cube1.y 			= ( stage.stageHeight / 2 ) - ( cube1.height / 2 );
-			cube1.z				= 1000;
+			cube1.z				= 1000; */
 			
 			cube2 = new Rectangle3D();
 			
@@ -74,7 +74,7 @@ package
 			cube2.y 			= ( stage.stageHeight / 2 ) - ( cube2.height / 2 );
 			cube2.z				= 1000;
 			
-			cube3 = new Rectangle3D();
+			/* cube3 = new Rectangle3D();
 			
 			cube3.faceFront 	= createFace( 0x333333, 'front' );
 			cube3.faceBack 		= createFace( 0x333333, 'back' );
@@ -90,7 +90,7 @@ package
 			cube3.rotationX		= 90;
 			cube3.x 			= 400 + cube3.width;
 			cube3.y 			= ( stage.stageHeight / 2 ) - ( cube3.height / 2 );
-			cube3.z				= 1000;
+			cube3.z				= 1000; */
 			
 			addEventListener( Event.ENTER_FRAME, handleEnterFrame );
 		}
@@ -119,7 +119,7 @@ package
 		
 		private function handleEnterFrame(e:Event=null):void
 		{			
-			cube1.rotationX 	+= 1; // pitch
+			//cube1.rotationX 	+= 1; // pitch
 			//cube1.rotationY 	+= 1; // scope
 			//cube1.rotationZ 	+= 1; // roll
 			
@@ -127,7 +127,7 @@ package
 			//cube2.rotationY 	+= 1; // scope
 			//cube2.rotationZ 	+= 1; // roll
 			
-			cube3.rotationX 	+= 1; // pitch
+			//cube3.rotationX 	+= 1; // pitch
 			//cube3.rotationY 	+= 1; // scope
 			//cube3.rotationZ 	+= 1; // roll
 		}
