@@ -47,7 +47,7 @@ package
 			
 			players = [ ];
 			
-			for ( var i:Number = 0; i < 6; i++ )
+			for ( var i:Number = 0; i < 2; i++ )
 			{
 				players.push( new YouTubePlayer() );
 				
@@ -64,10 +64,10 @@ package
 			materials = new MaterialsList({
 				front: 		new MovieMaterial( players[ 0 ], false, true, false, rect ),
 				back: 		new MovieMaterial( players[ 1 ], false, true, false, rect ),
-				right: 		new MovieMaterial( players[ 2 ], false, true, false, rect ),
-				left: 		new MovieMaterial( players[ 3 ], false, true, false, rect ),
-				top: 		new MovieMaterial( players[ 4 ], false, true, false, rect ),
-				bottom: 	new MovieMaterial( players[ 5 ], false, true, false, rect )
+				right: 		new MovieMaterial( players[ 1 ], false, true, false, rect ),
+				left: 		new MovieMaterial( players[ 1 ], false, true, false, rect ),
+				top: 		new MovieMaterial( players[ 1 ], false, true, false, rect ),
+				bottom: 	new MovieMaterial( players[ 1 ], false, true, false, rect )
 			});
 			
 			cube = new Cube( materials, CUBE_SIZE, CUBE_SIZE, CUBE_SIZE );
