@@ -133,7 +133,7 @@ function initLinkTracking()
 	
 	for ( var i = 0; i < links.length; i++ )
 	{
-		if ( !$(links[i]).attr( 'onclick' ) )
+		if ( !$(links[i]).attr( 'onclick' ) && $(links[i]).attr( 'href' ).indexOf( 'window.location' ) == -1 )
 		{
 			$(links[i]).click(function()
 			{
