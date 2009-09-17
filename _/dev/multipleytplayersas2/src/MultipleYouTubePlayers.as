@@ -42,8 +42,8 @@ class MultipleYouTubePlayers
 		player2.init( 'C54wqJBxrWg' );
 		player3.init( 'yU5W4CkZHHQ' );
 		
-		mc1.x	= 0;
-		mc2.x	= player1.playerWidth + 10;
-		mc3.x	= ( player1.playerWidth + 10 ) * 2;
+		mc1._y	= 0;
+		mc2._y	= player1.playerHeight + 10;
+		mc3._y	= ( player1.playerHeight + 10 ) * 2;
 	}
 }
