@@ -24,5 +24,4 @@
 	<? get_search_form(); ?>
 
 <? endif; ?>
-<? get_sidebar(); ?>
 <? get_footer(); ?>
