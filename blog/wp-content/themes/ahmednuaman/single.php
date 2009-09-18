@@ -46,7 +46,8 @@
 	
 	<? endwhile; ?>  
 <? else: ?>
-		<p>Sorry, no posts matched your criteria.</p>
+	<h2 class="center">Error 404 - Not Found</h2>
+	<? get_search_form(); ?>
 		
 <? endif; ?>
 <? get_footer(); ?>

@@ -11,5 +11,4 @@
 		<? endwhile; ?>
 	<? endif; ?>
 	<? edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
-<? get_sidebar(); ?>
 <? get_footer(); ?>
