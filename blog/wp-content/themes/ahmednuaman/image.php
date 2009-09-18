@@ -44,6 +44,8 @@
 	<? endwhile; ?>
 	
 <? else: ?>
-	<p>Sorry, no attachments matched your criteria.</p>
+	<h2>Whoa! Where are you off to?</h2>
+	<p>There's nothing here! So enter whatever you're looking for below and see what happens...</p>
+	<? get_search_form(); ?>
 <? endif; ?>
 <? get_footer(); ?>
