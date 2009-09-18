@@ -40,14 +40,14 @@
 	
 <? else: ?>
 	<? if ( is_category() ): // If this is a category archive ?>
-		<h2 class='center'>Sorry, but there aren't any posts in the <?=single_cat_title( '', false );?> category yet.</h2>
+		<h2>Sorry, but there aren't any posts in the <?=single_cat_title( '', false );?> category yet.</h2>
 	<? elseif ( is_date() ): // If this is a date archive ?>
-		<h2 class='center'>Sorry, but there aren't any posts with this date.</h2>
+		<h2>Sorry, but there aren't any posts with this date.</h2>
 	<? elseif ( is_author() ): // If this is a category archive
 		$userdata = get_userdatabylogin( get_query_var( 'author_name' ) ); ?>
-		<h2 class='center'>Sorry, but there aren't any posts by <?=$userdata->display_name;?> yet.</h2>
+		<h2>Sorry, but there aren't any posts by <?=$userdata->display_name;?> yet.</h2>
 	<? else: ?>
-		<h2 class='center'>No posts found.</h2>
+		<h2>No posts found.</h2>
 		<? get_search_form(); ?>
 	<? endif; ?>
 <? endif; ?>
