@@ -1,6 +1,7 @@
 package 
 {
 	import com.firestartermedia.lib.as3.display.component.interaction.ButtonSimple;
+	import com.firestartermedia.lib.as3.display.component.video.VideoPlayerChromless;
 	import com.firestartermedia.lib.as3.display.component.video.WebCam;
 	import com.firestartermedia.lib.as3.utils.DisplayObjectUtil;
 	
@@ -15,10 +16,15 @@ package
 	
 	public class App extends Sprite
 	{
+		public static const URL:String						  	= 'rtmp://localhost/';
+		public static const URL_RECORD:String					= URL + 'record/test1/';
+		public static const URL_PLAY:String						= URL + 'play/test1/';
+		
 		[Embed( systemFont='Arial', fontName='Arial', mimeType='application/x-font', unicodeRange='U+0020,U+0041-U+005A,U+0020,U+0061-U+007A,U+0020-U+002F,U+003A-U+0040,U+005B-U+0060,U+007B-U+007E' )] 
 		private var arial:Class;
 		
-		private var webcam:WebCam;
+		private var videoPlayer:VideoPlayerChromless;
+		private var webCam:WebCam;
 		
 		public function App()
 		{
@@ -32,35 +38,76 @@ package
 		
 		private function init():void
 		{
-			var button:ButtonSimple		= new ButtonSimple();
+			var buttonImage:ButtonSimple	= new ButtonSimple();
+			var buttonVideo:ButtonSimple	= new ButtonSimple();
 			
-			button.addEventListener( MouseEvent.CLICK, handleButtonClick );
+			buttonImage.addEventListener( MouseEvent.CLICK, handleButtonImageClick );
 			
-			button.border				= false;
-			button.buttonText 			= 'Capture an image!';
-			button.textFormat.size		= 14;
+			buttonImage.border				= false;
+			buttonImage.buttonText 			= 'Capture an image!';
+			buttonImage.textFormat.size		= 14;
 			
-			button.draw();
+			buttonImage.draw();
 			
-			addChild( button );
+			addChild( buttonImage );
 			
-			webcam = new WebCam();
+			buttonVideo.addEventListener( MouseEvent.CLICK, handleButtonVideoClick );
 			
-			addChild( webcam );
+			buttonVideo.border				= false;
+			buttonVideo.buttonText 			= 'Toggle capture a video!';
+			buttonVideo.textFormat.size		= 14;
 			
-			button.x	= ( webcam.width / 2 ) - ( button.width / 2 );
-			button.y	= webcam.height + 20;
+			buttonVideo.draw();
+			
+			addChild( buttonVideo );
+			
+			videoPlayer						= new VideoPlayerChromless();
+			
+			addChild( videoPlayer );
+			
+			webCam 							= new WebCam();
+			
+			webCam.captureURL 				= URL_RECORD;
+			
+			addChild( webCam );
+			
+			buttonImage.x					= ( webCam.width / 2 ) - ( buttonImage.width / 2 );
+			buttonImage.y					= webCam.height + 20;
+			
+			buttonVideo.x					= ( webCam.width / 2 ) - ( buttonVideo.width / 2 );
+			buttonVideo.y					= buttonImage.y + buttonImage.height + 20;
 		}
 		
-		private function handleButtonClick(e:MouseEvent):void
+		private function handleButtonImageClick(e:MouseEvent):void
 		{
-			var capture:Bitmap = webcam.captureImage();
+			var capture:Bitmap = webCam.captureImage();
 			
 			DisplayObjectUtil.scale( capture, 150, 150 );
 			
-			capture.x = webcam.width + 20;
+			capture.x = webCam.width + 20;
 			
 			addChild( capture );
+		}
+		
+		private function handleButtonVideoClick(e:MouseEvent):void
+		{
+			if ( webCam.recording )
+			{
+				webCam.captureVideoStop();
+				
+				playRecordedVideo( URL_PLAY + webCam.filename );
+			}
+			else
+			{
+				webCam.captureVideo();
+			}
+		}
+		
+		private function playRecordedVideo(videoURL:String):void
+		{
+			videoPlayer.x = webCam.width + 20;
+			
+			videoPlayer.play( videoURL ); trace(videoURL);
 		}
 	}
 }
