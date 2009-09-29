@@ -1,20 +1,22 @@
-package {
+package 
+{
 	import com.firestartermedia.lib.as3.display.component.interaction.ButtonSimple;
 	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayer;
 	
+	import flash.display.LoaderInfo;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
 	import flash.events.MouseEvent;
 	import flash.system.Security;
 
-	public class AppTest extends Sprite
+	[SWF( backgroundColor="#FFFFFF" )]
+
+	public class PlayerTest extends Sprite
 	{	
-		
-		
 		private var player:YouTubePlayer;
 		
-		public function AppTest()
+		public function PlayerTest()
 		{
 			stage.align			= StageAlign.TOP_LEFT;
 			stage.scaleMode		= StageScaleMode.NO_SCALE;
@@ -33,7 +35,7 @@ package {
 			player = new YouTubePlayer();
 			
 			player.chromeless		= true;
-			player.wrapperURL		= 'assets/swf/YouTubePlayerWrapper.swf';
+			player.wrapperURL		= ( LoaderInfo( loaderInfo ).parameters.url ||= 'assets/swf/YouTubePlayerWrapper.swf' );;
 			
 			player.play( 'ghqjailPGOQ' );
 			
@@ -41,7 +43,7 @@ package {
 			
 			var button:ButtonSimple = new ButtonSimple();
 			
-			button.buttonText		= 'Clickkkk';
+			button.buttonText		= 'Pause the video';
 			button.textEmbedFonts	= false;
 			
 			button.draw();
