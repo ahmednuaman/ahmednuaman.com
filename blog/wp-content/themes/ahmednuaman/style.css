@@ -31,6 +31,8 @@ Tags: blue, fixed width, two columns, widgets
 	.postmetadata { display: block; position: relative; padding: 5px 0; margin: 5px 0; border-top: 1px solid #EEEEEE; border-bottom: 1px solid #EEEEEE; font-style: italic; color: #555555; }
 	.postmetadata a { color: #555555; border-bottom-color: #555555; }
 	
+	.noborder, .noborder a { border: none; }
+	
 	.navigation { display: block; padding: 0 0 20px 0; }
 	
 	#footer { padding-top: 20px; }

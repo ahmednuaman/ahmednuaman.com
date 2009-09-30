@@ -9,7 +9,14 @@
 				<? wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
 				<div class="postmetadata alt">
-					Related posts:
+					<p>Share the love:</p>
+					<div class="noborder">
+						<? echo '<ul class="addtoany_list">'; if( function_exists('ADDTOANY_SHARE_SAVE_ICONS') ) ADDTOANY_SHARE_SAVE_ICONS( array("html_wrap_open" => "<li>", "html_wrap_close" => "</li>") ); if( function_exists('ADDTOANY_SHARE_SAVE_BUTTON') ) ADDTOANY_SHARE_SAVE_BUTTON( array("html_wrap_open" => "<li>", "html_wrap_close" => "</li>") ); echo '</ul>'; ?>
+						
+						<? if( function_exists('addHexoSearch') ) { addHexoSearch(); } ?>
+					</div>
+					
+					<p>Related posts:</p>
 					<ul>
 						<? related_posts_by_category( array(
 						    'orderby' => 'post_date',
