@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mainfeature>
+	<feature>
+		<title>Future Blogging Limited</title>
+		<image>/assets/image/work/mainfeature/fsmg_fb.jpg</image>
+		<id>fsmgFb</id>
+		<description>
+			Future Blogging are a new copywriting company who wanted their web site to stand out from the crowd. I pitched the idea of having their web site look and feel like a magazine, as most of their work is copy. The took to the idea, loved it and have had nothing but praise about their bold image. The web site was constructed with Actionscript 2 and uses XML to bind the data.
+		</description>
+		<link>futureblogging.co.uk</link>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/fsmg/fb/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/fsmg/fb/2.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/fsmg/fb/3.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/fsmg/fb/4.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>photoshop</tag>
+			<tag>design</tag>
+			<tag>flash</tag>
+			<tag>actionscript2</tag>
+			<tag>php</tag>
+		</tags>
+	</feature>
+	<feature>
+		<title>Brockway Consulting Limited</title>
+		<image>/assets/image/work/mainfeature/fsmg_bc.jpg</image>
+		<id>fsmgBc</id>
+		<description>
+			Brockway Consulting are a company who provide consultancy for the utility, government and rail industries. They required a sleek, modern and simple web site that would give them the ability to have a blog and keep up to date. The web site delivered is CMS based and allows the company to keep their site up to date as well add new pages, it's powered by PHP and MySQL, with an Actionscript 3 main feature, and has an XHTML and CSS compliant template.
+		</description>
+		<link>brockwayconsulting.com</link>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/fsmg/bc/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/fsmg/bc/2.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/fsmg/bc/3.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/fsmg/bc/4.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>php</tag>
+			<tag>xhtml</tag>
+			<tag>css</tag>
+			<tag>javascript</tag>
+			<tag>jquery</tag>
+			<tag>mysql</tag>
+			<tag>cms</tag>
+			<tag>actionscript3</tag>
+		</tags>
+	</feature>
+	<feature>
+		<title>Marshall Arts Photography</title>
+		<image>/assets/image/work/mainfeature/fsmg_mm.jpg</image>
+		<id>fsmgMm</id>
+		<description>
+			Mandy Marshall is a photographer who I had the pleasure to work with in a previous job. She wanted a clean, modern web site but did not require the complexity of a CMS. I proposed the idea of having her upload her photos to Flickr and for my to build a web site that fed off the Flickr API and presented her photos on her own web site. The front-end is built with Actionscript 3 and MXML and uses a PHP based proxy system to interact with Flickr's API.
+		</description>
+		<link>marshallartsphotography.co.uk</link>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/fsmg/mm/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/fsmg/mm/2.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>flickr</tag>
+			<tag>mxml</tag>
+			<tag>actionscript3</tag>
+			<tag>api</tag>
+			<tag>design</tag>
+			<tag>photoshop</tag>
+		</tags>
+	</feature>
+	<feature>
+		<title>Mosaicappeals.com Web Site</title>
+		<image>/assets/image/work/mainfeature/bubb_mos.jpg</image>
+		<id>bubbMos</id>
+		<description>
+			Mosaicappeals.com is a project that I created in a previous job. The concept was to create a self service style web site that allow charities and fund-raisers to come along and create a mosaic from any picture and have those tiles sold to the general public. The tiles sold would then count towards the charity's/fund-raiser's total. The system is built entirely on CodeIgnior (PHP) and uses XHTML, CSS, and JavaScript (Prototype and Script.aculo.us) for the front-end. The system also uses a Protx 3Dsecure API that I wrote.
+		</description>
+		<link>mosaicappeals.com</link>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/bubb/mos/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/bubb/mos/2.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/bubb/mos/3.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/bubb/mos/4.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>php</tag>
+			<tag>xhtml</tag>
+			<tag>css</tag>
+			<tag>javascript</tag>
+			<tag>prototype</tag>
+			<tag>scriptaculous</tag>
+			<tag>protx</tag>
+			<tag>mysql</tag>
+			<tag>actionscript3</tag>
+		</tags>
+	</feature>
+	<feature>
+		<title>FosterCare UK Web Site &amp; SEO</title>
+		<image>/assets/image/work/mainfeature/bubb_fcuk.jpg</image>
+		<id>bubbFcuk</id>
+		<description>
+			FosterCare UK is a fostering agency and who I worked with in a previous job. I was in charge of creating their web site, optimising it and then creating and managing a Google Adwords PPC campaign. The web site is a CMS powered site that allows them to keep it up to date, and with the optimisation and PPC campaign, their ROI reached over 300%.
+		</description>
+		<link>fostercareuk.co.uk</link>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/bubb/fcuk/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/bubb/fcuk/2.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/bubb/fcuk/3.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/bubb/fcuk/4.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>php</tag>
+			<tag>mysql</tag>
+			<tag>xhtml</tag>
+			<tag>css</tag>
+			<tag>javascript</tag>
+			<tag>actionscript3</tag>
+			<tag>seo</tag>
+			<tag>adwords</tag>
+		</tags>
+	</feature>
+</mainfeature>

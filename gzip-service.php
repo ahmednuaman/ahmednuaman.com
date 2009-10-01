@@ -17,7 +17,7 @@ else
 	ob_start();
 }
 
-$dir 			= '/home/ahmed/public_html/';
+$dir 			= dirname( __FILE__ ) . '/';
 $test_file		= $dir . 'cache/' . md5( $_GET['f'] );
 $files 			= explode( ',', $_GET['f'] );
 
@@ -40,7 +40,14 @@ if ( !file_exists( $test_file ) )
 {
 	foreach ( $files as $file )
 	{
-		$feeds .= file_get_contents( $dir . $file );
+		if ( strpos( $file, '.' ) === 0 || strstr( $file, '..' ) )
+		{
+			continue;
+		}
+		else
+		{
+			$feeds .= file_get_contents( $dir . $file );
+		}
 	}
 	
 	file_put_contents( $test_file, $feeds );

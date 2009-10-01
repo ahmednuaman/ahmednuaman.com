@@ -17,9 +17,10 @@ else
 	}
 }
 
-$recommendations = simplexml_load_file( 'assets/xml/recommendations.xml' );
-$work = simplexml_load_file( 'assets/xml/work.xml' );
-$blog = simplexml_load_file( 'assets/xml/blog.xml' );
+$blog 				= simplexml_load_file( 'assets/xml/blog.xml' );
+$recommendations 	= simplexml_load_file( 'assets/xml/recommendations.xml' );
+$work 				= simplexml_load_file( 'assets/xml/work.xml' );
+$workother			= simplexml_load_file( 'assets/xml/workother.xml' );
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -59,7 +60,7 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 		<div id="rightCol">
 			<h2>About Me</h2>
 			<p>I'm a freelance designer and developer with a first class degree in Interaction Design. I have strong knowledge of the web design and development industry and my skills include the design and development of web sites, gadgets and rich media adverts. I'm a self-motivated individual, I'm happy to work as an individual or in a team and believe that it's better to try than to not try at all.</p>
-			<p>My skills range from OOP Actionscript 2 &amp; 3, PHP, XHTML, CSS, JavaScript to design and real time video streaming to computer and mobile, and I'm a fully qualified Google AdWords Reseller. As I am comfortable with both design and development needs, I enjoy the challenge of balancing client and business needs in order to achieve the best outcome possible.</p>
+			<p>My skills range from OOP Actionscript 2 &amp; 3, PHP, XHTML, CSS, JavaScript to design and real time video streaming to computer and mobile, and I'm a fully qualified Google Advertising Professional. As I am comfortable with both design and development needs, I enjoy the challenge of balancing client and business needs in order to achieve the best outcome possible.</p>
 			<p>I've got professional knowledge of:</p>
 			<ul>
 				<li><strong>Server-side</strong>: PHP, Python and MySQL</li>
@@ -152,9 +153,45 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 							</ul>
 						</div>
 					<? endif; ?>
-					<!-- <p>
-						<a href="#" onclick="scrollBackUp()" class="topLink"><small>Top</small></a>
-					</p> -->
+				</li>
+				<? endforeach; ?>
+			</ul>
+			<h2>More Work</h2>
+			<ul class="work">
+				<? foreach ( $workother->feature as $feature ): ?>
+				<li id="<?=$feature->id;?>">
+					<h3><?=htmlspecialchars( $feature->title );?></h3>
+					<p>
+						<?=$feature->description;?>
+						<? if ( $feature->link ): ?>
+							<a href="http://<?=str_replace( '&', '&amp;', $feature->link );?>" title="Go to <?=htmlspecialchars( $feature->title );?> project web site">Visit this project's web site &raquo;</a>
+						<? endif; ?>
+					</p>
+					<? if ( $feature->thumbnails ): ?>
+						<div class="thumbnails">
+							<? foreach ( $feature->thumbnails->thumbnail as $thumbnail ): ?>
+								<div style="background-image: url(<?=$thumbnail->attributes()->src;?>)" title="<?=htmlspecialchars( $feature->title );?> screenshot">
+									<span class="hide"><?=htmlspecialchars( $feature->title );?> screen-shot</span>
+								</div>
+							<? endforeach; ?>
+						</div>
+					<? endif; ?>
+					<? if ( $feature->tags ): ?>
+						<div class="tags">
+							<ul>
+								<? 
+									$tags = get_object_vars( $feature->tags );
+									$tags = $tags[ 'tag' ];
+									sort( $tags );
+								?>
+								<? foreach ( $tags as $tag ): ?>
+									<li>
+										<a href="/blog/tag/<?=$tag;?>"><?=$tag;?></a>
+									</li>
+								<? endforeach; ?>
+							</ul>
+						</div>
+					<? endif; ?>
 				</li>
 				<? endforeach; ?>
 			</ul>

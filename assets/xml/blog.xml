@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+
+<channel>
+	<title>Ahmed Nuaman, Freelance Designer and Developer</title>
+	
+	<link>http://ahmednuaman.com/blog</link>
+	<description>I'm a freelance designer and developer with a first class degree in Interaction Design. I have strong knowledge of the web design and development industry</description>
+	<lastBuildDate>Tue, 29 Sep 2009 09:42:06 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.8.4</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<geo:lat>51.2880</geo:lat><geo:long>0.4913</geo:long><creativeCommons:license>http://creativecommons.org/licenses/by-nc-sa/3.0/</creativeCommons:license><image><link>http://ahmednuaman.com/blog</link><url>http://ahmednuaman.com/assets/image/gavater.png</url><title>Ahmed Nuaman's Blog Feed</title></image><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" href="http://feeds.feedburner.com/AhmedNuamansBlogEntries" type="application/rss+xml" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com" /><item>
+		<title>Another Release Of The Shiny YouTube Actionscript3 Wrapper</title>
+		<link>http://feedproxy.google.com/~r/AhmedNuamansBlogEntries/~3/peS3ODTLAXU/</link>
+		<comments>http://ahmednuaman.com/blog/2009/09/29/another-release-of-the-shiny-youtube-actionscript3-wrapper/#comments</comments>
+		<pubDate>Tue, 29 Sep 2009 09:42:06 +0000</pubDate>
+		<dc:creator>Ahmed</dc:creator>
+				<category><![CDATA[APIs]]></category>
+		<category><![CDATA[Actionscript 3]]></category>
+		<category><![CDATA[Development]]></category>
+		<category><![CDATA[as3]]></category>
+		<category><![CDATA[chromeless]]></category>
+		<category><![CDATA[chromless]]></category>
+		<category><![CDATA[fla]]></category>
+		<category><![CDATA[player]]></category>
+		<category><![CDATA[swf]]></category>
+		<category><![CDATA[wrapper]]></category>
+		<category><![CDATA[youtube]]></category>
+
+		<guid isPermaLink="false">http://ahmednuaman.com/blog/?p=433</guid>
+		<description><![CDATA[Ok so after some feedback on the last release of the wrapper, I&#8217;ve updated it and pushed it to Github. 
+There&#8217;s no need to compile the SWF yourself, I&#8217;ve done the hard work for you. Aren&#8217;t I nice?
+
+So, here&#8217;s a quick run through on how you can use it. In this example, I&#8217;m using the [...]]]></description>
+		<wfw:commentRss>http://ahmednuaman.com/blog/2009/09/29/another-release-of-the-shiny-youtube-actionscript3-wrapper/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://ahmednuaman.com/blog/2009/09/29/another-release-of-the-shiny-youtube-actionscript3-wrapper/</feedburner:origLink></item>
+		<item>
+		<title>Understanding SWCs</title>
+		<link>http://feedproxy.google.com/~r/AhmedNuamansBlogEntries/~3/2Tq9OlguD78/</link>
+		<comments>http://ahmednuaman.com/blog/2009/09/29/understanding-swcs/#comments</comments>
+		<pubDate>Tue, 29 Sep 2009 08:31:03 +0000</pubDate>
+		<dc:creator>Ahmed</dc:creator>
+				<category><![CDATA[APIs]]></category>
+		<category><![CDATA[Actionscript 3]]></category>
+		<category><![CDATA[CSS]]></category>
+		<category><![CDATA[Design]]></category>
+		<category><![CDATA[Development]]></category>
+		<category><![CDATA[Flash]]></category>
+		<category><![CDATA[as3]]></category>
+		<category><![CDATA[assets]]></category>
+		<category><![CDATA[builder]]></category>
+		<category><![CDATA[components]]></category>
+		<category><![CDATA[designer]]></category>
+		<category><![CDATA[developer]]></category>
+		<category><![CDATA[fdt]]></category>
+		<category><![CDATA[flashide]]></category>
+		<category><![CDATA[flex]]></category>
+		<category><![CDATA[ide]]></category>
+		<category><![CDATA[mxmlc]]></category>
+		<category><![CDATA[skin]]></category>
+		<category><![CDATA[skinning]]></category>
+		<category><![CDATA[swc]]></category>
+		<category><![CDATA[swcs]]></category>
+		<category><![CDATA[visual]]></category>
+
+		<guid isPermaLink="false">http://ahmednuaman.com/blog/?p=422</guid>
+		<description><![CDATA[So after my tutorial on Flashtuts+ (Quick Guide to Creating and Using SWCs), I&#8217;ve had a few emails and comments about the usage of SWCs.
+So, after responding to them individually, I&#8217;ve compiled this post so you guys can see what a SWC can help you with and what it can&#8217;t.
+
+Quick usage with visual assets
+So I&#8217;ve [...]]]></description>
+		<wfw:commentRss>http://ahmednuaman.com/blog/2009/09/29/understanding-swcs/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://ahmednuaman.com/blog/2009/09/29/understanding-swcs/</feedburner:origLink></item>
+		<item>
+		<title>Actionscript 3 Web Cam Capture Made Easy</title>
+		<link>http://feedproxy.google.com/~r/AhmedNuamansBlogEntries/~3/x---W5Ge6l0/</link>
+		<comments>http://ahmednuaman.com/blog/2009/09/18/actionscript-3-web-cam-capture-made-easy/#comments</comments>
+		<pubDate>Fri, 18 Sep 2009 08:59:34 +0000</pubDate>
+		<dc:creator>Ahmed</dc:creator>
+				<category><![CDATA[Actionscript 3]]></category>
+		<category><![CDATA[Development]]></category>
+		<category><![CDATA[actionscript]]></category>
+		<category><![CDATA[as3]]></category>
+		<category><![CDATA[bitmap]]></category>
+		<category><![CDATA[bitmapdata]]></category>
+		<category><![CDATA[cam]]></category>
+		<category><![CDATA[camera]]></category>
+		<category><![CDATA[capture]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[web]]></category>
+		<category><![CDATA[webcam]]></category>
+
+		<guid isPermaLink="false">http://ahmednuaman.com/blog/?p=417</guid>
+		<description><![CDATA[I&#8217;ve got a new pitch in the pipe work and for it I need to be able to capture the web cam. It&#8217;ll have to be video, but I&#8217;ve started writing a class that simplifies it for you. 
+Displaying and capturing the web cam in Actionscript 3 isn&#8217;t hard, here&#8217;s a nice tutorial from Riacodes.com: [...]]]></description>
+		<wfw:commentRss>http://ahmednuaman.com/blog/2009/09/18/actionscript-3-web-cam-capture-made-easy/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://ahmednuaman.com/blog/2009/09/18/actionscript-3-web-cam-capture-made-easy/</feedburner:origLink></item>
+		<item>
+		<title>Did Someone Order Multiple YouTube Players?</title>
+		<link>http://feedproxy.google.com/~r/AhmedNuamansBlogEntries/~3/Ymrt866r_A8/</link>
+		<comments>http://ahmednuaman.com/blog/2009/09/17/did-someone-order-multiple-youtube-players/#comments</comments>
+		<pubDate>Thu, 17 Sep 2009 13:35:45 +0000</pubDate>
+		<dc:creator>Ahmed</dc:creator>
+				<category><![CDATA[APIs]]></category>
+		<category><![CDATA[Actionscript 2]]></category>
+		<category><![CDATA[Actionscript 3]]></category>
+		<category><![CDATA[Development]]></category>
+		<category><![CDATA[actionscript]]></category>
+		<category><![CDATA[as2]]></category>
+		<category><![CDATA[as3]]></category>
+		<category><![CDATA[multiple]]></category>
+		<category><![CDATA[player]]></category>
+		<category><![CDATA[players]]></category>
+		<category><![CDATA[tube]]></category>
+		<category><![CDATA[you]]></category>
+		<category><![CDATA[youtube]]></category>
+
+		<guid isPermaLink="false">http://ahmednuaman.com/blog/?p=410</guid>
+		<description><![CDATA[So, here I am, playing with YouTube players, trying to get more than one to load in Actionscript 3. But it&#8217;s a pain, so I did a few tests and got it running fine in Actionscript 2, here&#8217;s the code:
+
+1234567891011121314151617181920212223242526272829303132333435363738394041import com.tangozebra.youtube.TZYouTubePlayer;
+
+class MultipleYouTubePlayers 
+&#123;
+&#160; &#160; private var parent:MovieClip;
+&#160; &#160; 
+&#160; &#160; public function MultipleYouTubePlayers&#40;parent:MovieClip&#41;
+&#160; &#160; &#123;
+&#160; [...]]]></description>
+		<wfw:commentRss>http://ahmednuaman.com/blog/2009/09/17/did-someone-order-multiple-youtube-players/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		<feedburner:origLink>http://ahmednuaman.com/blog/2009/09/17/did-someone-order-multiple-youtube-players/</feedburner:origLink></item>
+		<item>
+		<title>YouTube OAuth/AuthSub *Doesn’t* Do iFrames</title>
+		<link>http://feedproxy.google.com/~r/AhmedNuamansBlogEntries/~3/5VrM5DNAgOM/</link>
+		<comments>http://ahmednuaman.com/blog/2009/09/15/youtube-oauthauthsub-doesnt-do-iframes/#comments</comments>
+		<pubDate>Tue, 15 Sep 2009 09:16:03 +0000</pubDate>
+		<dc:creator>Ahmed</dc:creator>
+				<category><![CDATA[APIs]]></category>
+		<category><![CDATA[Actionscript 2]]></category>
+		<category><![CDATA[Actionscript 3]]></category>
+		<category><![CDATA[Development]]></category>
+		<category><![CDATA[JavaScript]]></category>
+		<category><![CDATA[actionscript]]></category>
+		<category><![CDATA[api]]></category>
+		<category><![CDATA[as2]]></category>
+		<category><![CDATA[as3]]></category>
+		<category><![CDATA[authsub]]></category>
+		<category><![CDATA[cookies]]></category>
+		<category><![CDATA[gdata]]></category>
+		<category><![CDATA[google]]></category>
+		<category><![CDATA[iframe]]></category>
+		<category><![CDATA[oauth]]></category>
+		<category><![CDATA[youtube]]></category>
+
+		<guid isPermaLink="false">http://ahmednuaman.com/blog/?p=403</guid>
+		<description><![CDATA[What a shame. YouTube officially doesn&#8217;t support &#8220;iframes&#8221; when it comes to OAuth and AuthSub. That&#8217;s a bit of a pain, but have no fear, I&#8217;ve found a way around it.
+
+You see the issue is that YouTube&#8217;s, well Google&#8217;s, authentication system can&#8217;t modify cookies as it&#8217;s being loaded in an &#8220;iframe&#8221;, making the site a [...]]]></description>
+		<wfw:commentRss>http://ahmednuaman.com/blog/2009/09/15/youtube-oauthauthsub-doesnt-do-iframes/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://ahmednuaman.com/blog/2009/09/15/youtube-oauthauthsub-doesnt-do-iframes/</feedburner:origLink></item>
+	</channel>
+</rss><!-- Dynamic page generated in 1.095 seconds. --><!-- Cached page generated by WP-Super-Cache on 2009-09-29 09:42:44 -->
