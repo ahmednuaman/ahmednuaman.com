@@ -35,9 +35,9 @@ package
 			player = new YouTubePlayer();
 			
 			player.chromeless		= true;
-			player.wrapperURL		= ( LoaderInfo( loaderInfo ).parameters.url ||= 'assets/swf/YouTubePlayerWrapper.swf' );;
+			player.wrapperURL		= ( LoaderInfo( loaderInfo ).parameters.url ||= 'assets/swf/YouTubePlayerWrapper.swf' );
 			
-			player.play( 'ghqjailPGOQ' );
+			//player.play( 'ghqjailPGOQ' );
 			
 			addChild( player );
 			
