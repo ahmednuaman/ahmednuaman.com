@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mainfeature>
 	<feature>
+		<title>IOC The Best Of Us Challenge</title>
+		<image>/assets/image/work/mainfeature/mek_ioc.jpg</image>
+		<id>a1c2fPlayer</id>
+		<description>
+		A month of so ago I got contacted by an agency in the states who asked me to help them build a beast of a YouTube Contest Gadget for the Olympics IOC. The concept, 'The Best Of Us Challenge', was to have videos of athletes doing stuff that us mere mortals can compete with, such as, walking on your hands or balancing balls. It's a beautifully designed gadget and my task was to aid the team through the maze that is a YouTube Contest Gadget, helping with coding, integration of the player, the authentication and uploading of videos, creation of the proxy (and caching) all the way through to the tech review process.
+		</description>
+		<link>olympic.org/thebestofuschallenge</link>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/mek/ioc/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/mek/ioc/2.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/mek/ioc/3.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/mek/ioc/4.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>actionscript3</tag>
+			<tag>gadget</tag>
+			<tag>flash</tag>
+			<tag>video</tag>
+			<tag>design</tag>
+			<tag>youtube</tag>
+			<tag>upload</tag>
+			<tag>auth</tag>
+			<tag>contest</tag>
+			<tag>channel</tag>
+			<tag>microsite</tag>
+			<tag>papervision3d</tag>
+		</tags>
+	</feature>
+	<feature>
 		<title>Flash Video Player for 1Click2Fame.com</title>
 		<image>/assets/image/work/mainfeature/1c2f_player.jpg</image>
 		<id>a1c2fPlayer</id>
