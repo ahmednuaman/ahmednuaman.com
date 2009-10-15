@@ -55,4 +55,6 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 				.tags { display: block; padding-bottom: 50px; }
 				.tags ul, .tags li { display: inline; list-style: none; margin: 0; padding: 0; }
 					.tags li a { display: block; float: left; background: #F8F8F8; border: none; margin: 0 5px 5px 0; padding: 2px 4px; }
+	#github { position: absolute; top: 0; right: 0; border: 0; z-index: 1000; }
+		#github a, #github img { border: 0; }
 }

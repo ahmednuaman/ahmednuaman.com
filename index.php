@@ -83,8 +83,6 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 							<a href="http://w3csites.com/profile.asp?u=ahmednuaman">W3C Sites</a></li>
 			</ul>
 			<br />
-			<iframe src="http://www.google.com/talk/service/badge/Show?tk=z01q6amlq5fnfbeju431acikg3tbjrav4slbitg4grjqc7ees3v76kebn10pj8lb7chcd83pjttdg658ea2pek6oce36agv9ppu9a1gulh8ff1u7n64p4q2lnjvs56d0em63hgmikktdhjb2fo4bjgh30c3325d5gnnbjop92&amp;w=200&amp;h=60" frameborder="0" allowtransparency="true" width="200" height="60" class="center"></iframe>
-			<br />
 			<img src="/assets/image/qr.png" alt="qrcode" class="center border" />
 			<br />
 			<h2>Recommendations</h2>
@@ -236,6 +234,9 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 			</p>
 		</div>
 	</div>
+	<div id="github">
+		<a href="http://github.com/ahmednuaman"><img src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+	</div>
 	<script type="text/javascript">
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -245,6 +246,5 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 	var pageTracker = _gat._getTracker("UA-352545-12");
 	pageTracker._trackPageview();
 	} catch(err) {}</script>
-	<a href="http://github.com/ahmednuaman"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1000;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 </body>
 </html>
