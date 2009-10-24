@@ -1,5 +1,7 @@
 package
 {
+	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayerAS3;
+	
 	import flash.events.Event;
 	import flash.geom.Rectangle;
 	import flash.system.Security;

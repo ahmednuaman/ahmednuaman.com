@@ -1,65 +1,61 @@
 package
 {
-	import flash.display.DisplayObject;
-	import flash.display.Loader;
+	import com.firestartermedia.lib.as3.display.component.interaction.ButtonSimple;
+	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayerAS3;
+	
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
-	import flash.events.Event;
-	import flash.net.URLRequest;
-	import flash.utils.Dictionary;
+	import flash.events.MouseEvent;
 
-	[SWF( width="900", height="400", frameRate="24", backgroundColor="#FFFFFF" )]
+	[SWF( width="580", height="800", frameRate="24", backgroundColor="#FFFFFF" )]
 
 	public class App extends Sprite
 	{
-		private var loaderToPlayerInfo:Dictionary				= new Dictionary();
-		private var playerToPlayerInfo:Dictionary				= new Dictionary();
-		private var requestURL:String							= 'http://www.youtube.com/apiplayer?version=3';
-		
+		private var players:Array								= [ ];
+				
 		public function App()
 		{
+			var button:ButtonSimple 		= new ButtonSimple();
+			
 			stage.align = StageAlign.TOP_LEFT;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			
-			loadAPlayer( 'R7yfISlGLNU', 450, 400 );
-			loadAPlayer( 'NisCkxU544c', 450, 400, 450 );
+			loadAPlayer( 'R7yfISlGLNU', 580, 400 );
+			loadAPlayer( 'NisCkxU544c', 580, 400, 0, 400 );
+			
+			button.buttonText				= 'Pause the videos';
+			button.textEmbedFonts			= false;
+			
+			button.draw();
+			
+			button.addEventListener( MouseEvent.CLICK, handleClick );
+			
+			addChild( button );
 		}
 		
 		private function loadAPlayer(videoId:String, width:Number, height:Number, x:Number=0, y:Number=0):void
 		{
-			var request:URLRequest = new URLRequest( requestURL );
-			var loader:Loader = new Loader();
+			var player:YouTubePlayerAS3 	= new YouTubePlayerAS3();
 			
-			loaderToPlayerInfo[ loader ] = { videoId: videoId, width: width, height: height, x: x, y: y };
+			player.height 					= height;
+			player.width 					= width
+			player.x 						= x;
+			player.y 						= y;
 			
-			loader.contentLoaderInfo.addEventListener( Event.INIT, handleLoaderInit );
+			player.play( videoId );
 			
-			loader.load( request );			
+			players.push( player );
+			
+			addChild( player );	
 		}
 		
-		private function handleLoaderInit(e:Event):void
+		private function handleClick(e:MouseEvent):void
 		{
-			var player:Object = e.target.content;
-			
-			player.addEventListener( 'onReady', handlePlayerReady );
-			
-			playerToPlayerInfo[ player ] = loaderToPlayerInfo[ e.target.loader ];
-			
-			addChild( player as DisplayObject );
-		}
-		
-		private function handlePlayerReady(e:Event):void
-		{
-			var player:Object = e.target;
-			var properties:Object = playerToPlayerInfo[ player ];
-			
-			player.loadVideoById( properties.videoId );
-			
-			player.setSize( properties.width, properties.height );
-			
-			player.x = properties.x;
-			player.y = properties.y;
+			for each ( var player:YouTubePlayerAS3 in players )
+			{
+				player.pause();
+			}
 		}
 	}
 }

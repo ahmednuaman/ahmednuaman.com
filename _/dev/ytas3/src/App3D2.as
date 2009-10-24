@@ -1,5 +1,7 @@
 package
 {
+	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayerAS3;
+	
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
