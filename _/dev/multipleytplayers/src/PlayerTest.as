@@ -1,9 +1,8 @@
 package 
 {
 	import com.firestartermedia.lib.as3.display.component.interaction.ButtonSimple;
-	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayer;
+	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayerAS3;
 	
-	import flash.display.LoaderInfo;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
@@ -14,7 +13,7 @@ package
 
 	public class PlayerTest extends Sprite
 	{	
-		private var player:YouTubePlayer;
+		private var player:YouTubePlayerAS3;
 		
 		public function PlayerTest()
 		{
@@ -32,12 +31,9 @@ package
 		
 		private function init():void
 		{
-			player = new YouTubePlayer();
+			player = new YouTubePlayerAS3();
 			
-			player.chromeless		= true;
-			player.wrapperURL		= ( LoaderInfo( loaderInfo ).parameters.url ||= 'assets/swf/YouTubePlayerWrapper.swf' );
-			
-			//player.play( 'ghqjailPGOQ' );
+			player.play( 'ghqjailPGOQ' );
 			
 			addChild( player );
 			
