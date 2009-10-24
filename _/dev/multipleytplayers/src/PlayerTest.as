@@ -2,6 +2,7 @@ package
 {
 	import com.firestartermedia.lib.as3.display.component.interaction.ButtonSimple;
 	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayerAS3;
+	import com.firestartermedia.lib.as3.events.YouTubePlayerEvent;
 	
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
@@ -33,7 +34,7 @@ package
 		{
 			player = new YouTubePlayerAS3();
 			
-			player.play( 'ghqjailPGOQ' );
+			player.play( 'R7yfISlGLNU' );
 			
 			addChild( player );
 			
