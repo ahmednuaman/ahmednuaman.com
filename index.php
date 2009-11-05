@@ -5,17 +5,17 @@ if ( strstr( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) || strstr( $_SERVER['HTTP_U
 	
 	exit();
 }
-else
-{
-	if ( substr_count( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip' ) )
-	{
-		ob_start( 'ob_gzhandler' );
-	}
-	else
-	{
-		ob_start();
-	}
-}
+// else
+// {
+// 	if ( substr_count( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip' ) )
+// 	{
+// 		ob_start( 'ob_gzhandler' );
+// 	}
+// 	else
+// 	{
+// 		ob_start();
+// 	}
+// }
 
 $blog 				= simplexml_load_file( 'assets/xml/blog.xml' );
 $recommendations 	= simplexml_load_file( 'assets/xml/recommendations.xml' );
@@ -34,11 +34,12 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 	<meta name="description" content="The official portfolio of Ahmed Nuaman, Freelance Designer and Developer" />
 	<meta name="keywords" content="ahmed, nuaman, ahmednuaman, newman, firestarter, media, firestartermedia, freelance, web, website, designer, developer, php, xhtml, html, css, javascript, mysql, actionscript, flash, photoshop, flex, mxml, youtube, brand, channel, gadget, widget, google, apis, gdata, iphone, ipod, apple, android, g1" />
 	<link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" /> 
-	<link type="text/css" rel="stylesheet" href="/gzip-service.php?f=assets/css/styles.css" media="all" />
+	<link type="text/css" rel="stylesheet" href="/assets/css/styles.css" media="all" />
 	<link type="application/rss+xml" rel="alternate" title="Ahmed Nuaman &mdash; Freelance Designer and Developer &mdash; Blog RSS Feed" href="http://ahmednuaman.com/blog/feed/" />
 	<link type="application/atom+xml" rel="alternate" title="Ahmed Nuaman &mdash; Freelance Designer and Developer &mdash; Blog Atom Feed" href="http://ahmednuaman.com/blog/feed/atom/" />
 	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://ahmednuaman.com/blog/wp-includes/wlwmanifest.xml" />
-	<script type="text/javascript" src="/gzip-service.php?f=assets/js/jquery.js,assets/js/jquery-easing.js,assets/js/jquery-flash.js,assets/js/jquery-scrollTo.js,assets/js/jquery-tweet.js,assets/js/jquery-ui.js,assets/js/suitcase.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/assets/js/suitcase.js"></script>
 	<title>Ahmed Nuaman &mdash; Freelance Designer and Developer &mdash; Portfolio</title>
 </head>
 <body>

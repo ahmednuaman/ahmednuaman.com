@@ -11,10 +11,12 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 	<meta name="keywords" content="ahmed, nuaman, ahmednuaman, newman, firestarter, media, firestartermedia, freelance, web, website, designer, developer, php, xhtml, html, css, javascript, mysql, actionscript, flash, photoshop, flex, mxml, youtube, brand, channel, gadget, widget, google, apis, gdata, iphone, ipod, apple, android, g1" />	
 	<link type="image/x-icon" rel="shortcut icon" href="/favicon.ico" /> 
 	<link rel="pingback" href="<? bloginfo( 'pingback_url' ); ?>" />
-	<link type="text/css" rel="stylesheet" href="/gzip-service.php?f=assets/css/styles.css,blog/wp-content/themes/ahmednuaman/style.css" media="all" />
+	<link type="text/css" rel="stylesheet" href="/assets/css/styles.css" media="all" />
+	<link type="text/css" rel="stylesheet" href="<? bloginfo( 'stylesheet_url' ); ?>" media="all" />
 	<link type="application/rss+xml" rel="alternate" title="<? bloginfo( 'name' ); ?> RSS Feed" href="<? bloginfo( 'rss2_url' ); ?>" />
 	<link type="application/atom+xml" rel="alternate" title="<? bloginfo( 'name' ); ?> Atom Feed" href="<? bloginfo( 'atom_url' ); ?>" />
-	<script type="text/javascript" src="/gzip-service.php?f=assets/js/jquery.js,assets/js/jquery-easing.js,assets/js/jquery-flash.js,assets/js/jquery-scrollTo.js,assets/js/jquery-ui.js,assets/js/suitcase.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/assets/js/suitcase.js"></script>
 	<title><? bloginfo( 'name' ); wp_title( '&mdash;', true, 'left' ); ?></title>
 	<? if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<? wp_head(); ?>
