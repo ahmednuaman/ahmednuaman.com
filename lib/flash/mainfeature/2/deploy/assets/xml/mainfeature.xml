@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mainfeature>
+	<feature>
+		<title>Feature title 1</title>
+		<image>http://farm2.static.flickr.com/1176/614590890_17fed5c9f7_b.jpg</image>
+		<target>feature</target>
+	</feature>
+	<feature>
+		<title>Feature title 2</title>
+		<image>http://farm1.static.flickr.com/9/12947752_f0834613b8_b.jpg</image>
+		<target>feature</target>
+	</feature>
+	<feature>
+		<title>Feature title 3</title>
+		<image>http://farm1.static.flickr.com/160/390864316_c117e70442_b.jpg</image>
+		<target>feature</target>
+	</feature>
+</mainfeature>

@@ -1,12 +1,12 @@
 <?
-if ( substr_count( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip' ) )
-{
-	ob_start( 'ob_gzhandler' );
-}
-else
-{
-	ob_start();
-}
+// if ( substr_count( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip' ) )
+// {
+// 	ob_start( 'ob_gzhandler' );
+// }
+// else
+// {
+// 	ob_start();
+// }
 
 $work = simplexml_load_file( 'assets/xml/work.xml' );
 ?>
@@ -21,8 +21,9 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta name="robots" content="noindex, nofollow" />
 	<meta name="viewport" content="width=320; user-scalable=yes; initial-scale=1.0;" />
-	<link type="text/css" rel="stylesheet" href="/gzip-service.php?f=assets/css/mobile.css" />
-	<script type="text/javascript" src="/gzip-service.php?f=assets/js/jquery.js,assets/js/suitcase-mobile.js"></script>
+	<link type="text/css" rel="stylesheet" href="/assets/css/mobile.css" />
+	<script type="text/javascript" src="/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/assets/js/suitcase-mobile.js"></script>
 	<title>Ahmed Nuaman &mdash; Freelance Designer and Developer &mdash; Portfolio</title>
 </head>
 <body>
