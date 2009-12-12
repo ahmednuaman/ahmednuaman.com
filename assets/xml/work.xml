@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mainfeature>
 	<feature>
+		<title>Google's Give Chrome</title>
+		<image>/assets/image/work/mainfeature/gg_givechrome.jpg</image>
+		<id>ggGiveChrome</id>
+		<description>
+		I recently got asked to help fix and put the finishing touches to Google's new 'Give Chrome' campaign. The site's server side code had to be rewritten in Python for Google's AppEngine, and the Actionscript code had to be cleaned up and updated, ready for working Facebook and Twitter integration and utilising the giving concept. It was a large project to take on, but I managed to get everything up and running within a couple of days, more work to come though!
+		</description>
+		<link>givechrome.com</link>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/gg/givechrome/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/gg/givechrome/2.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/gg/givechrome/3.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/gg/givechrome/4.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>actionscript3</tag>
+			<tag>flash</tag>
+			<tag>microsite</tag>
+			<tag>javascript</tag>
+			<tag>puremvc</tag>
+			<tag>python</tag>
+			<tag>appengine</tag>
+		</tags>
+	</feature>
+	<feature>
 		<title>IOC The Best Of Us Challenge</title>
 		<image>/assets/image/work/mainfeature/mek_ioc.jpg</image>
 		<id>mekIOC</id>
