@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mainfeature>
 	<feature>
+		<title>Fox's Avatar Interactive Trailer</title>
+		<image>/assets/image/work/mainfeature/ppc_avatar.jpg</image>
+		<id>ppcAvatar</id>
+		<description>
+		I was given the amazing opportunity by the guys at The PPC to work on the Avatar interactive trailer microsite. It wasn't the simplest of builds, but the concept was pretty simple. The biggest issue was making sure that the Flash could handle the rendering of the alpha channel videos with 3D panels without dragging too much processing power. The outcome was pretty perfect, although had I had more time I would've spent more time trying to claim back every bit of processing power!
+		</description>
+		<link>theppcpresents.com/avatar3d/</link>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/ppc/avatar/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/ppc/avatar/2.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/ppc/avatar/3.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/ppc/avatar/4.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>actionscript3</tag>
+			<tag>flash</tag>
+			<tag>microsite</tag>
+			<tag>puremvc</tag>
+			<tag>pv3d</tag>
+			<tag>papervision3d</tag>
+			<tag>video</tag>
+			<tag>player</tag>
+		</tags>
+	</feature>
+	<feature>
 		<title>Google's Give Chrome</title>
 		<image>/assets/image/work/mainfeature/gg_givechrome.jpg</image>
 		<id>ggGiveChrome</id>
@@ -198,13 +223,13 @@
 		</tags>
 	</feature>
 	<feature>
-		<title>Tutorials for Flashtuts+</title>
+		<title>Tutorials for Activetuts+</title>
 		<image>/assets/image/work/mainfeature/tuts_flash_puremvc.jpg</image>
 		<id>tutsFlashPureMVC</id>
 		<description>
-		I've recently started writing tutorials for the web site Flashtuts+ so I can raise my profile as a skilled freelancer. I've been asked to write a few more including ones on using YouTube and Google products and APIs, and coding conventions. The first tutorial I wrote, on PureMVC, went down really well and I'll be writing about two a month now.
+		I've recently started writing tutorials for the web site Activetuts+ so I can raise my profile as a skilled freelancer. I've been asked to write a few more including ones on using YouTube and Google products and APIs, and coding conventions. The first tutorial I wrote, on PureMVC, went down really well and I'll be writing about two a month now.
 		</description>
-		<link>flash.tutsplus.com/author/ahmed-nuaman/</link>
+		<link>active.tutsplus.com/author/ahmed-nuaman/</link>
 		<thumbnails>
 			<thumbnail src="/assets/image/work/screenshots/tuts/flash/puremvc/1.jpg"/>
 			<thumbnail src="/assets/image/work/screenshots/tuts/flash/puremvc/2.jpg"/>
