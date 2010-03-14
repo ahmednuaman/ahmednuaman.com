@@ -23,6 +23,7 @@ package
 		private function init():void
 		{
 			player.chromeless	= false;
+			player.pars			= '&fs=0';
 			player.playerHeight	= 400;
 			player.playerWidth	= 600;
 			

@@ -14,15 +14,16 @@
 				};
 
 				var params = {
-					menu	: 'false'
+					menu	: 'false',
+					wmode	: 'transparent'
 				};
 
 				var attributes = {
-					id		: '${application}',
-					name	: '${application}'
+					id		: '${swf}',
+					name	: '${swf}'
 				};
 
-				swfobject.embedSWF( '${application}.swf', '${application}', ${width}, ${height}, '9.0.0', 'http://swfobject.googlecode.com/svn/trunk/swfobject/expressInstall.swf', flashvars, params, attributes );
+				swfobject.embedSWF( '${swf}.swf', '${swf}', ${width}, ${height}, '9.0.0', 'http://swfobject.googlecode.com/svn/trunk/swfobject/expressInstall.swf', flashvars, params, attributes );
 			});
 			
 			google.load( 'swfobject', '2' );
@@ -45,11 +46,11 @@
 			}
 		-->
 		</style>
-		<title></title>
+		<title>${swf}</title>
 	</head>
 	<body>
 		<div id="center">
-			<div id="${application}">
+			<div id="${swf}">
 				<a href="http://get.adobe.com/flashplayer/">Get Flash.</a>
 			</div><br />
 		</div>
