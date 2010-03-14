@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mainfeature>
 	<feature>
+		<title>Google/YouTube Italy's That's Opera Talent Contest</title>
+		<image>/assets/image/work/mainfeature/yt_thatsoperatalent.jpg</image>
+		<id>ytThatsoperatalent</id>
+		<description>
+		It's been a crazy start to 2010 with lots and lots of work under my belt and one was developing the Google/YouTube Italy's That's Opera Talent Contest. It's a YouTube contest where entrants compete to win tickets to the 56&#xb0; Festival Puccini in the summer. They enter by submitting a video of themselves singing or playing an instrument to music of Madam Butterfly Opera. The contest is a full custom built gadget and uses Google Appengine Python backend for email verification and as a proxy between the user and the contest API.
+		</description>
+		<link>youtube.com/thatsoperatalent</link>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/yt/thatsoperatalent/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/yt/thatsoperatalent/2.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/yt/thatsoperatalent/3.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/yt/thatsoperatalent/4.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>actionscript3</tag>
+			<tag>flash</tag>
+			<tag>puremvc</tag>
+			<tag>video</tag>
+			<tag>player</tag>
+			<tag>appengine</tag>
+			<tag>python</tag>
+			<tag>gadget</tag>
+			<tag>youtube</tag>
+			<tag>italy</tag>
+		</tags>
+	</feature>
+	<feature>
 		<title>Fox's Avatar Interactive Trailer</title>
 		<image>/assets/image/work/mainfeature/ppc_avatar.jpg</image>
 		<id>ppcAvatar</id>
