@@ -1,14 +1,14 @@
-set :user,							"ahmed"
-set :runner,						"ahmed"
+set :user,					"ahmed"
+set :runner,				"ahmed"
 
-set :deploy_to, 				"/var/www/ahmednuaman.com/"
-set :use_sudo,					false
+set :deploy_to, 			"/var/www/ahmednuaman.com/"
+set :use_sudo,				false
 set :keep_releases,			5
 
 set :application, 			"ahmednuaman.com"
-set :repository,  			"git@github.com:ahmednuaman/Portfolio.git"
+set :repository,  			"git@fsmg.co.uk:ahmednuaman.git"
 
-set :scm, 							:git
+set :scm, 					:git
 
 task :prod do
 	server "95.172.20.234", :app, :web, :db, :primary => true
