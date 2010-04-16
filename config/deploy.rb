@@ -10,17 +10,8 @@ set :repository,  			"git@github.com:ahmednuaman/Portfolio.git"
 
 set :scm, 							:git
 
-task :update do
+task :prod do
 	server "95.172.20.234", :app, :web, :db, :primary => true
-end
-
-namespace :deploy do
-	#[ :setup, :update, :update_code, :finalize_update, :symlink, :restart ].each do |default_task|
-	[ :update ].each do |default_task|
-		task default_task do 
-			
-		end
-	end
 end
 
 task :compress do
