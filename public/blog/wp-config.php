@@ -66,6 +66,8 @@ $table_prefix  = 'wp_';
  */
 define ('WPLANG', '');
 
+define('WP_CACHE', true);
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
