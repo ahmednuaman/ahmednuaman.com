@@ -20,3 +20,9 @@ task :compress do
 				"lessc public/assets/css/mobile.less && " +
 				"java -jar ~/SRC/yui/yuicompressor.jar public/assets/css/mobile.css -o public/assets/css/mobile.css"
 end
+
+task :addfolders do	
+	run "chmod -R a+rw #{current_path}/public/blog/wp-content"
+end
+
+after "deploy:symlink", :setperms
