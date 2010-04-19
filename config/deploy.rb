@@ -21,7 +21,7 @@ task :compress do
 				"java -jar ~/SRC/yui/yuicompressor.jar public/assets/css/mobile.css -o public/assets/css/mobile.css"
 end
 
-task :addfolders do	
+task :setperms do	
 	run "chmod -R a+rw #{current_path}/public/blog/wp-content"
 end
 
