@@ -55,7 +55,7 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 				<li><a href="/" class="selected" id="portfolio">My Portfolio</a></li>
 				<li><a href="/blog" id="blog">My Blog</a></li>
 				<li><a href="http://twitter.com/ahmednuaman" id="twitter">My Tweets</a></li>
-				<li><a href="mailto:ahmed@ahmednuaman.com?subject=Enquiry from ahmednuaman.com" id="email">Email Me</a></li>
+				<li><a href="mailto:ahmed@ahmednuaman.com?subject=Enquiry%20from%20ahmednuaman.com" id="email">Email Me</a></li>
 			</ul>
 		</div>
 		<div id="rightCol">
