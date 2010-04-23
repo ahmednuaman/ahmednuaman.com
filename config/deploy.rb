@@ -23,7 +23,7 @@ end
 
 task :setperms do	
 	run "chmod -R a+rw #{current_path}/public/blog/wp-content"
-	#run "mkdir #{current_path}/public/cache && chmod -R a+rw #{current_path}/public/cache"
+	run "mkdir #{current_path}/public/cache && chmod -R a+rw #{current_path}/public/cache"
 end
 
 after "deploy:symlink", :setperms
