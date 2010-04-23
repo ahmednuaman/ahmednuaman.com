@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mainfeature>
 	<feature>
+		<title>YouTube Cannes Lions 48 Hour Ad Contest</title>
+		<image>/assets/image/work/mainfeature/yt_canneslions.jpg</image>
+		<id>ytDandAd</id>
+		<description>
+		This was a nice and quick project. Create a branded contest channel for the YouTube Cannes Lions contest. Essentially this included incorporating a standard YouTube contest gadget, but then integrating a smart countdown and other key aspects of the design within a new gadget frame and then supplying that for the channel. It looks nice, I'm sure you'd agree.
+		</description>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/yt/canneslions/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/yt/canneslions/2.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/yt/canneslions/3.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/yt/canneslions/4.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>actionscript3</tag>
+			<tag>flash</tag>
+			<tag>youtube</tag>
+			<tag>creative</tag>
+			<tag>canneslions</tag>
+			<tag>channel</tag>
+			<tag>contest</tag>
+		</tags>
+	</feature>
+	<feature>
 		<title>D&amp;AD Inspiration YouTube Channel</title>
 		<image>/assets/image/work/mainfeature/yt_dandad.jpg</image>
 		<id>ytDandAd</id>
@@ -152,55 +175,6 @@
 			<tag>channel</tag>
 			<tag>microsite</tag>
 			<tag>papervision3d</tag>
-		</tags>
-	</feature>
-	<feature>
-		<title>Flash Video Player for 1Click2Fame.com</title>
-		<image>/assets/image/work/mainfeature/1c2f_player.jpg</image>
-		<id>a1c2fPlayer</id>
-		<description>
-		One of the main projects that I had to do at 1Click2Fame.com was to create their branded player. This is one of the most important assets of the site, for example, what would YouTube be without its player? The player needed to not only play videos but also deal with voting on a performance and also handle authentication (in situ) as well as being embedable on external site and having a JavaScript API.
-		</description>
-		<link>1click2fame.com/</link>
-		<thumbnails>
-			<thumbnail src="/assets/image/work/screenshots/1c2f/player/1.jpg"/>
-			<thumbnail src="/assets/image/work/screenshots/1c2f/player/2.jpg"/>
-			<thumbnail src="/assets/image/work/screenshots/1c2f/player/3.jpg"/>
-			<thumbnail src="/assets/image/work/screenshots/1c2f/player/4.jpg"/>
-		</thumbnails>
-		<tags>
-			<tag>actionscript3</tag>
-			<tag>gadget</tag>
-			<tag>flash</tag>
-			<tag>video</tag>
-			<tag>design</tag>
-			<tag>player</tag>
-			<tag>javascript</tag>
-		</tags>
-	</feature>	
-	<feature>
-		<title>Coutts Location Tool</title>
-		<image>/assets/image/work/mainfeature/tz_coutts.jpg</image>
-		<id>tzCoutts</id>
-		<description>
-			The Coutts Location Tool is a project that I created whilst working at Tangozebra, now part of Google. The client wanted an interactive and intuitive tool that allowed customers to see where Coutts branches are and how to get there. The idea was to embed Google Maps and use the Maps API to integrate fully with set locations as well as geocoding user's post codes and directions to Coutts branches.
-		</description>
-		<link>coutts.com/locations/index.asp</link>
-		<thumbnails>
-			<thumbnail src="/assets/image/work/screenshots/tz/coutts/1.jpg"/>
-			<thumbnail src="/assets/image/work/screenshots/tz/coutts/2.jpg"/>
-			<thumbnail src="/assets/image/work/screenshots/tz/coutts/3.jpg"/>
-			<thumbnail src="/assets/image/work/screenshots/tz/coutts/4.jpg"/>
-		</thumbnails>
-		<tags>
-			<tag>javascript</tag>
-			<tag>xhtml</tag>
-			<tag>css</tag>
-			<tag>jquery</tag>
-			<tag>maps</tag>
-			<tag>api</tag>
-			<tag>google</tag>
-			<tag>geocoding</tag>
 		</tags>
 	</feature>
 </mainfeature>
