@@ -23,6 +23,7 @@ function ready()
 		initMainfeature();
 		initRecommendations();
 		initTweets();
+		initBlogFeed();
 	}
 	else
 	{
@@ -314,6 +315,23 @@ function scrollBackUp()
 		duration: 1000,
 		easing: 'easeOutQuad'
 		});
+}
+
+function initBlogFeed()
+{
+	$( '#blogEntries' ).html( '<li>Loading entries...</li>' );
+	
+	$.get( 'blog-proxy.php', null, function(d)
+	{
+		$( '#blogEntries' ).html( '' );
+		
+		$( 'item', d ).each( function()
+		{
+			$( '#blogEntries' ).append( '<li><p><a href="' + $( 'link', this ).text() + '">' + $( 'title', this ).text() + '</a></p>' );
+			$( '#blogEntries' ).append( '<p><em>' + $( 'description', this ).text() + '</em><br />' );
+			$( '#blogEntries' ).append( '<a href="' + $( 'link', this ).text() + '">Read more &raquo;</a></p></li>' );
+		});
+	}, 'xml' );
 }
 
 $(document).ready( ready );

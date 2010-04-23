@@ -5,19 +5,8 @@ if ( strstr( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) || strstr( $_SERVER['HTTP_U
 	
 	exit();
 }
-// else
-// {
-// 	if ( substr_count( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip' ) )
-// 	{
-// 		ob_start( 'ob_gzhandler' );
-// 	}
-// 	else
-// 	{
-// 		ob_start();
-// 	}
-// }
 
-$blog 				= simplexml_load_file( 'assets/xml/blog.xml' );
+//$blog 				= simplexml_load_file( 'assets/xml/blog.xml' );
 $recommendations 	= simplexml_load_file( 'assets/xml/recommendations.xml' );
 $work 				= simplexml_load_file( 'assets/xml/work.xml' );
 $workother			= simplexml_load_file( 'assets/xml/workother.xml' );
