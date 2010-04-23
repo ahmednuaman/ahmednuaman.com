@@ -91,7 +91,7 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 				<? foreach ( $recommendations->recommendation as $recommendation ): ?>
 				<li>
 					<p>&#x201C;<?=trim( $recommendation->description );?>&#x201D;</p>
-					<p><?=$recommendation->author;?>, <em><?=$recommendation->title;?></em></p>
+					<p><?=htmlspecialchars( $recommendation->author );?>, <em><?=htmlspecialchars( $recommendation->title );?></em></p>
 				</li>
 				<? endforeach; ?>
 			</ul>
