@@ -7,6 +7,7 @@
 		<description>
 		This was a nice and quick project. Create a branded contest channel for the YouTube Cannes Lions contest. Essentially this included incorporating a standard YouTube contest gadget, but then integrating a smart countdown and other key aspects of the design within a new gadget frame and then supplying that for the channel. It looks nice, I'm sure you'd agree.
 		</description>
+		<link>youtube.com/canneslions</link>
 		<thumbnails>
 			<thumbnail src="/assets/image/work/screenshots/yt/canneslions/1.jpg"/>
 			<thumbnail src="/assets/image/work/screenshots/yt/canneslions/2.jpg"/>
@@ -30,6 +31,7 @@
 		<description>
 		This has been a huge milestone project for me. It started out late last year and has been a great part of my working relationship with the guys and gals at YouTube and Google UK. The D&amp;AD Inspiration channel is creative showcase in the field of commercial creativity. It's free to enter and work isn't judged by a panel of D&amp;AD judges, instead it's showcased to the world of creativity through this gadget. It features a unique hexagon scrolling interface (for which the maths was hard) and integrates with a middle tier proxy system as well as YouTube GData feeds and the YouTube Contest API.
 		</description>
+		<link>youtube.com/dandad</link>
 		<thumbnails>
 			<thumbnail src="/assets/image/work/screenshots/yt/dandad/1.jpg"/>
 			<thumbnail src="/assets/image/work/screenshots/yt/dandad/2.jpg"/>
