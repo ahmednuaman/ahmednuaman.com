@@ -90,7 +90,7 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 			<ul id="recommendations">
 				<? foreach ( $recommendations->recommendation as $recommendation ): ?>
 				<li>
-					<p>&#x201C;<?=trim( $recommendation->description );?>&#x201D;</p>
+					<p>&#x201C;<?=trim( htmlspecialchars( $recommendation->description ) );?>&#x201D;</p>
 					<p><?=htmlspecialchars( $recommendation->author );?>, <em><?=htmlspecialchars( $recommendation->title );?></em></p>
 				</li>
 				<? endforeach; ?>
@@ -122,7 +122,7 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 				<li id="<?=$feature->id;?>">
 					<h3><?=htmlspecialchars( $feature->title );?></h3>
 					<p>
-						<?=$feature->description;?>
+						<?=trim( htmlspecialchars( $feature->description ) );?>
 						<? if ( $feature->link ): ?>
 							<a href="http://<?=str_replace( '&', '&amp;', $feature->link );?>" title="Go to <?=htmlspecialchars( $feature->title );?> project web site">Visit this project's web site &raquo;</a>
 						<? endif; ?>
@@ -161,7 +161,7 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 				<li id="<?=$feature->id;?>">
 					<h3><?=htmlspecialchars( $feature->title );?></h3>
 					<p>
-						<?=$feature->description;?>
+						<?=trim( htmlspecialchars( $feature->description ) );?>
 						<? if ( $feature->link ): ?>
 							<a href="http://<?=str_replace( '&', '&amp;', $feature->link );?>" title="Go to <?=htmlspecialchars( $feature->title );?> project web site">Visit this project's web site &raquo;</a>
 						<? endif; ?>
