@@ -76,7 +76,7 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 			<h2>Contact Me</h2>
 			<ul>
 				<li>Phone: <a href="tel:00447811184436">+44 7811 184 436</a></li>
-				<li>Email: <a href="mailto:ahmed@ahmednuaman.com?subject=Enquiry from ahmednuaman.com">ahmed@ahmednuaman.com</a></li>
+				<li>Email: <a href="mailto:ahmed@ahmednuaman.com?subject=Enquiry%20from%20ahmednuaman.com">ahmed@ahmednuaman.com</a></li>
 				<li>Social: <a href="http://www.linkedin.com/in/ahmednuaman">LinkedIn</a>, 
 							<a href="http://www.krop.com/ahmednuaman/">Krop</a>,
 							<a href="http://www.twitter.com/ahmednuaman/">Twitter</a>,
@@ -146,7 +146,7 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 								?>
 								<? foreach ( $tags as $tag ): ?>
 									<li>
-										<a href="/blog/tag/<?=$tag;?>"><?=$tag;?></a>
+										<a href="/blog/tag/<?=htmlspecialchars( $tag );?>"><?=htmlspecialchars( $tag );?></a>
 									</li>
 								<? endforeach; ?>
 							</ul>
@@ -185,7 +185,7 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 								?>
 								<? foreach ( $tags as $tag ): ?>
 									<li>
-										<a href="/blog/tag/<?=$tag;?>"><?=$tag;?></a>
+										<a href="/blog/tag/<?=htmlspecialchars( $tag );?>"><?=htmlspecialchars( $tag );?></a>
 									</li>
 								<? endforeach; ?>
 							</ul>
