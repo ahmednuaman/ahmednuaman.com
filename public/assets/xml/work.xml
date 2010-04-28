@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mainfeature>
 	<feature>
+		<title>Samsung 3D LED TV Campaign</title>
+		<image>/assets/image/work/mainfeature/chi_samsung.jpg</image>
+		<id>ytDandAd</id>
+		<description>
+		This was a very last minute project that I had the chance to work on. On my meeting to another project, I received a call from the creative agency asking for my help to get this YouTube and GCN centric campaign off the ground and turned around within 4 working days. It started off with a multi-stage YouTube brand channel that coincided with the launch of the teasers and adverts for the new 3D LED TV. I then also had to work on MPUs and a masthead for the YouTube homepage. Overall it was a pretty awesome project, one that had to be done quite fast (within 16 working days) and one that's come off pretty well.
+		</description>
+		<link>youtube.com/samsung3d</link>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/chi/samsung/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/chi/samsung/2.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/chi/samsung/3.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/chi/samsung/4.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>actionscript3</tag>
+			<tag>flash</tag>
+			<tag>youtube</tag>
+			<tag>creative</tag>
+			<tag>samsung</tag>
+			<tag>channel</tag>
+			<tag>mpu</tag>
+			<tag>masthead</tag>
+			<tag>gcn</tag>
+		</tags>
+	</feature>
+	<feature>
 		<title>YouTube Cannes Lions 48 Hour Ad Contest</title>
 		<image>/assets/image/work/mainfeature/yt_canneslions.jpg</image>
 		<id>ytDandAd</id>
