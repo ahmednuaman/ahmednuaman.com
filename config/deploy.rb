@@ -22,6 +22,7 @@ task :compress do
 end
 
 task :setperms do	
+	run "ln -s #{deploy_to}/static/blog"
 	run "mkdir #{current_path}/public/cache && chmod -R a+rw #{current_path}/public/cache"
 end
 
