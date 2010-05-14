@@ -22,9 +22,6 @@ task :compress do
 end
 
 task :setperms do	
-	run "ln -s #{current_path}/../static/blog/ #{current_path}/public/blog"
-	run "ln -s #{current_path}/../static/ #{current_path}/public/_"
-	#run "chmod -R a+rw #{current_path}/public/blog/wp-content"
 	run "mkdir #{current_path}/public/cache && chmod -R a+rw #{current_path}/public/cache"
 end
 
