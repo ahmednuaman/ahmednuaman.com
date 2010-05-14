@@ -1,7 +1,7 @@
 set :user,					"ahmed"
 set :runner,				"ahmed"
 
-set :deploy_to, 			"/var/www/ahmednuaman.com/"
+set :deploy_to, 			"~/www/ahmednuaman.com"
 set :use_sudo,				false
 set :keep_releases,			5
 
