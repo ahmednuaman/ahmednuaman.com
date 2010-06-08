@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mainfeature>
 	<feature>
+		<title>Tango'd Films YouTube Channel</title>
+		<image>/assets/image/work/mainfeature/bbh_tango.jpg</image>
+		<id>bbhTango</id>
+		<description>
+		This was a really fun project to work on. It was the first time I worked with BBH and I really hope it's not the last. The concept was simple: create a custom gadget that integrated with the YouTube Contest API and also the GData API to allow OAuth session creation so that users can rate, upload and subscribe to videos and the channel as well as submitting a video without having to authenticate multiple times. 
+		</description>
+		<link>youtube.com/tango</link>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/bbh/tango/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/bbh/tango/2.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/bbh/tango/3.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/bbh/tango/4.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>actionscript3</tag>
+			<tag>flash</tag>
+			<tag>youtube</tag>
+			<tag>tango</tag>
+			<tag>contest</tag>
+			<tag>channel</tag>
+			<tag>gdata</tag>
+			<tag>oauth</tag>
+		</tags>
+	</feature>
+	<feature>
 		<title>Samsung 3D LED TV Campaign</title>
 		<image>/assets/image/work/mainfeature/chi_samsung.jpg</image>
-		<id>ytDandAd</id>
+		<id>chiSamsung</id>
 		<description>
 		This was a very last minute project that I had the chance to work on. On my meeting to another project, I received a call from the creative agency asking for my help to get this YouTube and GCN centric campaign off the ground and turned around within 4 working days. It started off with a multi-stage YouTube brand channel that coincided with the launch of the teasers and adverts for the new 3D LED TV. I then also had to work on MPUs and a masthead for the YouTube homepage. Overall it was a pretty awesome project, one that had to be done quite fast (within 16 working days) and one that's come off pretty well.
 		</description>
@@ -29,7 +54,7 @@
 	<feature>
 		<title>YouTube Cannes Lions 48 Hour Ad Contest</title>
 		<image>/assets/image/work/mainfeature/yt_canneslions.jpg</image>
-		<id>ytDandAd</id>
+		<id>ytCannes</id>
 		<description>
 		This was a nice and quick project. Create a branded contest channel for the YouTube Cannes Lions contest. Essentially this included incorporating a standard YouTube contest gadget, but then integrating a smart countdown and other key aspects of the design within a new gadget frame and then supplying that for the channel. It looks nice, I'm sure you'd agree.
 		</description>
@@ -105,7 +130,7 @@
 		<image>/assets/image/work/mainfeature/yt_thatsoperatalent.jpg</image>
 		<id>ytThatsoperatalent</id>
 		<description>
-		It's been a crazy start to 2010 with lots and lots of work under my belt and one was developing the Google/YouTube Italy's That's Opera Talent Contest. It's a YouTube contest where entrants compete to win tickets to the 56&#xb0; Festival Puccini in the summer. They enter by submitting a video of themselves singing or playing an instrument to music of Madam Butterfly Opera. The contest is a full custom built gadget and uses Google Appengine Python backend for email verification and as a proxy between the user and the contest API.
+		It's been a crazy start to 2010 with lots and lots of work under my belt and one was developing the Google/YouTube Italy's That's Opera Talent Contest. It's a YouTube contest where entrants compete to win tickets to the 56° Festival Puccini in the summer. They enter by submitting a video of themselves singing or playing an instrument to music of Madam Butterfly Opera. The contest is a full custom built gadget and uses Google Appengine Python backend for email verification and as a proxy between the user and the contest API.
 		</description>
 		<link>youtube.com/thatsoperatalent</link>
 		<thumbnails>
@@ -152,30 +177,30 @@
 			<tag>player</tag>
 		</tags>
 	</feature>
-	<!-- <feature>
-			<title>Google's Give Chrome</title>
-			<image>/assets/image/work/mainfeature/gg_givechrome.jpg</image>
-			<id>ggGiveChrome</id>
-			<description>
+	<feature>
+		<title>Google's Give Chrome</title>
+		<image>/assets/image/work/mainfeature/gg_givechrome.jpg</image>
+		<id>ggGiveChrome</id>
+		<description>
 			I recently got asked to help fix and put the finishing touches to Google's new 'Give Chrome' campaign. The site's server side code had to be rewritten in Python for Google's AppEngine, and the Actionscript code had to be cleaned up and updated, ready for working Facebook and Twitter integration and utilising the giving concept. It was a large project to take on, but I managed to get everything up and running within a couple of days, more work to come though!
 			</description>
-			<link>givechrome.com</link>
-			<thumbnails>
-				<thumbnail src="/assets/image/work/screenshots/gg/givechrome/1.jpg"/>
-				<thumbnail src="/assets/image/work/screenshots/gg/givechrome/2.jpg"/>
-				<thumbnail src="/assets/image/work/screenshots/gg/givechrome/3.jpg"/>
-				<thumbnail src="/assets/image/work/screenshots/gg/givechrome/4.jpg"/>
-			</thumbnails>
-			<tags>
-				<tag>actionscript3</tag>
-				<tag>flash</tag>
-				<tag>microsite</tag>
-				<tag>javascript</tag>
-				<tag>puremvc</tag>
-				<tag>python</tag>
-				<tag>appengine</tag>
-			</tags>
-		</feature> -->
+		<link>givechrome.com</link>
+		<thumbnails>
+			<thumbnail src="/assets/image/work/screenshots/gg/givechrome/1.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/gg/givechrome/2.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/gg/givechrome/3.jpg"/>
+			<thumbnail src="/assets/image/work/screenshots/gg/givechrome/4.jpg"/>
+		</thumbnails>
+		<tags>
+			<tag>actionscript3</tag>
+			<tag>flash</tag>
+			<tag>microsite</tag>
+			<tag>javascript</tag>
+			<tag>puremvc</tag>
+			<tag>python</tag>
+			<tag>appengine</tag>
+		</tags>
+	</feature>
 	<feature>
 		<title>IOC The Best Of Us Challenge</title>
 		<image>/assets/image/work/mainfeature/mek_ioc.jpg</image>
