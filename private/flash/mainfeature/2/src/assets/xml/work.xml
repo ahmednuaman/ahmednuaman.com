@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mainfeature>
+	<feature>
+		<title>Google Advertising Landscape CMS</title>
+		<image>http://www.ahmednuaman.com/assets/image/work/mainfeature/tz_galcms.jpg</image>
+		<id>tzGal</id>
+		<description>
+			The Google Advertising Landscape (GAL for short) is an internal Google Sales tool created to aid DSOs sell Google, YouTube and GCN inventory to media buyers. It streamlines the creation of presentations, allowing sales officers to pick and customise case studies and elements to help them create the perfect pitch. I created the content management system (CMS) that the sales officers used to create their own GAL presentations. Its front-end was written in XHTML, CSS and JavaScript (jQuery) and back-end is powered by CodeIgnitor (PHP) and MySQL.
+		</description>
+		<thumbnails>
+			<thumbnail src="http://www.ahmednuaman.com/assets/image/work/screenshots/tz/gal/1.jpg"/>
+			<thumbnail src="http://www.ahmednuaman.com/assets/image/work/screenshots/tz/gal/2.jpg"/>
+		</thumbnails>
+	</feature>
+	<feature>
+		<title>YouTube Advertising Showcase</title>
+		<image>http://www.ahmednuaman.com/assets/image/work/mainfeature/yt_adshowcase.jpg</image>
+		<id>ytAdShowcase</id>
+		<description>
+			The YouTube Advertising Showcase is a tool that allows advertisers to see the different and innovative examples of YouTube's inventory ranging from expandable MPUs/LRECs to mastheads and brand channels. All the examples are video captured to help advertisers see the user journey. I created the front-end showcase, due to feature on YouTube, and the back-end CMS for sales officers to create and modify examples. The front and back-ends are built with Flex MXML and Actionscript 3 and uses Google App Engine (Python) for data storage and API functions.
+		</description>
+		<thumbnails>
+			<thumbnail src="http://www.ahmednuaman.com/assets/image/work/screenshots/yt/adshowcase/1.jpg"/>
+			<thumbnail src="http://www.ahmednuaman.com/assets/image/work/screenshots/yt/adshowcase/2.jpg"/>
+			<thumbnail src="http://www.ahmednuaman.com/assets/image/work/screenshots/yt/adshowcase/3.jpg"/>
+			<thumbnail src="http://www.ahmednuaman.com/assets/image/work/screenshots/yt/adshowcase/4.jpg"/>
+		</thumbnails>
+	</feature>
+	<feature>
+		<title>YouTube Brand Channel Concepts</title>
+		<image>http://www.ahmednuaman.com/assets/image/work/mainfeature/yt_bc_nissan.jpg</image>
+		<id>ytBrandChannels</id>
+		<description>
+			As part of my work at Google, I not only had to develop internal and external applications, but I was also brought into projects as a designer. I was asked multiple times to come up with YouTube Brand Channel concepts for clients ranging from TopGear, BMW, Ford to GE. To create these brand channels, one must have an understanding of what YouTube is about (community videos), how and why YouTubers participate in competitions, and how to use the YouTube APIs.
+		</description>
+		<thumbnails>
+			<thumbnail src="http://www.ahmednuaman.com/assets/image/work/screenshots/yt/brandchannels/1.jpg"/>
+			<thumbnail src="http://www.ahmednuaman.com/assets/image/work/screenshots/yt/brandchannels/2.jpg"/>
+			<thumbnail src="http://www.ahmednuaman.com/assets/image/work/screenshots/yt/brandchannels/3.jpg"/>
+			<thumbnail src="http://www.ahmednuaman.com/assets/image/work/screenshots/yt/brandchannels/4.jpg"/>
+		</thumbnails>
+	</feature>
+</mainfeature>

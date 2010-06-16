@@ -1,0 +1,58 @@
+package 
+{
+	import com.firestartermedia.lib.as3.display.component.interaction.ButtonSimple;
+	import com.firestartermedia.lib.as3.display.component.video.YouTubePlayerAS3;
+	import com.firestartermedia.lib.as3.events.YouTubePlayerEvent;
+	
+	import flash.display.Sprite;
+	import flash.display.StageAlign;
+	import flash.display.StageScaleMode;
+	import flash.events.MouseEvent;
+	import flash.system.Security;
+
+	[SWF( backgroundColor="#FFFFFF" )]
+
+	public class PlayerTest extends Sprite
+	{	
+		private var player:YouTubePlayerAS3;
+		
+		public function PlayerTest()
+		{
+			stage.align			= StageAlign.TOP_LEFT;
+			stage.scaleMode		= StageScaleMode.NO_SCALE;
+			
+			Security.allowDomain( '*' );
+			Security.allowDomain( 'www.youtube.com' );  
+			Security.allowDomain( 'youtube.com' );  
+			Security.allowDomain( 's.ytimg.com' );  
+			Security.allowDomain( 'i.ytimg.com' );
+			
+			init();
+		}
+		
+		private function init():void
+		{
+			player = new YouTubePlayerAS3();
+			
+			player.play( 'R7yfISlGLNU' );
+			
+			addChild( player );
+			
+			var button:ButtonSimple = new ButtonSimple();
+			
+			button.buttonText		= 'Pause the video';
+			button.textEmbedFonts	= false;
+			
+			button.draw();
+			
+			button.addEventListener( MouseEvent.CLICK, handleClick );
+			
+			addChild( button );
+		}
+		
+		private function handleClick(e:MouseEvent):void
+		{
+			player.pause();
+		}
+	}
+}

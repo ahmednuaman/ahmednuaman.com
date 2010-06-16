@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="580" minHeight="100">
+	
+	<mx:HSlider minimum="0" maximum="10" tickInterval="1" snapInterval="1" width="500" horizontalCenter="0" verticalCenter="0" />
+	
+	<mx:HSlider minimum="0" maximum="10" tickInterval="1" snapInterval="1" width="500" horizontalCenter="0" verticalCenter="0" trackSkin="@Embed(skinClass='TrackBackground')" />
+		
+	<mx:HSlider minimum="0" maximum="10" tickInterval="1" snapInterval="1" width="500" horizontalCenter="0" verticalCenter="0" trackSkin="@Embed(source='assets/image/bg.png')" />
+	
+	<mx:HSlider minimum="0" maximum="10" tickInterval="1" snapInterval="1" width="500" horizontalCenter="0" verticalCenter="0" trackSkin="@Embed(skinClass='TestTrackBackground')" />
+	
+	<mx:HSlider minimum="0" maximum="10" tickInterval="1" snapInterval="1" width="500" horizontalCenter="0" verticalCenter="0" thumbSkin="@Embed(source='assets/image/thumb.png')" 
+		trackSkin="@Embed(skinClass='TestTrackBackground')" />
+		
+	<mx:HSlider minimum="0" maximum="10" tickInterval="1" snapInterval="1" width="500" horizontalCenter="0" verticalCenter="0" thumbSkin="@Embed(source='assets/image/thumb.png')" 
+		trackSkin="@Embed(skinClass='TestTrackBackground')" sliderThumbClass="TestSliderThumb" />
+
+</mx:Application>
