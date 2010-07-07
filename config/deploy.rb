@@ -11,7 +11,7 @@ set :repository,  			"git@fsmg.co.uk:ahmednuaman.git"
 set :scm, 					:git
 
 task :prod do
-	server "95.172.20.234", :app, :web, :db, :primary => true
+	server "fsmg.co.uk", :app, :web, :db, :primary => true
 end
 
 task :compress do
