@@ -220,7 +220,7 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 			<br />
 			<p>
 				&copy; Ahmed Nuaman <?=date('Y');?>. <a href="http://www.firestartermedia.com">Looking for web design? Visit FireStarter Media Limited</a>.<br />
-				This site is built with <a href="http://validator.w3.org/check?uri=referer">valid XHTML 1.1</a> and <a href="http://jigsaw.w3.org/css-validator/check/referer">valid CSS 2.1</a>.
+				This site is built with <a href="http://validator.w3.org/check?uri=referer">valid HTML 5</a> and <a href="http://jigsaw.w3.org/css-validator/check/referer">valid CSS 3(ish)</a>.
 			</p>
 		</div>
 	</div>
