@@ -6,7 +6,7 @@ set :use_sudo,				false
 set :keep_releases,			5
 
 set :application, 			"ahmednuaman.com"
-set :repository,  			"git@fsmg.co.uk:ahmednuaman.git"
+set :repository,  			"git@github.com:ahmednuaman/_ahmednuaman.git"
 
 set :scm, 					:git
 
