@@ -7,7 +7,7 @@
 		<description>
 		I got this as a late minute project, it was simply to code up the front and back end of the contest, using YouTube to host entry videos and a custom microsite contest API to handle submissions, views and votes. The client mentioned that they didn't mind it being built in Flash, but I opted to do it in HTML, JavaScript and CSS so it would be tablet compatible for all you iPad lovers.
 		</description>
-		<link>http://www.sonicthehedgehog4.co.uk/contest/</link>
+		<link>www.sonicthehedgehog4.co.uk/contest/</link>
 		<thumbnails>
 			<thumbnail src="/assets/image/work/screenshots/wc/sonic/1.jpg"/>
 			<thumbnail src="/assets/image/work/screenshots/wc/sonic/2.jpg"/>
