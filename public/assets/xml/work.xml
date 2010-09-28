@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mainfeature>
     <feature>
+        <title>Ben 10 Facebook App and Microsite</title>
+        <image>/assets/image/work/mainfeature/wc_ben10.jpg</image>
+        <id>wcBen10</id>
+        <description>
+        This was quick project I picked up from the agency and had to add all the nice Facebook features such as the like button, posting on one's wall and inviting friends. I then also had to resize the application so it fitted within the dimensions of the Facebook canvas frame and then build an entirely new section for the results of the voting.
+		</description>
+        <link>apps.facebook.com/alienvote/</link>
+        <thumbnails>
+            <thumbnail src="/assets/image/work/screenshots/wc/ben10/1.jpg"/>
+            <thumbnail src="/assets/image/work/screenshots/wc/ben10/2.jpg"/>
+            <thumbnail src="/assets/image/work/screenshots/wc/ben10/3.jpg"/>
+            <thumbnail src="/assets/image/work/screenshots/wc/ben10/4.jpg"/>
+        </thumbnails>
+        <tags>
+            <tag>as3</tag>
+            <tag>php</tag>
+            <tag>facebook</tag>
+            <tag>actionscript3</tag>
+            <tag>3d</tag>
+            <tag>microsite</tag>
+        </tags>
+    </feature>
+    <feature>
         <title>HP/YouTube/Guggenheim Play Channel</title>
         <image>/assets/image/work/mainfeature/yt_play.jpg</image>
         <id>ytPlay</id>
