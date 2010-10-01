@@ -6,10 +6,26 @@ if ( strstr( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) || strstr( $_SERVER['HTTP_U
 	exit();
 }
 
-//$blog 				= simplexml_load_file( 'assets/xml/blog.xml' );
-$recommendations 	= simplexml_load_file( 'assets/xml/recommendations.xml' );
-$work 				= simplexml_load_file( 'assets/xml/work.xml' );
-$workother			= simplexml_load_file( 'assets/xml/workother.xml' );
+function load_from_xcache($file)
+{
+	if ( xcache_isset( $file ) )
+	{
+		return xcache_get( $file );
+	}
+	else
+	{
+		$data = simplexml_load_file( $file );
+		
+		xcache_set( $file, $data );
+		
+		return $data;
+	}
+}
+
+//$blog 				= load_from_xcache( 'assets/xml/blog.xml' );
+$recommendations 	= load_from_xcache( 'assets/xml/recommendations.xml' );
+$work 				= load_from_xcache( 'assets/xml/work.xml' );
+$workother			= load_from_xcache( 'assets/xml/workother.xml' );
 ?>
 <!DOCTYPE html>
 <html>
