@@ -8,18 +8,18 @@ if ( strstr( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) || strstr( $_SERVER['HTTP_U
 
 function load_from_xcache($file)
 {
-	if ( xcache_isset( $file ) )
-	{
-		return xcache_get( $file );
-	}
-	else
-	{
+	// if ( xcache_isset( $file ) )
+	// 	{
+	// 		return xcache_get( $file );
+	// 	}
+	// 	else
+	// 	{
 		$data = simplexml_load_file( $file );
 		
-		xcache_set( $file, $data );
+		// xcache_set( $file, $data );
 		
 		return $data;
-	}
+	// }
 }
 
 //$blog 				= load_from_xcache( 'assets/xml/blog.xml' );
