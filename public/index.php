@@ -8,18 +8,27 @@ if ( strstr( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) || strstr( $_SERVER['HTTP_U
 
 function load_from_xcache($file)
 {
-	// if ( xcache_isset( $file ) )
-	// 	{
-	// 		return xcache_get( $file );
-	// 	}
-	// 	else
-	// 	{
-		$data = simplexml_load_file( $file );
+	if ( function_exists( 'xcache_isset' ) && function_exists( 'xcache_get' ) && function_exists( 'xcache_set' ) )
+	{
+		if ( xcache_isset( $file ) )
+		{
+			$data	= xcache_get( $file );
+		}
+		else
+		{
+			$data 	= file_get_contents( $file );
+
+			xcache_set( $file, $data );
+		}
 		
-		// xcache_set( $file, $data );
-		
+		return simplexml_load_string( $data );
+	}
+	else
+	{
+		$data 		= simplexml_load_file( $file );
+
 		return $data;
-	// }
+	}
 }
 
 //$blog 				= load_from_xcache( 'assets/xml/blog.xml' );
