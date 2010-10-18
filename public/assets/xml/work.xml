@@ -70,28 +70,28 @@
             <tag>xml</tag>
         </tags>
     </feature>
-    <feature>
-        <title>Lloyds TSB YouTube Channel</title>
-        <image>/assets/image/work/mainfeature/bn_lloyds.jpg</image>
-        <id>bnLloyds</id>
-        <description>
-        This was a personal record breaker of a channel! I built this bad-boy of a gadget in a day! Oh yes, that quick. The best part was that the agency knew exactly what they wanted so there were no changes! It's just recently gone live and hit all the deadlines within good time.
-		</description>
-        <link>youtube.com/lloydstsb</link>
-        <thumbnails>
-            <thumbnail src="/assets/image/work/screenshots/bn/lloyds/1.jpg"/>
-            <thumbnail src="/assets/image/work/screenshots/bn/lloyds/2.jpg"/>
-            <thumbnail src="/assets/image/work/screenshots/bn/lloyds/3.jpg"/>
-            <thumbnail src="/assets/image/work/screenshots/bn/lloyds/4.jpg"/>
-        </thumbnails>
-        <tags>
-            <tag>as3</tag>
-            <tag>actionscript3</tag>
-            <tag>gdata</tag>
-            <tag>youtube</tag>
-            <tag>channel</tag>
-        </tags>
-    </feature>
+    <!-- <feature>
+            <title>Lloyds TSB YouTube Channel</title>
+            <image>/assets/image/work/mainfeature/bn_lloyds.jpg</image>
+            <id>bnLloyds</id>
+            <description>
+            This was a personal record breaker of a channel! I built this bad-boy of a gadget in a day! Oh yes, that quick. The best part was that the agency knew exactly what they wanted so there were no changes! It's just recently gone live and hit all the deadlines within good time.
+            </description>
+            <link>youtube.com/lloydstsb</link>
+            <thumbnails>
+                <thumbnail src="/assets/image/work/screenshots/bn/lloyds/1.jpg"/>
+                <thumbnail src="/assets/image/work/screenshots/bn/lloyds/2.jpg"/>
+                <thumbnail src="/assets/image/work/screenshots/bn/lloyds/3.jpg"/>
+                <thumbnail src="/assets/image/work/screenshots/bn/lloyds/4.jpg"/>
+            </thumbnails>
+            <tags>
+                <tag>as3</tag>
+                <tag>actionscript3</tag>
+                <tag>gdata</tag>
+                <tag>youtube</tag>
+                <tag>channel</tag>
+            </tags>
+        </feature> -->
     <feature>
         <title>Google Search Stories International YouTube Channel</title>
         <image>/assets/image/work/mainfeature/yt_searchstories_int.jpg</image>
