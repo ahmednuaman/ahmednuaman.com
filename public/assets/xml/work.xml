@@ -53,7 +53,7 @@
         <description>
         This was another project that was given to me at the 11th hour. The developer who had been working on it could no longer handle the bug fixes in the timescale left to get it live so it was up to me to quickly pick up the codebase and go through and make a number of fixes. The biggest problem was that the previous developer had decided to use Away3D so the main navigation cross was incredibly slow. Instead, I just wrote a 3D engine using Flash Player 10's native 3D APIs and now it's much faster!
 		</description>
-        <link>daviesmckerr.com</link>
+        <link>www.daviesmckerr.com</link>
         <thumbnails>
             <thumbnail src="/assets/image/work/screenshots/mg/davismckerr/1.jpg"/>
             <thumbnail src="/assets/image/work/screenshots/mg/davismckerr/2.jpg"/>
