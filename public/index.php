@@ -52,8 +52,6 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 	<link type="application/rss+xml" rel="alternate" title="Ahmed Nuaman &mdash; Freelance Designer and Developer &mdash; Blog RSS Feed" href="http://ahmednuaman.com/blog/feed/" />
 	<link type="application/atom+xml" rel="alternate" title="Ahmed Nuaman &mdash; Freelance Designer and Developer &mdash; Blog Atom Feed" href="http://ahmednuaman.com/blog/feed/atom/" />
 	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://ahmednuaman.com/blog/wp-includes/wlwmanifest.xml" />
-	<script type="text/javascript" src="/assets/js/jquery.js"></script>
-	<script type="text/javascript" src="/assets/js/suitcase.js"></script>
 	<title>Ahmed Nuaman &mdash; Freelance Designer and Developer &mdash; Portfolio</title>
 </head>
 <body>
@@ -252,6 +250,8 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 	<div id="github">
 		<a href="http://github.com/ahmednuaman"><img src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/js/suitcase.js"></script>
 	<script type="text/javascript">
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

@@ -15,8 +15,6 @@ Copyright (c) FireStarter Media Limited. All rights reserved.
 	<link type="text/css" rel="stylesheet" href="<? bloginfo( 'stylesheet_url' ); ?>" media="all" />
 	<link type="application/rss+xml" rel="alternate" title="<? bloginfo( 'name' ); ?> RSS Feed" href="<? bloginfo( 'rss2_url' ); ?>" />
 	<link type="application/atom+xml" rel="alternate" title="<? bloginfo( 'name' ); ?> Atom Feed" href="<? bloginfo( 'atom_url' ); ?>" />
-	<script type="text/javascript" src="/assets/js/jquery.js"></script>
-	<script type="text/javascript" src="/assets/js/suitcase.js"></script>
 	<title><? bloginfo( 'name' ); wp_title( '&mdash;', true, 'left' ); ?></title>
 	<? if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<? wp_head(); ?>

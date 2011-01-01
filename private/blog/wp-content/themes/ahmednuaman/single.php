@@ -11,9 +11,8 @@
 				<div class="postmetadata alt">
 					<p>Share the love:</p>
 					<div class="noborder">
-						<? echo '<ul class="addtoany_list">'; if( function_exists('ADDTOANY_SHARE_SAVE_ICONS') ) ADDTOANY_SHARE_SAVE_ICONS( array("html_wrap_open" => "<li>", "html_wrap_close" => "</li>") ); if( function_exists('ADDTOANY_SHARE_SAVE_BUTTON') ) ADDTOANY_SHARE_SAVE_BUTTON( array("html_wrap_open" => "<li>", "html_wrap_close" => "</li>") ); echo '</ul>'; ?>
-						
-						<? if( function_exists('addHexoSearch') ) { addHexoSearch(); } ?>
+						<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ahmednuaman">Tweet</a>
+						<fb:like layout="button_count" show_faces="false" width="100" font="arial"></fb:like>
 					</div>
 					
 					<p>Related posts:</p>
