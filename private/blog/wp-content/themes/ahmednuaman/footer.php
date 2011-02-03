@@ -15,7 +15,6 @@
 	<div id="github">
 		<a href="http://github.com/ahmednuaman"><img src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 	</div>
-	<script type="text/javascript" src="/assets/js/jquery.js"></script>
 	<script type="text/javascript" src="/assets/js/suitcase.js"></script>
 	<script type="text/javascript">
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
