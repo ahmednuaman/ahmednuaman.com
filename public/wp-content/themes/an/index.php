@@ -1,7 +1,7 @@
 <?php
 $live	= $_SERVER[ 'HTTP_HOST' ] != 'ahmednuaman.local';
-$dir	= get_bloginfo( 'template_directory' );
-$assets	= $dir . '/assets/';
+$dir	= get_bloginfo( 'template_directory' ) . '/';
+$assets	= $dir . 'assets/';
 $css	= $assets . 'css/';
 $img	= $assets . 'image/';
 $js		= $assets . 'js/';
@@ -19,7 +19,26 @@ $js		= $assets . 'js/';
 	</head>
 	<body>
 		
-		<script src="<?php echo $js . ( $live ? 'packaged' : 'loader' ); ?>.js"></script>
+		<?php
+		$scripts		= array(
+			'jquery-core',
+			'jquery-ui',
+			'modernizr',
+			'suitcase'
+		);
+		
+		if ( $live )
+		{
+			$scripts	= array( 'packaged' );
+		}
+		
+		foreach ( $scripts as $script )
+		{
+			?>
+				<script src="<? echo $js . $script; ?>.js"></script>
+			<?php
+		}
+		?>
 		<script>
 			var _gaq=[['_setAccount','UA-352545-12'],['_trackPageview'],['_trackPageLoadTime']];
 			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
