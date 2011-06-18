@@ -1,7 +1,0 @@
-User-agent: *
-Disallow: /_
-Disallow: /assets
-Disallow: /flash
-Disallow: /image
-Disallow: /blog-service.php
-Disallow: /gzip-service.php

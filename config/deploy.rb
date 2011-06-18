@@ -15,10 +15,7 @@ task :prod do
 end
 
 task :compress do
-	exec 	"lessc public/assets/css/styles.less && " +
-				"java -jar ~/SRC/yui/yuicompressor.jar public/assets/css/styles.css -o public/assets/css/styles.css && " +
-				"lessc public/assets/css/mobile.less && " +
-				"java -jar ~/SRC/yui/yuicompressor.jar public/assets/css/mobile.css -o public/assets/css/mobile.css"
+	exec "sh compress.sh"
 end
 
 task :setperms do	
@@ -29,3 +26,4 @@ task :setperms do
 end
 
 after "deploy:symlink", :setperms
+after "deploy:symlink", "deploy:cleanup"
