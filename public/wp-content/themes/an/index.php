@@ -7,18 +7,34 @@ $img	= $assets . 'image/';
 $js		= $assets . 'js/';
 ?>
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
 		<meta name="author" content="<?php bloginfo( 'name' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neucha&amp;v1" />
 		<link type="text/css" rel="stylesheet" href="<?php echo $css; ?>styles.css" />
-		<title></title>
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+		<?php wp_head(); ?>
+		<title><? wp_title( ' ~ ' ); ?></title>
 	</head>
-	<body>
-		
+	<body <?php body_class(); ?>>
+		<?php
+		if ( is_front_page() )
+		{
+			
+		}
+		else if ( is_home() )
+		{
+			
+		}
+		else if ( is_single() )
+		{
+			
+		}
+		?>
 		<?php
 		$scripts		= array(
 			'jquery-core',
