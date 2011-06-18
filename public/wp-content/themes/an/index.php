@@ -1,23 +1,27 @@
+<?php
+$live	= $_SERVER[ 'HTTP_HOST' ] != 'ahmednuaman.local';
+$dir	= get_bloginfo( 'template_directory' );
+$assets	= $dir . '/assets/';
+$css	= $assets . 'css/';
+$img	= $assets . 'image/';
+$js		= $assets . 'js/';
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta name="description" content="" />
-		<meta name="author" content="" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link type="text/css" rel="stylesheet" href="/assets/css/styles.css" />
+		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
+		<meta name="author" content="<?php bloginfo( 'name' ); ?>" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<link type="text/css" rel="stylesheet" href="<?php echo $css; ?>styles.css" />
 		<title></title>
 	</head>
 	<body>
 		
-		<script src="/assets/js/jquery-core.js"></script>
-		<script src="/assets/js/jquery-ui.js"></script>
-		<script src="/assets/js/modernizr.js"></script>
-		<script src="/assets/js/suitcase.js"></script>
-		<!--<script src="/assets/js/packaged.js"></script>-->
+		<script src="<?php echo $js . ( $live ? 'packaged' : 'loader' ); ?>.js"></script>
 		<script>
-			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview'],['_trackPageLoadTime']];
+			var _gaq=[['_setAccount','UA-352545-12'],['_trackPageview'],['_trackPageLoadTime']];
 			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
 			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 			s.parentNode.insertBefore(g,s)}(document,'script'));
