@@ -14,7 +14,6 @@ $js		= $assets . 'js/';
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
 		<meta name="author" content="<?php bloginfo( 'name' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-		<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neucha&amp;v1" />
 		<link type="text/css" rel="stylesheet" href="<?php echo $css; ?>styles.css" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<?php wp_head(); ?>
@@ -24,15 +23,21 @@ $js		= $assets . 'js/';
 		<?php
 		if ( is_front_page() )
 		{
-			
+			?>
+			front page
+			<?php
 		}
 		else if ( is_home() )
 		{
-			
+			?>
+			blog page
+			<?php
 		}
 		else if ( is_single() )
 		{
-			
+			?>
+			blog post
+			<?php
 		}
 		?>
 		<?php
