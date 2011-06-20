@@ -33,10 +33,11 @@ a:link,a:visited{color:#ffffff;border-bottom:1px solid #ffffff;text-decoration:n
 a:hover,a:active{color:#ffffff;border-bottom:none;text-decoration:none;}
 em{font-style:italic;}
 h1,h2,h3{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:normal;font-weight:bold;}
-h1{font-size:22pt;}
-h2{font-size:18pt;}
-h3{font-size:16pt;}
+h1{font-size:22pt;letter-spacing:-2px;}
+h2{font-size:18pt;letter-spacing:-1px;}
+h3{font-size:16pt;letter-spacing:-1px;}
 input,textarea{border:2px solid #c88d35;padding:5px 4px;font-size:10pt;color:#666666;font-weight:bold;}
 h1,h2,h3,p{margin:10px 0;}
 h1:first-child,h2:first-child,h3:first-child,p:first-child{margin-top:0;}
 strong{font-weight:bold;}
+#container{display:block;position:relative !important;margin:0 auto;max-width:900px;min-width:300px;}#container footer p,#container footer a{font-size:8pt;line-height:11pt;}
