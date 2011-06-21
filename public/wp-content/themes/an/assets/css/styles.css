@@ -58,4 +58,5 @@ header section form{display:block;float:right !important;}header section form in
 #container footer{display:block;clear:both;width:100%;}#container footer p,#container footer a{font-size:8pt;line-height:11pt;}
 .home .col:not(:last-child) menu li{display:block;float:left !important;margin-bottom:15px;}.home .col:not(:last-child) menu li a{display:block;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:290px;height:145px;border:none;}
 .home .col:not(:last-child) menu li a:hover{-webkit-box-shadow:0 0 5px #006699;-moz-box-shadow:0 0 5px #006699;box-shadow:0 0 5px #006699;}
+.home .col:last-child menu li{list-style:disc;margin-left:12px;}
 @media screen and (min-width: 301px){#container #top .mobile{display:none;visibility:hidden;} #container #top .large{display:block;visibility:visible;}}@media screen and (max-width: 300px){#container #top .mobile{display:block;visibility:visible;} #container #top .large{display:none;visibility:hidden;} #container #top #carousel{height:150px;}}

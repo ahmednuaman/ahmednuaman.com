@@ -75,25 +75,25 @@ var S	= {
 		{
 			var l	= ( m.indexOf( 'http' ) === -1 ? 'http://' : '' ) + m;
 
-			return '<a href="' + l + '" class="external">' + m + '</a>';
+			return '<a href="' + l + '">' + m + '</a>';
 		});
 
-		t	= t.replace( /\s(\@[^\s]+)\s?/gim, function(m)
+		t	= t.replace( /(\@[A-z0-9_]+)/gim, function(m)
 		{
 			m		= m.replace( /\s/gim, '' );
 
-			var l	= 'http://twitter.com/' + m;
+			var l	= 'http://twitter.com/' + m.replace( /[^\d|^\w]+/gim, '' );
 
-			return ' <a href="' + l + '" class="external">' + m + '</a> ';
+			return ' <a href="' + l + '">' + m + '</a>';
 		});
 
-		t	= t.replace( /\s(\#[^\s]+)\s?/gim, function(m)
+		t	= t.replace( /\s(\#[A-z0-9_]+)/gim, function(m)
 		{
 			m		= m.replace( /\s/gim, '' );
 
 			var l	= 'http://twitter.com/search?q=' + m;
 
-			return ' <a href="' + l + '" class="external">' + m + '</a> ';
+			return ' <a href="' + l + '">' + m + '</a>';
 		});
 
 		return t;
