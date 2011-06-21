@@ -153,10 +153,13 @@ $js		= $assets . 'js/';
 						</menu>
 					</section>
 					<section class="col">
-						<h2>Recommendations</h2>
-						
 						<h2>Tweets</h2>
-						
+						<menu id="tweets">
+							<li>Loading tweets....</li>
+						</menu>
+						<p>
+							<a href="http://twitter.com/ahmednuaman">Read more tweets &raquo;</a>
+						</p>
 						<h2>Posts</h2>
 						<menu>
 							<?php query_posts( array( 'post_type' => 'post', 'posts_per_page' => 5 ) ); ?>
@@ -169,6 +172,9 @@ $js		= $assets . 'js/';
 							<?php endwhile; ?>
 							<?php wp_reset_query(); ?>
 						</menu>
+						<p>
+							<a href="/blog">Read more posts &raquo;</a>
+						</p>
 					</section>
 				<?php elseif ( is_home() ): ?>
 					<section class="col rightcol">
