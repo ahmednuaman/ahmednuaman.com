@@ -7,7 +7,7 @@ function an_setup()
 	
 	add_image_size( 'an_hero', 900, 450 );
 	add_image_size( 'an_hero_mobile', 300, 150 );
-	add_image_size( 'an_thumbnail', 225, 150 );
+	add_image_size( 'an_thumbnail', 290, 145 );
 }
 
 function an_init()

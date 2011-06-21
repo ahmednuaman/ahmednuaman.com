@@ -26,7 +26,9 @@ $js		= $assets . 'js/';
 				<section>
 					<nav>
 						<?php foreach ( wp_get_nav_menu_items( 'nav' ) as $i => $item ): ?>
-							<a href="<?php echo $item->url; ?>"<?php if ( ( is_front_page() && $i === 0 ) || ( ( is_single() || is_home() ) && $i === 1 ) ): ?> class="selected"<?php endif; ?>>
+							<a href="<?php echo $item->url; ?>"<?php 
+								if ( ( is_front_page() && $i === 0 ) || ( ( is_single() || is_home() ) && $i === 1 ) ): 
+							?> class="selected"<?php endif; ?>>
 								<?php echo $item->title; ?>
 								<span></span>
 							</a>
@@ -41,7 +43,7 @@ $js		= $assets . 'js/';
 				<?php if ( is_single() ): ?>
 					<?php while ( have_posts() ): the_post(); ?>
 						<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_hero' ); ?>
-						<div id="post_thumb" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
+						<div id="post_thumb" class="large" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
 						<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_hero_mobile' ); ?>
 						<div id="post_thumb_mobile" class="mobile" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
 					<?php endwhile; ?>
@@ -52,12 +54,18 @@ $js		= $assets . 'js/';
 							<?php query_posts( array( 'post_type' => is_front_page() ? 'an_project' : 'post' ) ); ?>
 							<?php while ( have_posts() ): the_post(); ?>
 								<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_hero' ); ?>
-								<li id="tile_<?php the_ID(); ?>" class="large" style="background-image: url(<?php echo $u[ 0 ]; ?>)">
-									<h3><?php the_title(); ?></h3>
+								<li id="tile_<?php the_ID(); ?>" class="large">
+									<a href="<?php echo str_replace( site_url( '/blog/an_' ), '/#!/popup/', get_permalink() ); ?>" 
+										style="background-image: url(<?php echo $u[ 0 ]; ?>)">
+										<h3><?php the_title(); ?></h3>
+									</a>
 								</li>
 								<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_hero_mobile' ); ?>
-								<li id="tile_mobile_<?php the_ID(); ?>" class="mobile" style="background-image: url(<?php echo $u[ 0 ]; ?>)">
-									<h3><?php the_title(); ?></h3>
+								<li id="tile_mobile_<?php the_ID(); ?>" class="mobile">
+									<a href="<?php echo str_replace( site_url( '/blog/an_' ), '/#!/popup/', get_permalink() ); ?>"
+										 style="background-image: url(<?php echo $u[ 0 ]; ?>)">
+										<h3><?php the_title(); ?></h3>
+									</a>
 								</li>
 							<?php endwhile; ?>
 							<?php wp_reset_query(); ?>
@@ -110,82 +118,62 @@ $js		= $assets . 'js/';
 						</article>
 					</section>
 				<?php endif; ?>
-				
 				<?php if ( is_front_page() ): ?>
-					<section class="col">
-						<h2>Latest work</h2>
-						<menu>
-							<?php query_posts( array( 'post_type' => 'an_project', 'posts_per_page' => 5 ) ); ?>
-							<?php while ( have_posts() ): the_post(); ?>
-								<li>
-									<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_thumbnail' ); ?>
-									<div class="col" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
-									<div class="col">
-										<h3><?php the_title(); ?></h3>
-										<p>
-											<?php the_content(); ?>
-										</p>
-										<?php $l	= get_post_custom_values( 'link', get_the_ID() ); ?>
-										<?php if ( $l[ 0 ] ): ?>
-											<p>
-												<a href="<?php echo $l[ 0 ]; ?>">Visit the project &raquo;</a>
-											</p>
-										<?php endif; ?>
-									</div>
-								</li>
-							<?php endwhile; ?>
-							<?php wp_reset_query(); ?>
-						</menu>
-					</section>
-					<section class="col">
-						<h2>Latest clients</h2>
-						<menu>
-							<?php query_posts( array( 'post_type' => 'an_client', 'posts_per_page' => 5 ) ); ?>
-							<?php while ( have_posts() ): the_post(); ?>
-								<li>
-									<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_thumbnail' ); ?>
-									<div class="col" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
-									<div class="col">
-										<h3><?php the_title(); ?></h3>
-										<p>
-											<?php the_content(); ?>
-										</p>
-										<?php $l	= get_post_custom_values( 'link', get_the_ID() ); ?>
-										<?php if ( $l[ 0 ] ): ?>
-											<p>
-												<a href="<?php echo $l[ 0 ]; ?>">Visit the project &raquo;</a>
-											</p>
-										<?php endif; ?>
-									</div>
-								</li>
-							<?php endwhile; ?>
-							<?php wp_reset_query(); ?>
-						</menu>
-					</section>
-					<section class="col">
-						<h2>Tweets</h2>
-						<menu id="tweets">
-							<li>Loading tweets....</li>
-						</menu>
-						<p>
-							<a href="http://twitter.com/ahmednuaman">Read more tweets &raquo;</a>
-						</p>
-						<h2>Posts</h2>
-						<menu>
-							<?php query_posts( array( 'post_type' => 'post', 'posts_per_page' => 5 ) ); ?>
-							<?php while ( have_posts() ): the_post(); ?>
-								<li>
-									<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-										<?php the_title(); ?>
-									</a>
-								</li>
-							<?php endwhile; ?>
-							<?php wp_reset_query(); ?>
-						</menu>
-						<p>
-							<a href="/blog">Read more posts &raquo;</a>
-						</p>
-					</section>
+					<div>
+						<?php $ns	= array( 'project', 'client' ); ?>
+						<?php foreach ( $ns as $n ): ?>
+							<section class="col">
+								<h2>Latest <?php echo $n . 's'; ?></h2>
+								<menu>
+									<?php query_posts( array( 'post_type' => 'an_' . $n, 'posts_per_page' => 5 ) ); ?>
+									<?php while ( have_posts() ): the_post(); ?>
+										<li>
+											<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_thumbnail' ); ?>
+											<a href="<?php echo str_replace( site_url( '/blog/an_' ), '/#!/popup/', get_permalink() ); ?>" 
+												style="background-image: url(<?php echo $u[ 0 ]; ?>)"></a>
+											<div class="info hide">
+												<h3><?php the_title(); ?></h3>
+												<p>
+													<?php the_content(); ?>
+												</p>
+												<?php $l	= get_post_custom_values( 'link', get_the_ID() ); ?>
+												<?php if ( $l[ 0 ] ): ?>
+													<p>
+														<a href="<?php echo $l[ 0 ]; ?>">Visit the project &raquo;</a>
+													</p>
+												<?php endif; ?>
+											</div>
+										</li>
+									<?php endwhile; ?>
+									<?php wp_reset_query(); ?>
+								</menu>
+							</section>
+						<?php endforeach; ?>
+						<section class="col">
+							<h2>Tweets</h2>
+							<menu id="tweets">
+								<li>Loading tweets....</li>
+							</menu>
+							<p>
+								<a href="http://twitter.com/ahmednuaman">Read more tweets &raquo;</a>
+							</p>
+							<h2>Posts</h2>
+							<menu>
+								<?php query_posts( array( 'post_type' => 'post', 'posts_per_page' => 5 ) ); ?>
+								<?php while ( have_posts() ): the_post(); ?>
+									<li>
+										<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+											<?php the_title(); ?>
+										</a>
+									</li>
+								<?php endwhile; ?>
+								<?php wp_reset_query(); ?>
+							</menu>
+							<p>
+								<a href="/blog">Read more posts &raquo;</a>
+							</p>
+						</section>
+					</div>
 				<?php elseif ( is_home() ): ?>
 					<section class="col rightcol">
 						<?php dynamic_sidebar( 'blog_right' ); ?>
@@ -225,6 +213,7 @@ $js		= $assets . 'js/';
 			'jquery-core',
 			'jquery-ui',
 			'modernizr',
+			'selectivizr',
 			'suitcase'
 		);
 		

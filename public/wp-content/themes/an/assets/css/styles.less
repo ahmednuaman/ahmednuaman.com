@@ -4,7 +4,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 /* Fonts */
 
 /* Less Classes */
-.corners(@radius:3px)
+.corners(@radius:5px)
 {
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;
@@ -46,6 +46,12 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 .caps
 {
 	text-transform: uppercase;
+}
+.clearfix
+{
+	display: block;
+	clear: both;
+	width: 100%;
 }
 .fixed
 {
@@ -163,7 +169,7 @@ h2
 }
 h3
 {
-	font-size: 16pt;
+	font-size: 14pt;
 	letter-spacing: -1px;
 }
 input,
@@ -175,7 +181,7 @@ textarea
 	color: #666666;
 	font-weight: bold;
 	.gradient(#f8f8f8, #eeeeee);
-	.corners(5px);
+	.corners;
 }
 input:focus,
 textarea:focus
@@ -212,6 +218,7 @@ header
 	.gradient(#333333, #111111);
 	overflow: hidden;
 	.top;
+	.glow(#006699, 50px);
 	
 	h1
 	{
@@ -283,12 +290,142 @@ header div
 {
 	padding-top: 70px;
 	
-	footer p,
-	footer a
+	#top
 	{
-		font-size: 8pt;
-		line-height: 11pt;
+		.large a,
+		.mobile a
+		{
+			.corners;
+			border: none;
+		}
+		.large a
+		{
+			width: 100%;
+			height: 450px;
+		}
+		.mobile a
+		{
+			width: 300px;
+			height: 150px;
+		}
+		#carousel
+		{
+			ul
+			{
+				height: 450px;
+				overflow: hidden;
+				
+				li
+				{
+					a
+					{
+						.left;
+					}
+				}
+			}
+		}
+	}
+	#main
+	{
+		.clearfix;
+		padding: 30px 0;
+		
+		.col
+		{
+			.left;
+			width: 290px;
+			margin-left: 15px;
+		}
+		.col:first-child
+		{
+			margin: 0 !important;
+		}
+		.colleft
+		{
+			width: 580px;
+			padding-right: 20px;
+		}
+		.colright
+		{
+			width: 300px;
+		}
+	}
+	footer
+	{
+		.clearfix;
+		
+		p,
+		a
+		{
+			font-size: 8pt;
+			line-height: 11pt;
+		}
+	}
+}
+.home
+{
+	.col:not(:last-child)
+	{
+		menu
+		{
+			li
+			{
+				.left;
+				margin-bottom: 15px;
+				
+				a
+				{
+					display: block;
+					.corners;
+					width: 290px;
+					height: 145px;
+					border: none;
+				}
+				a:hover
+				{
+					.glow(#006699);
+				}
+			}
+		}
 	}
 }
 
 /* Browser specific */
+@media screen and (min-width: 301px)
+{
+	#container
+	{
+		#top
+		{
+			.mobile
+			{
+				.hide;
+			}
+			.large
+			{
+				.show;
+			}
+		}
+	}
+}
+@media screen and (max-width: 300px)
+{
+	#container
+	{
+		#top
+		{
+			.mobile
+			{
+				.show;
+			}
+			.large
+			{
+				.hide;
+			}
+			#carousel
+			{
+				height: 150px;
+			}
+		}
+	}
+}
