@@ -2,6 +2,7 @@ var S	= {
 	ready														: function()
 	{
 		S.loadTweets();
+		S.handleExternalLinks();
 	},
 	
 	loadTweets													: function()
@@ -23,6 +24,8 @@ var S	= {
 					
 					t.append( l );
 				});
+				
+				S.handleExternalLinks();
 			}
 			else
 			{
@@ -65,10 +68,10 @@ var S	= {
 	
 	handleExternalLinks											: function()
 	{
-		$( 'a.external' ).click( function()
+		$( 'a.external:not(.click_linked)' ).addClass( 'click_linked' ).click( function()
 		{
 			window.open( $( this ).attr( 'href' ) );
-
+			
 			return false;
 		});
 	}

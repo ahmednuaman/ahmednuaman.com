@@ -32,7 +32,7 @@ a{font-size:9pt;line-height:normal;}
 a:link,a:visited{color:#ffffff;border-bottom:1px solid #ffffff;text-decoration:none;}
 a:hover,a:active{color:#ffffff;border-bottom:none;text-decoration:none;}
 em{font-style:italic;}
-h1,h2,h3{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:normal;font-weight:bold;}
+h1,h2,h3{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:normal;font-weight:bold;text-transform:capitalize;}
 h1{font-size:22pt;letter-spacing:-2px;}
 h2{font-size:18pt;letter-spacing:-1px;}
 h3{font-size:16pt;letter-spacing:-1px;}

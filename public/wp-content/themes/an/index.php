@@ -118,7 +118,7 @@ $js		= $assets . 'js/';
 										<?php $l	= get_post_custom_values( 'link', get_the_ID() ); ?>
 										<?php if ( $l[ 0 ] ): ?>
 											<p>
-												<a href="<?php echo $l[ 0 ]; ?>">Visit the project &raquo;</a>
+												<a href="<?php echo $l[ 0 ]; ?>" class="external">Visit the project &raquo;</a>
 											</p>
 										<?php endif; ?>
 									</div>
@@ -143,7 +143,7 @@ $js		= $assets . 'js/';
 										<?php $l	= get_post_custom_values( 'link', get_the_ID() ); ?>
 										<?php if ( $l[ 0 ] ): ?>
 											<p>
-												<a href="<?php echo $l[ 0 ]; ?>">Visit the project &raquo;</a>
+												<a href="<?php echo $l[ 0 ]; ?>" class="external">Visit the project &raquo;</a>
 											</p>
 										<?php endif; ?>
 									</div>
@@ -158,7 +158,7 @@ $js		= $assets . 'js/';
 							<li>Loading tweets....</li>
 						</menu>
 						<p>
-							<a href="http://twitter.com/ahmednuaman">Read more tweets &raquo;</a>
+							<a href="http://twitter.com/ahmednuaman" class="external">Read more tweets &raquo;</a>
 						</p>
 						<h2>Posts</h2>
 						<menu>
@@ -206,8 +206,8 @@ $js		= $assets . 'js/';
 				<?php endif; ?>
 			</div>
 			<footer>
-				<p>&copy; Ahmed Nuaman (that's me) unless it's client work then the copyright sits with its respective owners. As for the blog, that's licensed under a <a href="http://creativecommons.org/licenses/by-sa/2.0/uk/">Creative Commons Attribution-Share Alike 2.0 UK: England &amp; Wales License</a>, unless I (Ahmed Nuaman) state otherwise on the post.</p>
-				<p>Built using <a href="http://wordpress.org">WordPress</a> because it's awesome. <a href="http://firestartermedia.com/?utm_referrer=ahmednuaman">Looking for web design and development? Try FireStarter Media Limited</a>.</p>
+				<p>&copy; Ahmed Nuaman (that's me) unless it's client work then the copyright sits with its respective owners. As for the blog, that's licensed under a <a href="http://creativecommons.org/licenses/by-sa/2.0/uk/" class="external">Creative Commons Attribution-Share Alike 2.0 UK: England &amp; Wales License</a>, unless I (Ahmed Nuaman) state otherwise on the post.</p>
+				<p>Built using <a href="http://wordpress.org" class="external">WordPress</a> because it's awesome. <a href="http://firestartermedia.com/?utm_referrer=ahmednuaman" class="external">Looking for web design and development? Try FireStarter Media Limited</a>.</p>
 			</footer>
 		</div>
 		<?php
