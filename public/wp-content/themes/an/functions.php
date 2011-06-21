@@ -1,6 +1,7 @@
 <?php
 function an_setup()
 {
+	add_theme_support( 'menus' );
 	add_theme_support( 'post-formats' );
 	add_theme_support( 'post-thumbnails' );
 	
