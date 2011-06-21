@@ -1,6 +1,14 @@
+/*jslint browser: true, 
+         eqeq: true, 
+         plusplus: true, 
+         regexp: true, 
+         white: false */
+/*global document, screen, window, $ */
+
 var S	= {
 	ready														: function()
 	{
+		S.detectBrowser();
 		S.loadTweets();
 		S.handleExternalLinks();
 	},
@@ -68,13 +76,87 @@ var S	= {
 	
 	handleExternalLinks											: function()
 	{
-		$( 'a.external:not(.click_linked)' ).addClass( 'click_linked' ).click( function()
+		$( 'a:not(.external):not(.internal)' ).each( function()
 		{
-			window.open( $( this ).attr( 'href' ) );
+			var h	= $( this ).attr( 'href' );
 			
-			return false;
+			if ( h.search( /https?\:\/\//i ) === 0 && h.indexOf( document.domain ) === -1 )
+			{
+				window.open( '_blank', h );
+			}
 		});
-	}
+	},
+	
+	detectBrowser							: function()
+	{
+		if ( $.browser.msie )
+		{
+			$( 'html' ).addClass( 'ie' );
+			
+			if ( $.browser.version == '9.0' )
+			{
+				$( 'html' ).addClass( 'ie9' );
+			}
+			else if ( $.browser.version == '8.0' )
+			{
+				$( 'html' ).addClass( 'ie8' );
+			}
+			else if ( $.browser.version == '7.0' )
+			{
+				$( 'html' ).addClass( 'ie7' );
+			} 
+			else
+			{
+				$( 'html' ).addClass( 'ie6' );
+			}
+		}
+		
+		if ( $.browser.webkit )
+		{
+			$( 'html' ).addClass( 'webkit' );
+			
+			if ( navigator.userAgent.indexOf( 'Chrome' ) === -1 )
+			{
+				$( 'html' ).addClass( 'safari' );
+			}
+			else
+			{
+				$( 'html' ).addClass( 'chrome' );
+			}
+		}
+
+		if ( $.browser.mozilla )
+		{
+			$( 'html' ).addClass( 'ff' );
+
+			if ( $.browser.version.substr( 0, 3 ) == '1.9' )
+			{
+				$( 'html' ).addClass( 'ff3' );
+			}
+			else if ( $.browser.version.substr( 0, 3 ) == '2.0' )
+			{
+				$( 'html' ).addClass( 'ff4' );
+			}
+			else
+			{
+				$( 'html' ).addClass( 'ff2' );
+			}
+		}
+		
+		if ( $.browser.opera )
+		{
+			$( 'html' ).addClass( 'opera' );
+		}
+
+		if ( navigator.userAgent.indexOf( 'Windows' ) != -1 )
+		{
+			$( 'html' ).addClass( 'windows' );
+		}
+		else if ( navigator.userAgent.indexOf( 'Mac' ) != -1 )
+		{
+			$( 'html' ).addClass( 'mac' );
+		}
+	},
 };
 
 $( document ).ready( S.ready );
