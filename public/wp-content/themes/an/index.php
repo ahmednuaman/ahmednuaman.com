@@ -20,9 +20,24 @@ $js		= $assets . 'js/';
 		<title><? wp_title( ' ~ ', true, 'right' ); ?><?php bloginfo('name'); ?></title>
 	</head>
 	<body <?php body_class(); ?>>
-		<div id="container">
-			<header>
+		<header>
+			<div>
 				<h1><?php bloginfo( 'name' ); ?></h1>
+				<section>
+					<nav>
+						<?php foreach ( wp_get_nav_menu_items( 'nav' ) as $item ): ?>
+							<a href="<?php echo $item->url; ?>">
+								<?php echo $item->title; ?>
+								<span></span>
+							</a>
+						<?php endforeach; ?>
+					</nav>
+					<?php dynamic_sidebar( 'header' ); ?>
+				</section>
+			</div>
+		</header>
+		<div id="container">
+			<div id="top">
 				<?php if ( is_single() ): ?>
 					<?php while ( have_posts() ): the_post(); ?>
 						<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_hero' ); ?>
@@ -49,12 +64,7 @@ $js		= $assets . 'js/';
 						</ul>
 					</div>
 				<?php endif; ?>
-				<nav>
-					<?php foreach ( wp_get_nav_menu_items( 'nav' ) as $item ): ?>
-						<a href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>
-					<?php endforeach; ?>
-				</nav>
-			</header>
+			</div>
 			<div id="main" role="main">
 				<?php if ( is_front_page() || is_single() ): ?>
 					<?php if ( is_single() ): ?>

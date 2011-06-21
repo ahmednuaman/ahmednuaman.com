@@ -135,6 +135,7 @@ a:active
 	color: #ffffff;
 	border-bottom: none;
 	text-decoration: none;
+	.shadow(#006699);
 }
 em
 {
@@ -148,6 +149,7 @@ h3
 	line-height: normal;
 	font-weight: bold;
 	text-transform: capitalize;
+	.shadow(#006699);
 }
 h1
 {
@@ -167,11 +169,19 @@ h3
 input,
 textarea
 {
-	border: 2px solid #c88d35;
+	border: 2px solid #333333;
 	padding: 5px 4px;
-	font-size: 10pt;
+	font-size: 9pt;
 	color: #666666;
 	font-weight: bold;
+	.gradient(#f8f8f8, #eeeeee);
+	.corners(5px);
+}
+input:focus,
+textarea:focus
+{
+	border-color: #006699;
+	.glow(#006699);
 }
 h1,
 h2,
@@ -193,12 +203,79 @@ strong
 }
 
 /* Structure */
-#container
+header
+{
+	.fixed;
+	top: 0;
+	width: 100%;
+	padding: 7px 0 10px;
+	.gradient(#333333, #111111);
+	overflow: hidden;
+	.top;
+	
+	h1
+	{
+		font-size: 14pt;
+		letter-spacing: -1px;
+		margin: 0;
+		.left;
+		.shadow(#000000);
+	}
+	section
+	{
+		.absolute;
+		right: 0px;
+		
+		nav
+		{
+			.left;
+			
+			a
+			{
+				.left;
+				border: none !important;
+				padding: 14px 10px;
+				margin-top: -7px;
+				
+				span
+				{
+					.relative;
+					border-color: transparent transparent #006699 transparent;
+					border-style: solid;
+					border-width: 10px;
+					width: 0px;
+					margin: 0 auto;
+					.hide;
+				}
+			}
+			a:hover,
+			a.selected
+			{
+				.shadow(#006699);
+				
+				span
+				{
+					.show;
+				}
+			}
+		}
+		form
+		{
+			.right;
+		}
+	}
+}
+#container,
+header div
 {
 	.relative;
 	margin: 0 auto;
 	max-width: 900px;
 	min-width: 300px;
+}
+#container
+{
+	padding-top: 70px;
 	
 	footer p,
 	footer a

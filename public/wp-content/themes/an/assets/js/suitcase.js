@@ -96,7 +96,7 @@ var S	= {
 		});
 	},
 	
-	detectBrowser							: function()
+	detectBrowser												: function()
 	{
 		if ( $.browser.msie )
 		{
@@ -165,7 +165,7 @@ var S	= {
 		{
 			$( 'html' ).addClass( 'mac' );
 		}
-	},
+	}
 };
 
 $( document ).ready( S.ready );

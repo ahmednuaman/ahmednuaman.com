@@ -43,7 +43,16 @@ function an_widgets_init()
 		'after_widget' 		=> '</li>',
 		'before_title' 		=> '<h3>',
 		'after_title' 		=> '</h3>',
-	) );
+	));
+	
+	register_sidebar( array(
+		'name' 				=> __( 'Header bar' ),
+		'id' 				=> 'header',
+		'before_widget' 	=> '',
+		'after_widget' 		=> '',
+		'before_title' 		=> '',
+		'after_title' 		=> '',
+	));
 }
 
 add_action( 'after_setup_theme', 'an_setup' );
