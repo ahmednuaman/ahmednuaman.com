@@ -58,11 +58,11 @@ $js		= $assets . 'js/';
 			<div id="main" role="main">
 				<?php if ( is_front_page() || is_single() ): ?>
 					<?php if ( is_single() ): ?>
-						<section class="col">
+						<section class="col rightcol">
 							<?php dynamic_sidebar( 'blog_right' ); ?>
 						</section>
 					<?php endif;?>
-					<section<?php if ( is_single() ): ?> class="col"<?php endif;?>>
+					<section<?php if ( is_single() ): ?> class="col leftcol"<?php endif;?>>
 						<article id="content">
 							<?php if ( is_single() ): ?>
 								<h1 id="post-<?php the_ID(); ?>"><?php echo the_title(); ?></h1>
@@ -102,12 +102,79 @@ $js		= $assets . 'js/';
 				<?php endif; ?>
 				
 				<?php if ( is_front_page() ): ?>
-					
-				<?php elseif ( is_home() ): ?>
 					<section class="col">
-						<?php dynamic_sidebar( 'blog_right' ); ?>
+						<h2>Latest work</h2>
+						<menu>
+							<?php query_posts( array( 'post_type' => 'an_project', 'posts_per_page' => 5 ) ); ?>
+							<?php while ( have_posts() ): the_post(); ?>
+								<li>
+									<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_thumbnail' ); ?>
+									<div class="col" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
+									<div class="col">
+										<h3><?php the_title(); ?></h3>
+										<p>
+											<?php the_content(); ?>
+										</p>
+										<?php $l	= get_post_custom_values( 'link', get_the_ID() ); ?>
+										<?php if ( $l[ 0 ] ): ?>
+											<p>
+												<a href="<?php echo $l[ 0 ]; ?>">Visit the project &raquo;</a>
+											</p>
+										<?php endif; ?>
+									</div>
+								</li>
+							<?php endwhile; ?>
+							<?php wp_reset_query(); ?>
+						</menu>
 					</section>
 					<section class="col">
+						<h2>Latest clients</h2>
+						<menu>
+							<?php query_posts( array( 'post_type' => 'an_client', 'posts_per_page' => 5 ) ); ?>
+							<?php while ( have_posts() ): the_post(); ?>
+								<li>
+									<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_thumbnail' ); ?>
+									<div class="col" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
+									<div class="col">
+										<h3><?php the_title(); ?></h3>
+										<p>
+											<?php the_content(); ?>
+										</p>
+										<?php $l	= get_post_custom_values( 'link', get_the_ID() ); ?>
+										<?php if ( $l[ 0 ] ): ?>
+											<p>
+												<a href="<?php echo $l[ 0 ]; ?>">Visit the project &raquo;</a>
+											</p>
+										<?php endif; ?>
+									</div>
+								</li>
+							<?php endwhile; ?>
+							<?php wp_reset_query(); ?>
+						</menu>
+					</section>
+					<section class="col">
+						<h2>Recommendations</h2>
+						
+						<h2>Tweets</h2>
+						
+						<h2>Posts</h2>
+						<menu>
+							<?php query_posts( array( 'post_type' => 'post', 'posts_per_page' => 5 ) ); ?>
+							<?php while ( have_posts() ): the_post(); ?>
+								<li>
+									<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+										<?php the_title(); ?>
+									</a>
+								</li>
+							<?php endwhile; ?>
+							<?php wp_reset_query(); ?>
+						</menu>
+					</section>
+				<?php elseif ( is_home() ): ?>
+					<section class="col rightcol">
+						<?php dynamic_sidebar( 'blog_right' ); ?>
+					</section>
+					<section class="col leftcol">
 						<div class="list">
 							<?php while ( have_posts() ): the_post(); ?>
 								<article>
