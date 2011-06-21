@@ -170,7 +170,7 @@ input,
 textarea
 {
 	border: 2px solid #333333;
-	padding: 5px 4px;
+	padding: 5px;
 	font-size: 9pt;
 	color: #666666;
 	font-weight: bold;
@@ -218,6 +218,7 @@ header
 		font-size: 14pt;
 		letter-spacing: -1px;
 		margin: 0;
+		text-transform: none;
 		.left;
 		.shadow(#000000);
 	}
@@ -262,6 +263,11 @@ header
 		form
 		{
 			.right;
+			
+			input
+			{
+				width: 150px;
+			}
 		}
 	}
 }

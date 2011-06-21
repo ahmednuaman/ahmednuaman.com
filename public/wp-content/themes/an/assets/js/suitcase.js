@@ -11,6 +11,31 @@ var S	= {
 		S.detectBrowser();
 		S.loadTweets();
 		S.handleExternalLinks();
+		S.addPlaceholder();
+	},
+	
+	addPlaceholder												: function()
+	{
+		if ( !Modernizr.input.placeholder )
+		{
+			$( '[placeholder]' ).focus( function()
+			{
+				var i	= $( this );
+				
+				if ( i.val() == i.attr( 'placeholder' ) )
+				{
+					i.val( '' );
+				}
+			}).blur( function()
+			{
+				var i	= $( this );
+				
+				if ( i.val() == '' )
+				{
+					i.val( i.attr( 'placeholder' ) );
+				}
+			}).blur();
+		}
 	},
 	
 	loadTweets													: function()
