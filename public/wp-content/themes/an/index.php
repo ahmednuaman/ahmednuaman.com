@@ -34,7 +34,7 @@ $js		= $assets . 'js/';
 				<?php else: ?>
 					<div id="carousel">
 						<ul>
-							<?php get_posts( array( 'post_type' => is_front_page() ? 'an_project' : 'post' ) ); ?>
+							<?php query_posts( array( 'post_type' => is_front_page() ? 'an_project' : 'post' ) ); ?>
 							<?php while ( have_posts() ): the_post(); ?>
 								<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_hero' ); ?>
 								<li id="tile_<?php the_ID(); ?>" class="large" style="background-image: url(<?php echo $u[ 0 ]; ?>)">
@@ -45,7 +45,7 @@ $js		= $assets . 'js/';
 									<h3><?php the_title(); ?></h3>
 								</li>
 							<?php endwhile; ?>
-							<?php rewind_posts(); ?>
+							<?php wp_reset_query(); ?>
 						</ul>
 					</div>
 				<?php endif; ?>
