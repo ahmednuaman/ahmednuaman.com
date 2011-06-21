@@ -17,7 +17,7 @@ $js		= $assets . 'js/';
 		<link type="text/css" rel="stylesheet" href="<?php echo $css; ?>styles.css" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<?php wp_head(); ?>
-		<title><? wp_title( ' ~ ' ); ?></title>
+		<title><? wp_title( ' ~ ', true, 'right' ); ?><?php bloginfo('name'); ?></title>
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="container">
@@ -57,9 +57,9 @@ $js		= $assets . 'js/';
 			</header>
 			<div id="main" role="main">
 				<?php if ( is_front_page() || is_single() ): ?>
-					<div id="content">
+					<article id="content">
 						<?php if ( is_single() ): ?>
-							<h1><?php echo the_title(); ?></h1>
+							<h1 id="post-<?php the_ID(); ?>"><?php echo the_title(); ?></h1>
 						<?php endif; ?>
 						<?php the_content(); ?>
 						<?php if ( is_single() ): ?>
@@ -71,7 +71,7 @@ $js		= $assets . 'js/';
 									<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink(); ?>&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:40px;" allowTransparency="true"></iframe>
 								</div>
 								<h3>Related posts:</h3>
-								<ul>
+								<menu>
 									<?php related_posts_by_category( array(
 										'orderby' => 'post_date',
 										'order' => 'DESC',
@@ -82,40 +82,42 @@ $js		= $assets . 'js/';
 										'type' => 'post',
 										'message' => 'no matches'
 									  )); ?>
-								</ul>
+								</menu>
 								<?php the_tags( 'Tags: ', ', ', ' &mdash; ' ); ?> Posted in: <?php the_category(', ') ?> on <?php the_time( 'l, F jS, Y' ); ?>.
 							</div>
-							<div class="navigation">
+							<nav class="navigation">
 								<div class="right"><?php previous_posts_link( 'Newer Entries &raquo;' ); ?></div>
 								<div class="left"><?php next_posts_link( '&laquo; Older Entries' ); ?></div>
-							</div>
+							</nav>
 							<?php comments_template(); ?>
 						<?php endif; ?>
-					</div>
+					</article>
 				<?php endif; ?>
 				
 				<?php if ( is_front_page() ): ?>
 					
 				<?php elseif ( is_home() ): ?>
 					<div class="list">
-						<ul>
-							<?php while ( have_posts() ): the_post(); ?>
-								<li>
-									<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-									<div class="entry">
-										<?php the_content( 'Read more &raquo;' ); ?>
-									</div>
-									<p class="postmetadata">
-										<?php the_tags( 'Tags: ', ', ', ' &mdash; ' ); ?> Posted in: <?php the_category(', ') ?> on <?php the_time( 'l, F jS, Y' ); ?>.
-									</p>
-								</li>
-							<?php endwhile; ?>
-						</ul>
+						<?php while ( have_posts() ): the_post(); ?>
+							<article>
+								<h2 id="post-<?php the_ID(); ?>">
+									<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+										<?php the_title(); ?>
+									</a>
+								</h2>
+								<div class="entry">
+									<?php the_content( 'Read more &raquo;' ); ?>
+								</div>
+								<p class="postmetadata">
+									<?php the_tags( 'Tags: ', ', ', ' &mdash; ' ); ?> Posted in: <?php the_category(', ') ?> on <?php the_time( 'l, F jS, Y' ); ?>.
+								</p>
+							</article>
+						<?php endwhile; ?>
 					</div>
-					<div class="navigation">
+					<nav class="navigation">
 						<div class="right"><?php previous_posts_link( 'Newer Entries &raquo;' ); ?></div>
 						<div class="left"><?php next_posts_link( '&laquo; Older Entries' ); ?></div>
-					</div>
+					</nav>
 				<?php endif; ?>
 			</div>
 			<footer>
