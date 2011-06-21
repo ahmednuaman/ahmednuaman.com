@@ -82,7 +82,16 @@ var S	= {
 			
 			if ( h.search( /https?\:\/\//i ) === 0 && h.indexOf( document.domain ) === -1 )
 			{
-				window.open( '_blank', h );
+				$( this ).addClass( 'external' ).click( function()
+				{
+					window.open( h );
+					
+					return false;
+				});
+			}
+			else
+			{
+				$( this ).addClass( 'internal' );
 			}
 		});
 	},
