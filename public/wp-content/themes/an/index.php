@@ -90,12 +90,10 @@ $js			= $assets . 'js/';
 			</div>
 			<div id="main" role="main">
 				<?php if ( /*$_front ||*/ $_single ): ?>
-					<?php if ( $_single ): ?>
-						<section class="col rightcol">
-							<?php dynamic_sidebar( 'blog_right' ); ?>
-						</section>
-					<?php endif;?>
-					<section<?php if ( $_single ): ?> class="col leftcol"<?php endif;?>>
+					<section class="col colright">
+						<?php dynamic_sidebar( 'blog_right' ); ?>
+					</section>
+					<section<?php if ( $_single ): ?> class="col colleft"<?php endif;?>>
 						<article id="content">
 							<?php if ( $_single ): ?>
 								<h1 id="post-<?php the_ID(); ?>"><?php echo the_title(); ?></h1>
@@ -216,18 +214,18 @@ $js			= $assets . 'js/';
 						</section>
 					</div>
 				<?php elseif ( $_home ): ?>
-					<section class="col rightcol">
+					<section class="col colright">
 						<?php dynamic_sidebar( 'blog_right' ); ?>
 					</section>
-					<section class="col leftcol">
+					<section class="col colleft">
 						<div class="list">
 							<?php while ( have_posts() ): the_post(); ?>
 								<article>
-									<h2 id="post-<?php the_ID(); ?>">
+									<h3 id="post-<?php the_ID(); ?>">
 										<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 											<?php the_title(); ?>
 										</a>
-									</h2>
+									</h3>
 									<div class="entry">
 										<?php the_content( 'Read more &raquo;' ); ?>
 									</div>

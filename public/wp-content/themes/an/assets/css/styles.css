@@ -58,8 +58,8 @@ header section form{display:block;float:right !important;}header section form in
 #container #top #carousel_controls menu a:hover,#container #top #carousel_controls menu a.selected{background:#006699;}
 #container #main{display:block;clear:both;width:100%;padding:30px 0;}#container #main .col{display:block;float:left !important;width:285px;margin-left:15px;}
 #container #main .col:first-child{margin:0 !important;}
-#container #main .colleft{width:580px;padding-right:20px;}
-#container #main .colright{width:300px;}
+#container #main .colleft{width:580px;padding-right:20px;margin:0;}
+#container #main .colright{display:block;float:right !important;width:300px;}
 #container footer{display:block;position:relative !important;display:block;clear:both;width:100%;-webkit-border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;border-radius:5px 5px 0 0;padding:5px 10px;background:#333333;margin:40px 0 0 0;}#container footer p,#container footer a{font-size:8pt;line-height:11pt;color:#dddddd;}
 #container footer a:link,#container footer a:visited{border-bottom-color:#999999;}
 #container footer span{display:block;position:absolute !important;border-color:transparent transparent #333333 transparent;border-style:solid;border-width:10px;width:0px;top:-15px;left:20px;}
