@@ -8,6 +8,7 @@
 var S	= {
 	ease														: 'easeOutQuint',
 	herosCarousel												: null,
+	ignoreHashchange											: false,
 	
 	ready														: function()
 	{
@@ -134,7 +135,7 @@ var S	= {
 		var m	= $( 'li:visible', t ).length;
 		var w	= $( 'li:visible:first', t ).outerWidth();
 		var u	= $( 'ul', t );
-		var i	= 0;
+		var i	= 1;
 		var o	= false;
 		var r;
 		
@@ -145,13 +146,18 @@ var S	= {
 		
 		u.width( m * w );
 		
-		a.click( function()
+		a.unbind( 'click' ).click( function()
 		{
-			S.stopHerosCarousel();
+			S.ignoreHashchange	= true;
+			
+			o					= true;
 			
 			u.stop( true ).animate({
 				'margin-left'	: $( this ).index() * w * -1 + 'px'
-			}, 1000, S.ease );
+			}, 2000, S.ease, function()
+			{
+				o	= false;
+			});
 		});
 		
 		S.herosCarousel	= setInterval( function()
@@ -166,12 +172,10 @@ var S	= {
 				i	= 0;
 			}
 			
-			u.stop( true ).animate({
-				'margin-left'	: i * w * -1 + 'px'
-			}, 2000, S.ease );
+			a.eq( i ).click();
 			
 			i++;
-		}, 6000 );
+		}, 2000 );
 		
 		t.unbind( 'mouseenter' ).mouseenter( function()
 		{
@@ -194,10 +198,22 @@ var S	= {
 	
 	handleHash													: function()
 	{
+		if ( S.ignoreHashchange )
+		{
+			S.ignoreHashchange	= false;
+			
+			return;
+		}
+		
 		var h	= window.location.hash.split( '/' );
 		
 		switch ( h[ 1 ] )
 		{
+			case 'carousel':
+				$( '#carousel_controls a[href$="' + window.location.hash + '"]' ).click();
+			
+			break;
+			
 			default:
 				return;
 			

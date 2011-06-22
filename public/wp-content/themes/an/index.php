@@ -162,6 +162,9 @@ $js			= $assets . 'js/';
 									<?php endwhile; ?>
 									<?php wp_reset_query(); ?>
 								</menu>
+								<p>
+									<a href="/#!/popup/<?php echo $n; ?>">See all <?php echo $n . 's'; ?> &raquo;</a>
+								</p>
 							</section>
 						<?php endforeach; ?>
 						<section class="col">
