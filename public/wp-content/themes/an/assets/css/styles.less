@@ -101,6 +101,13 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 /* Structure Classes */
 
 /* Tags */
+*
+{
+	-webkit-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+	-moz-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+	-o-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+	transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+}
 body,
 html
 {
@@ -137,7 +144,7 @@ a:hover,
 a:active
 {
 	color: #ffffff;
-	border-bottom: none;
+	border-bottom: 1px dotted #ffffff;
 	text-decoration: none;
 	.shadow(#006699);
 }
@@ -275,7 +282,7 @@ header
 					border-width: 10px;
 					width: 0px;
 					margin: 0 auto;
-					.hide;
+					opacity: 0;
 				}
 			}
 			a:hover,
@@ -285,7 +292,7 @@ header
 				
 				span
 				{
-					.show;
+					opacity: 1;
 				}
 			}
 		}
@@ -444,32 +451,40 @@ header div
 			{
 				.col > div
 				{
-					.left;
+					.relative;
+					
+					h2:nth-child(2)
+					{
+						.absolute;
+						top: 0;
+						margin: 0;
+						opacity: 0;
+					}
+					menu
+					{
+						.left;
+					}
+				}
+				.col > div:nth-child(2)
+				{
+					margin-top: 20px;
 				}
 				.col
 				{
 					div
 					{
-						h2:nth-child(2)
-						{
-							margin-top: 0;
-							.hide;
-						}
+						
 					}
 					div:hover
 					{
 						h2:first-child
 						{
-							.hide;
+							opacity: 0;
 						}
 						h2:nth-child(2)
 						{
-							.show;
+							opacity: 1;
 						}
-					}
-					div:nth-child(2)
-					{
-						margin-top: 20px;
 					}
 				}
 				.col:not(:last-child)
@@ -493,11 +508,10 @@ header div
 								h3
 								{
 									.absolute;
-									.hide;
 									background: #006699;
 									width: 100%;
 									margin: 0;
-									bottom: 0;
+									bottom: -50px;
 									left: 0;
 									padding: 4px;
 									font-size: 10pt;
@@ -509,7 +523,7 @@ header div
 
 								h3
 								{
-									.show;
+									bottom: 0;
 								}
 							}
 						}
@@ -557,7 +571,7 @@ header div
 			{
 				.postmetadata
 				{
-					visibility: visible;
+					opacity: 1;
 				}
 			}
 			article:last-of-type
@@ -579,10 +593,11 @@ header div
 	{
 		.relative;
 		.corners(5px);
+		.show;
 		padding: 5px 10px;
 		background: #333333;
 		font-size: 8pt;
-		visibility: hidden;
+		opacity: 0;
 		
 		a
 		{
@@ -593,6 +608,7 @@ header div
 .single .postmetadata
 {
 	.show;
+	opacity: 1;
 	margin-top: 20px;
 }
 footer,
