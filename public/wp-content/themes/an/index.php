@@ -89,7 +89,7 @@ $js			= $assets . 'js/';
 				<?php endif; ?>
 			</div>
 			<div id="main" role="main">
-				<?php if ( $_front || $_single ): ?>
+				<?php if ( /*$_front ||*/ $_single ): ?>
 					<?php if ( $_single ): ?>
 						<section class="col rightcol">
 							<?php dynamic_sidebar( 'blog_right' ); ?>
@@ -102,7 +102,11 @@ $js			= $assets . 'js/';
 							<?php endif; ?>
 							<?php the_content(); ?>
 							<?php if ( $_single ): ?>
-								<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+								<?php wp_link_pages( array( 
+									'before' => '<p><strong>Pages:</strong> ', 
+									'after' => '</p>', 
+									'next_or_number' => 'number' 
+								)); ?>
 								<div class="postmetadata alt">
 									<h3>Share the love:</h3>
 									<div class="noborder">
@@ -120,7 +124,7 @@ $js			= $assets . 'js/';
 											'after' => '</li>',
 											'type' => 'post',
 											'message' => 'no matches'
-										  )); ?>
+										)); ?>
 									</menu>
 									<?php the_tags( 'Tags: ', ', ', ' &mdash; ' ); ?> Posted in: <?php the_category(', ') ?> on <?php the_time( 'l, F jS, Y' ); ?>.
 								</div>
@@ -171,15 +175,15 @@ $js			= $assets . 'js/';
 							<div>
 								<h2>Tweets</h2>
 								<h2><a href="http://twitter.com/ahmednuaman">Read more tweets &raquo;</a></h2>
-								<menu id="tweets">
+								<ul id="tweets">
 									<li>Loading tweets....</li>
-								</menu>
+								</ul>
 							</div>
 							<div>
 								<h2>Posts</h2>
 								<h2><a href="/blog">Read more posts &raquo;</a></h2>
-								<menu>
-									<?php query_posts( array( 'post_type' => 'post', 'posts_per_page' => 5 ) ); ?>
+								<ul>
+									<?php query_posts( array( 'post_type' => 'post', 'posts_per_page' => 7 ) ); ?>
 									<?php while ( have_posts() ): the_post(); ?>
 										<li>
 											<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
@@ -188,8 +192,27 @@ $js			= $assets . 'js/';
 										</li>
 									<?php endwhile; ?>
 									<?php wp_reset_query(); ?>
-								</menu>
+								</ul>
 							</div>
+						</section>
+					</div>
+					<div class="clearfix">
+						<section class="col">
+							<h2>Get in touch</h2>
+							<p>If you're in a rush, drop me a call on +44 (0) 7811 184 436, add me to Skype as <strong>ahmednuaman</strong>, or add me to iChat/Google Talk as ahmednuaman@gmail.com. Otherwise...</p>
+							<ul>
+								<?php foreach ( wp_get_nav_menu_items( 'contact' ) as $i => $item ): ?>
+									<li>
+										<a href="<?php echo $item->url; ?>">
+											<?php echo $item->title; ?>
+										</a>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+						</section>
+						<section class="col">
+							<h2>A little bit about me</h2>
+							<?php the_content(); ?>
 						</section>
 					</div>
 				<?php elseif ( $_home ): ?>

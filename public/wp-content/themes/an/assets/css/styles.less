@@ -141,6 +141,10 @@ a:active
 	text-decoration: none;
 	.shadow(#006699);
 }
+abbr
+{
+	border-bottom: 1px dotted #ffffff;
+}
 em
 {
 	.italic;
@@ -150,7 +154,8 @@ h2,
 h3,
 h1 a,
 h2 a,
-h3 a
+h3 a,
+h4
 {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	line-height: normal;
@@ -175,6 +180,11 @@ h3 a
 {
 	font-size: 14pt;
 	letter-spacing: -1px;
+}
+h4
+{
+	font-size: 11pt;
+	letter-spacing: 0px;
 }
 input,
 textarea
@@ -210,6 +220,14 @@ p:first-child
 strong
 {
 	.bold;
+}
+ul
+{
+	li
+	{
+		list-style: disc;
+		margin-left: 13px;
+	}
 }
 
 /* Structure */
@@ -324,6 +342,8 @@ header div
 				li
 				{
 					.left;
+					margin: 0;
+					list-style: none;
 					
 					a
 					{
@@ -372,7 +392,7 @@ header div
 		.col
 		{
 			.left;
-			width: 290px;
+			width: 285px;
 			margin-left: 15px;
 		}
 		.col:first-child
@@ -393,10 +413,10 @@ header div
 	{
 		.relative;
 		.clearfix;
-		.corners;
-		padding: 10px;
+		.corners(5px 5px 0 0);
+		padding: 5px 10px;
 		background: #333333;
-		margin: 40px 0 20px 0;
+		margin: 40px 0 0 0;
 		
 		p,
 		a
@@ -428,98 +448,101 @@ header div
 	{
 		#main
 		{
-			.col > div
+			div:first-child
 			{
-				.left;
-			}
-			.col
-			{
-				div
+				.col > div
 				{
-					h2:nth-child(2)
-					{
-						margin-top: 0;
-						.hide;
-					}
+					.left;
 				}
-				div:hover
+				.col
 				{
-					h2:first-child
+					div
 					{
-						.hide;
-					}
-					h2:nth-child(2)
-					{
-						.show;
-					}
-				}
-				div:nth-child(2)
-				{
-					margin-top: 20px;
-				}
-			}
-			.col:not(:last-child)
-			{
-				menu
-				{
-					li
-					{
-						.left;
-						margin: 0 15px 15px 0;
-						
-						a
+						h2:nth-child(2)
 						{
-							.relative;
-							.corners;
-							width: 290px;
-							height: 145px;
-							border: none;
-							overflow: hidden;
-							
-							h3
-							{
-								.absolute;
-								.hide;
-								background: #006699;
-								width: 100%;
-								margin: 0;
-								bottom: 0;
-								left: 0;
-								padding: 4px;
-								font-size: 10pt;
-							}
-						}
-						a:hover
-						{
-							.glow(#006699, 10px);
-							
-							h3
-							{
-								.show;
-							}
+							margin-top: 0;
+							.hide;
 						}
 					}
-					li:nth-child(2n)
+					div:hover
 					{
-						margin-right: 0;
+						h2:first-child
+						{
+							.hide;
+						}
+						h2:nth-child(2)
+						{
+							.show;
+						}
+					}
+					div:nth-child(2)
+					{
+						margin-top: 20px;
 					}
 				}
-			}
-			.col:first-child
-			{
-				width: 600px;
-			}
-			.col:last-child
-			{
-				width: 285px;
-				
-				menu
+				.col:not(:last-child)
 				{
-					li
+					menu
 					{
-						list-style: disc;
-						margin-left: 13px;
+						li
+						{
+							.left;
+							margin: 0 15px 15px 0;
+
+							a
+							{
+								.relative;
+								.corners;
+								width: 290px;
+								height: 145px;
+								border: none;
+								overflow: hidden;
+
+								h3
+								{
+									.absolute;
+									.hide;
+									background: #006699;
+									width: 100%;
+									margin: 0;
+									bottom: 0;
+									left: 0;
+									padding: 4px;
+									font-size: 10pt;
+								}
+							}
+							a:hover
+							{
+								.glow(#006699, 10px);
+
+								h3
+								{
+									.show;
+								}
+							}
+						}
+						li:nth-child(2n)
+						{
+							margin-right: 0;
+						}
 					}
+				}
+				.col:first-child
+				{
+					width: 600px;
+					padding-bottom: 20px;
+				}
+				.col:last-child
+				{
+					width: 285px;
+				}
+			}
+			div:nth-child(2)
+			{
+				.col:last-child
+				{
+					width: 600px;
+					padding-bottom: 20px;
 				}
 			}
 		}

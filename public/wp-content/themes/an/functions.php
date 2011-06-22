@@ -1,13 +1,17 @@
 <?php
 function an_setup()
 {
-	add_theme_support( 'menus' );
 	add_theme_support( 'post-formats' );
 	add_theme_support( 'post-thumbnails' );
 	
 	add_image_size( 'an_hero', 900, 450 );
 	add_image_size( 'an_hero_mobile', 300, 150 );
 	add_image_size( 'an_thumbnail', 290, 145 );
+	
+	register_nav_menus( array(
+		'nav'		=> 'Main nav',
+		'contact'	=> 'Contact nav'
+	));
 }
 
 function an_init()
