@@ -368,6 +368,9 @@ header div
 		}
 		#carousel_controls
 		{
+			.relative;
+			padding-bottom: 40px;
+			
 			menu
 			{
 				.relative;
@@ -394,7 +397,6 @@ header div
 	#main
 	{
 		.clearfix;
-		padding: 30px 0;
 		
 		.col
 		{
@@ -513,7 +515,7 @@ header div
 									margin: 0;
 									bottom: -50px;
 									left: 0;
-									padding: 4px;
+									padding: 4px 8px;
 									font-size: 10pt;
 								}
 							}
@@ -556,8 +558,6 @@ header div
 	{
 		#main
 		{
-			padding: 0;
-			
 			article
 			{
 				.relative;
@@ -598,6 +598,13 @@ header div
 		a
 		{
 			font-size: 8pt;
+		}
+	}
+	.colright
+	{
+		li:not(:first-child) h3
+		{
+			margin-top: 20px;
 		}
 	}
 }

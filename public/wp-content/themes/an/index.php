@@ -43,16 +43,13 @@ $js			= $assets . 'js/';
 		</header>
 		<div id="container">
 			<div id="top">
-				<?php if ( $_single ): ?>
-					<?php while ( have_posts() ): the_post(); ?>
-						<?php $tid	= get_post_thumbnail_id(); ?>
-						<?php $u	= wp_get_attachment_image_src( $tid, 'an_hero' ); ?>
-						<div id="post_thumb" class="large" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
-						<?php $u	= wp_get_attachment_image_src( $tid, 'an_hero_mobile' ); ?>
-						<div id="post_thumb_mobile" class="mobile" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
-					<?php endwhile; ?>
-					<?php rewind_posts(); ?>
-				<?php elseif ( $_front ): ?>
+				<?php /*if ( $_single ): ?>
+					<?php $tid	= get_post_thumbnail_id(); ?>
+					<?php $u	= wp_get_attachment_image_src( $tid, 'an_hero' ); ?>
+					<div id="post_thumb" class="large" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
+					<?php $u	= wp_get_attachment_image_src( $tid, 'an_hero_mobile' ); ?>
+					<div id="post_thumb_mobile" class="mobile" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
+				<?php else*/if ( $_front ): ?>
 					<div id="carousel">
 						<ul>
 							<?php $cl	= array(); ?>

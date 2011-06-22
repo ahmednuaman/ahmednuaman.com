@@ -55,9 +55,9 @@ header section form{display:block;float:right !important;}header section form in
 #container #top .large a{width:900px;height:450px;}
 #container #top .mobile a{width:300px;height:150px;}
 #container #top #carousel{max-width:900px;overflow:hidden;}#container #top #carousel ul{height:450px;}#container #top #carousel ul li{display:block;float:left !important;margin:0;list-style:none;}#container #top #carousel ul li a{display:block;position:relative !important;}#container #top #carousel ul li a h3{display:block;position:absolute !important;bottom:0;right:20px;}
-#container #top #carousel_controls menu{display:block;position:relative !important;margin:0 auto;text-align:center;}#container #top #carousel_controls menu a{display:block;float:left !important;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;background:#ffffff;height:8px;width:8px;margin:8px 3px;}
+#container #top #carousel_controls{display:block;position:relative !important;padding-bottom:40px;}#container #top #carousel_controls menu{display:block;position:relative !important;margin:0 auto;text-align:center;}#container #top #carousel_controls menu a{display:block;float:left !important;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;background:#ffffff;height:8px;width:8px;margin:8px 3px;}
 #container #top #carousel_controls menu a:hover,#container #top #carousel_controls menu a.selected{background:#006699;}
-#container #main{display:block;clear:both;width:100%;padding:30px 0;}#container #main .col{display:block;float:left !important;width:275px;margin-left:25px;}
+#container #main{display:block;clear:both;width:100%;}#container #main .col{display:block;float:left !important;width:275px;margin-left:25px;}
 #container #main .col:first-child{margin:0 !important;}
 #container #main .colleft{width:580px;padding-right:20px;margin:0;}
 #container #main .colright{display:block;float:right !important;width:300px;}
@@ -68,16 +68,17 @@ header section form{display:block;float:right !important;}header section form in
 .home #container #main div:first-child .col>div:nth-child(2){margin-top:20px;}
 .home #container #main div:first-child .col div:hover h2:first-child{opacity:0;}
 .home #container #main div:first-child .col div:hover h2:nth-child(2){opacity:1;}
-.home #container #main div:first-child .col:not(:last-child) menu li{display:block;float:left !important;margin:0 15px 15px 0;}.home #container #main div:first-child .col:not(:last-child) menu li a{display:block;position:relative !important;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:290px;height:145px;border:none;overflow:hidden;}.home #container #main div:first-child .col:not(:last-child) menu li a h3{display:block;position:absolute !important;background:#006699;width:100%;margin:0;bottom:-50px;left:0;padding:4px;font-size:10pt;}
+.home #container #main div:first-child .col:not(:last-child) menu li{display:block;float:left !important;margin:0 15px 15px 0;}.home #container #main div:first-child .col:not(:last-child) menu li a{display:block;position:relative !important;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:290px;height:145px;border:none;overflow:hidden;}.home #container #main div:first-child .col:not(:last-child) menu li a h3{display:block;position:absolute !important;background:#006699;width:100%;margin:0;bottom:-50px;left:0;padding:4px 8px;font-size:10pt;}
 .home #container #main div:first-child .col:not(:last-child) menu li a:hover{-webkit-box-shadow:0 0 10px #006699;-moz-box-shadow:0 0 10px #006699;box-shadow:0 0 10px #006699;}.home #container #main div:first-child .col:not(:last-child) menu li a:hover h3{bottom:0;}
 .home #container #main div:first-child .col:not(:last-child) menu li:nth-child(2n){margin-right:0;}
 .home #container #main div:first-child .col:first-child{width:600px;padding-bottom:20px;}
 .home #container #main div:nth-child(2) .col:last-child{width:600px;padding-bottom:20px;}
-.blog #container #main{padding:0;}.blog #container #main article{display:block;position:relative !important;margin-bottom:40px;}
+.blog #container #main article{display:block;position:relative !important;margin-bottom:40px;}
 .blog #container #main article:hover .postmetadata{opacity:1;}
 .blog #container #main article:last-of-type{margin-bottom:20px;}
 .blog #container #main .navigation{display:block;float:left !important;margin-bottom:20px;}
 .blog .postmetadata,.single .postmetadata{display:block;position:relative !important;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;display:block;visibility:visible;padding:5px 10px;background:#333333;font-size:8pt;opacity:0;}.blog .postmetadata a,.single .postmetadata a{font-size:8pt;}
+.blog .colright li:not(:first-child) h3,.single .colright li:not(:first-child) h3{margin-top:20px;}
 .single .postmetadata{display:block;visibility:visible;opacity:1;margin-top:20px;}
 footer span,.postmetadata span{display:block;position:absolute !important;border-color:transparent transparent #333333 transparent;border-style:solid;border-width:10px;width:0px;top:-15px;left:20px;}
 @media screen and (min-width: 301px){#container #top #carousel ul .mobile{display:none;visibility:hidden;} #container #top #carousel ul .large{display:block;visibility:visible;}}@media screen and (max-width: 300px){#container #top #carousel ul .mobile{display:block;visibility:visible;} #container #top #carousel ul .large{display:none;visibility:hidden;}}
