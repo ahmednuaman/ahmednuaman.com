@@ -1,10 +1,13 @@
 <?php
-$live	= $_SERVER[ 'HTTP_HOST' ] != 'ahmednuaman.local';
-$dir	= get_bloginfo( 'template_directory' ) . '/';
-$assets	= $dir . 'assets/';
-$css	= $assets . 'css/';
-$img	= $assets . 'image/';
-$js		= $assets . 'js/';
+$_front		= is_front_page();
+$_home		= is_home();
+$_single	= is_single();
+$live		= $_SERVER[ 'HTTP_HOST' ] != 'ahmednuaman.local';
+$dir		= get_bloginfo( 'template_directory' ) . '/';
+$assets		= $dir . 'assets/';
+$css		= $assets . 'css/';
+$img		= $assets . 'image/';
+$js			= $assets . 'js/';
 ?>
 <!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
@@ -27,7 +30,7 @@ $js		= $assets . 'js/';
 					<nav>
 						<?php foreach ( wp_get_nav_menu_items( 'nav' ) as $i => $item ): ?>
 							<a href="<?php echo $item->url; ?>"<?php 
-								if ( ( is_front_page() && $i === 0 ) || ( ( is_single() || is_home() ) && $i === 1 ) ): 
+								if ( ( $_front && $i === 0 ) || ( ( $_single || $_home ) && $i === 1 ) ): 
 							?> class="selected"<?php endif; ?>>
 								<?php echo $item->title; ?>
 								<span></span>
@@ -40,53 +43,65 @@ $js		= $assets . 'js/';
 		</header>
 		<div id="container">
 			<div id="top">
-				<?php if ( is_single() ): ?>
+				<?php if ( $_single ): ?>
 					<?php while ( have_posts() ): the_post(); ?>
-						<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_hero' ); ?>
+						<?php $tid	= get_post_thumbnail_id(); ?>
+						<?php $u	= wp_get_attachment_image_src( $tid, 'an_hero' ); ?>
 						<div id="post_thumb" class="large" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
-						<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_hero_mobile' ); ?>
+						<?php $u	= wp_get_attachment_image_src( $tid, 'an_hero_mobile' ); ?>
 						<div id="post_thumb_mobile" class="mobile" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
 					<?php endwhile; ?>
 					<?php rewind_posts(); ?>
 				<?php else: ?>
 					<div id="carousel">
 						<ul>
-							<?php query_posts( array( 'post_type' => is_front_page() ? 'an_project' : 'post' ) ); ?>
+							<?php $cl	= array(); ?>
+							<?php query_posts( array( 'post_type' => $_front ? 'an_project' : 'post' ) ); ?>
 							<?php while ( have_posts() ): the_post(); ?>
-								<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_hero' ); ?>
-								<li id="tile_<?php the_ID(); ?>" class="large">
-									<a href="<?php echo str_replace( site_url( '/blog/an_' ), '/#!/popup/', get_permalink() ); ?>" 
-										style="background-image: url(<?php echo $u[ 0 ]; ?>)">
-										<h3><?php the_title(); ?></h3>
+								<?php $id	= get_the_ID(); ?>
+								<?php $tid	= get_post_thumbnail_id(); ?>
+								<?php $l	= $_front ? str_replace( site_url( '/blog/an_' ), '/#!/popup/', get_permalink() ) : get_permalink(); ?>
+								<?php $t	= get_the_title(); ?>
+								<?php $u	= wp_get_attachment_image_src( $tid, 'an_hero' ); ?>
+								<li id="tile_<?php echo $id; ?>" class="large">
+									<a href="<?php echo $l; ?>" style="background-image: url(<?php echo $u[ 0 ]; ?>)">
+										<h3><?php echo $t; ?></h3>
 									</a>
 								</li>
-								<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_hero_mobile' ); ?>
-								<li id="tile_mobile_<?php the_ID(); ?>" class="mobile">
-									<a href="<?php echo str_replace( site_url( '/blog/an_' ), '/#!/popup/', get_permalink() ); ?>"
-										 style="background-image: url(<?php echo $u[ 0 ]; ?>)">
-										<h3><?php the_title(); ?></h3>
+								<?php $u	= wp_get_attachment_image_src( $tid, 'an_hero_mobile' ); ?>
+								<li id="tile_mobile_<?php echo $id; ?>" class="mobile">
+									<a href="<?php echo $l; ?>" style="background-image: url(<?php echo $u[ 0 ]; ?>)">
+										<h3><?php echo $t; ?></h3>
 									</a>
 								</li>
+								<?php array_push( $cl, str_replace( '!/popup', '!/carousel', $l ) ); ?>
 							<?php endwhile; ?>
 							<?php wp_reset_query(); ?>
 						</ul>
 					</div>
+					<div id="carousel_controls">
+						<menu style="width: <?php echo count( $cl ) * 14; ?>px;">
+							<?php foreach ( $cl as $l ): ?>
+								<a href="<?php echo $l; ?>"></a>
+							<?php endforeach; ?>
+						</menu>
+					</div>
 				<?php endif; ?>
 			</div>
 			<div id="main" role="main">
-				<?php if ( is_front_page() || is_single() ): ?>
-					<?php if ( is_single() ): ?>
+				<?php if ( $_front || $_single ): ?>
+					<?php if ( $_single ): ?>
 						<section class="col rightcol">
 							<?php dynamic_sidebar( 'blog_right' ); ?>
 						</section>
 					<?php endif;?>
-					<section<?php if ( is_single() ): ?> class="col leftcol"<?php endif;?>>
+					<section<?php if ( $_single ): ?> class="col leftcol"<?php endif;?>>
 						<article id="content">
-							<?php if ( is_single() ): ?>
+							<?php if ( $_single ): ?>
 								<h1 id="post-<?php the_ID(); ?>"><?php echo the_title(); ?></h1>
 							<?php endif; ?>
 							<?php the_content(); ?>
-							<?php if ( is_single() ): ?>
+							<?php if ( $_single ): ?>
 								<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 								<div class="postmetadata alt">
 									<h3>Share the love:</h3>
@@ -118,7 +133,7 @@ $js		= $assets . 'js/';
 						</article>
 					</section>
 				<?php endif; ?>
-				<?php if ( is_front_page() ): ?>
+				<?php if ( $_front ): ?>
 					<div>
 						<?php $ns	= array( 'project', 'client' ); ?>
 						<?php foreach ( $ns as $n ): ?>
@@ -174,7 +189,7 @@ $js		= $assets . 'js/';
 							</p>
 						</section>
 					</div>
-				<?php elseif ( is_home() ): ?>
+				<?php elseif ( $_home ): ?>
 					<section class="col rightcol">
 						<?php dynamic_sidebar( 'blog_right' ); ?>
 					</section>
@@ -212,6 +227,7 @@ $js		= $assets . 'js/';
 		$scripts		= array(
 			'jquery-core',
 			'jquery-ui',
+			'jquery.ba-hashchange',
 			'modernizr',
 			'selectivizr',
 			'suitcase'

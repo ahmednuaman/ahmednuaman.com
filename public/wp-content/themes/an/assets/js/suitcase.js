@@ -6,12 +6,18 @@
 /*global document, screen, window, $ */
 
 var S	= {
+	ease														: 'easeOutQuint',
+	herosCarousel												: null,
+	
 	ready														: function()
 	{
 		S.detectBrowser();
 		S.loadTweets();
 		S.handleExternalLinks();
 		S.addPlaceholder();
+		S.startHerosCarousel();
+		
+		$( window ).hashchange( S.handleHash ).hashchange();
 	},
 	
 	addPlaceholder												: function()
@@ -119,6 +125,84 @@ var S	= {
 				$( this ).addClass( 'internal' );
 			}
 		});
+	},
+	
+	startHerosCarousel											: function()
+	{
+		var a	= $( '#carousel_controls a' );
+		var t	= $( '#carousel' );
+		var m	= $( 'li:visible', t ).length;
+		var w	= $( 'li:visible:first', t ).outerWidth();
+		var u	= $( 'ul', t );
+		var i	= 0;
+		var o	= false;
+		var r;
+		
+		if ( !t.is( ':visible' ) )
+		{
+			return;
+		}
+		
+		u.width( m * w );
+		
+		a.click( function()
+		{
+			S.stopHerosCarousel();
+			
+			u.stop( true ).animate({
+				'margin-left'	: $( this ).index() * w * -1 + 'px'
+			}, 1000, S.ease );
+		});
+		
+		S.herosCarousel	= setInterval( function()
+		{
+			if ( o )
+			{
+				return;
+			}
+			
+			if ( i >= m )
+			{
+				i	= 0;
+			}
+			
+			u.stop( true ).animate({
+				'margin-left'	: i * w * -1 + 'px'
+			}, 2000, S.ease );
+			
+			i++;
+		}, 6000 );
+		
+		t.unbind( 'mouseenter' ).mouseenter( function()
+		{
+			o	= true;
+			r	= Math.round( ( Number( u.css( 'margin-left' ).replace( 'px', '' ) ) * -1 ) / w );
+			
+			u.stop( true ).animate({
+				'margin-left'	: r * w * -1 + 'px'
+			}, 1000, S.ease );
+		}).unbind( 'mouseleave' ).mouseleave( function()
+		{
+			o	= false;
+		});
+	},
+	
+	stopHerosCarousel											: function()
+	{
+		clearInterval( S.herosCarousel );
+	},
+	
+	handleHash													: function()
+	{
+		var h	= window.location.hash.split( '/' );
+		
+		switch ( h[ 1 ] )
+		{
+			default:
+				return;
+			
+			break;
+		}
 	},
 	
 	detectBrowser												: function()
