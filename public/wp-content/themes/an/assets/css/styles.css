@@ -62,7 +62,6 @@ header section form{display:block;float:right !important;}header section form in
 #container #main .colright{display:block;float:right !important;width:300px;}
 #container footer{display:block;position:relative !important;display:block;clear:both;width:100%;-webkit-border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;border-radius:5px 5px 0 0;padding:5px 10px;background:#333333;margin:40px 0 0 0;}#container footer p,#container footer a{font-size:8pt;line-height:11pt;color:#dddddd;}
 #container footer a:link,#container footer a:visited{border-bottom-color:#999999;}
-#container footer span{display:block;position:absolute !important;border-color:transparent transparent #333333 transparent;border-style:solid;border-width:10px;width:0px;top:-15px;left:20px;}
 .home #container #main div:first-child .col>div{display:block;float:left !important;}
 .home #container #main div:first-child .col div h2:nth-child(2){margin-top:0;display:none;visibility:hidden;}
 .home #container #main div:first-child .col div:hover h2:first-child{display:none;visibility:hidden;}
@@ -74,4 +73,11 @@ header section form{display:block;float:right !important;}header section form in
 .home #container #main div:first-child .col:first-child{width:600px;padding-bottom:20px;}
 .home #container #main div:first-child .col:last-child{width:285px;}
 .home #container #main div:nth-child(2) .col:last-child{width:600px;padding-bottom:20px;}
+.blog #container #main{padding:0;}.blog #container #main article{display:block;position:relative !important;margin-bottom:40px;}
+.blog #container #main article:hover .postmetadata{visibility:visible;}
+.blog #container #main article:last-of-type{margin-bottom:20px;}
+.blog #container #main .navigation{display:block;float:left !important;margin-bottom:20px;}
+.blog .postmetadata,.single .postmetadata{display:block;position:relative !important;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;padding:5px 10px;background:#333333;font-size:8pt;visibility:hidden;}.blog .postmetadata a,.single .postmetadata a{font-size:8pt;}
+.single .postmetadata{display:block;visibility:visible;margin-top:20px;}
+footer span,.postmetadata span{display:block;position:absolute !important;border-color:transparent transparent #333333 transparent;border-style:solid;border-width:10px;width:0px;top:-15px;left:20px;}
 @media screen and (min-width: 301px){#container #top #carousel ul .mobile{display:none;visibility:hidden;} #container #top #carousel ul .large{display:block;visibility:visible;}}@media screen and (max-width: 300px){#container #top #carousel ul .mobile{display:block;visibility:visible;} #container #top #carousel ul .large{display:none;visibility:hidden;}}

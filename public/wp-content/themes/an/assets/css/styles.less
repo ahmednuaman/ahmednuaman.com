@@ -432,16 +432,6 @@ header div
 		{
 			border-bottom-color: #999999;
 		}
-		span
-		{
-			.absolute;
-			border-color: transparent transparent #333333 transparent;
-			border-style: solid;
-			border-width: 10px;
-			width: 0px;
-			top: -15px;
-			left: 20px;
-		}
 	}
 }
 .home
@@ -548,6 +538,75 @@ header div
 				}
 			}
 		}
+	}
+}
+.blog
+{
+	#container
+	{
+		#main
+		{
+			padding: 0;
+			
+			article
+			{
+				.relative;
+				margin-bottom: 40px;
+			}
+			article:hover
+			{
+				.postmetadata
+				{
+					visibility: visible;
+				}
+			}
+			article:last-of-type
+			{
+				margin-bottom: 20px;
+			}
+			.navigation
+			{
+				.left;
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+.blog,
+.single
+{
+	.postmetadata
+	{
+		.relative;
+		.corners(5px);
+		padding: 5px 10px;
+		background: #333333;
+		font-size: 8pt;
+		visibility: hidden;
+		
+		a
+		{
+			font-size: 8pt;
+		}
+	}
+}
+.single .postmetadata
+{
+	.show;
+	margin-top: 20px;
+}
+footer,
+.postmetadata
+{
+	span
+	{
+		.absolute;
+		border-color: transparent transparent #333333 transparent;
+		border-style: solid;
+		border-width: 10px;
+		width: 0px;
+		top: -15px;
+		left: 20px;
 	}
 }
 
