@@ -52,7 +52,7 @@ $js			= $assets . 'js/';
 						<div id="post_thumb_mobile" class="mobile" style="background-image: url(<?php echo $u[ 0 ]; ?>)"></div>
 					<?php endwhile; ?>
 					<?php rewind_posts(); ?>
-				<?php else: ?>
+				<?php elseif ( $_front ): ?>
 					<div id="carousel">
 						<ul>
 							<?php $cl	= array(); ?>
