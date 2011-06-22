@@ -33,10 +33,10 @@ a{font-size:9pt;line-height:normal;}
 a:link,a:visited{color:#ffffff;border-bottom:1px solid #ffffff;text-decoration:none;}
 a:hover,a:active{color:#ffffff;border-bottom:none;text-decoration:none;text-shadow:1px 1px 0px #006699;}
 em{font-style:italic;}
-h1,h2,h3{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:normal;font-weight:bold;text-transform:capitalize;text-shadow:1px 1px 0px #006699;}
-h1{font-size:22pt;letter-spacing:-2px;}
-h2{font-size:18pt;letter-spacing:-1px;}
-h3{font-size:14pt;letter-spacing:-1px;}
+h1,h2,h3,h1 a,h2 a,h3 a{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:normal;font-weight:bold;text-transform:capitalize;text-shadow:1px 1px 0px #006699;}
+h1,h1 a{font-size:22pt;letter-spacing:-2px;}
+h2,h2 a{font-size:18pt;letter-spacing:-1px;}
+h3,h3 a{font-size:14pt;letter-spacing:-1px;}
 input,textarea{border:2px solid #333333;padding:5px;font-size:9pt;color:#666666;font-weight:bold;background:#f8f8f8;background:-moz-linear-gradient(top, #f8f8f8, #eeeeee);background:-webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#eeeeee));background:-webkit-linear-gradient(#f8f8f8, #eeeeee);background:linear-gradient(#f8f8f8, #eeeeee);-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
 input:focus,textarea:focus{border-color:#006699;-webkit-box-shadow:0 0 5px #006699;-moz-box-shadow:0 0 5px #006699;box-shadow:0 0 5px #006699;}
 h1,h2,h3,p{margin:10px 0;}
@@ -50,15 +50,24 @@ header section form{display:block;float:right !important;}header section form in
 #container{padding-top:70px;}#container #top .large a,#container #top .mobile a{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;border:none;}
 #container #top .large a{width:900px;height:450px;}
 #container #top .mobile a{width:300px;height:150px;}
-#container #top #carousel{max-width:900px;overflow:hidden;}#container #top #carousel ul{height:450px;}#container #top #carousel ul li a{display:block;float:left !important;}
+#container #top #carousel{max-width:900px;overflow:hidden;}#container #top #carousel ul{height:450px;}#container #top #carousel ul li{display:block;float:left !important;}#container #top #carousel ul li a{display:block;position:relative !important;}#container #top #carousel ul li a h3{display:block;position:absolute !important;bottom:0;right:20px;}
 #container #top #carousel_controls menu{display:block;position:relative !important;margin:0 auto;text-align:center;}#container #top #carousel_controls menu a{display:block;float:left !important;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;background:#ffffff;height:8px;width:8px;margin:8px 3px;}
 #container #top #carousel_controls menu a:hover,#container #top #carousel_controls menu a.selected{background:#006699;}
 #container #main{display:block;clear:both;width:100%;padding:30px 0;}#container #main .col{display:block;float:left !important;width:290px;margin-left:15px;}
 #container #main .col:first-child{margin:0 !important;}
 #container #main .colleft{width:580px;padding-right:20px;}
 #container #main .colright{width:300px;}
-#container footer{display:block;clear:both;width:100%;}#container footer p,#container footer a{font-size:8pt;line-height:11pt;}
-.home .col:not(:last-child) menu li{display:block;float:left !important;margin-bottom:15px;}.home .col:not(:last-child) menu li a{display:block;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:290px;height:145px;border:none;}
-.home .col:not(:last-child) menu li a:hover{-webkit-box-shadow:0 0 5px #006699;-moz-box-shadow:0 0 5px #006699;box-shadow:0 0 5px #006699;}
-.home .col:last-child menu li{list-style:disc;margin-left:12px;}
-@media screen and (min-width: 301px){#container #top .mobile{display:none;visibility:hidden;} #container #top .large{display:block;visibility:visible;}}@media screen and (max-width: 300px){#container #top .mobile{display:block;visibility:visible;} #container #top .large{display:none;visibility:hidden;} #container #top #carousel{height:150px;}}
+#container footer{display:block;position:relative !important;display:block;clear:both;width:100%;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;padding:10px;background:#333333;margin:40px 0 20px 0;}#container footer p,#container footer a{font-size:8pt;line-height:11pt;color:#dddddd;}
+#container footer a:link,#container footer a:visited{border-bottom-color:#999999;}
+#container footer span{display:block;position:absolute !important;border-color:transparent transparent #333333 transparent;border-style:solid;border-width:10px;width:0px;top:-15px;left:20px;}
+.home #container #main .col>div{display:block;float:left !important;}
+.home #container #main .col div h2:nth-child(2){margin-top:0;display:none;visibility:hidden;}
+.home #container #main .col div:hover h2:first-child{display:none;visibility:hidden;}
+.home #container #main .col div:hover h2:nth-child(2){display:block;visibility:visible;}
+.home #container #main .col div:nth-child(2){margin-top:20px;}
+.home #container #main .col:not(:last-child) menu li{display:block;float:left !important;margin:0 15px 15px 0;}.home #container #main .col:not(:last-child) menu li a{display:block;position:relative !important;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:290px;height:145px;border:none;overflow:hidden;}.home #container #main .col:not(:last-child) menu li a h3{display:block;position:absolute !important;display:none;visibility:hidden;background:#006699;width:100%;margin:0;bottom:0;left:0;padding:4px;font-size:10pt;}
+.home #container #main .col:not(:last-child) menu li a:hover{-webkit-box-shadow:0 0 10px #006699;-moz-box-shadow:0 0 10px #006699;box-shadow:0 0 10px #006699;}.home #container #main .col:not(:last-child) menu li a:hover h3{display:block;visibility:visible;}
+.home #container #main .col:not(:last-child) menu li:nth-child(2n){margin-right:0;}
+.home #container #main .col:first-child{width:600px;}
+.home #container #main .col:last-child{width:285px;}.home #container #main .col:last-child menu li{list-style:disc;margin-left:13px;}
+@media screen and (min-width: 301px){#container #top #carousel ul .mobile{display:none;visibility:hidden;} #container #top #carousel ul .large{display:block;visibility:visible;}}@media screen and (max-width: 300px){#container #top #carousel ul .mobile{display:block;visibility:visible;} #container #top #carousel ul .large{display:none;visibility:hidden;}}

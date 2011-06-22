@@ -135,61 +135,61 @@ $js			= $assets . 'js/';
 				<?php endif; ?>
 				<?php if ( $_front ): ?>
 					<div>
-						<?php $ns	= array( 'project', 'client' ); ?>
+						<?php $ns	= array( 'project'/*, 'client'*/ ); ?>
 						<?php foreach ( $ns as $n ): ?>
 							<section class="col">
-								<h2>Latest <?php echo $n . 's'; ?></h2>
+								<div>
+									<h2>Latest <?php echo $n . 's'; ?></h2>
+									<h2><a href="/#!/popup/<?php echo $n; ?>">See all projects &raquo;</a></h2>
+									<menu>
+										<?php query_posts( array( 'post_type' => 'an_' . $n, 'posts_per_page' => 6 ) ); ?>
+										<?php while ( have_posts() ): the_post(); ?>
+											<li>
+												<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_thumbnail' ); ?>
+												<a href="<?php echo str_replace( site_url( '/blog/an_' ), '/#!/popup/', get_permalink() ); ?>" 
+													style="background-image: url(<?php echo $u[ 0 ]; ?>)">
+													<h3><?php the_title(); ?> &raquo;</h3>
+												</a>
+												<div class="info hide">
+													<h3><?php the_title(); ?></h3>
+													<?php the_content(); ?>
+													<?php $l	= get_post_custom_values( 'link', get_the_ID() ); ?>
+													<?php if ( $l[ 0 ] ): ?>
+														<p>
+															<a href="<?php echo $l[ 0 ]; ?>">Visit the project &raquo;</a>
+														</p>
+													<?php endif; ?>
+												</div>
+											</li>
+										<?php endwhile; ?>
+										<?php wp_reset_query(); ?>
+									</menu>
+								</div>
+							</section>
+						<?php endforeach; ?>
+						<section class="col">
+							<div>
+								<h2>Tweets</h2>
+								<h2><a href="http://twitter.com/ahmednuaman">Read more tweets &raquo;</a></h2>
+								<menu id="tweets">
+									<li>Loading tweets....</li>
+								</menu>
+							</div>
+							<div>
+								<h2>Posts</h2>
+								<h2><a href="/blog">Read more posts &raquo;</a></h2>
 								<menu>
-									<?php query_posts( array( 'post_type' => 'an_' . $n, 'posts_per_page' => 5 ) ); ?>
+									<?php query_posts( array( 'post_type' => 'post', 'posts_per_page' => 5 ) ); ?>
 									<?php while ( have_posts() ): the_post(); ?>
 										<li>
-											<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_thumbnail' ); ?>
-											<a href="<?php echo str_replace( site_url( '/blog/an_' ), '/#!/popup/', get_permalink() ); ?>" 
-												style="background-image: url(<?php echo $u[ 0 ]; ?>)"></a>
-											<div class="info hide">
-												<h3><?php the_title(); ?></h3>
-												<p>
-													<?php the_content(); ?>
-												</p>
-												<?php $l	= get_post_custom_values( 'link', get_the_ID() ); ?>
-												<?php if ( $l[ 0 ] ): ?>
-													<p>
-														<a href="<?php echo $l[ 0 ]; ?>">Visit the project &raquo;</a>
-													</p>
-												<?php endif; ?>
-											</div>
+											<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+												<?php the_title(); ?>
+											</a>
 										</li>
 									<?php endwhile; ?>
 									<?php wp_reset_query(); ?>
 								</menu>
-								<p>
-									<a href="/#!/popup/<?php echo $n; ?>">See all <?php echo $n . 's'; ?> &raquo;</a>
-								</p>
-							</section>
-						<?php endforeach; ?>
-						<section class="col">
-							<h2>Tweets</h2>
-							<menu id="tweets">
-								<li>Loading tweets....</li>
-							</menu>
-							<p>
-								<a href="http://twitter.com/ahmednuaman">Read more tweets &raquo;</a>
-							</p>
-							<h2>Posts</h2>
-							<menu>
-								<?php query_posts( array( 'post_type' => 'post', 'posts_per_page' => 5 ) ); ?>
-								<?php while ( have_posts() ): the_post(); ?>
-									<li>
-										<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-											<?php the_title(); ?>
-										</a>
-									</li>
-								<?php endwhile; ?>
-								<?php wp_reset_query(); ?>
-							</menu>
-							<p>
-								<a href="/blog">Read more posts &raquo;</a>
-							</p>
+							</div>
 						</section>
 					</div>
 				<?php elseif ( $_home ): ?>
@@ -222,6 +222,7 @@ $js			= $assets . 'js/';
 				<?php endif; ?>
 			</div>
 			<footer>
+				<span></span>
 				<p>&copy; Ahmed Nuaman (that's me) unless it's client work then the copyright sits with its respective owners. As for the blog, that's licensed under a <a href="http://creativecommons.org/licenses/by-sa/2.0/uk/">Creative Commons Attribution-Share Alike 2.0 UK: England &amp; Wales License</a>, unless I (Ahmed Nuaman) state otherwise on the post.</p>
 				<p>Built using <a href="http://wordpress.org">WordPress</a> because it's awesome. <a href="http://firestartermedia.com/?utm_referrer=ahmednuaman">Looking for web design and development? Try FireStarter Media Limited</a>.</p>
 			</footer>
@@ -254,5 +255,6 @@ $js			= $assets . 'js/';
 			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 			s.parentNode.insertBefore(g,s)}(document,'script'));
 		</script>
+		<?php wp_footer(); ?>
 	</body>
 </html>

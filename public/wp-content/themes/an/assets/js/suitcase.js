@@ -49,7 +49,7 @@ var S	= {
 	{
 		var t	= $( '#tweets' );
 		
-		$.getJSON( 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=ahmednuaman&count=5&callback=?', function(d)
+		$.getJSON( 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=ahmednuaman&count=7&callback=?', function(d)
 		{
 			if ( d.length )
 			{
@@ -152,13 +152,19 @@ var S	= {
 			
 			o					= true;
 			
+			i					= $( this ).index();
+			
+			a.removeClass( 'selected' );
+			
+			$( this ).addClass( 'selected' );
+			
 			u.stop( true ).animate({
-				'margin-left'	: $( this ).index() * w * -1 + 'px'
-			}, 2000, S.ease, function()
+				'margin-left'	: i * w * -1 + 'px'
+			}, 1000, S.ease, function()
 			{
 				o	= false;
 			});
-		});
+		}).eq( 0 ).click();
 		
 		S.herosCarousel	= setInterval( function()
 		{
@@ -175,9 +181,9 @@ var S	= {
 			a.eq( i ).click();
 			
 			i++;
-		}, 2000 );
+		}, 6000 );
 		
-		t.unbind( 'mouseenter' ).mouseenter( function()
+		/*t.unbind( 'mouseenter' ).mouseenter( function()
 		{
 			o	= true;
 			r	= Math.round( ( Number( u.css( 'margin-left' ).replace( 'px', '' ) ) * -1 ) / w );
@@ -188,7 +194,7 @@ var S	= {
 		}).unbind( 'mouseleave' ).mouseleave( function()
 		{
 			o	= false;
-		});
+		});*/
 	},
 	
 	stopHerosCarousel											: function()
