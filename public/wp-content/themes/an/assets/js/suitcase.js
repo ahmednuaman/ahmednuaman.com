@@ -146,11 +146,27 @@ var S	= {
 		
 		u.width( m * w );
 		
-		a.unbind( 'click' ).click( function()
+		t.unbind( 'mousedown touchstart' ).bind( 'mousedown touchstart', function()
+		{
+			o	= true;
+			
+			t.unbind( 'mousemove touchmove' ).bind( 'mousemove touchmove', function(e)
+			{
+				
+			});
+		}).unbind( 'mouseup touchend touchcancel' ).bind( 'mouseup touchend touchcancel', function()
+		{
+			o	= false;
+		});
+		
+		a.unbind( 'mousedown touchstart' ).bind( 'mousedown touchstart', function()
 		{
 			S.ignoreHashchange	= true;
-			
-			o					= true;
+		});
+		
+		a.unbind( 'click' ).click( function()
+		{
+			//o					= true;
 			
 			i					= $( this ).index();
 			
@@ -158,12 +174,12 @@ var S	= {
 			
 			$( this ).addClass( 'selected' );
 			
-			u.stop( true ).animate({
+			u.stop( true ).css({
 				'margin-left'	: i * w * -1 + 'px'
-			}, 1000, S.ease, function()
+			}/*, 1000, S.ease, function()
 			{
-				o	= false;
-			});
+				//o	= false;
+			}*/);
 		}).eq( 0 ).click();
 		
 		S.herosCarousel	= setInterval( function()
@@ -177,6 +193,8 @@ var S	= {
 			{
 				i	= 0;
 			}
+			
+			S.ignoreHashchange	= true;
 			
 			a.eq( i ).click();
 			
