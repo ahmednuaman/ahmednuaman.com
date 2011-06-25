@@ -8,11 +8,11 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 	-moz-border-radius: @radius;
 	border-radius: @radius;
 }
-.glow(@colour:#000000, @size:5px)
+.glow(@colour:#000000, @size:5px, @x:0, @y:0)
 {
-	-webkit-box-shadow: 0 0 @size @colour; 
-	-moz-box-shadow: 0 0 @size @colour; 
-	box-shadow: 0 0 @size @colour;
+	-webkit-box-shadow: @x @y @size @colour; 
+	-moz-box-shadow: @x @y @size @colour; 
+	box-shadow: @x @y @size @colour;
 }
 .gradient(@colour_from:#FFFFFF, @colour_to:#BBBBBB)
 {
@@ -77,6 +77,10 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 	-moz-user-select: none; 
 	-khtml-user-select: none; 
 	-webkit-user-select: none;
+}
+.reflect
+{
+	-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(90%, transparent), to(rgba(255,255,255,0.2)));
 }
 .relative
 {
@@ -344,7 +348,7 @@ header div
 			
 			ul
 			{
-				height: 500px;
+				height: 450px;
 				
 				li
 				{
@@ -355,7 +359,7 @@ header div
 					a
 					{
 						.relative;
-						-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(90%, transparent), to(rgba(255,255,255,0.2)));
+						.reflect;
 						
 						h3
 						{
@@ -370,7 +374,6 @@ header div
 		#carousel_controls
 		{
 			.relative;
-			margin-top: -40px;
 			padding-bottom: 40px;
 			
 			menu
@@ -504,11 +507,13 @@ header div
 							{
 								.relative;
 								.corners;
+								.reflect;
 								width: 290px;
 								height: 145px;
 								border: none;
 								overflow: hidden;
-
+								background-repeat: none;
+								
 								h3
 								{
 									.absolute;
@@ -630,8 +635,41 @@ footer,
 		left: 20px;
 	}
 }
-
+.codecolorer-container
+{
+	table td.line-numbers div
+	{
+		color: #333333;
+	}
+}
+.codecolorer, .codecolorer *, .codecolorer-container, .codecolorer-container *
+{
+	font-size: 9pt !important;
+}
 /* Browser specific */
+.cssreflections
+{
+	#container #top
+	{
+		#carousel ul
+		{
+			height: 500px;
+
+			a
+			{
+				.reflect;
+			}
+		}
+		#carousel_controls
+		{
+			margin-top: -50px;
+		}
+	}
+	.home #container #main div:first-child .col:not(:last-child) menu li
+	{
+		.reflect;
+	}
+}
 @media screen and (min-width: 301px)
 {
 	#container

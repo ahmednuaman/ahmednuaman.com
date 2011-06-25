@@ -23,6 +23,7 @@ legend{color:#000;}
 .italic{font-style:italic;}
 .left{display:block;float:left !important;}
 .noselect{user-select:none;-o-user-select:none;-moz-user-select:none;-khtml-user-select:none;-webkit-user-select:none;}
+.reflect{-webkit-box-reflect:below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(90%, transparent), to(rgba(255, 255, 255, 0.2)));}
 .relative{display:block;position:relative !important;}
 .right{display:block;float:right !important;}
 .show{display:block;visibility:visible;}
@@ -54,8 +55,8 @@ header section form{display:block;float:right !important;}header section form in
 #container{padding-top:70px;}#container #top .large a,#container #top .mobile a{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;border:none;}
 #container #top .large a{width:900px;height:450px;}
 #container #top .mobile a{width:300px;height:150px;}
-#container #top #carousel{max-width:900px;overflow:hidden;}#container #top #carousel ul{height:500px;}#container #top #carousel ul li{display:block;float:left !important;margin:0;list-style:none;}#container #top #carousel ul li a{display:block;position:relative !important;-webkit-box-reflect:below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(90%, transparent), to(rgba(255, 255, 255, 0.2)));}#container #top #carousel ul li a h3{display:block;position:absolute !important;bottom:0;right:20px;}
-#container #top #carousel_controls{display:block;position:relative !important;margin-top:-40px;padding-bottom:40px;}#container #top #carousel_controls menu{display:block;position:relative !important;margin:0 auto;text-align:center;}#container #top #carousel_controls menu a{display:block;float:left !important;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;background:#ffffff;height:8px;width:8px;margin:8px 3px;}
+#container #top #carousel{max-width:900px;overflow:hidden;}#container #top #carousel ul{height:450px;}#container #top #carousel ul li{display:block;float:left !important;margin:0;list-style:none;}#container #top #carousel ul li a{display:block;position:relative !important;-webkit-box-reflect:below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(90%, transparent), to(rgba(255, 255, 255, 0.2)));}#container #top #carousel ul li a h3{display:block;position:absolute !important;bottom:0;right:20px;}
+#container #top #carousel_controls{display:block;position:relative !important;padding-bottom:40px;}#container #top #carousel_controls menu{display:block;position:relative !important;margin:0 auto;text-align:center;}#container #top #carousel_controls menu a{display:block;float:left !important;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;background:#ffffff;height:8px;width:8px;margin:8px 3px;}
 #container #top #carousel_controls menu a:hover,#container #top #carousel_controls menu a.selected{background:#006699;}
 #container #main{display:block;clear:both;width:100%;}#container #main .col{display:block;float:left !important;width:275px;margin-left:25px;}
 #container #main .col:first-child{margin:0 !important;}
@@ -68,7 +69,7 @@ header section form{display:block;float:right !important;}header section form in
 .home #container #main div:first-child .col>div:nth-child(2){margin-top:20px;}
 .home #container #main div:first-child .col div:hover h2:first-child{opacity:0;}
 .home #container #main div:first-child .col div:hover h2:nth-child(2){opacity:1;}
-.home #container #main div:first-child .col:not(:last-child) menu li{display:block;float:left !important;margin:0 15px 15px 0;}.home #container #main div:first-child .col:not(:last-child) menu li a{display:block;position:relative !important;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:290px;height:145px;border:none;overflow:hidden;}.home #container #main div:first-child .col:not(:last-child) menu li a h3{display:block;position:absolute !important;background:#006699;width:100%;margin:0;bottom:-50px;left:0;padding:4px 8px;font-size:10pt;}
+.home #container #main div:first-child .col:not(:last-child) menu li{display:block;float:left !important;margin:0 15px 15px 0;}.home #container #main div:first-child .col:not(:last-child) menu li a{display:block;position:relative !important;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-webkit-box-reflect:below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(90%, transparent), to(rgba(255, 255, 255, 0.2)));width:290px;height:145px;border:none;overflow:hidden;background-repeat:none;}.home #container #main div:first-child .col:not(:last-child) menu li a h3{display:block;position:absolute !important;background:#006699;width:100%;margin:0;bottom:-50px;left:0;padding:4px 8px;font-size:10pt;}
 .home #container #main div:first-child .col:not(:last-child) menu li a:hover{-webkit-box-shadow:0 0 10px #006699;-moz-box-shadow:0 0 10px #006699;box-shadow:0 0 10px #006699;}.home #container #main div:first-child .col:not(:last-child) menu li a:hover h3{bottom:0;}
 .home #container #main div:first-child .col:not(:last-child) menu li:nth-child(2n){margin-right:0;}
 .home #container #main div:first-child .col:first-child{width:600px;padding-bottom:20px;}
@@ -81,4 +82,9 @@ header section form{display:block;float:right !important;}header section form in
 .blog .colright li:not(:first-child) h3,.single .colright li:not(:first-child) h3{margin-top:20px;}
 .single .postmetadata{display:block;visibility:visible;opacity:1;margin-top:20px;}
 footer span,.postmetadata span{display:block;position:absolute !important;border-color:transparent transparent #333333 transparent;border-style:solid;border-width:10px;width:0px;top:-15px;left:20px;}
+.codecolorer-container table td.line-numbers div{color:#333333;}
+.codecolorer,.codecolorer *,.codecolorer-container,.codecolorer-container *{font-size:9pt !important;}
+.cssreflections #container #top #carousel ul{height:500px;}.cssreflections #container #top #carousel ul a{-webkit-box-reflect:below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(90%, transparent), to(rgba(255, 255, 255, 0.2)));}
+.cssreflections #container #top #carousel_controls{margin-top:-50px;}
+.cssreflections .home #container #main div:first-child .col:not(:last-child) menu li{-webkit-box-reflect:below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(90%, transparent), to(rgba(255, 255, 255, 0.2)));}
 @media screen and (min-width: 301px){#container #top #carousel ul .mobile{display:none;visibility:hidden;} #container #top #carousel ul .large{display:block;visibility:visible;}}@media screen and (max-width: 300px){#container #top #carousel ul .mobile{display:block;visibility:visible;} #container #top #carousel ul .large{display:none;visibility:hidden;}}
