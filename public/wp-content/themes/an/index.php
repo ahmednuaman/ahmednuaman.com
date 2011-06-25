@@ -122,8 +122,10 @@ $js			= $assets . 'js/';
 										)); ?>
 									</ul>
 									<div class="postmetadata">
-										<?php the_tags( 'Tags: ', ', ', ' &mdash; ' ); ?> Posted in: <?php the_category(', ') ?> on <?php the_time( 'F jS, Y' ); ?>.
 										<span></span>
+										<p>
+											<?php the_tags( 'Tags: ', ', ', ' &mdash; ' ); ?> Posted in: <?php the_category(', ') ?> on <?php the_time( 'F jS, Y' ); ?>.
+										</p>
 									</div>
 								</div>
 								<nav class="navigation">
@@ -229,8 +231,10 @@ $js			= $assets . 'js/';
 									<?php the_content( 'Read more &raquo;' ); ?>
 								</div>
 								<div class="postmetadata">
-									<?php the_tags( 'Tags: ', ', ', ' &mdash; ' ); ?> Posted in: <?php the_category(', ') ?> on <?php the_time( 'F jS, Y' ); ?>.
 									<span></span>
+									<p>
+										<?php the_tags( 'Tags: ', ', ', ' &mdash; ' ); ?> Posted in: <?php the_category(', ') ?> on <?php the_time( 'F jS, Y' ); ?>.
+									</p>
 								</div>
 							</article>
 						<?php endwhile; ?>

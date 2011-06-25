@@ -132,10 +132,10 @@ var S	= {
 	{
 		var a	= $( '#carousel_controls a' );
 		var t	= $( '#carousel' );
-		var m	= $( 'li:visible', t ).length;
-		var w	= $( 'li:visible:first', t ).outerWidth();
 		var u	= $( 'ul', t );
-		var i	= 1;
+		var m	= $( 'li:visible', u ).length;
+		var w	= $( 'li:visible:first', u ).outerWidth();
+		var i	= 0;
 		var o	= false;
 		var r;
 		
@@ -144,7 +144,7 @@ var S	= {
 			return;
 		}
 		
-		u.width( m * w );
+		//u.width( m * w );
 		
 		t.unbind( 'mousedown touchstart' ).bind( 'mousedown touchstart', function()
 		{
@@ -174,12 +174,56 @@ var S	= {
 			
 			$( this ).addClass( 'selected' );
 			
-			u.stop( true ).css({
+			var x	= m + 1;
+			var j	= i + 1;
+			var li;
+			var l;
+			
+			while ( --x )
+			{
+				if ( x > j )
+				{
+					l	= w;
+				}
+				else if ( x < j )
+				{
+					l	= w * -1;
+				}
+				else
+				{
+					l	= 0;
+				}
+				
+				li	= $( 'li:visible', u ).eq( x - 1 );
+				
+				li.css( 'left', l );
+				
+				if ( l === 0 )
+				{
+					li.addClass( 'top' );
+				}
+				else
+				{
+					li.removeClass( 'top' );
+				}
+			}
+			
+			if ( i === 0 )
+			{
+				$( 'li:visible:last', u ).css( 'left', w * -1 ).removeClass( 'hide' );
+			}
+			
+			if ( i === m - 1 )
+			{
+				$( 'li:visible:first', u ).css( 'left', w ).removeClass( 'hide' );
+			}
+			
+			/*u.stop( true ).css({
 				'margin-left'	: i * w * -1 + 'px'
 			}/*, 1000, S.ease, function()
 			{
 				//o	= false;
-			}*/);
+			}* /);*/
 		}).eq( 0 ).click();
 		
 		S.herosCarousel	= setInterval( function()
