@@ -251,13 +251,15 @@ $js			= $assets . 'js/';
 				<p>Built using <a href="http://wordpress.org">WordPress</a> because it's awesome. <a href="http://firestartermedia.com/?utm_referrer=ahmednuaman">Looking for web design and development? Try FireStarter Media Limited</a>.</p>
 			</footer>
 		</div>
+		<div id="popup">
+			
+		</div>
 		<?php
 		$scripts		= array(
 			'jquery-core',
 			'jquery-ui',
 			'jquery.ba-hashchange',
 			'modernizr',
-			'selectivizr',
 			'suitcase'
 		);
 		

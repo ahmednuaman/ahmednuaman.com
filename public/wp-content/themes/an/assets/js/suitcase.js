@@ -135,8 +135,8 @@ var S	= {
 		var u	= $( 'ul', t );
 		var m	= $( 'li:visible', u ).length;
 		var w	= $( 'li:visible:first', u ).outerWidth();
-		var i	= 0;
-		var o	= false;
+		var i	= -1;
+		var o	= [ ];
 		var r;
 		
 		if ( !t.is( ':visible' ) )
@@ -146,17 +146,52 @@ var S	= {
 		
 		//u.width( m * w );
 		
-		t.unbind( 'mousedown touchstart' ).bind( 'mousedown touchstart', function()
+		t.unbind( 'mousedown touchstart' ).bind( 'mousedown touchstart', function(e)
 		{
-			o	= true;
+			var sx	= S.getX( e );
+			
+			o.push( 1 );
 			
 			t.unbind( 'mousemove touchmove' ).bind( 'mousemove touchmove', function(e)
 			{
+				var x	= sx - S.getX( e );
+				// var els	= [ $( 'li:visible', u ).eq( i - 1 ), $( 'li:visible', u ).eq( i ), $( 'li:visible', u ).eq( i + 1 ) ];
+				// 				
+				// 				if ( x > 0 || x < 0 )
+				// 				{
+				// 					$.each( els, function()
+				// 					{
+				// 						$( this ).css( 'left', function(i, v)
+				// 						{
+				// 							return parseInt( v ) + x;
+				// 						});
+				// 					});
+				// 				}
 				
+				if ( x > 300 )
+				{
+					a.eq( i + 1 ).click();
+					
+					t.unbind( 'mousemove touchmove' );
+				}
+				else if ( x < -300 )
+				{
+					a.eq( i - 1 ).click();
+					
+					t.unbind( 'mousemove touchmove' );
+				}
+				
+				return false;
 			});
-		}).unbind( 'mouseup touchend touchcancel' ).bind( 'mouseup touchend touchcancel', function()
+			
+			return false;
+		}).unbind( 'mouseup mouseout mouseleave touchend touchcancel' ).bind( 'mouseup mouseout mouseleave touchend touchcancel', function()
 		{
-			o	= false;
+			t.unbind( 'mousemove touchmove' );
+			
+			//o	= false;
+			
+			return false;
 		});
 		
 		a.unbind( 'mousedown touchstart' ).bind( 'mousedown touchstart', function()
@@ -181,20 +216,26 @@ var S	= {
 			
 			while ( --x )
 			{
+				li	= $( 'li:visible', u ).eq( x - 1 );
+				
 				if ( x > j )
 				{
 					l	= w;
+					
+					li.removeClass( 'rotleft' ).addClass( 'rotright' );
 				}
 				else if ( x < j )
 				{
 					l	= w * -1;
+					
+					li.removeClass( 'rotright' ).addClass( 'rotleft' );
 				}
 				else
 				{
 					l	= 0;
+					
+					li.removeClass( 'rotleft rotright' );
 				}
-				
-				li	= $( 'li:visible', u ).eq( x - 1 );
 				
 				li.css( 'left', l );
 				
@@ -210,12 +251,12 @@ var S	= {
 			
 			if ( i === 0 )
 			{
-				$( 'li:visible:last', u ).css( 'left', w * -1 ).removeClass( 'hide' );
+				$( 'li:visible:last', u ).css( 'left', w * -1 );
 			}
 			
 			if ( i === m - 1 )
 			{
-				$( 'li:visible:first', u ).css( 'left', w ).removeClass( 'hide' );
+				$( 'li:visible:first', u ).css( 'left', w );
 			}
 			
 			/*u.stop( true ).css({
@@ -228,10 +269,14 @@ var S	= {
 		
 		S.herosCarousel	= setInterval( function()
 		{
-			if ( o )
+			if ( o.length > 1 )
 			{
+				o	= [ 1 ];
+				
 				return;
 			}
+			
+			i++;
 			
 			if ( i >= m )
 			{
@@ -241,8 +286,6 @@ var S	= {
 			S.ignoreHashchange	= true;
 			
 			a.eq( i ).click();
-			
-			i++;
 		}, 6000 );
 		
 		/*t.unbind( 'mouseenter' ).mouseenter( function()
@@ -257,6 +300,11 @@ var S	= {
 		{
 			o	= false;
 		});*/
+	},
+	
+	getX														: function(e)
+	{
+		return ( e.type.indexOf( 'mouse' ) === 0 ? e.clientX : e.originalEvent.touches[ 0 ].clientX );
 	},
 	
 	stopHerosCarousel											: function()
