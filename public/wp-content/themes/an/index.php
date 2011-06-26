@@ -57,7 +57,7 @@ $js			= $assets . 'js/';
 							<?php while ( have_posts() ): the_post(); ?>
 								<?php $id	= get_the_ID(); ?>
 								<?php $tid	= get_post_thumbnail_id(); ?>
-								<?php $l	= $_front ? str_replace( site_url( '/blog/an_' ), '/#!/popup/', get_permalink() ) : get_permalink(); ?>
+								<?php $l	= $_front ? str_replace( site_url( '/blog/an_' ), '/#!/', get_permalink() ) : get_permalink(); ?>
 								<?php $t	= get_the_title(); ?>
 								<?php $u	= wp_get_attachment_image_src( $tid, 'an_hero' ); ?>
 								<li id="tile_<?php echo $id; ?>" class="large">
@@ -71,7 +71,7 @@ $js			= $assets . 'js/';
 										<h3><?php echo $t; ?></h3>
 									</a>
 								</li>
-								<?php array_push( $cl, str_replace( '!/popup', '!/carousel', $l ) ); ?>
+								<?php array_push( $cl, str_replace( '!/', '!/carousel', $l ) ); ?>
 							<?php endwhile; ?>
 							<?php wp_reset_query(); ?>
 						</ul>
@@ -139,38 +139,25 @@ $js			= $assets . 'js/';
 				<?php endif; ?>
 				<?php if ( $_front ): ?>
 					<div>
-						<?php $ns	= array( 'project'/*, 'client'*/ ); ?>
-						<?php foreach ( $ns as $n ): ?>
-							<section class="col">
-								<div>
-									<h2>Latest <?php echo $n . 's'; ?></h2>
-									<h2><a href="/#!/popup/<?php echo $n; ?>">See all projects &raquo;</a></h2>
-									<menu>
-										<?php query_posts( array( 'post_type' => 'an_' . $n, 'posts_per_page' => 6 ) ); ?>
-										<?php while ( have_posts() ): the_post(); ?>
-											<li>
-												<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_thumbnail' ); ?>
-												<a href="<?php echo str_replace( site_url( '/blog/an_' ), '/#!/popup/', get_permalink() ); ?>" 
-													style="background-image: url(<?php echo $u[ 0 ]; ?>)">
-													<h3><?php the_title(); ?> &raquo;</h3>
-												</a>
-												<div class="info hide">
-													<h3><?php the_title(); ?></h3>
-													<?php the_content(); ?>
-													<?php $l	= get_post_custom_values( 'link', get_the_ID() ); ?>
-													<?php if ( $l[ 0 ] ): ?>
-														<p>
-															<a href="<?php echo $l[ 0 ]; ?>">Visit the project &raquo;</a>
-														</p>
-													<?php endif; ?>
-												</div>
-											</li>
-										<?php endwhile; ?>
-										<?php wp_reset_query(); ?>
-									</menu>
-								</div>
-							</section>
-						<?php endforeach; ?>
+						<section class="col">
+							<div>
+								<h2>Latest Projects</h2>
+								<h2><a href="/#!/<?php echo $n; ?>">See all projects &raquo;</a></h2>
+								<menu>
+									<?php query_posts( array( 'post_type' => 'an_project', 'posts_per_page' => 6 ) ); ?>
+									<?php while ( have_posts() ): the_post(); ?>
+										<li>
+											<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_thumbnail' ); ?>
+											<a href="<?php echo str_replace( site_url( '/blog/an_' ), '/#!/', get_permalink() ); ?>" 
+												style="background-image: url(<?php echo $u[ 0 ]; ?>)">
+												<h3><?php the_title(); ?> &raquo;</h3>
+											</a>
+										</li>
+									<?php endwhile; ?>
+									<?php wp_reset_query(); ?>
+								</menu>
+							</div>
+						</section>
 						<section class="col">
 							<div>
 								<h2>Tweets</h2>
@@ -252,7 +239,25 @@ $js			= $assets . 'js/';
 			</footer>
 		</div>
 		<div id="popup">
-			
+			<div id="popup-projects">
+				<h2>Projects</h2>
+				<menu>
+					<?php query_posts( array( 'post_type' => 'an_project' ) ); ?>
+					<?php while ( have_posts() ): the_post(); ?>
+						<li>
+							<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_thumbnail' ); ?>
+							<a href="<?php echo str_replace( site_url( '/blog/an_' ), '/#!/', get_permalink() ); ?>" 
+								style="background-image: url(<?php echo $u[ 0 ]; ?>)">
+								<h3><?php the_title(); ?> &raquo;</h3>
+							</a>
+						</li>
+					<?php endwhile; ?>
+					<?php wp_reset_query(); ?>
+				</menu>
+			</div>
+			<div id="popup-project">
+				
+			</div>
 		</div>
 		<?php
 		$scripts		= array(

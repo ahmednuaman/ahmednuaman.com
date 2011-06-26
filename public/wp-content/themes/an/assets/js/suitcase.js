@@ -1,4 +1,3 @@
-/*jslint browser: true, regexp: true, white: false */
 /*global document, screen, window, $, Modernizr */
 
 var S	= {
@@ -85,7 +84,7 @@ var S	= {
 		{
 			m		= m.replace( /\s/gim, '' );
 
-			var l	= 'http://twitter.com/' + m.replace( /[^\d|^\w]+/gim, '' );
+			var l	= 'http://twitter.com/' + m.replace( /[,\.\-@]+/gim, '' );
 
 			return ' <a href="' + l + '">' + m + '</a>';
 		});
@@ -140,8 +139,6 @@ var S	= {
 			return;
 		}
 		
-		//u.width( m * w );
-		
 		t.unbind( 'mousedown touchstart' ).bind( 'mousedown touchstart', function(e)
 		{
 			var sx	= S.getX( e );
@@ -151,18 +148,6 @@ var S	= {
 			t.unbind( 'mousemove touchmove' ).bind( 'mousemove touchmove', function(e)
 			{
 				var x	= sx - S.getX( e );
-				// var els	= [ $( 'li:visible', u ).eq( i - 1 ), $( 'li:visible', u ).eq( i ), $( 'li:visible', u ).eq( i + 1 ) ];
-				// 				
-				// 				if ( x > 0 || x < 0 )
-				// 				{
-				// 					$.each( els, function()
-				// 					{
-				// 						$( this ).css( 'left', function(i, v)
-				// 						{
-				// 							return parseInt( v ) + x;
-				// 						});
-				// 					});
-				// 				}
 				
 				if ( x > 300 )
 				{
@@ -185,8 +170,6 @@ var S	= {
 		{
 			t.unbind( 'mousemove touchmove' );
 			
-			//o	= false;
-			
 			return false;
 		});
 		
@@ -197,9 +180,7 @@ var S	= {
 		
 		a.unbind( 'click' ).click( function()
 		{
-			//o					= true;
-			
-			i					= $( this ).index();
+			i		= $( this ).index();
 			
 			a.removeClass( 'selected' );
 			
@@ -276,19 +257,6 @@ var S	= {
 			
 			a.eq( i ).click();
 		}, 6000 );
-		
-		/*t.unbind( 'mouseenter' ).mouseenter( function()
-		{
-			o	= true;
-			r	= Math.round( ( Number( u.css( 'margin-left' ).replace( 'px', '' ) ) * -1 ) / w );
-			
-			u.stop( true ).animate({
-				'margin-left'	: r * w * -1 + 'px'
-			}, 1000, S.ease );
-		}).unbind( 'mouseleave' ).mouseleave( function()
-		{
-			o	= false;
-		});*/
 	},
 	
 	getX														: function(e)
@@ -318,7 +286,17 @@ var S	= {
 				$( '#carousel_controls a[href$="' + window.location.hash + '"]' ).click();
 			
 			break;
+			
+			case 'project':
+				S.openProject( h[ 2 ] );
+			
+			break;
 		}
+	},
+	
+	openProject													: function()
+	{
+		var p	= arguments[ 0 ];
 	},
 	
 	detectBrowser												: function()

@@ -101,10 +101,38 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 {
 	z-index: 2147483647;
 }
+.top-1
+{
+	z-index: 2147483646;
+}
 
 /* Structure Classes */
 
 /* Tags */
+::-webkit-scrollbar 
+{
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment  
+{
+	height: 0;
+}
+::-webkit-scrollbar-track-piece  
+{
+	background-color: #3b3b3b;
+	-webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical 
+{
+	height: 50px;
+	background-color: #666;
+	-webkit-border-radius: 6px;
+}
+
+
 *
 {
 	-webkit-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
@@ -379,7 +407,7 @@ header div
 				}
 				li.top
 				{
-					z-index: 2147483646;
+					.top-1;
 				}
 			}
 		}
@@ -459,6 +487,16 @@ header div
 			border-bottom-color: #999999;
 		}
 	}
+}
+#popup
+{
+	.top-1;
+	.fixed;
+	.gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.5));
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 .home
 {
