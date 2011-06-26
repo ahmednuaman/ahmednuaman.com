@@ -202,7 +202,7 @@ $js			= $assets . 'js/';
 							<?php the_content(); ?>
 						</section>
 					</div>
-				<?php elseif ( $_home ): ?>
+				<?php elseif ( $_home || is_category() || is_tag() || is_search() || is_archive() ): ?>
 					<section class="col colright">
 						<?php dynamic_sidebar( 'blog_right' ); ?>
 					</section>
