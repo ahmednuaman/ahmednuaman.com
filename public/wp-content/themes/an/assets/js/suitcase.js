@@ -1,9 +1,5 @@
-/*jslint browser: true, 
-         eqeq: true, 
-         plusplus: true, 
-         regexp: true, 
-         white: false */
-/*global document, screen, window, $ */
+/*jslint browser: true, regexp: true, white: false */
+/*global document, screen, window, $, Modernizr */
 
 var S	= {
 	ease														: 'easeOutQuint',
@@ -29,7 +25,7 @@ var S	= {
 			{
 				var i	= $( this );
 				
-				if ( i.val() == i.attr( 'placeholder' ) )
+				if ( i.val() === i.attr( 'placeholder' ) )
 				{
 					i.val( '' );
 				}
@@ -37,7 +33,7 @@ var S	= {
 			{
 				var i	= $( this );
 				
-				if ( i.val() == '' )
+				if ( i.val() === '' )
 				{
 					i.val( i.attr( 'placeholder' ) );
 				}
@@ -258,13 +254,6 @@ var S	= {
 			{
 				$( 'li:visible:first', u ).css( 'left', w );
 			}
-			
-			/*u.stop( true ).css({
-				'margin-left'	: i * w * -1 + 'px'
-			}/*, 1000, S.ease, function()
-			{
-				//o	= false;
-			}* /);*/
 		}).eq( 0 ).click();
 		
 		S.herosCarousel	= setInterval( function()
@@ -327,11 +316,6 @@ var S	= {
 		{
 			case 'carousel':
 				$( '#carousel_controls a[href$="' + window.location.hash + '"]' ).click();
-			
-			break;
-			
-			default:
-				return;
 			
 			break;
 		}
