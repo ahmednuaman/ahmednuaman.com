@@ -26,7 +26,7 @@ $js			= $assets . 'js/';
 					<nav>
 						<?php foreach ( wp_get_nav_menu_items( 'nav' ) as $i => $item ): ?>
 							<a href="<?php echo $item->url; ?>"<?php 
-								if ( ( $_front && $i === 0 ) || ( ( $_single || $_home ) && $i === 1 ) ): 
+								if ( ( is_front_page() && $i === 0 ) || ( !is_front_page() && $i === 1 ) ): 
 							?> class="selected"<?php endif; ?>>
 								<?php echo $item->title; ?>
 								<span></span>
