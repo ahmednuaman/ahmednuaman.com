@@ -123,6 +123,7 @@ html
 	padding: 0;
 	.gradient(#006699,#0099cc);
 	overflow-x: hidden;
+	min-height: 100%;
 }
 a,
 body,
@@ -328,6 +329,7 @@ header div
 #container
 {
 	padding-top: 70px;
+	height: auto;
 	
 	#top
 	{
@@ -466,14 +468,21 @@ header div
 }
 #popup
 {
-	.hide;
-	.top-1;
-	.fixed;
-	.gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.5));
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	height: auto;
+	
+	> div
+	{
+		.relative;
+		margin: 0 auto;
+		max-width: 900px;
+	}
+	.projects
+	{
+		li:nth-child(3n)
+		{
+			margin-right: 0;
+		}
+	}
 }
 .home
 {
@@ -523,50 +532,9 @@ header div
 				}
 				.col:not(:last-child)
 				{
-					menu
+					li:nth-child(2n)
 					{
-						li
-						{
-							.left;
-							margin: 0 15px 15px 0;
-
-							a
-							{
-								.relative;
-								.corners;
-								.reflect;
-								width: 290px;
-								height: 145px;
-								border: none;
-								overflow: hidden;
-								background-repeat: none;
-								
-								h3
-								{
-									.absolute;
-									background: #006699;
-									width: 100%;
-									margin: 0;
-									bottom: -50px;
-									left: 0;
-									padding: 4px 8px;
-									font-size: 10pt;
-								}
-							}
-							a:hover
-							{
-								.glow(#006699, 10px);
-
-								h3
-								{
-									bottom: 0;
-								}
-							}
-						}
-						li:nth-child(2n)
-						{
-							margin-right: 0;
-						}
+						margin-right: 0;
 					}
 				}
 				.col:first-child
@@ -686,6 +654,50 @@ footer,
 		width: 0px;
 		top: -10px;
 		left: 20px;
+	}
+}
+.projects
+{
+	menu
+	{
+		li
+		{
+			.left;
+			margin: 0 15px 15px 0;
+
+			a
+			{
+				.relative;
+				.corners;
+				.reflect;
+				width: 290px;
+				height: 145px;
+				border: none;
+				overflow: hidden;
+				background-repeat: none;
+				
+				h3
+				{
+					.absolute;
+					background: #006699;
+					width: 282px;
+					margin: 0;
+					bottom: -50px;
+					left: 0;
+					padding: 4px 8px;
+					font-size: 10pt;
+				}
+			}
+			a:hover
+			{
+				.glow(#006699, 10px);
+
+				h3
+				{
+					bottom: 0;
+				}
+			}
+		}
 	}
 }
 .codecolorer-container

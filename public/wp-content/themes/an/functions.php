@@ -32,7 +32,9 @@ function an_init()
 					'revisions'
 				),
 				'show_ui'		=> true,
-				'show_in_menu'	=> true
+				'show_in_menu'	=> true,
+				'public'		=> true,
+				'rewrite' 		=> array( 'slug' => $n . 's' )
 			)
 		);
 	}

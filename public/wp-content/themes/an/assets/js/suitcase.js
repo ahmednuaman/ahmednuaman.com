@@ -297,6 +297,11 @@ var S	= {
 	openProject													: function()
 	{
 		var p	= arguments[ 0 ];
+		
+		console.log(p);
+		
+		$( '#container' ).addClass( 'collapse' );
+		$( '#popup' ).removeClass( 'collapse' );
 	},
 	
 	detectBrowser												: function()
