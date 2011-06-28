@@ -17,6 +17,8 @@ function an_setup()
 function an_init()
 {
 	$a	= array( 'client', 'project' );
+	$t	= array();
+	
 	foreach ( $a as $n )
 	{
 		register_post_type( 'an_' . $n, array(
@@ -34,11 +36,32 @@ function an_init()
 				'show_ui'		=> true,
 				'show_in_menu'	=> true,
 				'public'		=> true,
-				'rewrite' 		=> array( 'slug' => $n . 's' )
+				'has_archive'	=> true,
+				'rewrite' 		=> array( 
+					'slug' 			=> $n . 's', 
+					'with_front' 	=> true 
+				)
 			)
 		);
+		
+		array_push( $t, 'an_' . $n );
 	}
+	
+	register_taxonomy( 'Skills', $t, array( 
+			'hierarchical' 		=> true, 
+			'label' 			=> 'Skills', 
+			'singular_label' 	=> 'Skill', 
+			'rewrite' 			=> true
+		)
+	);
+	
+	// flush_rewrite_rules();
 }
+
+// function an_admin_init()
+// {
+// 	add_meta_box("credits_meta", "Design & Build Credits", "credits_meta", "portfolio", "normal", "low");
+// }
 
 function an_widgets_init()
 {
@@ -63,4 +86,5 @@ function an_widgets_init()
 
 add_action( 'after_setup_theme', 'an_setup' );
 add_action( 'init', 'an_init' );
+// add_action( 'admin_init', 'an_admin_init' );
 add_action( 'widgets_init', 'an_widgets_init' );

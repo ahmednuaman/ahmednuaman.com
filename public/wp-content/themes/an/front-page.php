@@ -7,7 +7,7 @@
 			<?php while ( have_posts() ): the_post(); ?>
 				<?php $id	= get_the_ID(); ?>
 				<?php $tid	= get_post_thumbnail_id(); ?>
-				<?php $l	= $_front ? str_replace( site_url( '/blog/an_' ), '/#!/', get_permalink() ) : get_permalink(); ?>
+				<?php $l	= get_permalink(); ?>
 				<?php $t	= get_the_title(); ?>
 				<?php $u	= wp_get_attachment_image_src( $tid, 'an_hero' ); ?>
 				<li id="tile_<?php echo $id; ?>" class="large">
@@ -39,13 +39,13 @@
 		<section class="col">
 			<div class="projects">
 				<h2>Latest Projects</h2>
-				<h2><a href="/#!/project/">See all projects &raquo;</a></h2>
+				<h2><a href="<?php echo get_post_type_archive_link( 'an_project' ); ?>">See all projects &raquo;</a></h2>
 				<menu>
 					<?php query_posts( array( 'post_type' => 'an_project', 'posts_per_page' => 6 ) ); ?>
 					<?php while ( have_posts() ): the_post(); ?>
 						<li>
 							<?php $u	= wp_get_attachment_image_src( get_post_thumbnail_id(), 'an_thumbnail' ); ?>
-							<a href="<?php echo str_replace( site_url( '/blog/an_' ), '/#!/', get_permalink() ); ?>" 
+							<a href="<?php echo get_permalink(); ?>" 
 								style="background-image: url(<?php echo $u[ 0 ]; ?>)">
 								<h3><?php the_title(); ?> &raquo;</h3>
 							</a>
@@ -65,7 +65,7 @@
 			</div>
 			<div>
 				<h2>Posts</h2>
-				<h2><a href="/blog">Read more posts &raquo;</a></h2>
+				<h2><a href="/blog/">Read more posts &raquo;</a></h2>
 				<ul>
 					<?php query_posts( array( 'post_type' => 'post', 'posts_per_page' => 7 ) ); ?>
 					<?php while ( have_posts() ): the_post(); ?>

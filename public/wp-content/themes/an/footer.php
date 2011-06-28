@@ -5,7 +5,11 @@
 			</footer>
 		</div>
 		<?php
-		$live	= $_SERVER[ 'HTTP_HOST' ] != 'ahmednuaman.local';
+		$live			= $_SERVER[ 'HTTP_HOST' ] != 'ahmednuaman.local';
+		$dir			= get_bloginfo( 'template_directory' ) . '/';
+		$assets			= $dir . 'assets/';
+		$js				= $assets . 'js/';
+		
 		$scripts		= array(
 			'jquery-core',
 			'jquery-ui',
