@@ -65,7 +65,7 @@
 			</div>
 			<div>
 				<h2>Posts</h2>
-				<h2><a href="/blog/">Read more posts &raquo;</a></h2>
+				<h2><a href="<?php echo home_url( '/blog/' ); ?>">Read more posts &raquo;</a></h2>
 				<ul>
 					<?php query_posts( array( 'post_type' => 'post', 'posts_per_page' => 7 ) ); ?>
 					<?php while ( have_posts() ): the_post(); ?>
