@@ -1,0 +1,10 @@
+/* TEAM */
+Developer: Ahmed Nuaman
+Site: http://ahmednuaman.com
+Twitter: @ahmednuaman
+Location: Internets, UK
+
+/* SITE */
+Last update: 2011/10/21
+Standards: HTML5, CSS3 (well, they're not *really* standards yet but I'm sure yo' mumma would approve)
+Software: TextMate, git, LESSCSS
