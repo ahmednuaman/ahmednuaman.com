@@ -22,9 +22,17 @@ var S	= {
 			var t	= $( this );
 			var p	= t.parent();
 			
+			t.prepend( '<span class="point"></span>' );
+			
 			t.css({
 				'margin-left'	: ( p.width() - t.outerWidth() ) / 2 + 'px'
 			});
+			
+			// var s	= $( '.point', t );
+			// 			
+			// 			s.css({
+			// 				'margin-left'	: ( t.outerWidth() - s.outerWidth() ) / 2 + 'px'
+			// 			});
 		});
 	},
 	
