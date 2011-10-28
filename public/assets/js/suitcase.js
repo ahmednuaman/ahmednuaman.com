@@ -1,91 +1,134 @@
 var S	= {
-	resizeFunctions												: [ ],
-	resizeFunctionsLength										: 0,
+	cssAnimation												: 'webkitTransitionEnd transitionend oTransitionEnd',
+	months														: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
 	
 	ready														: function()
 	{
 		$( 'html' ).removeClass( 'no-js' );
 		
 		S.findTooltips();
-		
-		S.addResizeFunction( S.resizeLoader );
-		
-		$( window ).resize( S.handleResize ).resize();
-		
-		S.hideLoader();
+		// S.loadPosts();
+		// S.loadTweets();
 	},
 	
 	findTooltips												: function()
 	{
-		$( '.tooltip, a > span' ).each( function()
+		$( '.tooltip:not(.found)' ).each( function()
 		{
 			var t	= $( this );
 			var p	= t.parent();
 			
-			t.prepend( '<span class="point"></span>' );
+			t.prepend( '<span class="point"></span>' ).addClass( 'found' );
 			
 			t.css({
-				'margin-left'	: ( p.width() - t.outerWidth() ) / 2 + 'px'
+				'margin-left'	: ( p.outerWidth() - t.outerWidth() ) / 2 + 'px'
+			});
+		});
+	},
+	
+	loadPosts													: function()
+	{
+		$.getJSON( 'http://ahmednuaman.tumblr.com/api/read/json?type=text&filter=text&num=5&callback=?', function(d)
+		{
+			$( '#posts' ).bind( S.cssAnimation, function()
+			{
+				var l	= Number( d[ 'posts-total' ] );
+				var ul	= $( this );
+				var i;
+				
+				ul.unbind( S.cssAnimation ).empty();
+				
+				for ( i = 0; i < l; i++ )
+				{
+					ul.append( S.formatPost( d.posts[ i ] ) );
+				}
+				
+				S.findTooltips();
+				
+				ul.removeClass( 'fadeOut' );
+			}).addClass( 'fadeOut' );
+		});
+	},
+	
+	formatPost													: function(s)
+	{
+		var d	= new Date( s[ 'date-gmt' ] );
+		
+		return '<li>&rarr; <a href="' + s.url + '">' + s[ 'regular-title' ] + ' ~ ' + S.truncate( s[ 'regular-body' ], 40, ' ...' ) + '</a><span class="tooltip">Posted at ' + d.getHours() + ':' + d.getMinutes() + ' on ' + d.getDate() + ' ' + S.months[ d.getMonth() ] + '</span></li>';
+	},
+	
+	truncate													: function(s, l, a)
+	{
+		return s.length > l ? s.substr( 0, l ) + a : s;
+	},
+	
+	loadTweets													: function()
+	{
+		$.getJSON( 'https://api.twitter.com/1/statuses/user_timeline.json?screen_name=ahmednuaman&count=5&callback=?', function(d)
+		{
+			$( '#tweets' ).bind( S.cssAnimation, function()
+			{
+				var l	= d.length;
+				var ul	= $( this );
+				var i;
+				
+				ul.unbind( S.cssAnimation ).empty();
+				
+				for ( i = 0; i < l; i++ )
+				{
+					ul.append( S.formatTweet( d[ i ] ) );
+				}
+				
+				S.findTooltips();
+				
+				ul.removeClass( 'fadeOut' );
+			}).addClass( 'fadeOut' );
+		});
+	},
+	
+	formatTweet													: function(s)
+	{
+		var d	= new Date( s.created_at );
+		
+		return '<li>&rarr; ' + S.prepareLinks( s.text ) + '<span class="tooltip">Posted at ' + d.getHours() + ':' + d.getMinutes() + ' on ' + d.getDate() + ' ' + S.months[ d.getMonth() ] + '</span></li>';
+	},
+	
+	prepareLinks												: function(t, i)
+		{
+			t	= t.replace( /&/gim, '&amp;' ).replace( /</gim, '&lt;' ).replace( />/gim, '&gt;' );
+			
+			t	= t.replace( /((https?:\/\/|www\.)[^\s]+)/gim, function(m)
+			{
+				var l	= ( m.indexOf( 'http' ) === -1 ? 'http://' : '' ) + m;
+				
+				return '<a href="' + l + '" class="external">' + m + '</a>';
 			});
 			
-			// var s	= $( '.point', t );
-			// 			
-			// 			s.css({
-			// 				'margin-left'	: ( t.outerWidth() - s.outerWidth() ) / 2 + 'px'
-			// 			});
-		});
-	},
-	
-	resizeLoader												: function(w, h)
-	{
-		var c	= $( '#CanvasLoader' );
-		
-		c.css({
-			'left'	: ( w - c.width() ) / 2,
-			'top'	: ( h - c.height() ) / 2
-		});
-	},
-	
-	hideLoader													: function()
-	{
-		$( '#loader' ).addClass( 'fadeOut' ).bind( 'webkitTransitionEnd transitionend oTransitionEnd', function()
-		{
-			$( this ).addClass( 'hide' ).removeClass( 'fadeOut' );
-		});
-	},
-	
-	addResizeFunction											: function(f)
-	{
-		S.resizeFunctionsLength	= S.resizeFunctions.push( f );
-	},
-	
-	handleResize												: function()
-	{
-		var win	= $( window );
-		var h	= win.height();
-		var w	= win.width();
-		var f;
-		var i;
-		
-		for ( i = 0; i < S.resizeFunctionsLength; i++ )
-		{
-			f	= S.resizeFunctions[ i ];
+			t	= t.replace( /\s?(\@[^\s]+)\s?/gim, function(m)
+			{
+				m		= m.replace( /\s/gim, '' );
+				
+				var l	= 'http://twitter.com/' + m;
+				
+				return ' <a href="' + l + '" class="external">' + m + '</a> ';
+			});
+
+			t	= t.replace( /\s?(\#[^\s]+)\s?/gim, function(m)
+			{
+				m		= m.replace( /\s/gim, '' );
+				
+				var l	= 'http://twitter.com/search?q=' + m;
+				
+				return ' <a href="' + l + '" class="external">' + m + '</a> ';
+			});
 			
-			f( w, h );
+			return t;
 		}
-	}
 };
 
-var cl = new CanvasLoader( 'loader' );
-cl.setDensity( 12 );
-cl.setRange( 0.4 );
-cl.setSpeed( 1 );
-cl.setFPS( 12 );
-cl.setColor( '#0084ff' );
-
-var _gaq=[['_setAccount','UA-352545-12'],['_trackPageview'],['_trackPageLoadTime']];
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-s.parentNode.insertBefore(g,s)}(document,'script'));
+// var _gaq=[['_setAccount','UA-352545-12'],['_trackPageview'],['_trackPageLoadTime']];
+// (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+// g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+// s.parentNode.insertBefore(g,s)}(document,'script'));
 
 $( document ).ready( S.ready );

@@ -20,7 +20,7 @@
 					<li>
 						<a href="/Ahmed%20Nuaman%27s%20CV.pdf">
 							Download my CV
-							<span>
+							<span class="tooltip">
 								or resum&eacute; as they say in America
 							</span>
 						</a>
@@ -28,7 +28,7 @@
 					<li>
 						<a href="mailto:ahmed@ahmednuaman.com?subject=Enquiry%20from%20web%20site">
 							Contact me
-							<span>
+							<span class="tooltip">
 								usually I'm free for work
 							</span>
 						</a>
@@ -36,8 +36,8 @@
 					<li>
 						<a href="http://github.com/ahmednuaman">
 							Fork me at Github
-							<span>
-								break/fix my code, for free
+							<span class="tooltip">
+								break/fix my code
 							</span>
 						</a>
 					</li>
@@ -45,16 +45,65 @@
 			</nav>
 		</header>
 		<div id="container">
-			
+			<div id="holder">
+				<article>
+					<ul>
+						<li>
+							<span>
+								<h2></h2>
+								<p></p>
+							</span>
+						</li>
+					</ul>
+				</article>
+			</div>
+			<a id="arrowleft">
+				<span></span>
+			</a>
+			<a id="arrowright">
+				<span></span>
+			</a>
 		</div>
 		<footer>
-			
+			<div>
+				<h3>A quick bio...</h3>
+				<div class="cols">
+					<p>
+						<strong>I design and build web sites and apps.</strong> Most of my projects are development led where I work with the designers and creatives to solve their woes and make their concepts come to life. I also do design and occasionally find myself creating a full experience from wireframes to design and then development, which is awesome.
+					</p>
+					<p>
+						I graduated from Ravensbourne College of Design and Communication in 2007 with a first class BA (hons) in Interaction Design. During my time at college I was very fortunate to work with two very influential tutors (<a href="http://uk.linkedin.com/pub/john-durrant/9/693/5a3">John Durrant</a> and <a href="http://uk.linkedin.com/pub/martin-schmitz/2/735/645">Martin Schmitz</a>) who shaped me into what I am today. Without them, I'd probably be cleaning toilets somewhere.
+					</p>
+					<p>
+						Nowadays I freelance bouncing from project to project. I love it because with the uncertainty of work and the pressure of short deadlines allow me to stay driven to never say no. I love learning new things and I love working on projects that'll push me.
+					</p>
+					<p>
+						<a href="mailto:ahmed@ahmednuaman.com?subject=Enquiry%20from%20web%20site" class="left">
+							So, how about hiring me?
+							<!-- <span class="tooltip">
+															I make benefit for your glorious project
+														</span> -->
+						</a>
+					</p>
+				</div>
+			</div>
+			<div>
+				<h3>My social skills</h3>
+				<div class="col">
+					<h4>Latest blog posts</h4>
+					<ul id="posts" class="list">
+						<li>Loading posts...</li>
+					</ul>
+				</div>
+				<div class="col">
+					<h4>Latest tweets</h4>
+					<ul id="tweets" class="list">
+						<li>Loading tweets...</li>
+					</ul>
+				</div>
+			</div>
 		</footer>
-		<div id="loader">
-			
-		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-		<script src="https://heartcode-canvasloader.googlecode.com/files/heartcode-canvasloader-min.js"></script>
+		<script src="/assets/js/jquery.js"></script>
 		<script src="/assets/js/suitcase.js"></script>
 	</body>
 </html>
