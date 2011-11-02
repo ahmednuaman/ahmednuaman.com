@@ -1,2 +1,3 @@
-*.less
 reset.css
+style.css
+packaged.js
