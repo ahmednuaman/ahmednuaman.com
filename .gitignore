@@ -1,3 +1,2 @@
-reset.css
-style.css
-packaged.js
+*.css
+*packaged.js
