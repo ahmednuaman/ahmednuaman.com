@@ -50,7 +50,7 @@
 }
 .gradient(@colour_from:#FFFFFF, @colour_to:#BBBBBB)
 {
-	background: @colour_from;
+	background: @colour_to;
 	background: -moz-linear-gradient(top, @colour_from, @colour_to);
 	background: -webkit-gradient(linear, left top, left bottom, from(@colour_from), to(@colour_to));
 	background: -webkit-linear-gradient(@colour_from, @colour_to);
@@ -190,9 +190,10 @@
 body,
 html
 {
+	.gradient(#dddddd, #f8f8f8);
+	background-attachment: fixed;
 	margin: 0;
 	padding: 0;
-	.gradient(#dddddd, #f8f8f8);
 	height: 100%;
 	width: 100%;
 }
@@ -348,9 +349,7 @@ strong
 {
 	.left;
 	width: 100%;
-	height: 50em;
-	background: red;
-	margin-bottom: 4em;
+	height: 400px;
 	
 	#arrowleft
 	{
@@ -368,7 +367,7 @@ strong
 		.top;
 		.gradient(#ffffff, #eeeeee);
 		.box-shadow(rgba(0,0,0,.3), 0px, 3px, 3px);
-		top: 25em;
+		top: 250px;
 		cursor: pointer;
 		border: none;
 		width: 100px;
@@ -456,6 +455,7 @@ strong
 #footer
 {
 	.left;
+	padding: 4em 0;
 	
 	> div
 	{
