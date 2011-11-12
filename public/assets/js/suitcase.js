@@ -4,11 +4,11 @@ var S	= {
 	
 	ready														: function()
 	{
-		$( 'html' ).removeClass( 'no-js' );
+		var h	= document.getElementsByTagName( 'html' )[ 0 ].className	= '';
 		
 		S.findTooltips();
-		// S.loadPosts();
-		// S.loadTweets();
+		S.loadPosts();
+		S.loadTweets();
 	},
 	
 	findTooltips												: function()
@@ -18,10 +18,10 @@ var S	= {
 			var t	= $( this );
 			var p	= t.parent();
 			
-			t.prepend( '<span class="point"></span>' ).addClass( 'found' );
-			
-			t.css({
-				'margin-left'	: ( p.outerWidth() - t.outerWidth() ) / 2 + 'px'
+			t.addClass( 'found' )
+			.prepend( '<span class="point"></span>' )
+			.css({
+				'margin-left'	: ( p.outerWidth() - t.outerWidth() ) * .5 + 'px'
 			});
 		});
 	},
@@ -94,36 +94,36 @@ var S	= {
 	},
 	
 	prepareLinks												: function(t, i)
+	{
+		t	= t.replace( /&/gim, '&amp;' ).replace( /</gim, '&lt;' ).replace( />/gim, '&gt;' );
+		
+		t	= t.replace( /((https?:\/\/|www\.)[^\s]+)/gim, function(m)
 		{
-			t	= t.replace( /&/gim, '&amp;' ).replace( /</gim, '&lt;' ).replace( />/gim, '&gt;' );
+			var l	= ( m.indexOf( 'http' ) === -1 ? 'http://' : '' ) + m;
 			
-			t	= t.replace( /((https?:\/\/|www\.)[^\s]+)/gim, function(m)
-			{
-				var l	= ( m.indexOf( 'http' ) === -1 ? 'http://' : '' ) + m;
-				
-				return '<a href="' + l + '" class="external">' + m + '</a>';
-			});
+			return '<a href="' + l + '" class="external">' + m + '</a>';
+		});
+		
+		t	= t.replace( /\s?(\@[^\s]+)\s?/gim, function(m)
+		{
+			m		= m.replace( /\s/gim, '' );
 			
-			t	= t.replace( /\s?(\@[^\s]+)\s?/gim, function(m)
-			{
-				m		= m.replace( /\s/gim, '' );
-				
-				var l	= 'http://twitter.com/' + m;
-				
-				return ' <a href="' + l + '" class="external">' + m + '</a> ';
-			});
+			var l	= 'http://twitter.com/' + m;
+			
+			return ' <a href="' + l + '" class="external">' + m + '</a> ';
+		});
 
-			t	= t.replace( /\s?(\#[^\s]+)\s?/gim, function(m)
-			{
-				m		= m.replace( /\s/gim, '' );
-				
-				var l	= 'http://twitter.com/search?q=' + m;
-				
-				return ' <a href="' + l + '" class="external">' + m + '</a> ';
-			});
+		t	= t.replace( /\s?(\#[^\s]+)\s?/gim, function(m)
+		{
+			m		= m.replace( /\s/gim, '' );
 			
-			return t;
-		}
+			var l	= 'http://twitter.com/search?q=' + m;
+			
+			return ' <a href="' + l + '" class="external">' + m + '</a> ';
+		});
+		
+		return t;
+	}
 };
 
 // var _gaq=[['_setAccount','UA-352545-12'],['_trackPageview'],['_trackPageLoadTime']];
