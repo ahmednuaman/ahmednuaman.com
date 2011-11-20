@@ -5,7 +5,7 @@ var S	= {
 	
 	ready														: function()
 	{
-		var h	= document.getElementsByTagName( 'html' )[ 0 ].className	= '';
+		$( 'html' ).removeClass( 'no-js' );
 		
 		S.findTooltips();
 		S.loadPosts();
