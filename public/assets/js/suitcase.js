@@ -1,6 +1,7 @@
 var S	= {
 	cssAnimation												: 'webkitTransitionEnd transitionend oTransitionEnd',
 	months														: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
+	slowLoad													: 5000,
 	
 	ready														: function()
 	{
@@ -28,12 +29,19 @@ var S	= {
 	
 	loadPosts													: function()
 	{
+		var ul	= $( '#posts' );
+		var t	= setTimeout( function()
+		{
+			$( 'li', ul ).append( ' Well, this is magical...' );
+		}, S.slowLoad );
+		
 		$.getJSON( 'http://ahmednuaman.tumblr.com/api/read/json?type=text&filter=text&num=5&callback=?', function(d)
 		{
-			$( '#posts' ).bind( S.cssAnimation, function()
+			clearTimeout( t );
+			
+			ul.bind( S.cssAnimation, function()
 			{
 				var l	= Number( d[ 'posts-total' ] );
-				var ul	= $( this );
 				var i;
 				
 				ul.unbind( S.cssAnimation ).empty();
@@ -64,12 +72,19 @@ var S	= {
 	
 	loadTweets													: function()
 	{
+		var ul	= $( '#tweets' );
+		var t	= setTimeout( function()
+		{
+			$( 'li', ul ).append( ' Well, this is magical...' );
+		}, S.slowLoad );
+		
 		$.getJSON( 'https://api.twitter.com/1/statuses/user_timeline.json?screen_name=ahmednuaman&count=5&callback=?', function(d)
 		{
-			$( '#tweets' ).bind( S.cssAnimation, function()
+			clearTimeout( t );
+			
+			ul.bind( S.cssAnimation, function()
 			{
 				var l	= d.length;
-				var ul	= $( this );
 				var i;
 				
 				ul.unbind( S.cssAnimation ).empty();
@@ -95,7 +110,7 @@ var S	= {
 	
 	prepareLinks												: function(t, i)
 	{
-		t	= t.replace( /&/gim, '&amp;' ).replace( /</gim, '&lt;' ).replace( />/gim, '&gt;' );
+		//t	= t.replace( /&/gim, '&amp;' ).replace( /</gim, '&lt;' ).replace( />/gim, '&gt;' );
 		
 		t	= t.replace( /((https?:\/\/|www\.)[^\s]+)/gim, function(m)
 		{
