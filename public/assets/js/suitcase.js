@@ -10,6 +10,10 @@ var S	= {
 		S.findTooltips();
 		S.loadPosts();
 		S.loadTweets();
+		
+		S.prepareCarousel();
+		
+		S.showPage();
 	},
 	
 	findTooltips												: function()
@@ -138,6 +142,21 @@ var S	= {
 		});
 		
 		return t;
+	},
+	
+	prepareCarousel												: function()
+	{
+		
+	},
+	
+	showPage													: function()
+	{
+		$( '#loader' ).bind( S.cssAnimation, function()
+		{
+			$( this ).remove();
+		}).addClass( 'loading' );
+		
+		$( '#page' ).removeClass( 'loading' );
 	}
 };
 
