@@ -18,16 +18,16 @@ var S	= {
 	
 	findTooltips												: function()
 	{
-		$( '.tooltip:not(.found)' ).each( function()
+		$( '[title]' ).each( function()
 		{
-			var t	= $( this );
-			var p	= t.parent();
+			var a	= $( this );
+			var t	= $( '<span class="tooltip">' + $( this ).attr( 'title' ) + '</span>' ).prepend( '<span class="point"></span>' );
 			
-			t.addClass( 'found' )
-			.prepend( '<span class="point"></span>' )
-			.css({
-				'margin-left'	: ( p.outerWidth() - t.outerWidth() ) * .5 + 'px'
+			t.appendTo( a ).css({
+				'margin-left'	: ( a.outerWidth() - t.outerWidth() ) * .5 + 'px'
 			});
+			
+			a.removeAttr( 'title' );
 		});
 	},
 	
@@ -66,7 +66,7 @@ var S	= {
 	{
 		var d	= new Date( s[ 'date-gmt' ] );
 		
-		return '<li>&rarr; <a href="' + s.url + '">' + s[ 'regular-title' ] + ' ~ ' + S.truncate( s[ 'regular-body' ], 40, ' ...' ) + '</a><span class="tooltip">Posted at ' + d.getHours() + ':' + d.getMinutes() + ' on ' + d.getDate() + ' ' + S.months[ d.getMonth() ] + '</span></li>';
+		return '<li title="Posted at ' + d.getHours() + ':' + d.getMinutes() + ' on ' + d.getDate() + ' ' + S.months[ d.getMonth() ] + '">&rarr; <a href="' + s.url + '">' + s[ 'regular-title' ] + ' ~ ' + S.truncate( s[ 'regular-body' ], 40, ' ...' ) + '</a></li>';
 	},
 	
 	truncate													: function(s, l, a)
@@ -109,7 +109,7 @@ var S	= {
 	{
 		var d	= new Date( s.created_at );
 		
-		return '<li>&rarr; ' + S.prepareLinks( s.text ) + '<span class="tooltip">Posted at ' + d.getHours() + ':' + d.getMinutes() + ' on ' + d.getDate() + ' ' + S.months[ d.getMonth() ] + '</span></li>';
+		return '<li title="Posted at ' + d.getHours() + ':' + d.getMinutes() + ' on ' + d.getDate() + ' ' + S.months[ d.getMonth() ] + '">&rarr; ' + S.prepareLinks( s.text ) + '</li>';
 	},
 	
 	prepareLinks												: function(t, i)
