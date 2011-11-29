@@ -57,6 +57,14 @@
 	background: -webkit-linear-gradient(@colour_from, @colour_to);
 	background: linear-gradient(@colour_from, @colour_to);
 }
+.rotate(@deg:0deg)
+{
+	-webkit-transform: rotate(@deg);
+       -moz-transform: rotate(@deg);
+        -ms-transform: rotate(@deg);
+         -o-transform: rotate(@deg);
+            transform: rotate(@deg);
+}
 .text-shadow(@colour:#000000, @xdir:0px, @ydir:1px, @blur:0px)
 {
 	text-shadow: @xdir @ydir @blur @colour;
@@ -479,9 +487,11 @@ strong
 				.corners();
 				border: 2px solid #ffffff;
 				margin-top: 10px;
-				.ease;
+				.ease(500ms);
 				.glow(rgba(0,0,0,.1), 10px);
 				overflow: hidden;
+				background-size: 100%;
+				background-position: center center;
 				
 				span
 				{
@@ -506,7 +516,7 @@ strong
 			li:last-child
 			{
 				width: 400px;
-				background: #ffffff;
+				background-color: #ffffff;
 				border: none;
 				.corners(50%);
 				
@@ -523,6 +533,8 @@ strong
 			}
 			li:hover
 			{
+				background-size: 110%;
+				
 				h3
 				{
 					opacity: 1;
@@ -531,6 +543,10 @@ strong
 				{
 					bottom: 0;
 				}
+			}
+			li:last-child:hover
+			{
+				.rotate(360deg);
 			}
 		}
 	}
