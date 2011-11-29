@@ -489,7 +489,7 @@ strong
 				.corners();
 				border: 2px solid #ffffff;
 				margin-top: 10px;
-				.ease(500ms);
+				.ease(500ms, e('background-size, transform'));
 				.glow(rgba(0,0,0,.1), 10px);
 				overflow: hidden;
 				background-size: 100%;
@@ -497,7 +497,7 @@ strong
 				
 				span
 				{
-					.ease(750ms);
+					.ease(750ms,bottom);
 					.absolute;
 					background: #ffffff;
 					bottom: -400px;
