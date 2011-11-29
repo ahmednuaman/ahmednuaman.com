@@ -36,12 +36,20 @@
 	-moz-border-radius: @radius;
 	border-radius: @radius;
 }
-.ease(@time:400ms)
+.ease(@time:400ms, @prop:all)
 {
-	-webkit-transition: all @time cubic-bezier(0.770, 0.000, 0.175, 1.000); 
-	   -moz-transition: all @time cubic-bezier(0.770, 0.000, 0.175, 1.000); 
-	     -o-transition: all @time cubic-bezier(0.770, 0.000, 0.175, 1.000); 
-	        transition: all @time cubic-bezier(0.770, 0.000, 0.175, 1.000); /* easeInOutQuart */
+	-webkit-transition-property: @prop;
+	-webkit-transition-duration: @time;
+	-webkit-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000); 
+	-moz-transition-property: @prop;
+	-moz-transition-duration: @time;
+	-moz-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000); 
+	-o-transition-property: @prop;
+	-o-transition-duration: @time;
+	-o-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000); 
+	transition-property: @prop;
+	transition-duration: @time;
+	transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
 }
 .glow(@colour:#000000, @size:5px, @x:0, @y:0)
 {
@@ -92,12 +100,12 @@
 }
 .fadeIn
 {
-	.ease(750ms);
+	.ease(750ms, opacity);
 	opacity: 0;
 }
 .fadeOut
 {
-	.ease(750ms);
+	.ease(750ms, opacity);
 	opacity: 0;
 }
 .fixed
@@ -166,7 +174,7 @@
 .tooltip
 {
 	.absolute;
-	.ease(200ms);
+	.ease(200ms, e('opacity, margin-top'));
 	.corners;
 	.text-shadow(#000000);
 	.glow(#999999);
@@ -226,24 +234,21 @@ a
 {
 	font-size: 9pt;
 	line-height: normal;
+	text-decoration: none;
+	.box-shadow(#ffffff);
+	.ease(500ms, e('border-bottom, color'));
 }
 a:link,
 a:visited
 {
 	color: #666666;
 	border-bottom: 1px solid #666666;
-	text-decoration: none;
-	.ease;
-	.box-shadow(#ffffff);
 }
 a:hover,
 a:active
 {
 	color: @colour_blue;
 	border-bottom: 3px solid @colour_blue;
-	text-decoration: none;
-	.ease;
-	.box-shadow(#ffffff);
 }
 a,
 li
@@ -251,7 +256,6 @@ li
 	span.tooltip
 	{
 		margin-top: 0;
-		.ease(250ms);
 		opacity: 0;
 	}
 }
@@ -333,7 +337,7 @@ strong
 /* Structure */
 #page
 {
-	.ease;
+	.ease(500ms, opacity);
 }
 #header
 {
@@ -342,7 +346,6 @@ strong
 	h1
 	{
 		.left;
-		.ease;
 	}
 	#nav
 	{
@@ -390,7 +393,7 @@ strong
 		border: none;
 		width: 100px;
 		height: 60px;
-		.ease;
+		.ease(400ms, e('box-shadow, left, right'));
 		
 		span
 		{
@@ -446,7 +449,6 @@ strong
 	#arrowleft:active,
 	#arrowright:active
 	{
-		.ease(50ms);
 		.gradient(#eeeeee, #ffffff);
 		.box-shadow(@colour_blue, 0px, 1px, 3px);
 		
