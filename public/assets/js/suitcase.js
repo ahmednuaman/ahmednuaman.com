@@ -1,4 +1,6 @@
 var S	= {
+	carouselIndex												: -1,
+	carouselSets												: [ ],
 	cssAnimation												: 'webkitTransitionEnd transitionend oTransitionEnd',
 	months														: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
 	slowLoad													: 5000,
@@ -146,7 +148,29 @@ var S	= {
 	
 	prepareCarousel												: function()
 	{
+		S.carouselSets	= $( '#holder > ul > li' );
 		
+		$( '#arrowleft, #arrowright' ).click( function(e)
+		{
+			S.carouselIndex	= S.carouselIndex + ( e.currentTarget.id === 'arrowleft' ? -1 : 1 );
+			
+			if ( S.carouselIndex < 0 )
+			{
+				S.carouselIndex	= S.carouselSets.length - 1;
+			}
+			
+			if ( S.carouselIndex >= S.carouselSets.length )
+			{
+				S.carouselIndex	= 0;
+			}
+			
+			S.showCarouselSet();
+		}).eq( 1 ).click();
+	},
+	
+	showCarouselSet												: function()
+	{
+		console.log(S.carouselIndex);
 	},
 	
 	showPage													: function()
