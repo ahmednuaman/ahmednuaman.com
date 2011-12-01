@@ -41,7 +41,7 @@ ob_start();
 	</body>
 </html>
 <?php
-$h	= ob_get_contents();
+$h	= preg_replace( '/\s{2,}/im', '', ob_get_contents() );
 
 ob_end_flush();
 
