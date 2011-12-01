@@ -1,7 +1,4 @@
 var S	= {
-	carouselAnimating											: false,
-	carouselIndex												: -1,
-	carouselSets												: [ ],
 	cssAnimation												: 'webkitAnimationEnd animationend oAnimationEnd',
 	cssTransition												: 'webkitTransitionEnd transitionend oTransitionEnd',
 	months														: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
@@ -14,10 +11,6 @@ var S	= {
 		S.findTooltips();
 		S.loadPosts();
 		S.loadTweets();
-		
-		S.prepareCarousel();
-		
-		S.showPage();
 	},
 	
 	findTooltips												: function()
@@ -146,78 +139,6 @@ var S	= {
 		});
 		
 		return t;
-	},
-	
-	prepareCarousel												: function()
-	{
-		S.carouselSets	= $( '#holder > ul > li' ).addClass( 'hide' );
-		
-		$( '#arrowleft, #arrowright' ).click( function(e)
-		{
-			if ( S.carouselAnimating )
-			{
-				return;
-			}
-			
-			var c	= S.carouselIndex;
-			
-			S.carouselIndex	= S.carouselIndex + ( e.currentTarget.id === 'arrowleft' ? -1 : 1 );
-			
-			if ( S.carouselIndex < 0 )
-			{
-				S.carouselIndex	= S.carouselSets.length - 1;
-			}
-			
-			if ( S.carouselIndex >= S.carouselSets.length )
-			{
-				S.carouselIndex	= 0;
-			}
-			
-			S.showCarouselSet( c, e.currentTarget.id === 'arrowleft' );
-		}).eq( 1 ).click();
-	},
-	
-	showCarouselSet												: function(ci, l)
-	{
-		var c	= S.carouselSets.eq( ci );
-		
-		S.carouselAnimating	= true;
-		
-		if ( ci > -1 )
-		{
-			c.bind( S.cssAnimation, function()
-			{
-				c.unbind( S.cssAnimation ).removeAttr( 'class' ).addClass( 'hide' );
-				
-				S.showNextCarouselSet();
-			}).addClass( 'leave' + ( l ? 'left' : 'right' ) );
-		}
-		else
-		{
-			S.showNextCarouselSet();
-		}
-	},
-	
-	showNextCarouselSet											: function()
-	{
-		var n	= S.carouselSets.eq( S.carouselIndex );
-		
-		n.bind( S.cssAnimation, function()
-		{
-			n.unbind( S.cssAnimation ).removeAttr( 'class' );
-			
-			S.carouselAnimating	= false;
-		}).removeClass( 'hide' ).addClass( 'enter' /*+ ( !l ? 'left' : 'right' )*/ );
-	},
-	
-	showPage													: function()
-	{
-		$( '#loader' ).bind( S.cssTransition, function()
-		{
-			$( this ).remove().unbind( S.cssTransition );
-		}).addClass( 'loading' );
-		
-		$( '#page' ).removeClass( 'loading' );
 	}
 };
 
