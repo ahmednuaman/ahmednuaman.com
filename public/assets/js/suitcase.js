@@ -1,7 +1,9 @@
 var S	= {
+	carouselAnimating											: false,
 	carouselIndex												: -1,
 	carouselSets												: [ ],
-	cssAnimation												: 'webkitTransitionEnd transitionend oTransitionEnd',
+	cssAnimation												: 'webkitAnimationEnd animationend oAnimationEnd',
+	cssTransition												: 'webkitTransitionEnd transitionend oTransitionEnd',
 	months														: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
 	slowLoad													: 5000,
 	
@@ -41,16 +43,16 @@ var S	= {
 			$( 'li', ul ).append( ' Well, this is magical...' );
 		}, S.slowLoad );
 		
-		$.getJSON( 'http://ahmednuaman.tumblr.com/api/read/json?type=text&filter=text&num=5&callback=?', function(d)
+		var r	= $.getJSON( 'http://ahmednuaman.tumblr.com/api/read/json?type=text&filter=text&num=5&callback=?', function(d)
 		{
 			clearTimeout( t );
 			
-			ul.bind( S.cssAnimation, function()
+			ul.bind( S.cssTransition, function()
 			{
 				var l	= Number( d[ 'posts-total' ] );
 				var i;
 				
-				ul.unbind( S.cssAnimation ).empty();
+				ul.unbind( S.cssTransition ).empty();
 				
 				for ( i = 0; i < l; i++ )
 				{
@@ -84,16 +86,16 @@ var S	= {
 			$( 'li', ul ).append( ' Well, this is magical...' );
 		}, S.slowLoad );
 		
-		$.getJSON( 'https://api.twitter.com/1/statuses/user_timeline.json?screen_name=ahmednuaman&count=5&callback=?', function(d)
+		var r	= $.getJSON( 'https://api.twitter.com/1/statuses/user_timeline.json?screen_name=ahmednuaman&count=5&callback=?', function(d)
 		{
 			clearTimeout( t );
 			
-			ul.bind( S.cssAnimation, function()
+			ul.bind( S.cssTransition, function()
 			{
 				var l	= d.length;
 				var i;
 				
-				ul.unbind( S.cssAnimation ).empty();
+				ul.unbind( S.cssTransition ).empty();
 				
 				for ( i = 0; i < l; i++ )
 				{
@@ -148,10 +150,17 @@ var S	= {
 	
 	prepareCarousel												: function()
 	{
-		S.carouselSets	= $( '#holder > ul > li' );
+		S.carouselSets	= $( '#holder > ul > li' ).addClass( 'hide' );
 		
 		$( '#arrowleft, #arrowright' ).click( function(e)
 		{
+			if ( S.carouselAnimating )
+			{
+				return;
+			}
+			
+			var c	= S.carouselIndex;
+			
 			S.carouselIndex	= S.carouselIndex + ( e.currentTarget.id === 'arrowleft' ? -1 : 1 );
 			
 			if ( S.carouselIndex < 0 )
@@ -164,20 +173,48 @@ var S	= {
 				S.carouselIndex	= 0;
 			}
 			
-			S.showCarouselSet();
+			S.showCarouselSet( c, e.currentTarget.id === 'arrowleft' );
 		}).eq( 1 ).click();
 	},
 	
-	showCarouselSet												: function()
+	showCarouselSet												: function(ci, l)
 	{
-		console.log(S.carouselIndex);
+		var c	= S.carouselSets.eq( ci );
+		
+		S.carouselAnimating	= true;
+		
+		if ( ci > -1 )
+		{
+			c.bind( S.cssAnimation, function()
+			{
+				c.unbind( S.cssAnimation ).removeAttr( 'class' ).addClass( 'hide' );
+				
+				S.showNextCarouselSet();
+			}).addClass( 'leave' + ( l ? 'left' : 'right' ) );
+		}
+		else
+		{
+			S.showNextCarouselSet();
+		}
+	},
+	
+	showNextCarouselSet											: function()
+	{
+		var n	= S.carouselSets.eq( S.carouselIndex );
+		
+		n.bind( S.cssAnimation, function()
+		{
+			n.unbind( S.cssAnimation ).removeAttr( 'class' );
+			
+			S.carouselAnimating	= false;
+		}).removeClass( 'hide' ).addClass( 'enter' /*+ ( !l ? 'left' : 'right' )*/ );
 	},
 	
 	showPage													: function()
 	{
-		$( '#loader' ).bind( S.cssAnimation, function()
+		$( '#loader' ).bind( S.cssTransition, function()
 		{
-			$( this ).remove();
+			$( this ).remove().unbind( S.cssTransition );
 		}).addClass( 'loading' );
 		
 		$( '#page' ).removeClass( 'loading' );
