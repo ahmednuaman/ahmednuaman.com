@@ -1,0 +1,37 @@
+[
+	{
+	    "href": "#work",
+	    "name": "Work",
+	    "title": "New and noteable projects"
+	},
+	{
+	    "href": "#bio",
+	    "name": "Bio",
+	    "title": "Read all about me"
+	},
+	{
+	    "href": "http://careers.stackoverflow.com/ahmednuaman",
+	    "name": "CV",
+	    "title": "Or resume as they say in America"
+	},
+	{
+	    "href": "http://github.com/ahmednuaman",
+	    "name": "Github",
+	    "title": "Check out my coding skillz"
+	},
+	{
+	    "href": "http://blog.ahmednuaman.com",
+	    "name": "Blog",
+	    "title": "Read my rants"
+	},
+	{
+	    "href": "http://twitter.com/ahmednuaman",
+	    "name": "Twitter",
+	    "title": "Read my 140 character rants"
+	},
+	{
+	    "href": "#contact",
+	    "name": "Contact",
+	    "title": "You know you want to"
+	}
+]
