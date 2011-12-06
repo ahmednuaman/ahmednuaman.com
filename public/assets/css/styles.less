@@ -100,6 +100,8 @@ textarea {
 .georgia()
 {
 	font-family: 'Georgia', Times, sans;
+	font-weight: lighter;
+	font-style: italic;
 }
 
 /* Less Classes */
@@ -255,6 +257,11 @@ html
 {
 	margin: 0;
 	padding: 0;
+	overflow-x: hidden;
+	width: 100%;
+	height: 100%;
+	background-attachment: fixed;
+	.gradient(#0080ff, #0064c8);
 }
 a,
 body,
@@ -265,7 +272,7 @@ h3,
 p
 {
 	font-family: Helvetica, Arial, sans-serif;
-	color: #333333;
+	color: rgba(255, 255, 255, .85);
 	font-size: 9pt;
 	line-height: 13pt;
 }
@@ -273,19 +280,20 @@ a
 {
 	font-size: 9pt;
 	line-height: normal;
+	.ease(e('color, border-bottom'), .5s);
 }
 a:link,
 a:visited
 {
-	color: #666666;
-	border-bottom: 1px solid #666666;
+	color: #ffffff;
+	border-bottom: 1px solid #ffffff;
 	text-decoration: none;
 }
 a:hover,
 a:active
 {
-	color: #999999;
-	border-bottom: 1px solid #999999;
+	color: rgba(255, 255, 255, .5);
+	border-bottom: 1px solid rgba(255, 255, 255, 0);
 	text-decoration: none;
 }
 em
@@ -297,21 +305,30 @@ h2,
 h3
 {
 	line-height: normal;
+	color: rgba(255, 255, 255, .8);
+	.text-shadow(rgba(0, 0, 0, .3), 0, 1px, 3px);
 }
 h1
 {
-	font-size: 22pt;
+	font-size: 52pt;
+	font-weight: bolder;
+	letter-spacing: -3px;
 }
 h2
 {
-	font-size: 18pt;
+	font-size: 11pt;
+	.georgia;
 }
 h3
 {
 	font-size: 16pt;
 }
 h1,
-h2,
+h2
+{
+	text-align: center;
+	margin-top: 15px;
+}
 h3,
 p
 {
@@ -330,7 +347,58 @@ strong
 }
 
 /* Structure */
+#container
+{
+	.relative;
+	margin: 0 auto;
+	max-width: 960px;
+	padding: 20px;
+	
+	#intro
+	{
+		hr
+		{
+			.box-shadow(rgba(0, 0, 0, .3), 0, 1px, 3px);
+			border: none;
+			height: 1px;
+			background: rgba(255, 255, 255, .6);
+			width: 50%;
+		}
+	}
+	#menu
+	{
+		
+	}
+}
 
 /* Browser specific */
 
 /* Media queries */
+@media (max-width:768px)
+{
+	h1
+	{
+		font-size: 36pt;
+	}
+}
+@media (max-width:640px)
+{
+	h1
+	{
+		font-size: 30pt;
+	}
+}
+@media (max-width:480px)
+{
+	h1
+	{
+		font-size: 26pt;
+	}
+}
+@media (max-width:320px)
+{
+	h1
+	{
+		font-size: 22pt;
+	}
+}

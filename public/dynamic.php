@@ -1,7 +1,14 @@
 <?php
-function get_json($s)
+function get_json($s, $r=false)
 {
-	return json_decode( file_get_contents( $s ) );
+	$a	= json_decode( file_get_contents( $s ) );
+	
+	if ( is_array( $a ) && $r )
+	{
+		krsort( $a );
+	}
+	
+	return $a;
 }
 
 ob_start();
@@ -24,6 +31,7 @@ ob_start();
 				<h1>
 					Ahmed Nuaman
 				</h1>
+				<hr />
 				<h2>
 					builder of internets ~ developer of dreams ~ tamer of Dachshunds
 				</h2>
@@ -41,7 +49,7 @@ ob_start();
 			</div>
 			<div id="work">
 				<ul>
-					<?php foreach ( get_json( './assets/data/work.json' ) as $v ): ?>
+					<?php foreach ( get_json( './assets/data/work.json', true ) as $v ): ?>
 						<li id="work-<?php echo $v->name; ?>">
 							<div class="thumbnail" style="background-image:url(/assets/image/project/<?php echo $v->name; ?>.jpg)"></div>
 							<div class="info">
