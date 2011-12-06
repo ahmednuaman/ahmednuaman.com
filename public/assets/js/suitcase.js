@@ -21,7 +21,7 @@ var S	= {
 			var t	= $( '<span class="tooltip">' + $( this ).attr( 'title' ) + '</span>' ).prepend( '<span class="point"></span>' );
 			
 			t.appendTo( a ).css({
-				'margin-left'	: ( a.outerWidth() - t.outerWidth() ) * .5 + 'px'
+				'margin-left'	: ( a.width() - t.outerWidth() ) * .5 + 'px'
 			});
 			
 			a.removeAttr( 'title' );

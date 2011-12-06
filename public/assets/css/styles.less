@@ -258,7 +258,7 @@ textarea {
 	.text-shadow(#000000);
 	.glow(rgba(0,0,0,.5);
 	pointer-events: none;
-	background: #333333;
+	background: rgba(0, 0, 0, .8);
 	padding: 5px;
 	margin-top: 10px;
 	color: #ffffff;
@@ -277,7 +277,7 @@ textarea {
 		line-height: 0;
 		padding: 0;
 		border: 5px solid transparent;
-		border-bottom: 5px solid #333333;
+		border-bottom: 5px solid rgba(0, 0, 0, .8);
 		margin: -15px 0 0 44%;
 		background: transparent;
 	}
@@ -301,17 +301,20 @@ div,
 h1,
 h2,
 h3,
-p
+p,
+.tooltip
 {
 	font-family: Helvetica, Arial, sans-serif;
 	color: rgba(255, 255, 255, .85);
 	font-size: 9pt;
 	line-height: 13pt;
+	font-style: normal;
 }
 a
 {
 	font-size: 9pt;
 	line-height: normal;
+	.text-shadow(rgba(0, 0, 0, .3), 0, 1px, 3px);
 	.ease(e('color, border-bottom'), .5s);
 }
 a:link,
@@ -349,7 +352,7 @@ h2,
 h3
 {
 	line-height: normal;
-	color: rgba(255, 255, 255, .8);
+	color: rgba(255, 255, 255, .85);
 	.text-shadow(rgba(0, 0, 0, .3), 0, 1px, 3px);
 }
 h1
@@ -366,6 +369,7 @@ h2
 h3
 {
 	font-size: 16pt;
+	.georgia;
 }
 h1,
 h2
@@ -402,6 +406,7 @@ strong
 	{
 		hr
 		{
+			.ease(width);
 			.box-shadow(rgba(0, 0, 0, .3), 0, 1px, 3px);
 			border: none;
 			height: 1px;
@@ -409,9 +414,27 @@ strong
 			width: 50%;
 		}
 	}
+	#intro:hover
+	{
+		hr
+		{
+			width: 80%;
+		}
+	}
 	#menu
 	{
+		height: 90px;
+		margin-top: 20px;
+		text-align: center;
 		
+		a
+		{
+			.georgia;
+			font-size: 14pt;
+			display: inline-block;
+			border: none;
+			padding: 15px 25px;
+		}
 	}
 }
 

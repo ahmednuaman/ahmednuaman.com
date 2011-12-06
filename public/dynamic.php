@@ -37,15 +37,11 @@ ob_start();
 				</h2>
 			</div>
 			<div id="menu">
-				<ul>
-					<?php foreach ( get_json( './assets/data/menu.json' ) as $v ): ?>
-						<li>
-							<a href="<?php echo $v->href; ?>" title="<?php echo $v->title; ?>">
-								<?php echo $v->name; ?>
-							</a>
-						</li>
-					<?php endforeach; ?>
-				</ul>
+				<?php foreach ( get_json( './assets/data/menu.json' ) as $v ): ?>
+					<a href="<?php echo $v->href; ?>" title="<?php echo $v->title; ?>">
+						<?php echo $v->name; ?>
+					</a>
+				<?php endforeach; ?>
 			</div>
 			<div id="work">
 				<ul>
