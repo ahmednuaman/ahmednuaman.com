@@ -250,6 +250,38 @@ textarea {
 }
 
 /* Structure Classes */
+.tooltip
+{
+	.absolute;
+	.ease(e('opacity, margin-top'), .5s);
+	.corners;
+	.text-shadow(#000000);
+	.glow(rgba(0,0,0,.5);
+	pointer-events: none;
+	background: #333333;
+	padding: 5px;
+	margin-top: 10px;
+	color: #ffffff;
+	text-align: center;
+	.bold;
+	.top;
+	
+	.point
+	{
+		.absolute;
+		.corners(0px);
+		.glow(transparent,0,0,0);
+		height: 0;
+		width: 0;
+		font-size: 0;
+		line-height: 0;
+		padding: 0;
+		border: 5px solid transparent;
+		border-bottom: 5px solid #333333;
+		margin: -15px 0 0 44%;
+		background: transparent;
+	}
+}
 
 /* Tags */
 body,
@@ -288,6 +320,12 @@ a:visited
 	color: #ffffff;
 	border-bottom: 1px solid #ffffff;
 	text-decoration: none;
+	
+	span.tooltip
+	{
+		margin-top: 0;
+		opacity: 0;
+	}
 }
 a:hover,
 a:active
@@ -295,6 +333,12 @@ a:active
 	color: rgba(255, 255, 255, .5);
 	border-bottom: 1px solid rgba(255, 255, 255, 0);
 	text-decoration: none;
+	
+	span.tooltip
+	{
+		margin-top: 10px;
+		opacity: 1;
+	}
 }
 em
 {
