@@ -20,6 +20,14 @@ ob_start();
 	</head>
 	<body>
 		<div id="container">
+			<div id="intro">
+				<h1>
+					Ahmed Nuaman
+				</h1>
+				<h2>
+					builder of internets ~ developer of dreams ~ tamer of Dachshunds
+				</h2>
+			</div>
 			<div id="menu">
 				<ul>
 					<?php foreach ( get_json( './assets/data/menu.json' ) as $v ): ?>
@@ -31,10 +39,29 @@ ob_start();
 					<?php endforeach; ?>
 				</ul>
 			</div>
-			<div id="intro">
-				<h1>Hi, I'm Ahmed. I design and build web sites and apps.</h1>
-			</div>
 			<div id="work">
+				<ul>
+					<?php foreach ( get_json( './assets/data/work.json' ) as $v ): ?>
+						<li id="work-<?php echo $v->name; ?>">
+							<div class="thumbnail" style="background-image:url(/assets/image/project/<?php echo $v->name; ?>.jpg)"></div>
+							<div class="info">
+								<h3>
+									<?php echo $v->title; ?>
+								</h3>
+								<p>
+									<?php echo $v->description; ?>
+								</p>
+								<?php if ( @$v->href ): ?>
+									<p>
+										<a href="<?php echo $v->href; ?>">View the project &raquo;</a>
+									</p>
+								<?php endif; ?>
+							</div>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+			<div id="bio">
 				
 			</div>
 		</div>
