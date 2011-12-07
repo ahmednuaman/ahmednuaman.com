@@ -83,7 +83,7 @@ ob_start();
 							Nowadays I freelance bouncing from project to project. I love it because with the uncertainty of work and the pressure of short deadlines allow me to stay driven to never say no. I love learning new things and I love working on projects that'll push me.
 						</p>
 						<p>
-							<a href="mailto:ahmed@ahmednuaman.com?subject=Enquiry%20from%20web%20site" title="I make benefit for your glorious project">So, how about hiring me?</a>. I usually work remotely at home in my pants but I understand that from time to time I need to shave and clothe myself to come in for meetings, which is cool as I've got a mighty Brompton!
+							<a href="mailto:ahmed@ahmednuaman.com?subject=Enquiry%20from%20web%20site&amp;body=Hi%20Ahmed%2C%20we%20want%20you%20to%20make%20benefit%20to%20our%20glorious%20project..." title="I make benefit for your glorious project">So, how about hiring me?</a>. I usually work remotely at home in my pants but I understand that from time to time I need to shave and clothe myself to come in for meetings, which is cool as I've got a mighty Brompton!
 						</p>
 					</div>
 				</div>
