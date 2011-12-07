@@ -12,6 +12,7 @@ var S	= {
 		S.loadPosts();
 		S.loadTweets();
 		S.drawGradients();
+		S.addLettering();
 	},
 	
 	findTooltips												: function()
@@ -169,6 +170,11 @@ var S	= {
 			c.fill();
 			c.restore();
 		});
+	},
+	
+	addLettering												: function()
+	{
+		$( 'h1' ).lettering();
 	}
 };
 

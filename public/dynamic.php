@@ -72,6 +72,7 @@ ob_start();
 			</div>
 		</div>
 		<script src="/assets/js/jquery.js"></script>
+		<script src="/assets/js/jquery.lettering.js"></script>
 		<script src="/assets/js/suitcase.js"></script>
 	</body>
 </html>
