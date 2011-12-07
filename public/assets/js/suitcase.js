@@ -24,7 +24,7 @@ var S	= {
 	{
 		$( '[title]' ).each( function()
 		{
-			var a	= $( this ); console.log(a);
+			var a	= $( this );
 			var t	= $( '<span class="tooltip">' + $( this ).attr( 'title' ) + '</span>' ).prepend( '<span class="point"></span>' );
 			
 			t.appendTo( a ).css({
