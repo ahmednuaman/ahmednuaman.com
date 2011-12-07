@@ -138,7 +138,7 @@ textarea {
 	-moz-border-radius: @radius;
 	border-radius: @radius;
 }
-.ease(@prop:all, @time:1s)
+.ease(@prop:all, @time:.5s)
 {
 	-webkit-transition-property: @prop;
 	-webkit-transition-duration: @time;
@@ -259,7 +259,7 @@ textarea {
 .tooltip
 {
 	.absolute;
-	.ease(e('opacity, margin-top'), .5s);
+	.ease(e('opacity, margin-top'));
 	.corners;
 	.text-shadow(#000000);
 	.glow(rgba(0,0,0,.5);
@@ -321,7 +321,7 @@ a
 	font-size: 9pt;
 	line-height: normal;
 	.text-shadow(rgba(0, 0, 0, .3), 0, 1px, 3px);
-	.ease(e('color, border-bottom'), .5s);
+	.ease(e('color, border-bottom'));
 }
 a:link,
 a:visited
@@ -454,14 +454,28 @@ strong
 				.left;
 				width: 620px;
 				height: 383px;
+				background-position: center;
+				background-size: 100%;
 				.corners;
 				.box-shadow(rgba(0, 0, 0, .3), 0, 3px, 5px);
+				.ease(e('background-size, box-shadow'));
 				
 				canvas
 				{
 					.absolute;
+					.ease(opacity);
 					width: 620px;
 					height: 383px;
+				}
+			}
+			.thumbnail:hover
+			{
+				background-size: 105%;
+				.box-shadow(rgba(0, 0, 0, .7), 0, 3px, 10px);
+				
+				canvas
+				{
+					opacity: 0;
 				}
 			}
 			.info
