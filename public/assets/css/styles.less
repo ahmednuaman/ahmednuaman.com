@@ -165,6 +165,7 @@ textarea {
 }
 .gradient(@colour_from:#FFFFFF, @colour_to:#BBBBBB, @dir:bottom)
 {
+	background: @colour_from;
 	background-image: linear-gradient(@dir, @colour_from, @colour_to);
 	background-image: -o-linear-gradient(@dir, @colour_from, @colour_to);
 	background-image: -moz-linear-gradient(@dir, @colour_from, @colour_to);
@@ -173,11 +174,11 @@ textarea {
 }
 .gradient-radial(@colour_from:#FFFFFF, @colour_to:#BBBBBB, @p_from:0%, @p_to:100%)
 {
-	background: -moz-radial-gradient(center, ellipse cover, @colour_from @p_from, @colour_to @p_to);
-	background: -webkit-radial-gradient(center, ellipse cover, @colour_from @p_from,@colour_to @p_to);
-	background: -o-radial-gradient(center, ellipse cover, @colour_from @p_from,@colour_to @p_to);
-	background: -ms-radial-gradient(center, ellipse cover, @colour_from @p_from,@colour_to @p_to);
-	background: radial-gradient(center, ellipse cover, @colour_from @p_from,@colour_to @p_to);
+	background-image: -moz-radial-gradient(center, ellipse cover, @colour_from @p_from, @colour_to @p_to);
+	background-image: -webkit-radial-gradient(center, ellipse cover, @colour_from @p_from,@colour_to @p_to);
+	background-image: -o-radial-gradient(center, ellipse cover, @colour_from @p_from,@colour_to @p_to);
+	background-image: -ms-radial-gradient(center, ellipse cover, @colour_from @p_from,@colour_to @p_to);
+	background-image: radial-gradient(center, ellipse cover, @colour_from @p_from,@colour_to @p_to);
 }
 .transform(@trans)
 {
@@ -591,6 +592,7 @@ strong
 		li
 		{
 			.left;
+			width: 100%;
 			margin-bottom: 60px;
 			
 			.thumbnail
@@ -654,7 +656,7 @@ strong
 			.left;
 			width: 460px;
 		}
-		> div:first-of-type,
+		> div:first-child,
 		div.col:first-of-type
 		{
 			margin-right: 20px;
@@ -708,6 +710,60 @@ strong
 	h1
 	{
 		font-size: 36pt;
+	}
+	#container
+	{
+		#menu
+		{
+			#menubar
+			{
+				a
+				{
+					margin-left: 10px;
+					margin-right: 10px;
+				}
+			}
+		}
+		#work
+		{
+			li,
+			li:nth-child(even)
+			{
+				.thumbnail,
+				.info
+				{
+					.relative;
+					float: none !important;
+					margin: 0 auto 20px;
+				}
+				.info
+				{
+					width: auto;
+					margin: 0 auto;
+					width: 620px;
+				}
+			}
+		}
+		#bio
+		{
+			> div
+			{
+				width: 300px;
+			}
+			> div:first-child
+			{
+				margin-left: 53px;
+			}
+			div.col
+			{
+				width: 100%;
+				margin: 0 0 20px 0;
+			}
+			div.cols
+			{
+				.cols(1);
+			}
+		}
 	}
 }
 @media (max-width:640px)

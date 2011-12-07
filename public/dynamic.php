@@ -19,7 +19,7 @@ ob_start();
 		<meta charset="utf-8" />
 		<meta name="description" content="Ahmed Nuaman's super awesome portfolio of web stuffs" />
 		<meta name="author" content="Ahmed Nuaman" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
 		<link type="text/css" rel="stylesheet" href="/assets/css/animation.css" />
 		<link type="text/css" rel="stylesheet" href="/assets/css/styles.css" />
 		<link type="text/plain" rel="author" href="/humans.txt" />
