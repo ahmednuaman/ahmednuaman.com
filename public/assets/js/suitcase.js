@@ -147,7 +147,13 @@ var S	= {
 		$( '.thumbnail canvas' ).each( function()
 		{
 			var c	= $( this ).get( 0 ).getContext( '2d' );
+			var p	= $( this ).parent();
 			var g;
+			
+			$( this ).attr({
+				height	: p.outerHeight(),
+				width	: p.outerWidth()
+			});
 			
 			c.save();
 			c.beginPath();
