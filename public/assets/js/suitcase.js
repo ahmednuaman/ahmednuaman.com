@@ -1,6 +1,7 @@
 var S	= {
 	cssAnimation												: 'webkitAnimationEnd animationend oAnimationEnd',
 	cssTransition												: 'webkitTransitionEnd transitionend oTransitionEnd',
+	menuY														: 0,
 	months														: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
 	slowLoad													: 5000,
 	
@@ -13,6 +14,10 @@ var S	= {
 		S.loadTweets();
 		S.drawGradients();
 		S.addLettering();
+		
+		S.menuY	= $( '#menubar' ).offset().top;
+		
+		$( window ).scroll( S.handleScrolling );
 	},
 	
 	findTooltips												: function()
@@ -175,6 +180,24 @@ var S	= {
 	addLettering												: function()
 	{
 		$( 'h1' ).lettering();
+	},
+	
+	handleScrolling												: function(e)
+	{
+		var c	= 'fixed';
+		var m	= $( '#menubar' );
+		var t	= m.hasClass( c );
+		var y	= e.currentTarget.pageYOffset;
+		
+		if ( !t && y > S.menuY )
+		{
+			m.addClass( c );
+		}
+		
+		if ( y <= S.menuY )
+		{
+			m.removeClass( c );
+		}
 	}
 };
 
