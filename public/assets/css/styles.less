@@ -113,6 +113,12 @@ textarea {
 	-o-animation: @time @name;
 	animation: @time @name;
 }
+.background-clip(@prop)
+{
+	-webkit-background-clip: @prop;
+	-moz-background-clip: @prop;
+	background-clip: @prop;
+}
 .box-shadow(@colour:#000000, @xdir:0px, @ydir:1px, @blur:0px)
 {
 	box-shadow: @xdir @ydir @blur @colour;
@@ -423,7 +429,7 @@ strong
 	}
 	#menu
 	{
-		height: 90px;
+		height: 100px;
 		margin-top: 20px;
 		text-align: center;
 		
@@ -434,6 +440,48 @@ strong
 			display: inline-block;
 			border: none;
 			padding: 15px 25px;
+		}
+	}
+	#work
+	{
+		li
+		{
+			.left;
+			margin-bottom: 60px;
+			
+			.thumbnail
+			{
+				.left;
+				width: 620px;
+				height: 383px;
+				.corners;
+				.box-shadow(rgba(0, 0, 0, .3), 0, 3px, 5px);
+				
+				canvas
+				{
+					.absolute;
+					width: 620px;
+					height: 383px;
+				}
+			}
+			.info
+			{
+				width: 300px;
+				.right;
+				margin: 0 0 0 20px;
+			}
+		}
+		li:nth-child(even)
+		{
+			.thumbnail
+			{
+				.right;
+			}
+			.info
+			{
+				.left;
+				margin: 0 20px 0 0;
+			}
 		}
 	}
 }

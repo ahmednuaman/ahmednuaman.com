@@ -11,6 +11,7 @@ var S	= {
 		S.findTooltips();
 		S.loadPosts();
 		S.loadTweets();
+		S.drawGradients();
 	},
 	
 	findTooltips												: function()
@@ -139,6 +140,29 @@ var S	= {
 		});
 		
 		return t;
+	},
+	
+	drawGradients												: function()
+	{
+		$( '.thumbnail canvas' ).each( function()
+		{
+			var c	= $( this ).get( 0 ).getContext( '2d' );
+			var g;
+			
+			c.save();
+			c.beginPath();
+			c.moveTo(0.0, 383.0);
+			c.bezierCurveTo(0.0, 337.5, 0.0, 0.0, 0.0, 0.0);
+			c.bezierCurveTo(0.0, 0.0, 501.5, 0.0, 620.0, 0.0);
+			c.bezierCurveTo(323.5, 54.0, 113.5, 191.5, 0.0, 383.0);
+			c.closePath();
+			g = c.createLinearGradient(87.6, -73.5, 343.8, 231.8);
+			g.addColorStop(0.00, 'rgba(255, 255, 255, .05)');
+			g.addColorStop(1.00, 'rgba(255, 255, 255, .15)');
+			c.fillStyle = g;
+			c.fill();
+			c.restore();
+		});
 	}
 };
 

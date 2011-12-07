@@ -47,7 +47,9 @@ ob_start();
 				<ul>
 					<?php foreach ( get_json( './assets/data/work.json', true ) as $v ): ?>
 						<li id="work-<?php echo $v->name; ?>">
-							<div class="thumbnail" style="background-image:url(/assets/image/project/<?php echo $v->name; ?>.jpg)"></div>
+							<div class="thumbnail" style="background-image:url(/assets/image/project/<?php echo $v->name; ?>.jpg)">
+								<canvas width="620" height="383"></canvas>
+							</div>
 							<div class="info">
 								<h3>
 									<?php echo $v->title; ?>
