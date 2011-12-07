@@ -17,14 +17,14 @@ var S	= {
 		
 		S.menuY	= $( '#menubar' ).offset().top;
 		
-		$( window ).scroll( S.handleScrolling );
+		$( window ).scroll( S.handleScrolling ).scroll();
 	},
 	
 	findTooltips												: function()
 	{
 		$( '[title]' ).each( function()
 		{
-			var a	= $( this );
+			var a	= $( this ); console.log(a);
 			var t	= $( '<span class="tooltip">' + $( this ).attr( 'title' ) + '</span>' ).prepend( '<span class="point"></span>' );
 			
 			t.appendTo( a ).css({

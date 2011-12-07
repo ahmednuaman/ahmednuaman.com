@@ -70,7 +70,38 @@ ob_start();
 				</ul>
 			</div>
 			<div id="bio">
-				
+				<div>
+					<h3>A quick bio...</h3>
+					<div class="cols">
+						<p>
+							<strong>I design and build web sites and apps.</strong> Most of my projects are development led where I work with the designers and creatives to solve their woes and make their concepts come to life. I also do design and occasionally find myself creating a full experience from wireframes to design and then development, which is awesome.
+						</p>
+						<p>
+							I graduated from Ravensbourne College of Design and Communication in 2007 with a first class BA (hons) in Interaction Design. During my time at college I was very fortunate to work with two very influential tutors (<a href="http://uk.linkedin.com/pub/john-durrant/9/693/5a3">John Durrant</a> and <a href="http://uk.linkedin.com/pub/martin-schmitz/2/735/645">Martin Schmitz</a>) who shaped me into what I am today. Without them, I'd probably be cleaning toilets somewhere.
+						</p>
+						<p>
+							Nowadays I freelance bouncing from project to project. I love it because with the uncertainty of work and the pressure of short deadlines allow me to stay driven to never say no. I love learning new things and I love working on projects that'll push me.
+						</p>
+						<p>
+							<a href="mailto:ahmed@ahmednuaman.com?subject=Enquiry%20from%20web%20site" title="I make benefit for your glorious project">So, how about hiring me?</a>. I usually work remotely at home in my pants but I understand that from time to time I need to shave and clothe myself to come in for meetings, which is cool as I've got a mighty Brompton!
+						</p>
+					</div>
+				</div>
+				<div>
+					<h3>My social skills</h3>
+					<div class="col">
+						<h4>Latest blog posts</h4>
+						<ul id="posts" class="list">
+							<li>Loading posts...</li>
+						</ul>
+					</div>
+					<div class="col">
+						<h4>Latest tweets</h4>
+						<ul id="tweets" class="list">
+							<li>Loading tweets...</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 		<script src="/assets/js/jquery.js"></script>
