@@ -17,10 +17,10 @@ ob_start();
 <html class="no-js" lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta name="description" content="Ahmed Nuaman's super awesome portfolio of web stuffs" />
 		<meta name="author" content="Ahmed Nuaman" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link type="text/css" rel="stylesheet" href="/assets/css/animation.css" />
 		<link type="text/css" rel="stylesheet" href="/assets/css/styles.css" />
 		<link type="text/plain" rel="author" href="/humans.txt" />
 		<title>The Portfolio of the illusive Ahmed Nuaman</title>
@@ -116,6 +116,18 @@ ob_start();
 </html>
 <?php
 $h	= preg_replace( '/\s{2,}/im', '', ob_get_contents() );
+
+$f	= array(
+	'<link type="text/css" rel="stylesheet" href="/assets/css/animation.css" />',
+	'<script src="/assets/js/jquery.js"></script><script src="/assets/js/jquery.lettering.js"></script><script src="/assets/js/suitcase.js"></script>'
+);
+
+$r	= array(
+	'',
+	'<script src="/assets/js/packaged.js"></script>'
+);
+
+$h	= str_replace( $f, $r, $h );
 
 ob_end_flush();
 
