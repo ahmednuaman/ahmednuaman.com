@@ -3,6 +3,9 @@
 echo 'Compressing...'
 sh compress.sh
 
+echo 'Compiling...'
+curl http://ahmednuaman.dev/dynamic.php
+
 echo 'Uploading...'
 rsync -e ssh --recursive --progress --verbose --compress \
 	--exclude '.svn/' \

@@ -63,7 +63,7 @@ ob_start();
 								</p>
 								<?php if ( @$v->href ): ?>
 									<p>
-										<a href="<?php echo $v->href; ?>">View the project &raquo;</a>
+										<a href="http://<?php echo $v->href; ?>">View the project &raquo;</a>
 									</p>
 								<?php endif; ?>
 							</div>
