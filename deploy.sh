@@ -7,8 +7,9 @@ echo 'Uploading...'
 rsync -e ssh --recursive --progress --verbose --compress \
 	--exclude '.svn/' \
 	--exclude '.DS_Store' \
-	--exclude '.less' \
-	--exclude 'jquery.?*.js' \
+	--exclude '*.less' \
+	--exclude 'jquery*' \
+	--exclude 'suitcase.js' \
 	--exclude 'data/*' \
 	--exclude 'animation.css' \
 	public/ ahmednua@fsmg.co.uk:~/www/
