@@ -41,6 +41,12 @@ var S	= {
 	loadPosts													: function()
 	{
 		var ul	= $( '#posts' );
+		
+		if ( !ul.length )
+		{
+			return;
+		}
+		
 		var t	= setTimeout( function()
 		{
 			$( 'li', ul ).append( ' Well, this is magical...' );
@@ -84,6 +90,12 @@ var S	= {
 	loadTweets													: function()
 	{
 		var ul	= $( '#tweets' );
+		
+		if ( !ul.length )
+		{
+			return;
+		}
+		
 		var t	= setTimeout( function()
 		{
 			$( 'li', ul ).append( ' Well, this is magical...' );
@@ -278,9 +290,9 @@ $.extend($.easing,
 	}
 });
 
-// var _gaq=[['_setAccount','UA-352545-12'],['_trackPageview'],['_trackPageLoadTime']];
-// (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-// g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-// s.parentNode.insertBefore(g,s)}(document,'script'));
+var _gaq=[['_setAccount','UA-352545-12'],['_trackPageview'],['_trackPageLoadTime']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g,s)}(document,'script'));
 
 $( document ).ready( S.ready );

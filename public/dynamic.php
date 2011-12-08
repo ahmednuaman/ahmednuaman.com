@@ -23,7 +23,7 @@ ob_start();
 		<link type="text/css" rel="stylesheet" href="/assets/css/animation.css" />
 		<link type="text/css" rel="stylesheet" href="/assets/css/styles.css" />
 		<link type="text/plain" rel="author" href="/humans.txt" />
-		<title>The Portfolio of the illusive Ahmed Nuaman</title>
+		<title>Portfolio of the illusive Ahmed Nuaman</title>
 	</head>
 	<body>
 		<div id="container">
