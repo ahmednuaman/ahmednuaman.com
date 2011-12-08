@@ -1,6 +1,6 @@
-<? get_header(); ?>
+<?php get_header(); ?>
 <h2>Links</h2>
 <ul>
-	<? wp_list_bookmarks(); ?>
+	<?php wp_list_bookmarks(); ?>
 </ul>
-<? get_footer(); ?>
+<?php get_footer(); ?>

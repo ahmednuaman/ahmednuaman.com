@@ -1,28 +1,28 @@
-<? get_header(); ?>
-<? if ( have_posts() ): ?>
-	<? while ( have_posts() ): the_post(); ?>
-		<div <? post_class() ?>>
-			<h2 id="post-<? the_ID(); ?>"><a href="<? the_permalink() ?>" rel="bookmark" title="Permanent Link to <? the_title_attribute(); ?>"><? the_title(); ?></a></h2>
+<?php get_header(); ?>
+<?php if ( have_posts() ): ?>
+	<?php while ( have_posts() ): the_post(); ?>
+		<div <?php post_class() ?>>
+			<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 			<div class="entry">
-				<? the_content( 'Read more &raquo;' ); ?>
+				<?php the_content( 'Read more &raquo;' ); ?>
 			</div>
 			<p class="postmetadata">
-				Posted in: <? the_category(', ') ?> on <? the_time( 'l, F jS, Y' ); ?> &mdash;
-				<? the_tags( 'Tags: ', ', ', ' &mdash; ' ); ?>
-				<? comments_popup_link( 'No Comments &#187;', '1 Comment &#187;', '% Comments &#187;' ); ?>
+				Posted in: <?php the_category(', ') ?> on <?php the_time( 'l, F jS, Y' ); ?> &mdash;
+				<?php the_tags( 'Tags: ', ', ', ' &mdash; ' ); ?>
+				<?php comments_popup_link( 'No Comments &#187;', '1 Comment &#187;', '% Comments &#187;' ); ?>
 			</p>
 		</div><br />
-	<? endwhile; ?>
+	<?php endwhile; ?>
 
 	<div class="navigation">
-		<div class="right"><? previous_posts_link( 'Newer Entries &raquo;' ); ?></div>
-		<div class="left"><? next_posts_link( '&laquo; Older Entries' ); ?></div>
+		<div class="right"><?php previous_posts_link( 'Newer Entries &raquo;' ); ?></div>
+		<div class="left"><?php next_posts_link( '&laquo; Older Entries' ); ?></div>
 	</div>
 
-<? else : ?>
+<?php else : ?>
 	<h2>Whoa! Where are you off to?</h2>
 	<p>There's nothing here! So enter whatever you're looking for below and see what happens...</p>
-	<? get_search_form(); ?>
+	<?php get_search_form(); ?>
 
-<? endif; ?>
-<? get_footer(); ?>
+<?php endif; ?>
+<?php get_footer(); ?>

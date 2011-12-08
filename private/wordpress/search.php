@@ -1,31 +1,31 @@
-<? get_header(); ?>
-<? if (have_posts()) : ?>
+<?php get_header(); ?>
+<?php if (have_posts()) : ?>
 	<h2>Search Results</h2>
 
-	<? while ( have_posts() ): the_post(); ?>
-		<div <? post_class() ?>>
-			<h3 id="post-<? the_ID(); ?>"><a href="<? the_permalink() ?>" rel="bookmark" title="Permanent Link to <? the_title_attribute(); ?>"><? the_title(); ?></a></h3>
-			<small><? the_time( 'l, F jS, Y' ); ?></small>
+	<?php while ( have_posts() ): the_post(); ?>
+		<div <?php post_class() ?>>
+			<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+			<small><?php the_time( 'l, F jS, Y' ); ?></small>
 			<div class="entry">
-				<? the_content(); ?>
+				<?php the_content(); ?>
 			</div>
 			<p class="postmetadata">
-				<? the_tags( 'Tags: ', ', ', '<br />' ); ?> Posted in <? the_category(', ') ?> | 
-				<? edit_post_link( 'Edit', '', ' | ' ); ?>  
-				<? comments_popup_link( 'No Comments &#187;', '1 Comment &#187;', '% Comments &#187;' ); ?>
+				<?php the_tags( 'Tags: ', ', ', '<br />' ); ?> Posted in <?php the_category(', ') ?> | 
+				<?php edit_post_link( 'Edit', '', ' | ' ); ?>  
+				<?php comments_popup_link( 'No Comments &#187;', '1 Comment &#187;', '% Comments &#187;' ); ?>
 			</p>
 		</div>
-	<? endwhile; ?>
+	<?php endwhile; ?>
 
 	<div class="navigation">
-		<div class="right"><? previous_posts_link( 'Newer Entries &raquo;' ); ?></div>
-		<div class="left"><? next_posts_link( '&laquo; Older Entries' ); ?></div>
+		<div class="right"><?php previous_posts_link( 'Newer Entries &raquo;' ); ?></div>
+		<div class="left"><?php next_posts_link( '&laquo; Older Entries' ); ?></div>
 	</div>
 
-<? else: ?>
+<?php else: ?>
 	<h2>Whoa! Where are you off to?</h2>
 	<p>There's nothing here! So enter whatever you're looking for below and see what happens...</p>
-	<? get_search_form(); ?>
+	<?php get_search_form(); ?>
 
-<? endif; ?>
-<? get_footer(); ?>
+<?php endif; ?>
+<?php get_footer(); ?>

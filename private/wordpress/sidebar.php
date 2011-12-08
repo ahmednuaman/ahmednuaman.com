@@ -1,9 +1,9 @@
 <div id="rightCol">
-	<? // if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ): ?>	
-		<? get_search_form(); ?>
+	<?php // if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ): ?>	
+		<?php get_search_form(); ?>
 		
-		<? dynamic_sidebar(); ?>
+		<?php dynamic_sidebar(); ?>
 		
-	<? // endif; ?>
+	<?php // endif; ?>
 </div>
 
