@@ -8,7 +8,7 @@ var S	= {
 	
 	ready														: function()
 	{
-		$( 'html' ).removeClass( 'no-js' );
+		S.detectBrowser();
 		
 		S.findTooltips();
 		S.loadPosts();
@@ -21,6 +21,63 @@ var S	= {
 		S.menuY	= $( '#menubar' ).offset().top;
 		
 		$( window ).scroll( S.handleScrolling ).scroll().resize( S.handleResize ).resize();
+	},
+	
+	detectBrowser												: function()
+	{
+		if ( $.browser.msie )
+		{
+			$( 'html' ).addClass( 'ie' );
+			
+			if ( $.browser.version )
+			{
+				$( 'html' ).addClass( 'ie' + Number( $.browser.version ) );
+			}
+			else
+			{
+				$( 'html' ).addClass( 'ie6' );
+			}
+		}
+
+		if ( $.browser.webkit )
+		{
+			$( 'html' ).addClass( 'webkit' );
+			
+			if ( navigator.userAgent.indexOf( 'Chrome' ) === -1 )
+			{
+				$( 'html' ).addClass( 'safari' );
+			}
+			else
+			{
+				$( 'html' ).addClass( 'chrome' );
+			}
+		}
+
+		if ( $.browser.mozilla )
+		{
+			$( 'html' ).addClass( 'ff' );
+		}
+		
+		if ( $.browser.opera )
+		{
+			$( 'html' ).addClass( 'opera' );
+		}
+
+		if ( navigator.userAgent.indexOf( 'Windows' ) != -1 )
+		{
+			$( 'html' ).addClass( 'windows' );
+		}
+		else if ( navigator.userAgent.indexOf( 'Mac' ) != -1 )
+		{
+			$( 'html' ).addClass( 'mac' );
+		}
+		
+		if ( navigator.userAgent.indexOf( 'iPad' ) != -1 )
+		{
+			$( 'html' ).addClass( 'ipad' );
+		}
+		
+		$( 'html' ).removeClass( 'no-js' );
 	},
 	
 	findTooltips												: function()
@@ -165,6 +222,11 @@ var S	= {
 	
 	drawGradients												: function()
 	{
+		if ( !$.support.canvas )
+		{
+			return;
+		}
+		
 		$( '.thumbnail canvas' ).each( function()
 		{
 			var c	= $( this ).get( 0 ).getContext( '2d' );
