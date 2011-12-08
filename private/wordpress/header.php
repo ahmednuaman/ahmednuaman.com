@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <html class="no-js" lang="en">
 	<head>
 		<meta charset="utf-8" />
