@@ -13,8 +13,9 @@ rsync -e ssh --recursive --progress --verbose --compress \
 	--exclude '*.less' \
 	--exclude 'jquery*' \
 	--exclude 'suitcase.js' \
-	--exclude 'data/*' \
+	--exclude 'data' \
 	--exclude 'animation.css' \
+	--exclude 'dynamic.php' \
 	public/ ahmednua@fsmg.co.uk:~/www/
 
 echo 'Done!'

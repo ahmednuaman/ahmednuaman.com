@@ -1,4 +1,4 @@
 *.css
 !animation.css
 *packaged.js
-public/index.html
+*index.html
