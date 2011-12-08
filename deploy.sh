@@ -4,7 +4,7 @@ echo 'Compressing...'
 sh compress.sh
 
 echo 'Compiling...'
-curl http://ahmednuaman.dev/dynamic.php
+curl http://ahmednuaman.dev/dynamic.php > /dev/null
 
 echo 'Uploading...'
 rsync -e ssh --recursive --progress --verbose --compress \
