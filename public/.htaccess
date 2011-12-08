@@ -67,3 +67,6 @@ FileETag None
 
 ErrorDocument 404 /404.html
 ErrorDocument 500 /500.html
+
+RewriteEngine on
+RewriteRule ^\+$ https://plus.google.com/109868412062207779835 [L]
