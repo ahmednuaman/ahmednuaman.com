@@ -2,7 +2,7 @@
 <?php if ( have_posts() ): ?> 
 	<?php while (have_posts()) : the_post(); ?>
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<h2><?php the_title(); ?></h2>
+			<h3><?php the_title(); ?></h3>
 			<div class="entry">
 				<?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>
 
@@ -52,7 +52,7 @@
 	
 	<?php endwhile; ?>  
 <?php else: ?>
-	<h2>Whoa! Where are you off to?</h2>
+	<h3>Whoa! Where are you off to?</h3>
 	<p>There's nothing here! So enter whatever you're looking for below and see what happens...</p>
 	<?php get_search_form(); ?>
 		

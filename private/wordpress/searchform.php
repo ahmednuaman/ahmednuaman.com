@@ -2,8 +2,7 @@
 <div>
 	<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/"> 
 		<div>
-			<input type="text" value="<?php echo ( $search_text ? $search_text : 'Search...' );?>" name="s" id="searchinput" /> 
-			<input type="submit" id="searchsubmit" value="&raquo;" />
+			<input type="search" name="s" placeholder="Search el blog!" /> 
 		</div>
 	</form>
 </div>
