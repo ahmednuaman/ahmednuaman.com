@@ -22,23 +22,16 @@
 						    'order' => 'DESC',
 						    'limit' => 5,
 						    'echo' => true,
-						    'before' => '<li>',
+						    'before' => '<li>&rarr; ',
 						    'after' => '</li>',
 						    'type' => 'post',
 						    'message' => 'no matches'
 						  ) ) ?>
 					</ul>
-					<?php the_tags( 'Tags: ', ', ', ' <br /> ' ); ?>
-					Posted in: <?php the_category(', ') ?> on <?php the_time( 'l, F jS, Y' ); ?>.<br />
-					<?php if ( ( $post->comment_status == 'open' ) && ( $post->ping_status == 'open' ) ): // Both Comments and Pings are open ?>
-						You can <a href="#respond">leave a response</a>, or <a href="<?php trackback_url(); ?>" rel="trackback">trackback</a> from your own site.
-					<?php elseif ( ! ( $post->comment_status == 'open' ) && ( $post->ping_status == 'open' ) ): // Only Pings are Open ?>
-						Responses are currently closed, but you can <a href="<?php trackback_url(); ?> " rel="trackback">trackback</a> from your own site.
-					<?php elseif ( ( $post->comment_status == 'open' ) && !( $post->ping_status == 'open' ) ): // Comments are open, Pings are not ?>
-						You can skip to the end and leave a response. Pinging is currently not allowed.
-					<?php elseif ( ! ($post->comment_status == 'open' ) && !( 'open' == $post->ping_status ) ): // Neither Comments, nor Pings are open ?>
-						Both comments and pings are currently closed.
-					<?php endif; ?>
+					<p>
+						<?php the_tags( 'Tags: ', ', ', ' <br /> ' ); ?>
+						Posted in: <?php the_category(', ') ?> on <?php the_time( 'l, F jS, Y' ); ?>.
+					</p>
 				</div>
 			</div>
 		</div>
@@ -47,8 +40,6 @@
 			<div class="right"><?php previous_posts_link( 'Newer Entries &raquo;' ); ?></div>
 			<div class="left"><?php next_posts_link( '&laquo; Older Entries' ); ?></div>
 		</div>
-		
-		<?php comments_template(); ?>
 	
 	<?php endwhile; ?>  
 <?php else: ?>

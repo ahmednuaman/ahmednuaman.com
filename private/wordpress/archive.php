@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 <?php if ( have_posts() ): ?>
 	<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
-	
 	<?php /* If this is a category archive */ if ( is_category() ): ?>
 		<h3>Archive for the &#x201C;<?php single_cat_title(); ?>&#x201D; Category</h3>
 	<?php /* If this is a tag archive */ elseif ( is_tag() ): ?>
@@ -17,31 +16,7 @@
 	<?php /* If this is a paged archive */ elseif ( isset( $_GET['paged'] ) && !empty( $_GET['paged'] ) ): ?>
 		<h3>Blog Archives</h3>
 	<?php endif; ?>
-	
-	<?php if ( have_posts() ): ?>
-		<ul>
-			<?php while ( have_posts() ): the_post(); ?>
-				<li <?php post_class() ?> id="post-<?php the_ID(); ?>">
-					<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-					<small><?php the_time( 'l, F jS, Y' ); ?></small>
-					<div class="entry">
-						<?php the_content(); ?>
-					</div>
-					<p class="postmetadata">
-						<?php the_tags( 'Tags: ', ', ', '<br />' ); ?> Posted in <?php the_category(', ') ?> | 
-						<?php edit_post_link( 'Edit', '', ' | ' ); ?>  
-						<?php comments_popup_link( 'No Comments &#187;', '1 Comment &#187;', '% Comments &#187;' ); ?>
-					</p>
-				</li>
-			<?php endwhile; ?>
-		</ul>
-	<?php endif; ?>
-
-	<div class="navigation">
-		<div class="right"><?php previous_posts_link( 'Newer Entries &raquo;' ); ?></div>
-		<div class="left"><?php next_posts_link( '&laquo; Older Entries' ); ?></div>
-	</div>
-	
+	<?php ahmed_loop(); ?>
 <?php else: ?>
 	<?php if ( is_category() ): // If this is a category archive ?>
 		<h3>Sorry, but there aren't any posts in the <?php echo single_cat_title( '', false );?> category yet.</h3>
