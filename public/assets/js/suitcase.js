@@ -113,9 +113,9 @@ var S	= {
 		{
 			clearTimeout( t );
 			
-			ul.bind( S.cssTransition, function()
+			ul.bind( S.cssTransition, function(e)
 			{
-				var l	= Number( d[ 'posts-total' ] );
+				var l	= d[ 'posts' ].length;
 				var i;
 				
 				ul.unbind( S.cssTransition ).empty();

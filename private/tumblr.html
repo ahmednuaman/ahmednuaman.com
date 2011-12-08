@@ -96,7 +96,25 @@
 			</div>
 		</div>
 		<script src="http://ahmednuaman.com/assets/js/packaged.js"></script>
-	{block:IfGoogleAnalyticsID}<script type="text/javascript">var gaJsHost=(("https:"==document.location.protocol)?"https://ssl.":"http://www.");document.write(unescape("%3Cscript src='"+gaJsHost+"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">try{var pageTracker=_gat._getTracker("{text:Google Analytics ID}");pageTracker._trackPageview()}catch(err){}</script>{block:IfGoogleAnalyticsID}
-	{block:IfDisqusShortname}<script type="text/javascript">(function() {var links = document.getElementsByTagName('a');var query = '?';for(var i = 0; i < links.length; i++){if(links[i].href.indexOf('#disqus_thread') >= 0){query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';}}document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');})();</script>{/block:IfDisqusShortname}
+		<script src="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/scripts/shCore.js"></script>
+		<script src="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/scripts/shBrushAS3.js"></script>
+		<script src="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/scripts/shBrushBash.js"></script>
+		<script src="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/scripts/shBrushCss.js"></script>
+		<script src="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/scripts/shBrushJScript.js"></script>
+		<script src="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/scripts/shBrushPhp.js"></script>
+		<script src="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/scripts/shBrushPython.js"></script>
+		<script src="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/scripts/shBrushSql.js"></script>
+		<script src="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/scripts/shBrushXml.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/styles/shBrushAS3.css" />
+		<link type="text/css" rel="stylesheet" href="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/styles/shBrushBash.css" />
+		<link type="text/css" rel="stylesheet" href="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/styles/shBrushCss.css" />
+		<link type="text/css" rel="stylesheet" href="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/styles/shBrushJScript.css" />
+		<link type="text/css" rel="stylesheet" href="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/styles/shBrushPhp.css" />
+		<link type="text/css" rel="stylesheet" href="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/styles/shBrushPython.css" />
+		<link type="text/css" rel="stylesheet" href="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/styles/shBrushSql.css" />
+		<link type="text/css" rel="stylesheet" href="https://raw.github.com/alexgorbatchev/SyntaxHighlighter/master/styles/shBrushXml.css" />
+		{block:IfGoogleAnalyticsID}<script type="text/javascript">var gaJsHost=(("https:"==document.location.protocol)?"https://ssl.":"http://www.");document.write(unescape("%3Cscript src='"+gaJsHost+"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">try{var pageTracker=_gat._getTracker("{text:Google Analytics ID}");pageTracker._trackPageview()}catch(err){}</script>{block:IfGoogleAnalyticsID}
+		{block:IfDisqusShortname}<script type="text/javascript">(function() {var links = document.getElementsByTagName('a');var query = '?';for(var i = 0; i < links.length; i++){if(links[i].href.indexOf('#disqus_thread') >= 0){query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';}}document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');})();</script>{/block:IfDisqusShortname}
 	</body>
 </html>
