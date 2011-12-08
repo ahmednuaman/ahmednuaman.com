@@ -222,7 +222,7 @@ var S	= {
 	
 	drawGradients												: function()
 	{
-		if ( !$.support.canvas )
+		if ( !'HTMLCanvasElement' in window )
 		{
 			return;
 		}
