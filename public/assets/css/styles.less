@@ -328,6 +328,7 @@ html
 	width: 100%;
 	background-attachment: fixed;
 	.gradient(#0080ff, #0064c8);
+	.ease(background-image);
 }
 a,
 body,
@@ -404,7 +405,7 @@ h4
 h1
 {
 	font-size: 52pt;
-	font-weight: bolder;
+	font-weight: bold;
 	letter-spacing: -3px;
 }
 h2,
@@ -438,7 +439,7 @@ p:first-child
 }
 strong
 {
-	font-weight: bolder;
+	font-weight: bold;
 }
 
 /* Structure */
@@ -448,9 +449,23 @@ strong
 	margin: 0 auto;
 	max-width: 960px;
 	padding: 20px 0;
+	.ease(margin);
 	
 	#intro
 	{
+		.ease(margin);
+		
+		h1
+		{
+			.char9
+			{
+				letter-spacing: -6px;
+			}
+			.char14
+			{
+				letter-spacing: -6px;
+			}
+		}
 		hr
 		{
 			.ease(width);
@@ -610,7 +625,7 @@ strong
 				height: 383px;
 				.corners;
 				.box-shadow(rgba(0, 0, 0, .3), 0, 3px, 5px);
-				.ease(box-shadow, 1s);
+				.ease(box-shadow);
 				overflow: hidden;
 				
 				canvas
@@ -712,8 +727,6 @@ strong
 }
 .minimalist
 {
-	.ease;
-	
 	body
 	{
 		.gradient(#ffffff, #eeeeee);
