@@ -109,7 +109,7 @@ var S	= {
 			$( 'li', ul ).append( ' Well, this is magical...' );
 		}, S.slowLoad );
 		
-		var r	= $.getJSON( 'http://ahmednuaman.tumblr.com/api/read/json?type=text&filter=text&num=5&callback=?', function(d)
+		var r	= $.getJSON( 'http://ahmednuaman.com/blog/api/get_recent_posts/?callback=?', function(d)
 		{
 			clearTimeout( t );
 			
@@ -134,9 +134,9 @@ var S	= {
 	
 	formatPost													: function(s)
 	{
-		var d	= new Date( s[ 'date-gmt' ] );
+		var d	= new Date( s[ 'date' ] );
 		
-		return '<li title="Posted at ' + d.getHours() + ':' + d.getMinutes() + ' on ' + d.getDate() + ' ' + S.months[ d.getMonth() ] + '">&rarr; <a href="' + s.url + '">' + s[ 'regular-title' ] + ' ~ ' + S.truncate( s[ 'regular-body' ], 40, ' ...' ) + '</a></li>';
+		return '<li title="Posted at ' + d.getHours() + ':' + d.getMinutes() + ' on ' + d.getDate() + ' ' + S.months[ d.getMonth() ] + '">&rarr; <a href="' + s.url + '">' + s[ 'title_plain' ] + ' ~ ' + S.truncate( s[ 'excerpt' ], 40, ' ...' ) + '</a></li>';
 	},
 	
 	truncate													: function(s, l, a)
