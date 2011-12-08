@@ -28,9 +28,11 @@ ob_start();
 	<body>
 		<div id="container">
 			<div id="intro">
-				<h1>
-					Ahmed Nuaman
-				</h1>
+				<div title="Too blue? Click here to go minimalist!">
+					<h1>
+						Ahmed Nuaman
+					</h1>
+				</div>
 				<hr />
 				<h2>
 					builder of internets ~ developer of dreams ~ tamer of Dachshunds

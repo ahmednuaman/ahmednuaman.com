@@ -3,6 +3,7 @@ var S	= {
 	cssTransition												: 'webkitTransitionEnd transitionend oTransitionEnd',
 	menuY														: 0,
 	months														: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
+	narrow														: false,
 	slowLoad													: 5000,
 	
 	ready														: function()
@@ -15,10 +16,11 @@ var S	= {
 		S.drawGradients();
 		S.addLettering();
 		S.sortScrolling();
+		S.addMinimalist();
 		
 		S.menuY	= $( '#menubar' ).offset().top;
 		
-		$( window ).scroll( S.handleScrolling ).scroll();
+		$( window ).scroll( S.handleScrolling ).scroll().resize( S.handleResize ).resize();
 	},
 	
 	findTooltips												: function()
@@ -183,12 +185,12 @@ var S	= {
 		$( 'h1' ).lettering();
 	},
 	
-	handleScrolling												: function(e)
+	handleScrolling												: function()
 	{
 		var c	= 'fixed';
 		var m	= $( '#menubar' );
 		var t	= m.hasClass( c );
-		var y	= e.currentTarget.pageYOffset;
+		var y	= $( window ).scrollTop();
 		
 		if ( !t && y > S.menuY )
 		{
@@ -213,6 +215,55 @@ var S	= {
 			
 			return false;
 		});
+	},
+	
+	addMinimalist												: function()
+	{
+		$( 'h1' ).click( function()
+		{
+			if ( S.narrow )
+			{
+				return;
+			}
+			
+			$( 'html' ).addClass( 'minimalist' );
+			
+			S.reset();
+		});
+	},
+	
+	repositionTooltips											: function()
+	{
+		$( '.tooltip' ).each( function()
+		{
+			var t	= $( this );
+			var p	= t.parent();
+			
+			t.css({
+				'margin-left'	: ( p.width() - t.outerWidth() ) * .5 + 'px'
+			});
+		});
+	},
+	
+	handleResize												: function()
+	{
+		var w	= $( window ).width();
+		
+		S.narrow	= w < 1080; 
+		
+		if ( S.narrow )
+		{
+			$( 'html' ).removeClass( 'minimalist' );
+			
+			S.reset();
+		}
+	},
+	
+	reset														: function()
+	{
+		S.menuY	= $( '#menubar' ).offset().top;
+		
+		S.repositionTooltips();
 	}
 };
 
