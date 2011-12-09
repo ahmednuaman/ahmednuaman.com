@@ -12,6 +12,7 @@ ob_start();
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<link type="application/rss+xml" rel="alternate" title="<?php bloginfo( 'name' ); ?> RSS Feed" href="<?php bloginfo( 'rss2_url' ); ?>" />
 		<link type="application/atom+xml" rel="alternate" title="<?php bloginfo( 'name' ); ?> Atom Feed" href="<?php bloginfo( 'atom_url' ); ?>" />
+		<meta property="og:image" content="http://ahmednuaman.com/assets/image/gravatar.png" />
 		<script src="/assets/js/packaged.js"></script>
 		<?php wp_head(); ?>
 		<title>Blog of the illusive Ahmed Nuaman <?php wp_title( '&mdash;', true, 'left' ); ?></title>
