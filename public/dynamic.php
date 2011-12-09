@@ -63,6 +63,18 @@ ob_start();
 								<p>
 									<?php echo $v->description; ?>
 								</p>
+								<p class="tags">
+									<?php
+									sort( $v->tags );
+									
+									foreach ( $v->tags as $t ) 
+									{
+										?>
+											<a href="/blog/tag/<?php echo $t; ?>"><?php echo $t; ?></a>
+										<?php
+									}
+									?>
+								</p>
 								<?php if ( @$v->href ): ?>
 									<p>
 										<a href="http://<?php echo $v->href; ?>">View the project &raquo;</a>

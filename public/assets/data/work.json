@@ -3,77 +3,116 @@
 		"description"	: "I'm dyslexic and I find it very hard reading tweets on a number of Twitter clients. I'm also very forgetful so I favourite a lot of tweets as a form of bookmarking. So I created a nice reader for reading your favourites back, it's awesome!",
 		"href"			: "twitfavs.fsmg.co.uk",
 		"name"			: "an-twitfavs",
+		"tags"			: [
+			"jquery", "php", "twitter", "javascript", "css", "html"
+		],
 		"title"			: "Twitfavs"
 	},
 	{
 		"description"	: "A friend of mine, Matt Godfrey, wanted a new portfolio site, so, I said to him 'just draw it and I'll put it together', and that's what I did. I think it works really well, his quirky drawings really bring his work and personality to the user. It uses the Flickr API to host all his images so he doesn't have to worry about future-proofing his collection.",
 		"href"			: "drawnbymatt.co.uk",
 		"name"			: "mg-folio",
+		"tags"			: [
+			"as3", "puremvc", "flickr", "flash"
+		],
 		"title"			: "Drawn by Matt"
 	},
 	{
 		"description"	: "This was a personal record breaker of a channel! I built this bad-boy of a gadget in a day! Oh yes, that quick. The best part was that the agency knew exactly what they wanted so there were no changes! It's just recently gone live and hit all the deadlines within good time.",
 		"href"			: "youtube.com/lloydstsb",
 		"name"			: "bn-lloyds",
+		"tags"			: [
+			"as3", "puremvc", "flash", "youtube", "gdata"
+		],
 		"title"			: "Lloyds TSB YouTube channel"
 	},
 	{
 		"description"	: "It's not often that you're asked to create a working prototype for the BBC, and then it's even rarer that that prototype goes into production. I worked with a great set of producers and developers (<a href=\"http://play.blog2t.net/\">Tomek</a> and Parmy) for this project.",
 		"href"			: "www.bbc.co.uk/cbbc/topics/staring-contests",
 		"name"			: "0069bbc",
+		"tags"			: [
+			"as3", "puremvc", "flash"
+		],
 		"title"			: "CBBC staring contests"
 	},
 	{
 		"description"	: "After I finished working at Google I met a great agency called <a href=\"http://www.psycle.com/\">Psycle</a>. One of the first projects that I worked on with them was for YouTube's Play channel in collaboration with Guggenheim, my part was making the large scrolling wall and now I can tell you whatever you want about getting around FP9's 2,880 max width for display objects.",
 		"href"			: "www.youtube.com/play",
 		"name"			: "0097ps",
+		"tags"			: [
+			"as3", "puremvc", "youtube"
+		],
 		"title"			: "YouTube Play"
 	},
 	{
 		"description"	: "This was a partial build where I had to finish up where another developer had left off. The agency <a href=\"http://mattandgeorge.com/\">Matt&amp;George</a> wanted it to run faster so I stripped out the 3D libraries and used some native Flash trickery to make it run 5x faster.",
 		"href"			: "www.daviesmckerr.com/",
 		"name"			: "0099mg",
+		"tags"			: [
+			"as3", "robotlegs", "flash"
+		],
 		"title"			: "davies+mckerr web site"
 	},
 	{
 		"description"	: "I worked for an agency called <a href=\"http://www.clicktag.co.uk/\">clickTag</a> to create this app for ITV2's show about blood suckers. I never knew just how many people liked vampires until we went live; it had over 500 entries in the first hour.",
 		"href"			: "apps.facebook.com/beturned",
 		"name"			: "0107ct",
+		"tags"			: [
+			"as3", "puremvc", "facebook", "flash"
+		],
 		"title"			: "Vampire diaries Facebook app"
 	},
 	{
 		"description"	: "I was fortunate enough to be given the oppertunity to develop BBH's new web site by the guys at AddictivePixel. The idea was simple: take one part WordPress, apply a cool-ass designer and serve to a developer. The biggest challenge was getting the consistancy correct in terms of the carousel movement, but that's all mathematics, so stay in school kids.",
 		"href"			: "bbh.co.uk",
 		"name"			: "0111bbh",
+		"tags"			: [
+			"html", "css", "javascript", "jquery", "wordpress"
+		],
 		"title"			: "BBH world wide web site"
 	},
 	{
 		"description"	: "This is another project I did with the guys at <a href=\"http://www.psycle.com/\">Psycle</a>, and what a project to work one: The Royal Wedding. My job was to create a CSS/JS carousel and timeline that worked on IE6, oh yes, it was fun! The channel went on to <a href=\"http://www.officialroyalwedding2011.org/blog/2011/May/6/The-Royal-Wedding-online\">break viewing records</a>.",
 		"href"			: "youtube.com/theroyalchannel",
 		"name"			: "0126ps",
+		"tags"			: [
+			"javascript", "jquery", "html", "css", "youtube"
+		],
 		"title"			: "The royal wedding YouTube channel"
 	},
 	{
 		"description"	: "Another <a href=\"http://www.psycle.com/\">Psycle</a> project was the live YouTube Unstaged Twitter gadget. The idea was to get as many people tweeting and posting about the live music gig so that when a certain number of posts were reached, the fans got a free download in realtime.",
 		"name"			: "0133ps",
+		"tags"			: [
+			"as3", "flash"
+		],
 		"title"			: "YouTube Unstaged"
 	},
 	{
 		"description"	: "Another project from the bad boys at AddictivePixel, this time it was to do the site for the famous Sir Hegarty. It's a simple parallex site, although a fair bit of logic had gone into it to sort out the masking and the animatic movement.",
 		"href"			: "hegartyonadvertising.com",
 		"name"			: "0134bbh",
+		"tags"			: [
+			"css", "html", "javascript", "jquery"
+		],
 		"title"			: "Hegarty on Advertising"
 	},
 	{
 		"description"	: "It's not every day that you're given the oppertunity to work with a <a href=\"http://www.aardman.com/digital/bafta-win-for-aardman-digital/\">BAFTA award winning team</a> so even though the time may've been tight, I couldn't have pass an oppertunity to work with <a href=\"http://www.aardman.com/digital/\">Aardman</a>. It's quite a fun app (designed by the famous <a href=\"http://news.jam-factory.com/\">Gavin</a>), plenty of my Facebook feed has been taken up by posters made with this app.",
 		"href"			: "thepirates-movie.co.uk",
 		"name"			: "0136aa",
+		"tags"			: [
+			"as3", "puremvc", "facebook", "flash"
+		],
 		"title"			: "The Pirates! poster generator"
 	},
 	{
 		"description"	: "I get a few jobs from the USA and one of the great agencies <a href=\"http://www.madeinhaus.com/\">Made in Haus</a> contacted me to help them with their new campaign for Zyrtec. I got to work with the infamous <a href=\"https://twitter.com/#!/drwoohoo\">Dr. Woohoo!</a> as well as <a href=\"https://twitter.com/#!/cwahlers\">Claus</a> and <a href=\"https://twitter.com/#!/TechStyleLAB\">Andy</a>, and a very frisky PM. It was a great laugh and a great project.",
 		"href"			: "youtube.com/parksunleashed",
 		"name"			: "0139haus",
+		"tags"			: [
+			"as3", "robotlegs", "youtube", "flash", "gdata"
+		],
 		"title"			: "Zyrtec Parks Unleashed"
 	}
 ]
