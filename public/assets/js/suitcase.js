@@ -120,20 +120,20 @@ var S	= {
 			$( 'li', ul ).append( ' Well, this is magical...' );
 		}, S.slowLoad );
 		
-		var r	= $.getJSON( '/blog/api/get_recent_posts/', function(d)
+		var r	= $.getJSON( '/blog/json/', function(d)
 		{
 			clearTimeout( t );
 			
 			ul.bind( S.cssTransition, function(e)
 			{
-				var l	= d[ 'posts' ].length;
+				var l	= d.length;
 				var i;
 				
 				ul.unbind( S.cssTransition ).empty();
 				
 				for ( i = 0; i < l; i++ )
 				{
-					ul.append( S.formatPost( d.posts[ i ] ) );
+					ul.append( S.formatPost( d[ i ] ) );
 				}
 				
 				S.findTooltips();
@@ -145,9 +145,9 @@ var S	= {
 	
 	formatPost													: function(s)
 	{
-		var d	= new Date( s[ 'date' ] );
+		var d	= new Date( s[ 'post_date_gmt' ] );
 		
-		return '<li title="Posted at ' + d.getHours() + ':' + d.getMinutes() + ' on ' + d.getDate() + ' ' + S.months[ d.getMonth() ] + '">&rarr; <a href="' + s.url + '">' + s[ 'title_plain' ] + ' ~ ' + S.truncate( s[ 'excerpt' ], 40, ' ...' ) + '</a></li>';
+		return '<li title="Posted at ' + d.getHours() + ':' + d.getMinutes() + ' on ' + d.getDate() + ' ' + S.months[ d.getMonth() ] + '">&rarr; <a href="' + s.url + '">' + s[ 'post_title' ] + '</a></li>';
 	},
 	
 	truncate													: function(s, l, a)
