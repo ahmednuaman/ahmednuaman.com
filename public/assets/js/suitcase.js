@@ -10,6 +10,8 @@ var S	= {
 	
 	ready														: function()
 	{
+		var h	= window.location.hash;
+		
 		S.detectBrowser();
 		
 		S.findTooltips();
@@ -23,6 +25,13 @@ var S	= {
 		S.menuY	= $( '#menubar' ).offset().top;
 		
 		$( window ).scroll( S.handleScrolling ).scroll().resize( S.handleResize ).resize();
+		
+		$( 'html, body' ).scrollTop( 0 );
+		
+		if ( h.length > 0 )
+		{
+			S.scrollTo( h );
+		}
 	},
 	
 	detectBrowser												: function()
@@ -111,7 +120,7 @@ var S	= {
 			$( 'li', ul ).append( ' Well, this is magical...' );
 		}, S.slowLoad );
 		
-		var r	= $.getJSON( '/blog/api/get_recent_posts/?callback=?', function(d)
+		var r	= $.getJSON( '/blog/api/get_recent_posts/', function(d)
 		{
 			clearTimeout( t );
 			
@@ -286,11 +295,7 @@ var S	= {
 	{
 		$( 'a[href^="#"]' ).click( function(e)
 		{
-			var y	= $( e.currentTarget.hash ).offset().top - $( '#menubar' ).outerHeight();
-			
-			$( 'html, body' ).animate({
-				scrollTop	: y
-			}, 2000, 'easeInOutExpo' );
+			S.scrollTo( e.currentTarget.hash );
 			
 			return false;
 		});
@@ -343,6 +348,15 @@ var S	= {
 		S.menuY	= $( '#menubar' ).offset().top;
 		
 		S.repositionTooltips();
+	},
+
+	scrollTo													: function(h)
+	{
+		var y	= $( h ).offset().top - $( '#menubar' ).outerHeight();
+		
+		$( 'html, body' ).animate({
+			'scrollTop'	: y
+		}, 2000, 'easeInOutExpo' );
 	}
 };
 
