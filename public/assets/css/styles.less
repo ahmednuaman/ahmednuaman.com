@@ -393,6 +393,27 @@ li:hover
 		opacity: 1;
 	}
 }
+button,
+input
+{
+	.corners;
+	.box-shadow(rgba(0, 0, 0, .4), 0, 1px, 3px);
+	border: 1px solid rgba(255, 255, 255, .85);
+	padding: 4px 6px;
+	background: rgba(255, 255, 255, .9);
+}
+button
+{
+	margin-left: 5px;
+}
+button:hover
+{
+	.gradient(#cccccc, #ffffff);
+}
+button:active
+{
+	.gradient(#ffffff, #cccccc);
+}
 em
 {
 	font-style: italic;
