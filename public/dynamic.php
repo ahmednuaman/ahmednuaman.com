@@ -96,12 +96,19 @@ ob_start();
 						<ul id="posts" class="list">
 							<li>Loading posts...</li>
 						</ul>
+						<p>
+							<a href="http://feeds.feedburner.com/ahmednuaman" rel="alternate" type="application/rss+xml" class="noborder"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a> <a href="http://feeds.feedburner.com/ahmednuaman" rel="alternate" type="application/rss+xml" title="My thoughts straight to your feed reader">Subscribe in a reader</a>
+						</p>
 					</div>
 					<div class="col">
 						<h4>Latest tweets</h4>
 						<ul id="tweets" class="list">
 							<li>Loading tweets...</li>
 						</ul>
+						<p>
+							<a href="https://twitter.com/ahmednuaman" class="twitter-follow-button noborder" data-show-count="false" data-lang="en">Follow @ahmednuaman</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						</p>
 					</div>
 				</div>
 				<div id="footer">

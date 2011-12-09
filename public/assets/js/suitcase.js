@@ -2,6 +2,8 @@ var S	= {
 	cssAnimation												: 'webkitAnimationEnd animationend oAnimationEnd',
 	cssTransition												: 'webkitTransitionEnd transitionend oTransitionEnd',
 	menuY														: 0,
+	minCanvasWidth												: 640,
+	minMinimalistWidth											: 1080,
 	months														: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
 	narrow														: false,
 	slowLoad													: 5000,
@@ -109,7 +111,7 @@ var S	= {
 			$( 'li', ul ).append( ' Well, this is magical...' );
 		}, S.slowLoad );
 		
-		var r	= $.getJSON( 'http://ahmednuaman.com/blog/api/get_recent_posts/?callback=?', function(d)
+		var r	= $.getJSON( '/blog/api/get_recent_posts/?callback=?', function(d)
 		{
 			clearTimeout( t );
 			
@@ -231,13 +233,16 @@ var S	= {
 		{
 			var c	= $( this ).get( 0 ).getContext( '2d' );
 			var p	= $( this ).parent();
+			var h	= p.outerHeight();
+			var w	= p.outerWidth()
 			var g;
 			
 			$( this ).attr({
-				height	: p.outerHeight(),
-				width	: p.outerWidth()
+				height	: h,
+				width	: w
 			});
 			
+			c.clearRect( 0, 0, w, h );
 			c.save();
 			c.beginPath();
 			c.moveTo(0.0, 383.0);
@@ -323,7 +328,7 @@ var S	= {
 	{
 		var w	= $( window ).width();
 		
-		S.narrow	= w < 1080; 
+		S.narrow	= w < S.minMinimalistWidth; 
 		
 		if ( S.narrow )
 		{
