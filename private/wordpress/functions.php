@@ -8,10 +8,15 @@ function ahmed_check_cache()
 	global $ahmed_cache_folder;
 	global $ahmed_cache_prefix;
 	
-	$f	= $ahmed_cache_folder . $ahmed_cache_prefix . md5( $_SERVER[ 'REQUEST_URI' ] );
+	$f	= $ahmed_cache_folder . $ahmed_cache_prefix . ahmed_hash_url( $_SERVER[ 'REQUEST_URI' ] );
 	
 	if ( file_exists( $f ) && !is_admin() )
 	{
+		if ( filesize( $f ) < 1024 )
+		{
+			return;
+		}
+		
 		ob_end_flush();
 		
 		echo file_get_contents( $f );
@@ -41,12 +46,17 @@ function ahmed_clear_cache()
 	}
 }
 
+function ahmed_hash_url($s)
+{
+	return str_replace( '/', '_', $s );
+}
+
 function ahmed_save_cache()
 {
 	global $ahmed_cache_folder;
 	global $ahmed_cache_prefix;
 	
-	$f	= $ahmed_cache_folder . $ahmed_cache_prefix . md5( $_SERVER[ 'REQUEST_URI' ] );
+	$f	= $ahmed_cache_folder . $ahmed_cache_prefix . ahmed_hash_url( $_SERVER[ 'REQUEST_URI' ] );
 	$h 	= ob_get_contents();
 	
 	if ( !file_exists( $f ) )

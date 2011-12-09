@@ -70,7 +70,7 @@ ob_start();
 									foreach ( $v->tags as $t ) 
 									{
 										?>
-											<a href="/blog/tag/<?php echo $t; ?>"><?php echo $t; ?></a>
+											<a href="/blog/tag/<?php echo $t; ?>/"><?php echo $t; ?></a>
 										<?php
 									}
 									?>
