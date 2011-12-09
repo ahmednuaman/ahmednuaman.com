@@ -1001,6 +1001,8 @@ small
 	}
 	#container
 	{
+		padding: 10px;
+		
 		#menu
 		{
 			margin-top: 0;
@@ -1026,7 +1028,7 @@ small
 				.thumbnail,
 				.info
 				{
-					width: 400px;
+					width: 100%;
 				}
 				.thumbnail
 				{
@@ -1035,7 +1037,7 @@ small
 					
 					canvas
 					{
-						width: 400px;
+						width: 100%;
 						height: 247px;
 					}
 				}
@@ -1043,11 +1045,11 @@ small
 		}
 		#bio
 		{
-			width: 400px;
+			width: 100%;
 			
 			> div
 			{
-				width: 400px;
+				width: 100%;
 				margin: 20px 0 0 0;
 			}
 			> div:first-child
@@ -1076,6 +1078,11 @@ small
 					font-size: 11pt;
 					padding: 5px 6px;
 				}
+				a:nth-child(2),
+				a:nth-child(4)
+				{
+					.hide;
+				}
 			}
 		}
 		#work
@@ -1085,30 +1092,15 @@ small
 			{
 				margin-bottom: 20px;
 				
-				.thumbnail,
-				.info
-				{
-					width: 320px;
-				}
 				.thumbnail
 				{
-					height: 197px;
+					height: 180px;
 					
 					canvas
 					{
-						width: 320px;
-						height: 197px;
+						height: 180px;
 					}
 				}
-			}
-		}
-		#bio
-		{
-			width: 320px;
-			
-			> div
-			{
-				width: 320px;
 			}
 		}
 	}
