@@ -26,6 +26,7 @@ ob_start();
 		<title>Portfolio of the illusive Ahmed Nuaman</title>
 	</head>
 	<body>
+		<div id="bg"></div>
 		<div id="container">
 			<div id="intro">
 				<div title="Too blue? Click here to go minimalist!">

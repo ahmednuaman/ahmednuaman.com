@@ -17,6 +17,7 @@ ob_start();
 		<title>Blog of the illusive Ahmed Nuaman <?php wp_title( '&mdash;', true, 'left' ); ?></title>
 	</head>
 	<body <?php echo body_class(); ?>>
+		<div id="bg"></div>
 		<div id="container">
 			<div id="intro">
 				<div title="Too blue? Click here to go minimalist!">
