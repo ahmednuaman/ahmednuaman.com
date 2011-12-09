@@ -59,7 +59,7 @@ function ahmed_save_cache()
 	$f	= $ahmed_cache_folder . $ahmed_cache_prefix . ahmed_hash_url( $_SERVER[ 'REQUEST_URI' ] );
 	$h 	= ob_get_contents();
 	
-	if ( !file_exists( $f ) )
+	if ( !file_exists( $f ) && !is_admin() )
 	{
 		file_put_contents( $f, $h );
 	}
@@ -96,11 +96,28 @@ function ahmed_loop($t='')
 			<div class="right"><?php previous_posts_link( 'Newer Entries &raquo;' ); ?></div>
 			<div class="left"><?php next_posts_link( '&laquo; Older Entries' ); ?></div>
 		</div>
-	<?php else: ?>
-		<h3>Whoa! Where are you off to?</h3>
-		<p>There's nothing here! So enter whatever you're looking for below and see what happens...</p>
-		<?php get_search_form(); ?>
-	<?php endif;
+	<?php else: ahmed_404(); endif;
+}
+
+function ahmed_404()
+{
+	?>
+		<style>
+		<!--
+			#baxter
+			{
+				display: block;
+				margin: 20px 0 0 0;
+				-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;text-shadow:0px 1px 0px #000000;-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.5);-moz-box-shadow:0 0 5px rgba(0, 0, 0, 0.5);box-shadow:0 0 5px rgba(0, 0, 0, 0.5);
+				width: 900px;
+				height: 602px;
+				background: url(/assets/image/baxter.jpg) center no-repeat;
+			}
+		-->
+		</style>
+		<h2>Oh noes, you're lost! Well to cheer you up, here's a picture of Baxter:</h2>
+		<div id="baxter"></div>
+	<?php
 }
 
 add_action( 'clean_post_cache', 'ahmed_clear_cache' );

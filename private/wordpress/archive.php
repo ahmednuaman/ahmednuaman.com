@@ -25,10 +25,6 @@
 	<?php elseif ( is_author() ): // If this is a category archive
 		$userdata = get_userdatabylogin( get_query_var( 'author_name' ) ); ?>
 		<h3>Sorry, but there aren't any posts by <?php echo $userdata->display_name;?> yet.</h3>
-	<?php else: ?>
-		<h3>Whoa! Where are you off to?</h3>
-		<p>There's nothing here! So enter whatever you're looking for below and see what happens...</p>
-		<?php get_search_form(); ?>
-	<?php endif; ?>
+	<?php else: ahmed_404(); endif; ?>
 <?php endif; ?>
 <?php get_footer(); ?>

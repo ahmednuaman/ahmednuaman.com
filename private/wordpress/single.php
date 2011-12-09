@@ -42,10 +42,5 @@
 		</div>
 	
 	<?php endwhile; ?>  
-<?php else: ?>
-	<h3>Whoa! Where are you off to?</h3>
-	<p>There's nothing here! So enter whatever you're looking for below and see what happens...</p>
-	<?php get_search_form(); ?>
-		
-<?php endif; ?>
+<?php else: ahmed_404(); endif; ?>
 <?php get_footer(); ?>
