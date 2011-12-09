@@ -626,7 +626,7 @@ small
 				.animation(fade-name, .5s, 0.0s, infinite, alternate);
 			}
 		}
-		}
+	}
 	#menu
 	{
 		height: 100px;
@@ -721,6 +721,11 @@ small
 		li:last-child
 		{
 			margin-bottom: 0 !important;
+		}
+		.navigation
+		{
+			.left;
+			width: 100%;
 		}
 	}
 	#bio
@@ -974,6 +979,14 @@ small
 				}
 			}
 		}
+		#work,
+		#bio
+		{
+			.relative;
+			float: none !important;
+			margin: 0 auto;
+			width: 100%;
+		}
 		#work
 		{
 			li,
@@ -991,11 +1004,6 @@ small
 		}
 		#bio
 		{
-			.relative;
-			float: none !important;
-			margin: 0 auto;
-			width: 620px;
-			
 			> div
 			{
 				margin-top: 60px;
