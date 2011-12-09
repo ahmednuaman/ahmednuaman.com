@@ -1,10 +1,10 @@
 		</div>
 			<div id="bio">
 				<div>
-					<h3>Search</h3>
-					<?php get_search_form(); ?>
 					<h3>Where have comments gone?</h3>
 					<p>Good question my old fruity. I'm now sticking any post discussions on <a href="/+">Google+</a>. Why? Well simply it's better. WordPress's comment system isn't very elegant and nor are ones like Disqus or Livefyre, so to save hassle I've just shipped them off to a social network, like a real boss.</p>
+					<h3>Search</h3>
+					<?php get_search_form(); ?>
 				</div>
 				<div>
 					<h3>My social skills</h3>
