@@ -82,7 +82,7 @@ function ahmed_loop($t='')
 		<ul>
 			<?php while ( have_posts() ): the_post(); ?>
 				<li <?php post_class() ?> id="post-<?php the_ID(); ?>">
-					<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+					<h<?php echo $t ? '4' : '3' ?>><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h<?php echo $t ? '4' : '3' ?>>
 					<div class="entry">
 						<p>
 							<small>

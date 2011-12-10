@@ -18,6 +18,22 @@
 		"title"			: "Drawn by Matt"
 	},
 	{
+		"description"	: "The Davos Debates 2009 were a great way that YouTube helped users post their responses and feelings on major questions to the world's leaders. It featured a full custom brand channel gadget, created by me in Actionscript 2, and uses the YouTube Contest API with a Google App Engine (Python) proxy. The gadget proved to be highly successful and a first for YouTube.",
+		"name"			: "yt-davos",
+		"tags"			: [
+			"as2", "flash", "youtube", "contestapi"
+		],
+		"title"			: "WEF Davos Debates 2009 Channel"
+	},
+	{
+		"description"	: "One of the first projects I did after I left Google was the 'Best of us challenge' YouTube Channel for the IOC. The idea of the channel was to have videos of athletes doing stuff that us mere mortals can compete with, such as, walking on your hands or balancing balls. It's a beautifully designed gadget and my task was to aid the team through the maze that is a YouTube Contest Gadget, helping with coding, integration of the player, the authentication and uploading of videos, creation of the proxy (and caching) all the way through to the tech review process.",
+		"name"			: "0043mek",
+		"tags"			: [
+			"as3", "flash", "youtube", "gdata"
+		],
+		"title"			: "IOC Best of us YouTube channel"
+	},
+	{
 		"description"	: "This was a personal record breaker of a channel! I built this bad-boy of a gadget in a day! Oh yes, that quick. The best part was that the agency knew exactly what they wanted so there were no changes! It's just recently gone live and hit all the deadlines within good time.",
 		"href"			: "youtube.com/lloydstsb",
 		"name"			: "bn-lloyds",
@@ -27,6 +43,14 @@
 		"title"			: "Lloyds TSB YouTube channel"
 	},
 	{
+		"description"	: "This has been a huge milestone project for me. The D&amp;AD Inspiration channel is creative showcase in the field of commercial creativity. It's free to enter and work isn't judged by a panel of D&amp;AD judges, instead it's showcased to the world of creativity through this gadget. It features a unique hexagon scrolling interface (for which the maths was hard) and integrates with a middle tier proxy system as well as YouTube GData feeds and the YouTube Contest API.",
+		"name"			: "0054yt",
+		"tags"			: [
+			"as3", "flash", "puremvc", "youtube", "gdata", "contestapi"
+		],
+		"title"			: "D&amp;AD Inspiration YouTube Channel"
+	},
+	{
 		"description"	: "It's not often that you're asked to create a working prototype for the BBC, and then it's even rarer that that prototype goes into production. I worked with a great set of producers and developers (<a href=\"http://play.blog2t.net/\">Tomek</a> and Parmy) for this project.",
 		"href"			: "www.bbc.co.uk/cbbc/topics/staring-contests",
 		"name"			: "0069bbc",
@@ -34,6 +58,30 @@
 			"as3", "puremvc", "flash"
 		],
 		"title"			: "CBBC staring contests"
+	},
+	{
+		"description"	: "On my meeting to another project, I received a call from the creative agency asking for my help to get this YouTube and GCN centric campaign off the ground and turned around within 4 working days. It started off with a multi-stage YouTube brand channel that coincided with the launch of the teasers and adverts for the new 3D LED TV. I then also had to work on MPUs and a masthead for the YouTube homepage. Overall it was a pretty awesome project, one that had to be done quite fast (within 16 working days) and one that's come off pretty well.",
+		"name"			: "0079chi",
+		"tags"			: [
+			"as3", "flash", "puremvc", "youtube", "gdata"
+		],
+		"title"			: "Samsung 3D LED TV Campaign"
+	},
+	{
+		"description"	: "This was a really fun project to work on. It was the first time I worked with AddictivePixel and I really hope it's not the last. The concept was simple: create a custom gadget that integrated with the YouTube Contest API and also the GData API to allow OAuth session creation so that users can rate, upload and subscribe to videos and the channel as well as submitting a video without having to authenticate multiple times. ",
+		"name"			: "0083bbh",
+		"tags"			: [
+			"as3", "flash", "puremvc", "youtube", "gdata", "contestapi"
+		],
+		"title"			: "Tango'd Films YouTube Channel"
+	},
+	{
+		"description"	: "I got this as a late minute project, it was simply to code up the front and back end of the contest, using YouTube to host entry videos and a custom microsite contest API to handle submissions, views and votes. The client mentioned that they didn't mind it being built in Flash, but I opted to do it in HTML, JavaScript and CSS so it would be tablet compatible for all you iPad lovers.",
+		"name"			: "0096wc",
+		"tags"			: [
+			"html", "css", "javascript", "jquery"
+		],
+		"title"			: "SEGA Sonic The Hedgehog Birthday Contest"
 	},
 	{
 		"description"	: "After I finished working at Google I met a great agency called <a href=\"http://www.psycle.com/\">Psycle</a>. One of the first projects that I worked on with them was for YouTube's Play channel in collaboration with Guggenheim, my part was making the large scrolling wall and now I can tell you whatever you want about getting around FP9's 2,880 max width for display objects.",
@@ -52,6 +100,14 @@
 			"as3", "robotlegs", "flash"
 		],
 		"title"			: "davies+mckerr web site"
+	},
+	{
+		"description"	: "This was quick project I picked up from the agency and had to add all the nice Facebook features such as the like button, posting on one's wall and inviting friends. I then also had to resize the application so it fitted within the dimensions of the Facebook canvas frame and then build an entirely new section for the results of the voting.",
+		"name"			: "0103wc",
+		"tags"			: [
+			"as3", "flash", "facebook"
+		],
+		"title"			: "Ben 10 Facebook App and Microsite"
 	},
 	{
 		"description"	: "I worked for an agency called <a href=\"http://www.clicktag.co.uk/\">clickTag</a> to create this app for ITV2's show about blood suckers. I never knew just how many people liked vampires until we went live; it had over 500 entries in the first hour.",
