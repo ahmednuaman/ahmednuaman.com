@@ -22,7 +22,7 @@
 						    'order' => 'DESC',
 						    'limit' => 5,
 						    'echo' => true,
-						    'before' => '<li>&rarr; ',
+						    'before' => '<li>',
 						    'after' => '</li>',
 						    'type' => 'post',
 						    'message' => 'no matches'
