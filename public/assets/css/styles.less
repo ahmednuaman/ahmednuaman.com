@@ -339,7 +339,7 @@ li,
 .tooltip
 {
 	.helvetica;
-	color: rgba(255, 255, 255, .85);
+	color: #ffffff;
 	font-size: 9pt;
 	line-height: 14pt;
 	font-style: normal;
@@ -802,12 +802,22 @@ small
 		}
 	}
 	#bio div.col,
-	#work .postmetadata
+	#work .postmetadata,
+	#work .entry
 	{
 		li
 		{
 			float: none !important;
 			margin-bottom: 5px;
+		}
+	}
+	#work .entry ul
+	{
+		margin: 10px 0;
+		
+		li:before
+		{
+			content: '→ ';
 		}
 	}
 }
