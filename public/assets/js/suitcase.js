@@ -145,9 +145,9 @@ var S	= {
 	
 	formatPost													: function(s)
 	{
-		var d	= new Date( s[ 'post_date_gmt' ] );
+		var d	= new Date( s.post_date_gmt );
 		
-		return '<li title="Posted at ' + d.getHours() + ':' + d.getMinutes() + ' on ' + d.getDate() + ' ' + S.months[ d.getMonth() ] + '">&rarr; <a href="' + s.url + '">' + s[ 'post_title' ] + '</a></li>';
+		return '<li title="Posted at ' + d.getHours() + ':' + d.getMinutes() + ' on ' + d.getDate() + ' ' + S.months[ d.getMonth() ] + '">&rarr; <a href="' + s.guid + '">' + s.post_title + '</a></li>';
 	},
 	
 	truncate													: function(s, l, a)
