@@ -65,7 +65,7 @@ function ahmed_save_cache()
 	$f	= $ahmed_cache_folder . $ahmed_cache_prefix . ahmed_hash_url( $_SERVER[ 'REQUEST_URI' ] );
 	$h 	= ob_get_contents();
 	
-	if ( !file_exists( $f ) && !is_admin() )
+	if ( /*!file_exists( $f ) &&*/ !is_admin() && ob_get_length() > 0 )
 	{
 		file_put_contents( $f, $h );
 	}
