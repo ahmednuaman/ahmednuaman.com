@@ -92,7 +92,7 @@ function ahmed_loop($t='')
 						<?php the_content(); ?>
 					</div>
 					<p class="postmetadata">
-						<?php the_tags( 'Tags: ', ', ', '<br />' ); ?> Posted in <?php the_category(', ') ?>
+						<?php the_tags( 'Tags: ', ' ~ ', '<br />' ); ?> Posted in <?php the_category(' ~ ') ?>
 					</p>
 					<hr />
 				</li>
