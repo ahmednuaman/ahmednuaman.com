@@ -126,9 +126,33 @@ function ahmed_404()
 	<?php
 }
 
+function ahmed_show_flash($a)
+{
+	global $post;
+	
+	extract( $a );
+	
+	$id	= preg_replace( '/\W+/', '', $movie );
+	
+	return <<<EOF
+		<div class="flash border">
+			<div id="$id"></div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+		<script>
+		<!--
+			swfobject.embedSWF( '$movie', '$id', '$width', '$height', '10.0.0' );
+		-->
+		</script>
+EOF;
+}
+
 add_action( 'clean_post_cache', 'ahmed_clear_cache' );
 add_action( 'delete_post', 'ahmed_clear_cache' );
 add_action( 'posts_selection', 'ahmed_check_cache' );
 add_action( 'save_post', 'ahmed_clear_cache' );
 add_action( 'shutdown', 'ahmed_save_cache', 0 );
 add_action( 'update_option', 'ahmed_clear_cache' );
+
+add_shortcode( 'kml_flashembed', 'ahmed_show_flash' );
+add_shortcode( 'flashembed', 'ahmed_show_flash' );
