@@ -14,6 +14,8 @@ var S	= {
 		
 		S.detectBrowser();
 		
+		Socialite.load();
+		
 		S.findTooltips();
 		S.loadPosts();
 		S.loadTweets();

@@ -25,4 +25,7 @@ rsync -e ssh --recursive --progress --verbose --compress \
 	--exclude 'style.css' \
 	private/wordpress/ ahmednua@fsmg.co.uk:~/www/blog/wp-content/themes/ahmednuaman/
 
+echo 'Clearing cache...'
+ssh ahmednua@fsmg.co.uk 'rm -rf ~/www/blog/wp-content/cache/*'
+
 echo 'Done!'

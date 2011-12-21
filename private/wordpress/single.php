@@ -10,23 +10,30 @@
 
 				<div class="postmetadata alt">
 					<p>Share the love:</p>
-					<div class="noborder">
-						<a href="http://twitter.com/share" class="socialite twitter" data-text="<?php the_title(); ?>" data-url="<?php the_permalink(); ?>" data-count="vertical" data-via="dbushell" rel="nofollow">
-							<span>Share on Twitter</span>
-						</a>
-						<a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=<?php the_permalink(); ?>" class="socialite googleplus" data-size="tall" data-href="<?php the_permalink(); ?>" rel="nofollow">
-							<span>Share on Google+</span>
-						</a>
-						<a href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>&amp;t=<?php the_title(); ?>" class="socialite facebook" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false" rel="nofollow">
-							<span>Share on Facebook</span>
-						</a>
-						<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>" class="socialite linkedin" data-url="<?php the_permalink(); ?>" data-counter="top" rel="nofollow">
-							<span>Share on LinkedIn</span>
-						</a>
-					</div>
-					
+					<ul class="social">
+						<li>
+							<a href="http://twitter.com/share" class="socialite twitter" data-text="<?php the_title(); ?>" data-url="<?php the_permalink(); ?>" data-count="horizontal" data-via="ahmednuaman" rel="nofollow">
+								<span>Share on Twitter</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=<?php the_permalink(); ?>" class="socialite googleplus" data-size="medium" data-href="<?php the_permalink(); ?>" rel="nofollow">
+								<span>Share on Google+</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>&amp;t=<?php the_title(); ?>" class="socialite facebook" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="60" data-show-faces="false" rel="nofollow">
+								<span>Share on Facebook</span>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>" class="socialite linkedin" data-url="<?php the_permalink(); ?>" data-counter="right" rel="nofollow">
+								<span>Share on LinkedIn</span>
+							</a>
+						</li>
+					</ul>
 					<p>Related posts:</p>
-					<ul>
+					<ul class="related">
 						<?php related_posts_by_category( array(
 						    'orderby' => 'post_date',
 						    'order' => 'DESC',

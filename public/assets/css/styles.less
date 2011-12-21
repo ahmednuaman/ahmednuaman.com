@@ -811,8 +811,23 @@ small
 	{
 		li
 		{
-			float: none !important;
+			float: none;
 			margin-bottom: 5px;
+		}
+		.social
+		{
+			.relative;
+			height: 40px;
+			
+			li
+			{
+				.left;
+				width: 100px;
+			}
+			li:before
+			{
+				content: '';
+			}
 		}
 	}
 	#work .postmetadata
