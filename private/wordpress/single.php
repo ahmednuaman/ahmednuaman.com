@@ -11,8 +11,18 @@
 				<div class="postmetadata alt">
 					<p>Share the love:</p>
 					<div class="noborder">
-						<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=<?php the_permalink(); ?>&amp;via=ahmednuaman&amp;text=<?php the_title(); ?>" style="width:130px; height:40px;"></iframe>
-						<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink(); ?>&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:40px;" allowTransparency="true"></iframe>
+						<a href="http://twitter.com/share" class="socialite twitter" data-text="<?php the_title(); ?>" data-url="<?php the_permalink(); ?>" data-count="vertical" data-via="dbushell" rel="nofollow">
+							<span>Share on Twitter</span>
+						</a>
+						<a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=<?php the_permalink(); ?>" class="socialite googleplus" data-size="tall" data-href="<?php the_permalink(); ?>" rel="nofollow">
+							<span>Share on Google+</span>
+						</a>
+						<a href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>&amp;t=<?php the_title(); ?>" class="socialite facebook" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false" rel="nofollow">
+							<span>Share on Facebook</span>
+						</a>
+						<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>" class="socialite linkedin" data-url="<?php the_permalink(); ?>" data-counter="top" rel="nofollow">
+							<span>Share on LinkedIn</span>
+						</a>
 					</div>
 					
 					<p>Related posts:</p>
