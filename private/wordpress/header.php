@@ -15,7 +15,7 @@ ob_start();
 		<meta property="og:image" content="http://ahmednuaman.com/assets/image/gravatar.png" />
 		<script src="/assets/js/packaged.js"></script>
 		<?php wp_head(); ?>
-		<title>Blog of the illusive Ahmed Nuaman <?php wp_title( '&mdash;', true, 'left' ); ?></title>
+		<title><?php wp_title( ' &mdash; ', true, 'right' ); ?>Blog of the illusive Ahmed Nuaman</title>
 	</head>
 	<body <?php echo body_class(); ?>>
 		<div id="bg"></div>

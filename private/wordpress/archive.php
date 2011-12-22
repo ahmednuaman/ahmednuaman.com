@@ -14,15 +14,15 @@ if ( have_posts() )
 	}
 	elseif ( is_day() )
 	{ 
-		$t	= 'Archive for ' . the_time('F jS, Y');
+		$t	= 'Archive for ' . get_the_time('F jS, Y');
 	}
 	elseif ( is_month() )
 	{ 
-		$t	= 'Archive for ' . the_time('F, Y');
+		$t	= 'Archive for ' . get_the_time('F, Y');
 	}
 	elseif ( is_year() )
 	{ 
-		$t	= 'Archive for ' . the_time('Y');
+		$t	= 'Archive for ' . get_the_time('Y');
 	}
 	elseif ( is_author() )
 	{ 
