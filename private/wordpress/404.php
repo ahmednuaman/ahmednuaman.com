@@ -39,6 +39,11 @@
 		</style>
 	</head>
 	<body>
+		<!-- 
+			<?php
+				print_r($wp_rewrite);
+			?>
+		-->
 		<div id="container">
 			<h1>Oh noes, something's gone wrong!</h1>
 			<h2>Oh well, instead, how about a picture of Baxter?</h2>

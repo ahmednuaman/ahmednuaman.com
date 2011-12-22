@@ -147,9 +147,19 @@ function ahmed_show_flash($a)
 EOF;
 }
 
+function ahmed_add_rewrite_rules($r)
+{
+	$n	= array(
+		'[0-9]{4}/[0-9]{2}/[0-9]{2}/([^/]+)/?$' => 'index.php?name=$matches[1]'
+	);
+	
+	return $n + $r;
+}
+
 add_action( 'clean_post_cache', 'ahmed_clear_cache' );
 add_action( 'delete_post', 'ahmed_clear_cache' );
 add_action( 'posts_selection', 'ahmed_check_cache' );
+add_filter( 'rewrite_rules_array', 'ahmed_add_rewrite_rules' );
 add_action( 'save_post', 'ahmed_clear_cache' );
 add_action( 'shutdown', 'ahmed_save_cache', 0 );
 add_action( 'update_option', 'ahmed_clear_cache' );
