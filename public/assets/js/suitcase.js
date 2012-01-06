@@ -14,7 +14,10 @@ var S	= {
 		
 		S.detectBrowser();
 		
-		Socialite.load();
+		if ( $( 'body' ).hasClass( 'single' ) )
+		{
+			Socialite.load();
+		}
 		
 		S.findTooltips();
 		S.loadPosts();
