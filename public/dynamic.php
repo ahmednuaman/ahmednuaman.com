@@ -24,7 +24,7 @@ ob_start();
 		<link type="text/css" rel="stylesheet" href="/assets/css/styles.css" />
 		<link type="text/plain" rel="author" href="/humans.txt" />
 		<meta property="og:image" content="http://ahmednuaman.com/assets/image/gravatar.png" />
-		<title>Portfolio of the illusive Ahmed Nuaman</title>
+		<title>Portfolio of the elusive Ahmed Nuaman</title>
 	</head>
 	<body>
 		<div id="bg"></div>
