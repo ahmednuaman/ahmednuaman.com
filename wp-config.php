@@ -14,7 +14,7 @@
  * @package WordPress
  */
 
-$json_config	= file_get_contents( $_ENV['CRED_FILE'], false );
+$json_config	= @file_get_contents( $_ENV['CRED_FILE'], false );
 
 if ( $json_config == false )
 {
