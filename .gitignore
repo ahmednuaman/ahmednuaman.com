@@ -9,5 +9,8 @@ wp-content/plugins/*
 wp-content/themes/*
 !wp-content/themes/ahmednuaman/
 !wp-content/themes/ahmednuaman/*
+!wp-content/themes/ahmednuaman/assets/*
 wp-content/themes/ahmednuaman/assets/css/styles.css
+!wp-content/themes/ahmednuaman/assets/css/*
 wp-content/themes/ahmednuaman/assets/js/packaged.js
+!wp-content/themes/ahmednuaman/assets/js/*
