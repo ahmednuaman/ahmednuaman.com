@@ -1,3 +1,4 @@
+			
 		</div>
 		<?php wp_footer(); ?>
 		<?php if ( WP_DEBUG ): ?>
