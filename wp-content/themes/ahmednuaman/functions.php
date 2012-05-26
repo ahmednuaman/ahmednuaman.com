@@ -33,20 +33,23 @@ function ahmed_save_cache()
 	global $ahmed_cache_prefix;
 	global $post;
 	
-	if ( $post->post_type != 'post' && $post->post_type != 'page' )
+	if ( $post )
 	{
-		return;
+		if ( $post->post_type != 'post' && $post->post_type != 'page' )
+		{
+			return;
+		}
+		
+		$f	= $ahmed_cache_prefix . ahmed_hash_url( $_SERVER[ 'REQUEST_URI' ] );
+		$h 	= ob_get_contents();
+		
+		if ( /*!file_exists( $f ) &&*/ !is_admin() && ob_get_length() > 1024 )
+		{
+			apc_add( $f, $h );
+		}
+		
+		ob_end_flush();
 	}
-	
-	$f	= $ahmed_cache_prefix . ahmed_hash_url( $_SERVER[ 'REQUEST_URI' ] );
-	$h 	= ob_get_contents();
-	
-	if ( /*!file_exists( $f ) &&*/ !is_admin() && ob_get_length() > 1024 )
-	{
-		apc_add( $f, $h );
-	}
-	
-	ob_end_flush();
 }
 
 function ahmed_show_flash($a)
