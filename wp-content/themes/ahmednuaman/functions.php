@@ -91,6 +91,8 @@ function ahmed_add_rewrite_rules($r)
 function ahmed_enqueue_scripts()
 {
 	wp_register_script( 'swfobject', get_template_directory_uri() . '/assets/js/swfobject.js' );
+	
+	wp_enqueue_script( 'jquery' );
 }
 
 add_action( 'clean_post_cache', 'ahmed_clear_cache' );
