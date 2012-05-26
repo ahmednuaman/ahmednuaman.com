@@ -8,13 +8,17 @@ function ahmed_check_cache()
 	
 	$f	= $ahmed_cache_prefix . ahmed_hash_url( $_SERVER[ 'REQUEST_URI' ] );
 	
-	if ( apc_exists( $f ) && !is_admin() )
+	if ( apc_exists( $f ) && !is_admin() && !current_user_can( 'administrator' ) )
 	{
 		ob_end_flush();
 		
 		echo apc_fetch( $f );
 		
 		die();
+	}
+	else if ( current_user_can( 'administrator' ) )
+	{
+		apc_delete( $f );
 	}
 }
 
@@ -33,7 +37,7 @@ function ahmed_save_cache()
 	global $ahmed_cache_prefix;
 	global $post;
 	
-	if ( $post )
+	if ( !is_admin() && $post )
 	{
 		if ( $post->post_type != 'post' && $post->post_type != 'page' )
 		{
@@ -43,7 +47,7 @@ function ahmed_save_cache()
 		$f	= $ahmed_cache_prefix . ahmed_hash_url( $_SERVER[ 'REQUEST_URI' ] );
 		$h 	= ob_get_contents();
 		
-		if ( /*!file_exists( $f ) &&*/ !is_admin() && ob_get_length() > 1024 )
+		if ( /*!file_exists( $f ) &&*/ ob_get_length() > 1024 )
 		{
 			apc_add( $f, $h );
 		}
