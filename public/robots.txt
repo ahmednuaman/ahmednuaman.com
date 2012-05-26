@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /_
-Disallow: /assets
-Disallow: /error.html
