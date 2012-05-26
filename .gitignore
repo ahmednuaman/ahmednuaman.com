@@ -1,4 +1,12 @@
-*.css
-!animation.css
-*packaged.js
-public/index.html
+*
+!wp-config.php
+!wp-content/
+wp-content/*
+!wp-content/plugins/
+wp-content/plugins/*
+!wp-content/plugins/ahmednuaman/
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/ahmednuaman/
+wp-content/themes/ahmednuaman/assets/css/styles.css
+wp-content/themes/ahmednuaman/assets/js/packaged.js
