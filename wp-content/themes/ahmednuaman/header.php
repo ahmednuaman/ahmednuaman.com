@@ -22,10 +22,13 @@
 	<body>
 		<div id="container">
 			<header>
-				<a href="<?php bloginfo( 'siteurl' ); ?>" id="logo" class="sprite">
+				<a href="<?php echo site_url(); ?>" id="logo" class="sprite">
 					<span class="hide">
 						<?php bloginfo( 'name' ); ?>
 					</span>
 				</a>
+				<nav>
+					<?php echo ahmed_menu( 'top' ); ?>
+				</nav>
 			</header>
 			<div id="content">

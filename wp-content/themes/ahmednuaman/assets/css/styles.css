@@ -313,8 +313,8 @@ strong {
     display: block;
     position: relative !important;
     width: 100%;
-    border-top: 5px solid #0080ff;
-    border-bottom: 5px solid #0064c8;
+    border-top: 2px solid #0080ff;
+    border-bottom: 2px solid #0064c8;
   }
   #container header #logo {
     display: block;

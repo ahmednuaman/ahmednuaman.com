@@ -95,6 +95,44 @@ function ahmed_enqueue_scripts()
 	wp_enqueue_script( 'jquery' );
 }
 
+function ahmed_menu($m)
+{
+	global $wp_query;
+	
+	$its	= wp_get_nav_menu_items( $m );
+	$h		= '';
+	$u		= $_SERVER[ 'REQUEST_URI' ];
+	
+	foreach ( $its as $i ) 
+	{
+		$h	.= '<a href="' . $i->url . '"' . ( ahmed_compare_urls( $u, $i->url ) ? ' class="selected"' : '' ) . '>' . $i->title . '</a>';
+	}
+	
+	return $h;
+}
+
+function ahmed_compare_urls($u1, $u2)
+{
+	if ( $u1 === $u2 )
+	{
+		return true;
+	}
+	
+	$u1	= parse_url( $u1 );
+	$u2	= parse_url( $u2 );
+	
+	$u1	= str_replace( '/', '', $u1[ 'path' ] );
+	$u2	= str_replace( '/', '', $u2[ 'path' ] );
+	
+	if ( @strpos( $u1, $u2 ) === 0 )
+	{
+		return true;
+	}
+}
+
+add_theme_support( 'menus' );
+add_theme_support( 'post-thumbnails' );
+
 add_action( 'clean_post_cache', 'ahmed_clear_cache' );
 add_action( 'delete_post', 'ahmed_clear_cache' );
 add_action( 'posts_selection', 'ahmed_check_cache' );
