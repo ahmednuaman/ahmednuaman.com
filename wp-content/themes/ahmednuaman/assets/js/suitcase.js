@@ -1,3 +1,5 @@
+$	= jQuery;
+
 var Suitcase	= function(window)
 {
 	function ready()
@@ -77,6 +79,14 @@ var Suitcase	= function(window)
 		if ( navigator.userAgent.indexOf( 'OS 5_' ) != -1 )
 		{
 			$( 'html' ).addClass( 'ios5' );
+		}
+		
+		if ( window.devicePixelRatio )
+		{
+			if ( window.devicePixelRatio > 1 )
+			{
+				$( 'html' ).addClass( 'retina' );
+			}
 		}
 		
 		$( 'html' ).removeClass( 'no-js' );

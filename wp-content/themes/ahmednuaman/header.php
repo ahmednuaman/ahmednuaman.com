@@ -16,7 +16,16 @@
 		<?php wp_head(); ?>
 		<title>
 			<?php wp_title( ' ~ ', true, 'right' ); ?>
+			<?php bloginfo( 'name' ); ?>
 		</title>
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div id="container">
+			<header>
+				<a href="<?php bloginfo( 'siteurl' ); ?>" id="logo" class="sprite">
+					<span class="hide">
+						<?php bloginfo( 'name' ); ?>
+					</span>
+				</a>
+			</header>
+			<div id="content">
