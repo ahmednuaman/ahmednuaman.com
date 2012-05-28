@@ -124,6 +124,11 @@ function ahmed_compare_urls($u1, $u2)
 	$u1	= str_replace( '/', '', $u1[ 'path' ] );
 	$u2	= str_replace( '/', '', $u2[ 'path' ] );
 	
+	if ( $u1 === $u2 )
+	{
+		return true;
+	}
+	
 	if ( @strpos( $u1, $u2 ) === 0 )
 	{
 		return true;

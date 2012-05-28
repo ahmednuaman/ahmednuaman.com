@@ -282,7 +282,7 @@ p
 }
 a
 {
-	font-size: 9pt;
+	font-size: 10pt;
 	line-height: normal;
 }
 a:link,
@@ -363,8 +363,8 @@ strong
 		{
 			#logo
 			{
-				.relative;
 				.corners(50%);
+				.relative;
 				margin: 10px auto;
 				border: solid 3px #dddddd;
 				width: 81px;
@@ -378,7 +378,24 @@ strong
 				
 				a
 				{
+					.corners(5px);
+					.ease(border-color);
+					.text-shadow(#ffffff);
+					border: 2px solid #dddddd;
 					display: inline-block;
+					padding: 5px 10px;
+					font-size: 12pt;
+					margin: 0 5px;
+				}
+				a.selected
+				{
+					.gradient(#0064c8, #0080ff);
+					.text-shadow(#333333);
+					color: #eeeeee;
+				}
+				a:hover
+				{
+					border-color: #ededed;
 				}
 			}
 		}
