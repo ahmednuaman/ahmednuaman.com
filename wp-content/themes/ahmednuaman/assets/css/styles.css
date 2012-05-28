@@ -327,6 +327,15 @@ strong {
     width: 81px;
     height: 81px;
   }
+  #container header nav {
+    display: block;
+    position: relative !important;
+    margin: 0 auto 10px;
+    text-align: center;
+  }
+  #container header nav a {
+    display: inline-block;
+  }
 }
 @media (min-width: 480px) {
   
