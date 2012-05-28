@@ -316,6 +316,11 @@ strong {
     border-top: 2px solid #0080ff;
     border-bottom: 2px solid #0064c8;
   }
+  #container header {
+    display: block;
+    position: relative !important;
+    width: 100%;
+  }
   #container header #logo {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -369,9 +374,28 @@ strong {
   #container header nav a:hover {
     border-color: #ededed;
   }
+  #container header nav a:first-child {
+    margin-left: 0;
+  }
+  #container header nav a:last-child {
+    margin-right: 0;
+  }
 }
 @media (min-width: 480px) {
-  
+  #container header {
+    padding: 0 20px;
+    height: 101px;
+  }
+  #container header #logo {
+    display: block;
+    float: left !important;
+  }
+  #container header nav {
+    display: block;
+    float: right !important;
+    width: auto;
+    margin-top: 30px;
+  }
 }
 @media (min-width: 768px) {
   

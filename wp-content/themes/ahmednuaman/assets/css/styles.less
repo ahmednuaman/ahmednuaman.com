@@ -361,6 +361,9 @@ strong
 		
 		header
 		{
+			.relative;
+			width: 100%;
+			
 			#logo
 			{
 				.corners(50%);
@@ -397,13 +400,39 @@ strong
 				{
 					border-color: #ededed;
 				}
+				a:first-child
+				{
+					margin-left: 0;
+				}
+				a:last-child
+				{
+					margin-right: 0;
+				}
 			}
 		}
 	}
 }
 @media (min-width: 480px)
 {
-	
+	#container
+	{
+		header
+		{
+			padding: 0 20px;
+			height: 101px;
+			
+			#logo
+			{
+				.left;
+			}
+			nav
+			{
+				.right;
+				width: auto;
+				margin-top: 30px;
+			}
+		}
+	}
 }
 @media (min-width: 768px)
 {
