@@ -8,6 +8,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<link type="text/css" rel="stylesheet" href="<?php echo $dir; ?>/assets/css/styles.css" />
 		<link type="text/plain" rel="author" href="<?php echo $dir; ?>/humans.txt" />
+		<link type="image/png" rel="icon" href="<?php echo $dir; ?>/assets/image/favicon.ico" />
+		<link type="image/png" rel="apple-touch-icon-precomposed" href="<?php echo $dir; ?>/assets/image/icon-57.png" />
+		<link type="image/png" rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $dir; ?>/assets/image/icon-72.png" />
+		<link type="image/png" rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $dir; ?>/assets/image/icon-114.png" />
+		<link type="image/png" rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $dir; ?>/assets/image/icon-144.png" />
 		<?php wp_head(); ?>
 		<title>
 			<?php wp_title( ' ~ ', true, 'right' ); ?>
