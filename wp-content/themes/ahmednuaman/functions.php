@@ -2,6 +2,30 @@
 
 $ahmed_cache_prefix	= 'ahmed_';
 
+function ahmed_init()
+{
+	register_post_type( 'portfolio', array(
+		'label'			=> __( 'Portfolio' ),
+		'show_ui'		=> true,
+		'show_in_menu'	=> true,
+		'supports'		=> array(
+			'title',
+			'editor',
+			'thumbnail'
+		)
+	));
+	
+	register_post_type( 'labs', array(
+		'label'			=> __( 'Labs' ),
+		'show_ui'		=> true,
+		'show_in_menu'	=> true,
+		'supports'		=> array(
+			'title',
+			'editor'
+		)
+	));
+}
+
 function ahmed_check_cache()
 {
 	global $ahmed_cache_prefix;
@@ -138,6 +162,7 @@ function ahmed_compare_urls($u1, $u2)
 add_theme_support( 'menus' );
 add_theme_support( 'post-thumbnails' );
 
+add_action( 'init', 'ahmed_init' );
 add_action( 'clean_post_cache', 'ahmed_clear_cache' );
 add_action( 'delete_post', 'ahmed_clear_cache' );
 add_action( 'posts_selection', 'ahmed_check_cache' );
@@ -149,3 +174,5 @@ add_action( 'wp_enqueue_scripts', 'ahmed_enqueue_scripts' );
 
 add_shortcode( 'kml_flashembed', 'ahmed_show_flash' );
 add_shortcode( 'flashembed', 'ahmed_show_flash' );
+
+add_image_size( 'work', 620, 383 );
