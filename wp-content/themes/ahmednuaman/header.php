@@ -6,6 +6,7 @@
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
 		<meta name="author" content="Ahmed Nuaman" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<link type="text/css" rel="stylesheet" href="<?php echo $dir; ?>/assets/css/styles.css" />
 		<link type="text/plain" rel="author" href="<?php echo $dir; ?>/humans.txt" />
 		<link type="image/png" rel="icon" href="<?php echo $dir; ?>/assets/image/favicon.ico" />
