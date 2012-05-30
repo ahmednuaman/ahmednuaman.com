@@ -167,8 +167,8 @@ function ahmed_compare_urls($u1, $u2)
 	$u1	= parse_url( $u1 );
 	$u2	= parse_url( $u2 );
 	
-	$u1	= str_replace( '/', '', $u1[ 'path' ] );
-	$u2	= str_replace( '/', '', $u2[ 'path' ] );
+	$u1	= ahmed_hash_url( $u1[ 'path' ] );
+	$u2	= ahmed_hash_url( $u2[ 'path' ] );
 	
 	if ( $u1 === $u2 )
 	{
@@ -179,6 +179,26 @@ function ahmed_compare_urls($u1, $u2)
 	{
 		return true;
 	}
+}
+
+function ahmed_get_portfolio_items()
+{
+	$its	= array();
+	
+	$q		= new WP_Query( 'post_type=portfolio&order_by' );
+	
+	while ( $q->have_posts() ) 
+	{
+		$q->the_post();
+		
+		array_push( $its, array(
+			'title'		=> get_the_title(),
+			'content'	=> get_the_content(),
+			'hero'		=> get_post_meta( get_the_ID(), 'ahmed_portfolio_hero', true )
+		));
+	}
+	
+	return $its;
 }
 
 add_theme_support( 'menus' );

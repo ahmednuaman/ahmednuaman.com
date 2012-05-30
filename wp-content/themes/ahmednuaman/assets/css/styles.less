@@ -121,6 +121,13 @@ textarea {
 	-moz-background-clip: @prop;
 	background-clip: @prop;
 }
+.background-size(@prop)
+{
+	-moz-background-size: @prop;
+	-o-background-size: @prop;
+	-webkit-background-size: @prop;
+	background-size: @prop;
+}
 .cols(@count:2, @gap:20px)
 {
 	-moz-column-count: @count;
@@ -423,6 +430,10 @@ strong
 				}
 			}
 		}
+		#hero
+		{
+			
+		}
 	}
 }
 @media (min-width: 480px)
@@ -459,11 +470,12 @@ strong
 {
 	
 }
-@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5)
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
 {
 	.sprite
 	{
-		background-size: 50%;
+		.background-size(500px 500px);
+		background-image: url(../image/sprite@2x.png);
 	}
 }
 
