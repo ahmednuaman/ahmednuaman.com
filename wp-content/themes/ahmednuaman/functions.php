@@ -10,8 +10,7 @@ function ahmed_init()
 		'show_in_menu'	=> true,
 		'supports'		=> array(
 			'title',
-			'editor',
-			'thumbnail'
+			'editor'
 		)
 	));
 	
@@ -24,6 +23,29 @@ function ahmed_init()
 			'editor'
 		)
 	));
+}
+
+function ahmed_add_meta_boxes()
+{
+	add_meta_box( 'ahmed_portfolio_hero', 'Hero', 'ahmed_meta_box_text', 'portfolio', 'normal' );
+}
+
+function ahmed_meta_box_text($p, $m)
+{
+	?>
+		<input type="text" name="<?php echo $m[ 'id' ]; ?>" value="<?php echo get_post_meta( $p->ID, $m[ 'id' ], true ); ?>" placeholder="<?php echo $m[ 'title' ]; ?>" />
+	<?php
+}
+
+function ahmed_save_post($id)
+{
+	foreach ( $_POST as $k => $v ) 
+	{
+		if ( strstr( $k, 'ahmed_' ) )
+		{
+			update_post_meta( $id, $k, $v );
+		}
+	}
 }
 
 function ahmed_check_cache()
@@ -163,11 +185,13 @@ add_theme_support( 'menus' );
 add_theme_support( 'post-thumbnails' );
 
 add_action( 'init', 'ahmed_init' );
+add_action( 'add_meta_boxes', 'ahmed_add_meta_boxes' );
 add_action( 'clean_post_cache', 'ahmed_clear_cache' );
 add_action( 'delete_post', 'ahmed_clear_cache' );
 add_action( 'posts_selection', 'ahmed_check_cache' );
 add_filter( 'rewrite_rules_array', 'ahmed_add_rewrite_rules' );
 add_action( 'save_post', 'ahmed_clear_cache' );
+add_action( 'save_post', 'ahmed_save_post' );
 add_action( 'shutdown', 'ahmed_save_cache', 0 );
 add_action( 'update_option', 'ahmed_clear_cache' );
 add_action( 'wp_enqueue_scripts', 'ahmed_enqueue_scripts' );
