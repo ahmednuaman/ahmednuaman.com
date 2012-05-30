@@ -265,7 +265,12 @@ html
 {
 	margin: 0;
 	padding: 0;
-	background: #ededed;
+	background: url(../image/bg.png);
+}
+body
+{
+	border-top: 2px solid #0080ff;
+	border-bottom: 2px solid #0064c8;
 }
 a,
 body,
@@ -282,22 +287,26 @@ p
 }
 a
 {
+	.ease(color);
 	font-size: 10pt;
 	line-height: normal;
+	text-decoration: none;
 }
 a:link,
 a:visited
 {
 	color: #666666;
 	border-bottom: 1px solid #666666;
-	text-decoration: none;
 }
-a:hover,
-a:active
+a:hover
 {
 	color: #999999;
 	border-bottom: 1px solid #999999;
-	text-decoration: none;
+}
+a:active
+{
+	color: #0064c8;
+	border-bottom: 1px solid #0064c8;
 }
 em
 {
@@ -356,8 +365,6 @@ strong
 	{
 		.relative;
 		width: 100%;
-		border-top: 2px solid #0080ff;
-		border-bottom: 2px solid #0064c8;
 		
 		header
 		{
@@ -368,10 +375,15 @@ strong
 			{
 				.corners(50%);
 				.relative;
+				.ease(border-color);
 				margin: 10px auto;
 				border: solid 3px #dddddd;
 				width: 81px;
 				height: 81px;
+			}
+			#logo:hover
+			{
+				border-color: #ffffff;
 			}
 			nav
 			{
@@ -382,7 +394,7 @@ strong
 				a
 				{
 					.corners(5px);
-					.ease(border-color);
+					.ease(e('border-color,background,color'));
 					.text-shadow(#ffffff);
 					border: 2px solid #dddddd;
 					display: inline-block;
@@ -398,7 +410,8 @@ strong
 				}
 				a:hover
 				{
-					border-color: #ededed;
+					border-color: #ffffff;
+					background: #ffffff;
 				}
 				a:first-child
 				{
