@@ -304,14 +304,11 @@ h2,
 h3 {
   line-height: normal;
 }
-h1 {
-  font-size: 22pt;
-}
-h2 {
-  font-size: 18pt;
-}
-h3 {
-  font-size: 16pt;
+h1:first-child,
+h2:first-child,
+h3:first-child,
+p:first-child {
+  margin-top: 0;
 }
 input,
 textarea {
@@ -321,23 +318,26 @@ textarea {
   color: #666666;
   font-weight: bold;
 }
-h1,
-h2,
-h3,
-p {
-  margin: 10px 0;
-}
-h1:first-child,
-h2:first-child,
-h3:first-child,
-p:first-child {
-  margin-top: 0;
-}
 strong {
   font-weight: bolder;
 }
 /* Media queries */
 @media (min-width: 320px) {
+  h1 {
+    font-size: 14pt;
+  }
+  h2 {
+    font-size: 13pt;
+  }
+  h3 {
+    font-size: 12pt;
+  }
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 5px 0;
+  }
   #container {
     display: block;
     position: relative !important;
@@ -447,7 +447,12 @@ strong {
   #container #hero {
     display: block;
     position: relative !important;
-    height: 300px;
+    overflow-x: scroll;
+  }
+  #container #hero ul {
+    width: 10000px;
+    padding: 10px 0;
+    height: 350px;
   }
   #container #hero ul li {
     -webkit-transition-property: -webkit-transform, -moz-transform, -ms-transform, -o-transform, transform;
@@ -472,8 +477,59 @@ strong {
     -ms-transform: translatez(0);
     -o-transform: translatez(0);
     transform: translatez(0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: block;
     float: left !important;
+    background: #ffffff;
+    width: 320px;
+    height: 330px;
+    overflow: hidden;
+  }
+  #container #hero ul li img {
+    display: block;
+    position: relative !important;
+    width: 100%;
+    margin: 0 auto 15px;
+  }
+  #container #hero ul li h2,
+  #container #hero ul li div {
+    padding: 0 10px;
+  }
+}
+@media (min-width: 480px) {
+  #container header {
+    padding: 0 20px;
+    height: 101px;
+  }
+  #container header #logo {
+    display: block;
+    float: left !important;
+  }
+  #container header nav {
+    display: block;
+    float: right !important;
+    width: auto;
+    margin-top: 30px;
+  }
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 22pt;
+  }
+  h2 {
+    font-size: 18pt;
+  }
+  h3 {
+    font-size: 16pt;
+  }
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 10px 0;
+  }
+  #container #hero ul li {
+    box-shadow: none;
   }
   #container #hero ul li img {
     -webkit-border-radius: 3px;
@@ -502,29 +558,8 @@ strong {
     -o-transform: translatez(0);
     transform: translatez(0);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: block;
-    position: relative !important;
-    width: 300px;
-    margin: 0 auto;
-  }
-}
-@media (min-width: 480px) {
-  #container header {
-    padding: 0 20px;
-    height: 101px;
-  }
-  #container header #logo {
-    display: block;
-    float: left !important;
-  }
-  #container header nav {
-    display: block;
-    float: right !important;
     width: auto;
-    margin-top: 30px;
   }
-}
-@media (min-width: 768px) {
   #container #hero ul li:hover img {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }

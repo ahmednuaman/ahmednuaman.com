@@ -334,17 +334,12 @@ h3
 {
 	line-height: normal;
 }
-h1
+h1:first-child,
+h2:first-child,
+h3:first-child,
+p:first-child
 {
-	font-size: 22pt;
-}
-h2
-{
-	font-size: 18pt;
-}
-h3
-{
-	font-size: 16pt;
+	margin-top: 0;
 }
 input,
 textarea
@@ -355,20 +350,6 @@ textarea
 	color: #666666;
 	font-weight: bold;
 }
-h1,
-h2,
-h3,
-p
-{
-	margin: 10px 0;
-}
-h1:first-child,
-h2:first-child,
-h3:first-child,
-p:first-child
-{
-	margin-top: 0;
-}
 strong
 {
 	font-weight: bolder;
@@ -377,6 +358,25 @@ strong
 /* Media queries */
 @media (min-width: 320px)
 {
+	h1
+	{
+		font-size: 14pt;
+	}
+	h2
+	{
+		font-size: 13pt;
+	}
+	h3
+	{
+		font-size: 12pt;
+	}
+	h1,
+	h2,
+	h3,
+	p
+	{
+		margin: 5px 0;
+	}
 	#container
 	{
 		.relative;
@@ -443,23 +443,34 @@ strong
 		#hero
 		{
 			.relative;
-			height: 300px;
+			overflow-x: scroll;
 			
 			ul
 			{
+				width: 10000px;
+				padding: 10px 0;
+				height: 350px;
+				
 				li
 				{
 					.ease(e('-webkit-transform, -moz-transform, -ms-transform, -o-transform, transform'));
+					.glow(rgba(0,0,0,.1), 10px);
 					.left;
+					background: #ffffff;
+					width: 320px;
+					height: 330px;
+					overflow: hidden;
 					
 					img
 					{
-						.corners(3px);
-						.ease(box-shadow);
-						.glow(rgba(0,0,0,.1), 10px);
 						.relative;
-						width: 300px;
-						margin: 0 auto;
+						width: 100%;
+						margin: 0 auto 15px;
+					}
+					h2,
+					div
+					{
+						padding: 0 10px;
 					}
 				}
 			}
@@ -490,12 +501,43 @@ strong
 }
 @media (min-width: 768px)
 {
+	h1
+	{
+		font-size: 22pt;
+	}
+	h2
+	{
+		font-size: 18pt;
+	}
+	h3
+	{
+		font-size: 16pt;
+	}
+	h1,
+	h2,
+	h3,
+	p
+	{
+		margin: 10px 0;
+	}
 	#container
 	{
 		#hero
 		{
 			ul
 			{
+				li
+				{
+					box-shadow: none;
+					
+					img
+					{
+						.corners(3px);
+						.ease(box-shadow);
+						.glow(rgba(0,0,0,.1), 10px);
+						width: auto;
+					}
+				}
 				li:hover
 				{
 					img
