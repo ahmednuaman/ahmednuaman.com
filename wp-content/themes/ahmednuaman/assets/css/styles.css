@@ -447,7 +447,7 @@ strong {
   #container #hero {
     display: block;
     position: relative !important;
-    overflow-x: scroll;
+    overflow: hidden;
   }
   #container #hero ul {
     width: 10000px;
@@ -480,6 +480,11 @@ strong {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: block;
     float: left !important;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
     background: #ffffff;
     width: 320px;
     height: 330px;
@@ -488,12 +493,41 @@ strong {
   #container #hero ul li img {
     display: block;
     position: relative !important;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
     width: 100%;
     margin: 0 auto 15px;
   }
   #container #hero ul li h2,
   #container #hero ul li div {
     padding: 0 10px;
+  }
+  #container #hero ul.snapping {
+    -webkit-transition-property: margin-left;
+    -webkit-transition-duration: 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+    -moz-transition-property: margin-left;
+    -moz-transition-duration: 0.5s;
+    -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+    -o-transition-property: margin-left;
+    -o-transition-duration: 0.5s;
+    -o-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+    transition-property: margin-left;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
   }
 }
 @media (min-width: 480px) {

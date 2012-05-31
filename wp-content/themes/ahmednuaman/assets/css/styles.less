@@ -443,7 +443,7 @@ strong
 		#hero
 		{
 			.relative;
-			overflow-x: scroll;
+			overflow: hidden;
 			
 			ul
 			{
@@ -456,6 +456,7 @@ strong
 					.ease(e('-webkit-transform, -moz-transform, -ms-transform, -o-transform, transform'));
 					.glow(rgba(0,0,0,.1), 10px);
 					.left;
+					.noselect;
 					background: #ffffff;
 					width: 320px;
 					height: 330px;
@@ -464,6 +465,7 @@ strong
 					img
 					{
 						.relative;
+						.noselect;
 						width: 100%;
 						margin: 0 auto 15px;
 					}
@@ -473,6 +475,10 @@ strong
 						padding: 0 10px;
 					}
 				}
+			}
+			ul.snapping
+			{
+				.ease(margin-left);
 			}
 		}
 	}
