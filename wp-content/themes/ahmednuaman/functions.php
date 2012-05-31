@@ -54,7 +54,7 @@ function ahmed_check_cache()
 	
 	$f	= $ahmed_cache_prefix . ahmed_hash_url( $_SERVER[ 'REQUEST_URI' ] );
 	
-	if ( apc_exists( $f ) && !is_admin() && !current_user_can( 'administrator' ) )
+	if ( apc_exists( $f ) && !is_admin() && !current_user_can( 'administrator' ) && !WP_DEBUG )
 	{
 		ob_end_flush();
 		
@@ -187,16 +187,16 @@ function ahmed_get_portfolio_items()
 	
 	$q		= new WP_Query( 'post_type=portfolio&order_by' );
 	
-	while ( $q->have_posts() ) 
+	foreach ( $q->posts as $p ) 
 	{
-		$q->the_post();
-		
 		array_push( $its, array(
-			'title'		=> get_the_title(),
-			'content'	=> get_the_content(),
-			'hero'		=> get_post_meta( get_the_ID(), 'ahmed_portfolio_hero', true )
+			'title'		=> $p->post_title,
+			'content'	=> $p->post_content,
+			'hero'		=> get_post_meta( $p->ID, 'ahmed_portfolio_hero', true )
 		));
 	}
+	
+	wp_reset_postdata();
 	
 	return $its;
 }

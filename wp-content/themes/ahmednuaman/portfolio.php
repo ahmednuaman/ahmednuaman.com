@@ -4,12 +4,10 @@ Template Name: Portfolio
 */
 
 get_header();
-
-$items	= ahmed_get_portfolio_items();
 ?>
 <div id="hero">
 	<ul>
-		<?php foreach ( $items as $item ): ?>
+		<?php foreach ( ahmed_get_portfolio_items() as $item ): ?>
 			<li>
 				<img src="<?php echo $item[ 'hero' ]; ?>" alt="<?php echo $item[ 'title' ]; ?> hero" />
 				<h2>
@@ -22,4 +20,5 @@ $items	= ahmed_get_portfolio_items();
 		<?php endforeach; ?>
 	</ul>
 </div>
+<?php the_content(); ?>
 <?php get_footer(); ?>
