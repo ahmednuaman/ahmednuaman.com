@@ -2,12 +2,12 @@ $	= jQuery;
 
 var Suitcase	= function(window)
 {
-	var heroMarginX	= 0;
+	var heroCurrentX	= 0;
+	var heroMarginX		= 0;
 	
 	var hasTouch;
 	var hasTransitions;
 	var hero;
-	var heroCurrentX;
 	var heroMinX;
 	var heroMoveX;
 	var heroTestX;
@@ -22,10 +22,6 @@ var Suitcase	= function(window)
 	function ready()
 	{
 		detectBrowser();
-		
-		hasTransitions	= $( 'html' ).hasClass( 'csstransitions' );
-		
-		hasTouch		= $( 'html' ).hasClass( 'touch' );
 		
 		prepareHero();
 		
@@ -115,11 +111,16 @@ var Suitcase	= function(window)
 		}
 		
 		$( 'html' ).removeClass( 'no-js' );
+		
+		hasTransitions	= $( 'html' ).hasClass( 'csstransitions' );
+		
+		hasTouch		= $( 'html' ).hasClass( 'touch' );
 	}
 	
 	function prepareHero()
 	{
 		hero	= $( '#hero' );
+		
 		heroUl	= hero.find( 'ul' );
 		
 		if ( hero.length )
@@ -128,7 +129,7 @@ var Suitcase	= function(window)
 			
 			hero.bind( 'mousedown touchstart', handleHeroTouchStart );
 			
-			$( document ).bind( 'mouseup touchend mouseleave', handleHeroTouchEnd );
+			window.bind( 'mouseup touchend mouseleave', handleHeroTouchEnd ).resize();
 		}
 	}
 	
@@ -171,7 +172,7 @@ var Suitcase	= function(window)
 	
 	function handleHeroTouchEnd(e)
 	{
-		heroMarginX	= heroCurrentX;
+		heroMarginX	= heroCurrentX || 0;
 		
 		hero.unbind( 'mousemove touchmove', handleHeroTouchMove );
 		
