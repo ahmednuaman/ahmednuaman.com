@@ -134,7 +134,10 @@ var Suitcase	= function(window)
 	
 	function handleHeroTouchStart(e)
 	{
-		e.preventDefault();
+		if ( !hasTouch )
+		{
+			e.preventDefault();
+		}
 		
 		heroUl.removeClass( 'snapping' ).stop( true );
 		
@@ -145,7 +148,10 @@ var Suitcase	= function(window)
 	
 	function handleHeroTouchMove(e)
 	{
-		e.preventDefault();
+		if ( !hasTouch )
+		{
+			e.preventDefault();
+		}
 		
 		heroMoveX		= getX( e );
 		
@@ -226,7 +232,29 @@ var Suitcase	= function(window)
 	
 	function getX(e)
 	{
-		return hasTouch ? e.originalEvent.touches[ 0 ].pageX : e.pageX;
+		if ( hasTouch )
+		{
+			return getTouchX( e );
+		}
+		else
+		{
+			return e.pageX;
+		}
+	}
+	
+	function getTouchX(e)
+	{
+		e	= e.originalEvent;
+		
+		if ( !!e.touches )
+		{
+			if ( e.touches.length )
+			{
+				return e.touches[ 0 ].pageX;
+			}
+		}
+		
+		return e.pageX;
 	}
 	
 	return ready;
