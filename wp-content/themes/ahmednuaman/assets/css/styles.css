@@ -424,9 +424,9 @@ strong {
     margin-bottom: 15px;
   }
   #container header #logo {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
     display: block;
     position: relative !important;
     -webkit-transition-property: border-color;
