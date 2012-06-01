@@ -29,6 +29,11 @@ get_header();
 <article>
 	<h3>
 		Latest posts
+		<a id="bloglink" class="sociallink sprite" href="/blog">
+			<span class="hide">
+				Read more posts
+			</span>
+		</a>
 	</h3>
 	<ul class="list">
 		<?php foreach ( ahmed_get_latest_posts() as $item ): ?>
@@ -44,11 +49,14 @@ get_header();
 <article>
 	<h3>
 		Latest tweets
+		<a id="twitterlink" class="sociallink sprite" href="https://twitter.com/intent/user?screen_name=ahmednuaman">
+			<span class="hide">
+				Follow me
+			</span>
+		</a>
 	</h3>
 	<ul class="list" id="tweets">
-		<li>
-			<a href="" title=""></a>
-		</li>
+		<li></li>
 	</ul>
 </article>
 <?php get_footer(); ?>

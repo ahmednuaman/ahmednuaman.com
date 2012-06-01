@@ -268,6 +268,7 @@ var Suitcase	= function(window)
 		var ul	= $( '#tweets' );
 		var data;
 		var li;
+		var lin;
 		var status;
 		
 		if ( ul.length )
@@ -299,12 +300,11 @@ var Suitcase	= function(window)
 			{
 				status	= data[ i ];
 				
-				ul.append(
-					li.clone().find( 'a' ).attr({
-						'href'	: 'https://twitter.com/' + status.user.screen_name + '/status/' + status.id_str,
-						'title'	: status.text
-					}).html( formatTweet( status.text ) )
-				);
+				lin		= li.clone();
+				
+				lin.html( formatTweet( status.text ) );
+				
+				ul.append( lin );
 			}
 			
 			if ( hasTransitions )
@@ -327,9 +327,34 @@ var Suitcase	= function(window)
 		}
 	}
 	
-	function formatTweet(s)
+	function formatTweet(t)
 	{
+		t	= t.replace( /((https?:\/\/|www\.)[^\s]+)/gim, function(m)
+		{
+			var l	= ( m.indexOf( 'http' ) === -1 ? 'http://' : '' ) + m;
+			
+			return '<a href="' + l + '" class="external">' + m + '</a>';
+		});
 		
+		t	= t.replace( /\s?(\@[^\s]+)\s?/gim, function(m)
+		{
+			m		= m.replace( /\s/gim, '' );
+			
+			var l	= 'http://twitter.com/' + m;
+			
+			return ' <a href="' + l + '" class="external">' + m + '</a> ';
+		});
+		
+		t	= t.replace( /\s?(\#[^\s]+)\s?/gim, function(m)
+		{
+			m		= m.replace( /\s/gim, '' );
+			
+			var l	= 'http://twitter.com/search?q=' + m;
+			
+			return ' <a href="' + l + '" class="external">' + m + '</a> ';
+		});
+		
+		return t;
 	}
 	
 	return ready;
