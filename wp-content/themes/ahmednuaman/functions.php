@@ -185,7 +185,7 @@ function ahmed_get_portfolio_items()
 {
 	$its	= array();
 	
-	$q		= new WP_Query( 'post_type=portfolio&order_by' );
+	$q		= new WP_Query( 'post_type=portfolio' );
 	
 	foreach ( $q->posts as $p ) 
 	{
@@ -193,6 +193,25 @@ function ahmed_get_portfolio_items()
 			'title'		=> $p->post_title,
 			'content'	=> $p->post_content,
 			'hero'		=> get_post_meta( $p->ID, 'ahmed_portfolio_hero', true )
+		));
+	}
+	
+	wp_reset_postdata();
+	
+	return $its;
+}
+
+function ahmed_get_latest_posts()
+{
+	$its	= array();
+	
+	$q		= new WP_Query( 'post_type=post&posts_per_page=5' );
+	
+	foreach ( $q->posts as $p ) 
+	{
+		array_push( $its, array(
+			'title'		=> $p->post_title,
+			'link'		=> get_permalink( $p->ID )
 		));
 	}
 	

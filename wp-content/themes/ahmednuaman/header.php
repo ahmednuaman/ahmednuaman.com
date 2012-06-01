@@ -32,4 +32,4 @@
 					<?php echo ahmed_menu( 'top' ); ?>
 				</nav>
 			</header>
-			<div id="content">
+			<section id="content">

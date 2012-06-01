@@ -194,6 +194,35 @@ textarea {
   clear: both;
   width: 100%;
 }
+.fadein,
+.fadeout {
+  -webkit-transition-property: opacity;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition-property: opacity;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition-property: opacity;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  transform: translatez(0);
+  opacity: 1 !important;
+}
+.fadeout {
+  opacity: 0 !important;
+}
 .fixed {
   display: block;
   position: fixed !important;
@@ -208,6 +237,10 @@ textarea {
 .left {
   display: block;
   float: left !important;
+}
+.list li {
+  list-style: disc outside;
+  margin: 5px 0 5px 15px;
 }
 .noselect {
   user-select: none;
@@ -249,7 +282,8 @@ div,
 h1,
 h2,
 h3,
-p {
+p,
+li {
   font-family: Georgia, Times, sans;
   color: #333333;
   font-size: 10pt;
@@ -301,13 +335,30 @@ em {
 h1,
 h2,
 h3 {
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
   line-height: normal;
 }
 h1:first-child,
 h2:first-child,
 h3:first-child,
-p:first-child {
+h1:first-of-type,
+h2:first-of-type,
+h3:first-of-type {
   margin-top: 0;
+}
+hr {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+  position: relative !important;
+  border: none;
+  /*	background: rgba(0,115,229,.3);*/
+
+  height: 3px;
+  background: #dddddd;
+  width: 80%;
+  margin: 0 auto;
 }
 input,
 textarea {
@@ -342,7 +393,9 @@ strong {
   }
   h1,
   h2,
-  h3,
+  h3 {
+    margin: 20px 0 5px;
+  }
   p {
     margin: 5px 0;
   }
@@ -460,31 +513,11 @@ strong {
   #container #hero ul {
     width: 10000px;
     padding: 10px 0;
-    height: 350px;
+    height: 370px;
   }
   #container #hero ul li {
-    -webkit-transition-property: -webkit-transform, -moz-transform, -ms-transform, -o-transform, transform;
-    -webkit-transition-duration: 0.5s;
-    -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-    -moz-transition-property: -webkit-transform, -moz-transform, -ms-transform, -o-transform, transform;
-    -moz-transition-duration: 0.5s;
-    -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-    -o-transition-property: -webkit-transform, -moz-transform, -ms-transform, -o-transform, transform;
-    -o-transition-duration: 0.5s;
-    -o-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-    transition-property: -webkit-transform, -moz-transform, -ms-transform, -o-transform, transform;
-    transition-duration: 0.5s;
-    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: translatez(0);
-    -moz-transform: translatez(0);
-    -ms-transform: translatez(0);
-    -o-transform: translatez(0);
-    transform: translatez(0);
+    /*					.ease(e('-webkit-transform, -moz-transform, -ms-transform, -o-transform, transform'));*/
+  
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: block;
     float: left !important;
@@ -495,7 +528,7 @@ strong {
     -webkit-user-select: none;
     background: #ffffff;
     width: 320px;
-    height: 330px;
+    height: 350px;
     overflow: hidden;
   }
   #container #hero ul li img {
@@ -509,9 +542,8 @@ strong {
     width: 100%;
     margin: 0 auto 15px;
   }
-  #container #hero ul li h2,
   #container #hero ul li div {
-    padding: 0 10px;
+    padding: 0 15px;
   }
   #container #hero ul.snapping {
     -webkit-transition-property: margin-left;
@@ -537,6 +569,12 @@ strong {
     -o-transform: translatez(0);
     transform: translatez(0);
   }
+  #container article {
+    display: block;
+    position: relative !important;
+    margin: 20px auto;
+    width: 90%;
+  }
 }
 @media (min-width: 480px) {
   #container header {
@@ -552,6 +590,9 @@ strong {
     float: right !important;
     width: auto;
     margin-top: 30px;
+  }
+  #container #hero ul li {
+    width: 480px;
   }
 }
 @media (min-width: 768px) {
