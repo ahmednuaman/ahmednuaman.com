@@ -1,6 +1,6 @@
 <?php $dir	= get_template_directory_uri(); ?>
 <!DOCTYPE html>
-<html class="no-js" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" <?php body_class( 'no-js' ) ?>>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />

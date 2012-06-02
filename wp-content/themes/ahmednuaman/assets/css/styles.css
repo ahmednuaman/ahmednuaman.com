@@ -371,7 +371,7 @@ hr {
   height: 3px;
   background: #dddddd;
   width: 80%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 input,
 textarea {
@@ -518,17 +518,17 @@ strong {
   #container header nav a:last-child {
     margin-right: 0;
   }
-  #container #hero {
+  #container #content #hero {
     display: block;
     position: relative !important;
     overflow: hidden;
   }
-  #container #hero ul {
+  #container #content #hero ul {
     width: 10000px;
     padding: 10px 0;
     height: 370px;
   }
-  #container #hero ul li {
+  #container #content #hero ul li {
     /*					.ease(e('-webkit-transform, -moz-transform, -ms-transform, -o-transform, transform'));*/
   
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -544,7 +544,7 @@ strong {
     height: 350px;
     overflow: hidden;
   }
-  #container #hero ul li img {
+  #container #content #hero ul li img {
     display: block;
     position: relative !important;
     user-select: none;
@@ -555,10 +555,10 @@ strong {
     width: 100%;
     margin: 0 auto 15px;
   }
-  #container #hero ul li div {
-    padding: 0 15px;
+  #container #content #hero ul li article {
+    padding: 0 20px;
   }
-  #container #hero ul.snapping {
+  #container #content #hero ul.snapping {
     -webkit-transition-property: margin-left;
     -webkit-transition-duration: 0.5s;
     -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
@@ -582,11 +582,11 @@ strong {
     -o-transform: translatez(0);
     transform: translatez(0);
   }
-  #container article {
+  #container #content #padding {
     display: block;
     position: relative !important;
-    margin: 20px auto;
-    width: 90%;
+    padding: 20px;
+    width: auto;
   }
 }
 @media (min-width: 480px) {
@@ -609,6 +609,16 @@ strong {
   }
 }
 @media (min-width: 768px) {
+  a,
+  body,
+  div,
+  h1,
+  h2,
+  h3,
+  p {
+    font-size: 10pt;
+    line-height: 16pt;
+  }
   h1 {
     font-size: 22pt;
   }
