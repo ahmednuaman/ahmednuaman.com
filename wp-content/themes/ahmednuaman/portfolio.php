@@ -23,8 +23,10 @@ get_header();
 	</ul>
 </section>
 <section id="padding">
-	<article>
-		<?php the_content(); ?>
+	<article id="bio">
+		<div>
+			<?php the_content(); ?>
+		</div>
 	</article>
 	<hr />
 	<article>

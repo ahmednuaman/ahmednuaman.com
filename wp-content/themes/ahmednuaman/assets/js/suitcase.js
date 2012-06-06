@@ -19,6 +19,7 @@ var Suitcase	= function(window)
 	var panels;
 	var panelsLength;
 	var panelWidth;
+	var tap;
 	
 	function ready()
 	{
@@ -28,7 +29,9 @@ var Suitcase	= function(window)
 		
 		prepareHero();
 		
-		window.bind( 'orientationchange', handleResize ).resize( handleResize ).resize();
+		window.on( 'orientationchange', handleResize ).resize( handleResize ).resize();
+		
+		handleMediaChange();
 	}
 	
 	function detectBrowser()
@@ -118,6 +121,8 @@ var Suitcase	= function(window)
 		hasTransitions	= $( 'html' ).hasClass( 'csstransitions' );
 		
 		hasTouch		= $( 'html' ).hasClass( 'touch' );
+		
+		tap				= 'click';
 	}
 	
 	function prepareHero()
@@ -130,9 +135,9 @@ var Suitcase	= function(window)
 		{
 			panels	= hero.find( 'li' );
 			
-			hero.bind( 'mousedown touchstart', handleHeroTouchStart );
+			hero.on( 'mousedown touchstart', handleHeroTouchStart );
 			
-			window.bind( 'mouseup touchend mouseleave', handleHeroTouchEnd ).resize();
+			window.on( 'mouseup touchend mouseleave', handleHeroTouchEnd ).resize();
 		}
 	}
 	
@@ -147,7 +152,7 @@ var Suitcase	= function(window)
 		
 		heroStartX	= getX( e );
 		
-		hero.bind( 'mousemove touchmove', handleHeroTouchMove );
+		hero.on( 'mousemove touchmove', handleHeroTouchMove );
 	}
 	
 	function handleHeroTouchMove(e)
@@ -177,7 +182,7 @@ var Suitcase	= function(window)
 	{
 		heroMarginX	= heroCurrentX || 0;
 		
-		hero.unbind( 'mousemove touchmove', handleHeroTouchMove );
+		hero.off( 'mousemove touchmove', handleHeroTouchMove );
 		
 		snapHero();
 	}
@@ -194,7 +199,7 @@ var Suitcase	= function(window)
 			
 			if ( hasTransitions )
 			{
-				heroUl.bind( eventTransitionEnd, handleSnapEnd ).addClass( 'snapping' ).css( 'margin-left', heroMarginX + 'px' );
+				heroUl.on( eventTransitionEnd, handleSnapEnd ).addClass( 'snapping' ).css( 'margin-left', heroMarginX + 'px' );
 			}
 			else
 			{
@@ -209,7 +214,7 @@ var Suitcase	= function(window)
 	{
 		if ( hasTransitions )
 		{
-			heroUl.unbind( 'transitionend oTransitionEnd webkitTransitionEnd msTransitionEnd', handleSnapEnd ).removeClass( 'snapping' );
+			heroUl.off( 'transitionend oTransitionEnd webkitTransitionEnd msTransitionEnd', handleSnapEnd ).removeClass( 'snapping' );
 		}
 	}
 	
@@ -228,6 +233,19 @@ var Suitcase	= function(window)
 			heroUl.width( heroWidth );
 			
 			snapHero();
+		}
+	}
+	
+	function handleMediaChange()
+	{
+		$( '#bio' ).off( tap );
+		
+		if ( matchMedia( '(max-width: 480px)' ).matches )
+		{
+			$( '#bio' ).on( tap, function(e)
+			{
+				$( this ).toggleClass( 'more' );
+			});
 		}
 	}
 	
@@ -283,7 +301,7 @@ var Suitcase	= function(window)
 				
 				if ( hasTransitions )
 				{
-					ul.bind( eventTransitionEnd, handleFadeOut ).addClass( 'fadeout' );
+					ul.on( eventTransitionEnd, handleFadeOut ).addClass( 'fadeout' );
 				}
 				else
 				{
@@ -309,8 +327,8 @@ var Suitcase	= function(window)
 			
 			if ( hasTransitions )
 			{
-				ul.unbind( eventTransitionEnd, handleFadeOut ).css( 'opacity', 0 ).removeClass( 'fadeout' )
-					.bind( eventTransitionEnd, handleFadeIn ).addClass( 'fadein' );
+				ul.off( eventTransitionEnd, handleFadeOut ).css( 'opacity', 0 ).removeClass( 'fadeout' )
+					.on( eventTransitionEnd, handleFadeIn ).addClass( 'fadein' );
 			}
 			else
 			{
@@ -322,7 +340,7 @@ var Suitcase	= function(window)
 		{
 			if ( hasTransitions )
 			{
-				ul.unbind( eventTransitionEnd, handleFadeIn ).removeAttr( 'style' ).removeClass( 'fadein' );
+				ul.off( eventTransitionEnd, handleFadeIn ).removeAttr( 'style' ).removeClass( 'fadein' );
 			}
 		}
 	}
