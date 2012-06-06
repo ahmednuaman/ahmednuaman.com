@@ -175,10 +175,12 @@ function ahmed_compare_urls($u1, $u2)
 		return true;
 	}
 	
-	if ( @strpos( $u1, $u2 ) === 0 )
+	if ( @strpos( $u1, $u2 ) === 0 && strlen( $u2 ) > 1 )
 	{
 		return true;
 	}
+	
+	return false;
 }
 
 function ahmed_get_portfolio_items()
