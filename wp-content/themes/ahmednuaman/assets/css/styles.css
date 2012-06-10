@@ -556,9 +556,6 @@ strong {
     width: 100%;
     margin: 0 auto 15px;
   }
-  #container #content #hero ul li article {
-    padding: 0 20px;
-  }
   #container #content #hero ul.snapping {
     -webkit-transition-property: margin-left;
     -webkit-transition-duration: 0.5s;
@@ -588,6 +585,25 @@ strong {
     position: relative !important;
     padding: 20px;
     width: auto;
+  }
+  #container #content article {
+    padding: 0 20px;
+  }
+  #container #content article.post {
+    word-wrap: break-word;
+    padding-top: 20px;
+  }
+  #container #content article.post h4 {
+    margin-bottom: 20px;
+  }
+  #container #content article.post section.post-meta {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 10px 0 20px;
+    padding: 3px 8px;
+    border: 1px solid #cccccc;
   }
 }
 @media (max-width: 480px) {
