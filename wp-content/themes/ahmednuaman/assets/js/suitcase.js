@@ -32,8 +32,6 @@ var Suitcase	= function(window)
 		window.on( 'orientationchange', handleResize ).resize( handleResize ).resize();
 		
 		handleMediaChange();
-		
-		$( 'h1.post-title' ).fitText();
 	}
 	
 	function detectBrowser()
