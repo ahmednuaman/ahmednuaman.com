@@ -16,6 +16,8 @@
 			</p>
 		</section>
 	</article>
-	<?php comments_template(); ?>
+	<section class="post-comments">
+		<?php comments_template(); ?>
+	</section>
 <?php endwhile; ?>
 <?php get_footer(); ?>

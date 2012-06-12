@@ -546,7 +546,8 @@ strong
 				padding: 20px;
 				width: auto;
 			}
-			article
+			article,
+			section.post-comments
 			{
 				padding: 0 20px;
 			}
@@ -718,9 +719,24 @@ strong
 		}
 	}
 }
-@media (min-width: 1024px)
+@media (min-width: 960px)
 {
-	
+	#container
+	{
+		margin: 0 auto;
+		width: 960px;
+		
+		#content
+		{
+			article.post
+			{
+				section.post-meta
+				{
+					padding: 0px 12px;
+				}
+			}
+		}
+	}
 }
 @media (min-width: 1200px)
 {

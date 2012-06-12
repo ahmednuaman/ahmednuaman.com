@@ -586,7 +586,8 @@ strong {
     padding: 20px;
     width: auto;
   }
-  #container #content article {
+  #container #content article,
+  #container #content section.post-comments {
     padding: 0 20px;
   }
   #container #content article.post {
@@ -734,8 +735,14 @@ strong {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }
 }
-@media (min-width: 1024px) {
-  
+@media (min-width: 960px) {
+  #container {
+    margin: 0 auto;
+    width: 960px;
+  }
+  #container #content article.post section.post-meta {
+    padding: 0px 12px;
+  }
 }
 @media (min-width: 1200px) {
   
