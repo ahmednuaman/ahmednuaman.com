@@ -565,13 +565,28 @@ strong
 				{
 					margin-bottom: 20px;
 				}
-				section.post-meta
+				section.post-meta,
+				.codecolorer-container
 				{
 					.corners;
 					background: rgba(255,255,255,.5);
 					margin: 10px 0 20px;
 					padding: 3px 8px;
 					border: 1px solid #cccccc;
+				}
+				.codecolorer-container div,
+				.codecolorer-container td
+				{
+					background: none;
+				}
+				.codecolorer-container td.line-numbers
+				{
+					.ease(opacity);
+					opacity: .2;
+				}
+				.codecolorer-container:hover td.line-numbers
+				{
+					opacity: 1;
 				}
 			}
 		}
