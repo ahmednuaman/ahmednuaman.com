@@ -238,6 +238,16 @@ function ahmed_fix_widows($t)
 	);
 }
 
+function ahmed_search($q)
+{
+	if ( $q->is_search ) 
+	{
+		$q->set( 'post_type', 'post' );
+	}
+	
+	return $q;
+}
+
 add_theme_support( 'menus' );
 add_theme_support( 'post-thumbnails' );
 
@@ -252,6 +262,7 @@ add_action( 'shutdown', 'ahmed_save_cache', 0 );
 add_action( 'update_option', 'ahmed_clear_cache' );
 add_action( 'wp_enqueue_scripts', 'ahmed_enqueue_scripts' );
 
+add_filter( 'pre_get_posts', 'ahmed_search' );
 add_filter( 'rewrite_rules_array', 'ahmed_add_rewrite_rules' );
 add_filter( 'the_title', 'ahmed_fix_widows' );
 
