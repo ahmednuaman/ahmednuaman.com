@@ -416,6 +416,7 @@ strong {
     display: block;
     position: relative !important;
     width: 100%;
+    overflow-x: hidden;
   }
   #container header {
     display: block;
