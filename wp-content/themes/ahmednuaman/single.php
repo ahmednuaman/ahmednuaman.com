@@ -16,6 +16,7 @@
 			</p>
 		</section>
 	</article>
+	<hr />
 	<section class="post-comments">
 		<?php comments_template(); ?>
 	</section>

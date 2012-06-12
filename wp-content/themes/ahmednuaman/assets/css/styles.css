@@ -594,6 +594,9 @@ strong {
   #container #content section.post-comments {
     padding: 0 20px;
   }
+  #container #content section.post-comments {
+    padding-top: 20px;
+  }
   #container #content article.post {
     word-wrap: break-word;
     padding-top: 20px;
