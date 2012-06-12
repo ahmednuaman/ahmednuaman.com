@@ -327,7 +327,10 @@ a {
   -o-transform: translatez(0);
   transform: translatez(0);
   line-height: normal;
-  text-decoration: none;
+  text-decoration: none !important;
+}
+a * {
+  text-decoration: none !important;
 }
 a:link,
 a:visited {
