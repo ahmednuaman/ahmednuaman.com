@@ -229,7 +229,7 @@ var Suitcase	= function(window)
 		{
 			el	= $( this );
 			pos	= el.position().left;
-			console.log(pos,panelWidth)
+			
 			if ( pos >= 0 && pos < panelWidth )
 			{
 				el.addClass( 'master' );
@@ -258,7 +258,7 @@ var Suitcase	= function(window)
 			
 			heroWidth		= panelsLength * panelWidth;
 			
-			heroMinX		= window.width() - heroWidth;
+			heroMinX		= hero.outerWidth() - heroWidth;
 			
 			heroUl.width( heroWidth );
 			
