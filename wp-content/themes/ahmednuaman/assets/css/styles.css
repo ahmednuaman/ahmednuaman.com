@@ -661,6 +661,13 @@ strong {
     display: block;
     float: right !important;
   }
+  #container footer p {
+    text-align: center;
+  }
+  #container footer p,
+  #container footer a {
+    font-size: 8pt;
+  }
 }
 @media (max-width: 480px) {
   .home #bio div:first-child {
