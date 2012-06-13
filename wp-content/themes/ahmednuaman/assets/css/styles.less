@@ -530,6 +530,13 @@ strong
 					{
 	/*					.ease(e('-webkit-transform, -moz-transform, -ms-transform, -o-transform, transform'));*/
 	/*					.glow(rgba(0,0,0,.1), 10px);*/
+						-webkit-backface-visibility: hidden;
+						   -moz-backface-visibility: hidden;
+						    -ms-backface-visibility: hidden;
+						     -o-backface-visibility: hidden;
+								backface-visibility: hidden;
+			
+						.transform(translateZ(0));
 						.left;
 						.noselect;
 						background: #ffffff;

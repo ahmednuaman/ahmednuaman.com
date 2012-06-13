@@ -543,6 +543,16 @@ strong {
   
     /*					.glow(rgba(0,0,0,.1), 10px);*/
   
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
     display: block;
     float: left !important;
     -o-user-select: none;
