@@ -749,11 +749,11 @@ strong {
     margin-top: 30px;
   }
   #container #content #hero ul {
-    height: 410px;
+    height: 420px;
   }
   #container #content #hero ul li {
     width: 480px;
-    height: 410px;
+    height: 420px;
   }
 }
 @media (min-width: 768px) {
