@@ -4,6 +4,7 @@ var Suitcase	= function(window)
 {
 	var eventTransitionEnd	= 'transitionend oTransitionEnd webkitTransitionEnd msTransitionEnd';
 	var heroCurrentX		= 0;
+	var heroIndex			= 0;
 	var heroMarginX			= 0;
 	var heroPaddingX		= 10;
 	
@@ -138,7 +139,7 @@ var Suitcase	= function(window)
 			
 			window.on( 'mouseup touchend mouseleave', handleHeroTouchEnd ).resize();
 			
-			// window.on( 'keyup' )
+			window.on( 'keyup', handleKeyUp );
 		}
 	}
 	
@@ -190,11 +191,41 @@ var Suitcase	= function(window)
 		snapHero();
 	}
 	
+	function handleKeyUp(e)
+	{
+		if ( e.keyCode === 37 || e.keyCode === 39 )
+		{
+			snapHero( e.keyCode === 37 ? -1 : 1 );
+		}
+	}
+	
 	function snapHero()
 	{
-		heroTestX			= heroCurrentX / panelWidth;
+		var force	= arguments[ 0 ];
 		
-		heroTestRoundedX	= Math.round( heroTestX );
+		if ( force )
+		{
+			heroIndex			+= force;
+			
+			if ( heroIndex < 0 )
+			{
+				heroIndex		= 0;
+			}
+			else if ( heroIndex > panelsTotal )
+			{
+				heroIndex		= panelsTotal;
+			}
+			
+			heroTestRoundedX	= -heroIndex;
+			
+			heroTestX			= null;
+		}
+		else
+		{
+			heroTestX			= heroCurrentX / panelWidth;
+			
+			heroTestRoundedX	= Math.round( heroTestX );
+		}
 		
 		if ( heroTestX !== heroTestRoundedX )
 		{
@@ -211,6 +242,8 @@ var Suitcase	= function(window)
 				}, 'normal', 'easeOutExpo', handleHeroSnapEnd );
 			}
 		}
+		
+		heroIndex	= -heroTestRoundedX;
 	}
 	
 	function handleHeroSnapEnd(e)
@@ -249,6 +282,8 @@ var Suitcase	= function(window)
 		if ( hero.length )
 		{
 			panelsLength	= panels.length;
+			
+			panelsTotal		= panelsLength - 1;
 			
 			panelWidth		= $( panels[ 0 ] ).outerWidth();
 			
