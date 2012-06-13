@@ -282,7 +282,7 @@ textarea {
 }
 .show
 {
-	display: block;
+	display: block !important;
 	visibility: visible !important;
 }
 a.sociallink
@@ -411,6 +411,10 @@ textarea
 strong
 {
 	font-weight: bolder;
+}
+#print
+{
+	.hide;
 }
 
 /* Media queries */
@@ -902,5 +906,27 @@ strong
 		background-image: url(../image/sprite@2x.png);
 	}
 }
-
+@media print
+{
+	body
+	{
+		border: none;
+	}
+	
+	#container
+	{
+		.hide;
+	}
+	#print
+	{
+		.show;
+		
+		h1
+		{
+			page-break-after: always;
+			font-size: 60pt;
+			line-height: 80pt;
+		}
+	}
+}
 /* Browser specific */
