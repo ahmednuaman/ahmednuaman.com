@@ -566,6 +566,9 @@ strong {
     width: 100%;
     margin: 0 auto 15px;
   }
+  #container #content #hero ul li article {
+    padding: 0 20px;
+  }
   #container #content #hero ul.snapping {
     -webkit-transition-property: margin-left;
     -webkit-transition-duration: 0.5s;
@@ -595,10 +598,6 @@ strong {
     position: relative !important;
     padding: 20px;
     width: auto;
-  }
-  #container #content article,
-  #container #content > section {
-    padding: 0 20px;
   }
   #container #content article.post {
     word-wrap: break-word;
@@ -650,7 +649,7 @@ strong {
     opacity: 1;
   }
   #container #content section.post-comments {
-    padding-top: 20px;
+    padding: 20px;
   }
   #container #content section.pagination li {
     display: block;
