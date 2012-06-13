@@ -22,14 +22,13 @@
 <?php endwhile; ?>
 <?php if ( $wp_query->max_num_pages > 1 ): ?>
 	<section class="pagination">
-		<ul>
-			<li>
-				<?php previous_posts_link( '&laquo; Previous page' ); ?>
-			</li>
-			<li>
-				<?php next_posts_link( 'Next page &raquo;' ); ?>
-			</li>
-		</ul>
+		<p>
+			<?php previous_posts_link( '&laquo; Previous' ); ?>
+			<em>
+				&lt;!-- Pagination, baby --&gt;
+			</em>
+			<?php next_posts_link( 'Next &raquo;' ); ?>
+		</p>
 	</section>
 <?php endif; ?>
 <?php get_footer(); ?>

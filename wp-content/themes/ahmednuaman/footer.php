@@ -1,6 +1,6 @@
 			</section>
+			<hr />
 			<footer>
-				<hr />
 				<p>
 					&copy; Ahmed Nuaman <?php echo date( 'Y' ); ?>. The code that's shared here is released under <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a> license.
 				</p>

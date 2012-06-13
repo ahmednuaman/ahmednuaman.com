@@ -379,7 +379,7 @@ hr {
   height: 3px;
   background: #dddddd;
   width: 80%;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 input,
 textarea {
@@ -601,7 +601,7 @@ strong {
   }
   #container #content article.post {
     word-wrap: break-word;
-    padding-top: 20px;
+    padding: 20px;
   }
   #container #content article.post h4 {
     margin-bottom: 20px;
@@ -651,14 +651,22 @@ strong {
   #container #content section.post-comments {
     padding: 20px;
   }
-  #container #content section.pagination li {
-    display: block;
-    float: left !important;
-    margin-bottom: 20px;
+  #container #content section.pagination {
+    height: 20px;
+    padding: 0 20px;
   }
-  #container #content section.pagination li:last-child {
-    display: block;
-    float: right !important;
+  #container #content section.pagination p {
+    color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  #container #content section.pagination a:first-child {
+    margin-right: 10px;
+  }
+  #container #content section.pagination a:last-child {
+    margin-left: 10px;
+  }
+  #container footer {
+    padding: 0 20px;
   }
   #container footer p {
     text-align: center;
@@ -766,7 +774,7 @@ strong {
     margin: 10px 0;
   }
   hr {
-    margin: 30px auto;
+    margin: 15px auto;
   }
   #container #hero ul li {
     box-shadow: none;
