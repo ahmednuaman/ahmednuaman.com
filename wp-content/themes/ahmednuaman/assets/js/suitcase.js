@@ -5,6 +5,7 @@ var Suitcase	= function(window)
 	var eventTransitionEnd	= 'transitionend oTransitionEnd webkitTransitionEnd msTransitionEnd';
 	var heroCurrentX		= 0;
 	var heroMarginX			= 0;
+	var heroPaddingX		= 10;
 	
 	var hasTouch;
 	var hasTransitions;
@@ -136,6 +137,8 @@ var Suitcase	= function(window)
 			hero.on( 'mousedown touchstart', handleHeroTouchStart );
 			
 			window.on( 'mouseup touchend mouseleave', handleHeroTouchEnd ).resize();
+			
+			// window.on( 'keyup' )
 		}
 	}
 	
@@ -164,9 +167,9 @@ var Suitcase	= function(window)
 		
 		heroCurrentX	= ( heroMoveX - heroStartX ) + heroMarginX;
 		
-		if ( heroCurrentX > 0 )
+		if ( heroCurrentX > heroPaddingX )
 		{
-			heroCurrentX	= 0;
+			heroCurrentX	= heroPaddingX;
 		}
 		else if ( heroCurrentX < heroMinX )
 		{
@@ -230,7 +233,7 @@ var Suitcase	= function(window)
 			el	= $( this );
 			pos	= el.position().left;
 			
-			if ( pos >= 0 && pos < panelWidth )
+			if ( pos >= -heroPaddingX && pos < panelWidth )
 			{
 				el.addClass( 'master' );
 			}
@@ -258,7 +261,7 @@ var Suitcase	= function(window)
 			
 			heroWidth		= panelsLength * panelWidth;
 			
-			heroMinX		= hero.outerWidth() - heroWidth;
+			heroMinX		= hero.outerWidth() - heroWidth - heroPaddingX;
 			
 			heroUl.width( heroWidth );
 			
