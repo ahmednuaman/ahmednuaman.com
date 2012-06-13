@@ -636,6 +636,10 @@ strong {
     display: inline-block;
     height: 10px;
     width: 10px;
+    margin: 0 3px 0 0;
+  }
+  #container #content #hero #hero-pagination a:last-child {
+    margin: 0;
   }
   #container #content #hero #hero-pagination a.selected {
     background: #0064c8;

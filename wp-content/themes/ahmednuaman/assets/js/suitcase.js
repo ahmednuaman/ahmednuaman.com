@@ -137,9 +137,19 @@ var Suitcase	= function(window)
 			
 			hero.on( 'mousedown touchstart', handleHeroTouchStart );
 			
-			window.on( 'mouseup touchend mouseleave', handleHeroTouchEnd ).resize();
+			window.on( 'mouseup touchend mouseleave', handleHeroTouchEnd ).on( 'keyup', handleKeyUp ).resize();
 			
-			window.on( 'keyup', handleKeyUp );
+			$( '#hero-pagination a' ).on( tap, function(e)
+			{
+				
+				heroTestRoundedX	= -$( this ).index();
+				
+				heroCurrentX		= heroTestRoundedX * panelWidth;
+				
+				heroTestX			= null;
+				
+				handleHeroSnap();
+			})
 		}
 	}
 	
@@ -195,40 +205,43 @@ var Suitcase	= function(window)
 	{
 		if ( e.keyCode === 37 || e.keyCode === 39 )
 		{
-			snapHero( e.keyCode === 37 ? -1 : 1 );
+			handleArrowKey( e.keyCode === 37 ? -1 : 1 );
 		}
+	}
+	
+	function handleArrowKey(f)
+	{
+		heroIndex			+= f;
+		
+		if ( heroIndex < 0 )
+		{
+			heroIndex		= 0;
+		}
+		else if ( heroIndex > panelsTotal )
+		{
+			heroIndex		= panelsTotal;
+		}
+		
+		heroTestRoundedX	= -heroIndex;
+		
+		heroCurrentX		= heroTestRoundedX * panelWidth;
+		
+		heroTestX			= null;
+		
+		handleHeroSnap();
 	}
 	
 	function snapHero()
 	{
-		var force	= arguments[ 0 ];
+		heroTestX			= heroCurrentX / panelWidth;
 		
-		if ( force )
-		{
-			heroIndex			+= force;
-			
-			if ( heroIndex < 0 )
-			{
-				heroIndex		= 0;
-			}
-			else if ( heroIndex > panelsTotal )
-			{
-				heroIndex		= panelsTotal;
-			}
-			
-			heroTestRoundedX	= -heroIndex;
-			
-			heroCurrentX		= heroTestRoundedX * panelWidth;
-			
-			heroTestX			= null;
-		}
-		else
-		{
-			heroTestX			= heroCurrentX / panelWidth;
-			
-			heroTestRoundedX	= Math.round( heroTestX );
-		}
+		heroTestRoundedX	= Math.round( heroTestX );
 		
+		handleHeroSnap();
+	}
+	
+	function handleHeroSnap()
+	{
 		if ( heroTestX !== heroTestRoundedX )
 		{
 			heroMarginX	= heroTestRoundedX * panelWidth;
