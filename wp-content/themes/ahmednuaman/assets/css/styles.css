@@ -786,6 +786,22 @@ strong {
     margin: 0 auto;
     width: 960px;
   }
+  #container header {
+    height: 182px;
+  }
+  #container header #logo {
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    border-radius: 80px;
+    background-position: 0px -75px;
+    width: 152px;
+    height: 152px;
+  }
+  #container header nav a {
+    font-size: 16pt;
+    padding: 8px 12px;
+    margin-top: 35px;
+  }
   #container #content article.post section.post-meta {
     padding: 0px 12px;
   }
