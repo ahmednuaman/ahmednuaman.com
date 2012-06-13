@@ -765,6 +765,9 @@ strong {
   p {
     margin: 10px 0;
   }
+  hr {
+    margin: 30px auto;
+  }
   #container #hero ul li {
     box-shadow: none;
   }
@@ -799,6 +802,24 @@ strong {
   }
   #container #hero ul li:hover img {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  .home #content #padding hr {
+    display: none;
+  }
+  .home #content #padding hr:first-of-type {
+    display: block;
+  }
+  .home #content #padding article {
+    display: block;
+    float: left !important;
+    width: 50%;
+  }
+  .home #content #padding article:first-child {
+    float: none !important;
+    width: auto;
+  }
+  .home #content #padding article:last-of-type {
+    margin-bottom: 20px;
   }
 }
 @media (min-width: 960px) {

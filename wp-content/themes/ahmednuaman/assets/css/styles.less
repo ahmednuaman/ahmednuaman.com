@@ -738,6 +738,10 @@ strong
 	{
 		margin: 10px 0;
 	}
+	hr
+	{
+		margin: 30px auto;
+	}
 	#container
 	{
 		#hero
@@ -772,7 +776,28 @@ strong
 		{
 			#padding
 			{
-				
+				hr
+				{
+					display: none;
+				}
+				hr:first-of-type
+				{
+					display: block;
+				}
+				article
+				{
+					.left;
+					width: 50%;
+				}
+				article:first-child
+				{
+					float: none !important;
+					width: auto;
+				}
+				article:last-of-type
+				{
+					margin-bottom: 20px;
+				}
 			}
 		}
 	}
