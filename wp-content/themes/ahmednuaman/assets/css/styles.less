@@ -517,7 +517,6 @@ strong
 		{
 			#hero
 			{
-				.glow(rgba(0,0,0,.1), 10px);
 				.relative;
 				width: 320px;
 				margin: 0 auto;
@@ -530,8 +529,7 @@ strong
 					li
 					{
 	/*					.ease(e('-webkit-transform, -moz-transform, -ms-transform, -o-transform, transform'));*/
-	/*					.glow(rgba(0,0,0,.1), 10px);*/
-						.ease(opacity);
+						.ease(e('opacity,box-shadow'));
 						.left;
 						.noselect;
 						background: #ffffff;
@@ -554,6 +552,7 @@ strong
 					}
 					li.master
 					{
+						.glow(rgba(0,0,0,.3), 10px);
 						opacity: 1;
 					}
 				}
@@ -716,6 +715,10 @@ strong
 				{
 					width: 480px;
 					height: 420px;
+				}
+				li.master
+				{
+					.glow(rgba(0,0,0,.3), 20px);
 				}
 			}
 		}
