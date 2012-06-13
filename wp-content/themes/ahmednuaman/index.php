@@ -18,4 +18,10 @@
 	</article>
 	<hr />
 <?php endwhile; ?>
+<?php if ( $wp_query->max_num_pages > 1 ): ?>
+	<section class="pagination">
+		<?php previous_posts_link( 'Previous page &raquo;' ); ?>
+		<?php next_posts_link( 'Next page &raquo;' ); ?>
+	</section>
+<?php endif; ?>
 <?php get_footer(); ?>
