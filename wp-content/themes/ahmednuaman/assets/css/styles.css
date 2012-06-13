@@ -304,16 +304,16 @@ li {
   text-rendering: optimizeLegibility;
 }
 a {
-  -webkit-transition-property: color;
+  -webkit-transition-property: color, border-color;
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-  -moz-transition-property: color;
+  -moz-transition-property: color, border-color;
   -moz-transition-duration: 0.5s;
   -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-  -o-transition-property: color;
+  -o-transition-property: color, border-color;
   -o-transition-duration: 0.5s;
   -o-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-  transition-property: color;
+  transition-property: color, border-color;
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
   -webkit-backface-visibility: hidden;
@@ -335,14 +335,14 @@ a * {
 a:link,
 a:visited {
   color: #666666;
-  border-bottom: 1px solid #666666;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 a:hover {
   color: #999999;
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
 }
 a:active {
-  color: #0064c8;
+  color: #0064c8 !important;
   border-bottom: 1px solid #0064c8;
 }
 em {
@@ -353,6 +353,11 @@ h2,
 h3 {
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
   line-height: normal;
+}
+h1 a,
+h2 a,
+h3 a {
+  font-size: inherit !important;
 }
 h1:first-child,
 h2:first-child,
@@ -592,11 +597,8 @@ strong {
     width: auto;
   }
   #container #content article,
-  #container #content section.post-comments {
+  #container #content > section {
     padding: 0 20px;
-  }
-  #container #content section.post-comments {
-    padding-top: 20px;
   }
   #container #content article.post {
     word-wrap: break-word;
@@ -646,6 +648,18 @@ strong {
   }
   #container #content article.post .codecolorer-container:hover td.line-numbers {
     opacity: 1;
+  }
+  #container #content section.post-comments {
+    padding-top: 20px;
+  }
+  #container #content section.pagination li {
+    display: block;
+    float: left !important;
+    margin-bottom: 20px;
+  }
+  #container #content section.pagination li:last-child {
+    display: block;
+    float: right !important;
   }
 }
 @media (max-width: 480px) {
