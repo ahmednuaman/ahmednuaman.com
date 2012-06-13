@@ -187,7 +187,7 @@ function ahmed_get_portfolio_items()
 {
 	$its	= array();
 	
-	$q		= new WP_Query( 'post_type=portfolio' );
+	$q		= new WP_Query( 'post_type=portfolio&posts_per_page=1000' );
 	
 	foreach ( $q->posts as $p ) 
 	{

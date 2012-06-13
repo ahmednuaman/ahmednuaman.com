@@ -536,7 +536,7 @@ strong {
   }
   #container #content #hero ul {
     width: 10000px;
-    height: 350px;
+    height: 340px;
   }
   #container #content #hero ul li {
     /*					.ease(e('-webkit-transform, -moz-transform, -ms-transform, -o-transform, transform'));*/
@@ -552,7 +552,7 @@ strong {
     user-select: none;
     background: #ffffff;
     width: 320px;
-    height: 350px;
+    height: 340px;
     overflow: hidden;
   }
   #container #content #hero ul li img {
@@ -738,8 +738,12 @@ strong {
     width: auto;
     margin-top: 30px;
   }
-  #container #hero ul li {
+  #container #content #hero ul {
+    height: 410px;
+  }
+  #container #content #hero ul li {
     width: 480px;
+    height: 410px;
   }
 }
 @media (min-width: 768px) {
