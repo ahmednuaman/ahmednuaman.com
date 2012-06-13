@@ -30,8 +30,6 @@ var Suitcase	= function(window)
 		prepareHero();
 		
 		window.on( 'orientationchange', handleResize ).resize( handleResize ).resize();
-		
-		handleMediaChange();
 	}
 	
 	function detectBrowser()
@@ -184,6 +182,8 @@ var Suitcase	= function(window)
 		
 		hero.off( 'mousemove touchmove', handleHeroTouchMove );
 		
+		heroLiClassAssign();
+		
 		snapHero();
 	}
 	
@@ -199,23 +199,46 @@ var Suitcase	= function(window)
 			
 			if ( hasTransitions )
 			{
-				heroUl.on( eventTransitionEnd, handleSnapEnd ).addClass( 'snapping' ).css( 'margin-left', heroMarginX + 'px' );
+				heroUl.on( eventTransitionEnd, handleHeroSnapEnd ).addClass( 'snapping' ).css( 'margin-left', heroMarginX + 'px' );
 			}
 			else
 			{
 				heroUl.animate({
 					'margin-left'	: heroMarginX + 'px'
-				}, 'normal', 'easeOutExpo', handleSnapEnd );
+				}, 'normal', 'easeOutExpo', handleHeroSnapEnd );
 			}
 		}
 	}
 	
-	function handleSnapEnd(e)
+	function handleHeroSnapEnd(e)
 	{
 		if ( hasTransitions )
 		{
-			heroUl.off( 'transitionend oTransitionEnd webkitTransitionEnd msTransitionEnd', handleSnapEnd ).removeClass( 'snapping' );
+			heroUl.off( 'transitionend oTransitionEnd webkitTransitionEnd msTransitionEnd', handleHeroSnapEnd ).removeClass( 'snapping' );
 		}
+		
+		heroLiClassAssign();
+	}
+	
+	function heroLiClassAssign()
+	{
+		var el;
+		var pos;
+		
+		heroUl.find( 'li' ).each( function()
+		{
+			el	= $( this );
+			pos	= el.position().left;
+			console.log(pos,panelWidth)
+			if ( pos >= 0 && pos < panelWidth )
+			{
+				el.addClass( 'master' );
+			}
+			else
+			{
+				el.removeClass( 'master' );
+			}
+		});
 	}
 	
 	function handleResize(e)
@@ -226,6 +249,13 @@ var Suitcase	= function(window)
 			
 			panelWidth		= $( panels[ 0 ] ).outerWidth();
 			
+			if ( isNaN( panelWidth ) )
+			{
+				setTimeout( $( window ).resize, 100 );
+				
+				return;
+			}
+			
 			heroWidth		= panelsLength * panelWidth;
 			
 			heroMinX		= window.width() - heroWidth;
@@ -233,6 +263,10 @@ var Suitcase	= function(window)
 			heroUl.width( heroWidth );
 			
 			snapHero();
+			
+			handleMediaChange();
+			
+			heroLiClassAssign();
 		}
 	}
 	
