@@ -218,6 +218,8 @@ var Suitcase	= function(window)
 			
 			heroTestRoundedX	= -heroIndex;
 			
+			heroCurrentX		= heroTestRoundedX * panelWidth;
+			
 			heroTestX			= null;
 		}
 		else
@@ -244,6 +246,8 @@ var Suitcase	= function(window)
 		}
 		
 		heroIndex	= -heroTestRoundedX;
+		
+		$( '#hero-pagination a' ).removeClass( 'selected' ).eq( heroIndex ).addClass( 'selected' );
 	}
 	
 	function handleHeroSnapEnd(e)
