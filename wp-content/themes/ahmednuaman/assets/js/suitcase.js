@@ -141,6 +141,7 @@ var Suitcase	= function(window)
 			
 			$( '#hero-pagination a' ).on( tap, function(e)
 			{
+				e.preventDefault();
 				
 				heroTestRoundedX	= -$( this ).index();
 				

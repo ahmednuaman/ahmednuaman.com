@@ -595,16 +595,16 @@ strong {
   }
   #container #content #hero ul.snapping {
     -webkit-transition-property: margin-left;
-    -webkit-transition-duration: 0.5s;
+    -webkit-transition-duration: 1s;
     -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
     -moz-transition-property: margin-left;
-    -moz-transition-duration: 0.5s;
+    -moz-transition-duration: 1s;
     -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
     -o-transition-property: margin-left;
-    -o-transition-duration: 0.5s;
+    -o-transition-duration: 1s;
     -o-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
     transition-property: margin-left;
-    transition-duration: 0.5s;
+    transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
