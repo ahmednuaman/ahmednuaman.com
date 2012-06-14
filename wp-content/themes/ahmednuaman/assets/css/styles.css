@@ -908,7 +908,7 @@ strong {
     -ms-transform: translatez(0);
     -o-transform: translatez(0);
     transform: translatez(0);
-    background: none;
+    background-color: transparent;
     height: 300px;
   }
   #container #content #hero ul li article {
@@ -923,7 +923,7 @@ strong {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    background: #ffffff;
+    background-color: #ffffff;
     height: 450px;
   }
   #container #content #hero ul li.selected article {
