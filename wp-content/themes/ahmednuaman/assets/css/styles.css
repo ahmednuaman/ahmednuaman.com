@@ -392,10 +392,6 @@ textarea {
 strong {
   font-weight: bolder;
 }
-#print {
-  display: none !important;
-  visibility: hidden !important;
-}
 /* Media queries */
 @media (min-width: 320px) {
   a,
@@ -941,18 +937,9 @@ strong {
   body {
     border: none;
   }
-  #container {
+  body #container {
     display: none !important;
     visibility: hidden !important;
-  }
-  #print {
-    display: block !important;
-    visibility: visible !important;
-  }
-  #print h1 {
-    page-break-after: always;
-    font-size: 60pt;
-    line-height: 80pt;
   }
 }
 /* Browser specific */
