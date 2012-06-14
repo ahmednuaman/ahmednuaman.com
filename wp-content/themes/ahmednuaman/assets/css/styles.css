@@ -425,7 +425,6 @@ strong {
     display: block;
     position: relative !important;
     width: 100%;
-    overflow-x: hidden;
   }
   #container header {
     display: block;
@@ -657,6 +656,7 @@ strong {
   }
   #container #content article.post {
     word-wrap: break-word;
+    overflow-x: hidden;
     padding: 20px;
   }
   #container #content article.post h4 {
@@ -842,6 +842,10 @@ strong {
   hr {
     margin: 15px auto;
   }
+  #container {
+    margin: 0 auto;
+    width: 768px;
+  }
   #container #hero ul li {
     box-shadow: none;
   }
@@ -897,10 +901,6 @@ strong {
   }
 }
 @media (min-width: 960px) {
-  #container {
-    margin: 0 auto;
-    width: 960px;
-  }
   #container header {
     height: 182px;
   }
