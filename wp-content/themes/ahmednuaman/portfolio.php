@@ -7,7 +7,7 @@ get_header();
 ?>
 <section id="hero">
 	<ul>
-		<?php $i = 0; foreach ( ahmed_get_portfolio_items() as $item ): ?>
+		<?php $l = 0; foreach ( ahmed_get_portfolio_items() as $item ): ?>
 			<li>
 				<img src="<?php echo $item[ 'hero' ]; ?>" alt="<?php echo $item[ 'title' ]; ?> hero" />
 				<article>
@@ -19,11 +19,11 @@ get_header();
 					</p>
 				</article>
 			</li>
-		<?php $i++; endforeach; ?>
+		<?php $l++; endforeach; ?>
 	</ul>
 	<div id="hero-pagination">
-		<?php for ( $x = 0; $x < $i; $x++ ): ?>
-			<a href="#hero"></a>
+		<?php for ( $x = 0; $x < $l; $x++ ): ?>
+			<a href="#hero"<?php echo $x === 0 ? ' class="selected"' : ''; ?>></a>
 		<?php endfor; ?>
 	</div>
 </section>
