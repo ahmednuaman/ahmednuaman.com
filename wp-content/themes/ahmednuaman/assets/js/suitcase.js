@@ -286,11 +286,11 @@ var Suitcase	= function(window)
 			
 			if ( pos >= -heroPaddingX && pos < panelWidth )
 			{
-				el.addClass( 'master' );
+				el.addClass( 'selected' );
 			}
 			else
 			{
-				el.removeClass( 'master' );
+				el.removeClass( 'selected' );
 			}
 		});
 	}
