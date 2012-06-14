@@ -175,6 +175,8 @@ var Suitcase	= function(window)
 			e.preventDefault();
 		}
 		
+		heroUl.find( 'li' ).removeClass( 'selected' );
+		
 		heroMoveX		= getX( e );
 		
 		heroCurrentX	= ( heroMoveX - heroStartX ) + heroMarginX;
@@ -225,8 +227,6 @@ var Suitcase	= function(window)
 		
 		heroTestRoundedX	= -heroIndex;
 		
-		heroCurrentX		= heroTestRoundedX * panelWidth;
-		
 		heroTestX			= null;
 		
 		handleHeroSnap();
@@ -247,6 +247,10 @@ var Suitcase	= function(window)
 		{
 			heroMarginX	= heroTestRoundedX * panelWidth;
 			
+			heroTestX	= heroTestRoundedX;
+			
+			heroUl.find( 'li' ).removeClass( 'selected' );
+			
 			if ( hasTransitions )
 			{
 				heroUl.on( eventTransitionEnd, handleHeroSnapEnd ).addClass( 'snapping' ).css( 'margin-left', heroMarginX + 'px' );
@@ -257,11 +261,13 @@ var Suitcase	= function(window)
 					'margin-left'	: heroMarginX + 'px'
 				}, 'normal', 'easeOutExpo', handleHeroSnapEnd );
 			}
+			
+			heroCurrentX	= heroMarginX;
+			
+			heroIndex	= -heroTestRoundedX;
+			
+			$( '#hero-pagination a' ).removeClass( 'selected' ).eq( heroIndex ).addClass( 'selected' );
 		}
-		
-		heroIndex	= -heroTestRoundedX;
-		
-		$( '#hero-pagination a' ).removeClass( 'selected' ).eq( heroIndex ).addClass( 'selected' );
 	}
 	
 	function handleHeroSnapEnd(e)
