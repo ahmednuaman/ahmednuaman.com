@@ -1,0 +1,15 @@
+title: Selling Out
+link: http://www.ahmednuaman.com/blog/selling-out/
+creator: ahmed
+description: 
+post_id: 144
+post_date: 2009-06-01 19:53:33
+post_date_gmt: 2009-06-01 19:53:33
+comment_status: open
+post_name: selling-out
+status: publish
+post_type: post
+
+# Selling Out
+
+Today was a day for phone calls. I came in to the office at around 9am and then went up stairs for a heartly Google breakfast (they're free by the way!). When I came back down to my desk, I think it may have been around 9:40am, I had five missed calls! And about seven emails. All from recruitment agencies, all wanting to fit me in some time or another with their clients. Crazy. Well I guess it's a bit of a blessing. I was a bit worried last week about whether I was going to bum around next week, but it doesn't seem so. I'm just waiting for confirmation about a week working at [Imagination](http://imagination.com) in London. Then I've had offers from [BBC](http://bbc.co.uk) for the following week, not forgetting [Skype](http://skype.com) or [MediaCom](http://mediacomuk.com). And to top this off, today I had an interview with [BSkyB](http://sky.com), wow. Tomorrow I've got to pop in to some offices for a quick chat with some more recruiters but I'm sure that I'll be bombarded with more work requests. I now need to find a suitable way to make sure that I make the best use of my time at these creative agencies and that I don't sell out. I'm not in it for the money you see, although contractor rates are very nice. I'm in it to learn more. I had a conversation with another freelancing friend of mine today who said that "small agencies will pay you loads, but the big ones, the ones you want to be at, won't, because they know that you want to be there". I guess that's true; she gave the example of [Poke](http://pokelondon.com), they're an awesome agency by the way, saying that they won't pay you as much as BBC, but the experience you'll pick up there, plus the prestige you get from putting them on your portfolio and CV is second to none. I remember when I wrote my dissertation, it was about who was correct, the client or the designer. I went around forums asking people if they would do anything for money or would they put their foot down and say not to invalid mark up or a bright pink background with flashing text. And the results weren't surprising: about 60% would "pimp themselves out" while the others would stand up for what they believe in. Now don't get me wrong, I wouldn't say no to a big fat cheque, but nor would I say no to experience, and that's what I'm after. I want to make the most out of freelancing, meet great people and work with them too. I want to say "yeah I worked there" and "I made that" on stuff that's out there in the public eye. I guess that's what we all want, and there's nothing wrong with not wanting that and just wanting money. We're all different see.

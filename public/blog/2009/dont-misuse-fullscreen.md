@@ -1,0 +1,21 @@
+title: Don't Misuse Fullscreen
+link: http://www.ahmednuaman.com/blog/dont-misuse-fullscreen/
+creator: ahmed
+description: 
+post_id: 207
+post_date: 2009-06-24 18:44:31
+post_date_gmt: 2009-06-24 18:44:31
+comment_status: open
+post_name: dont-misuse-fullscreen
+status: publish
+post_type: post
+
+# Don't Misuse Fullscreen
+
+Since [Adobe introduce the fullscreen Flash Player mode in Flash Player 9](http://www.adobe.com/devnet/flashplayer/articles/full_screen_mode.html), it's come as a relief to many designers, developers and UX architects as now they didn't have to _cheat_ the browser to make their creating go "fullscreen" so to speak. However, when should you use fullscreen? There's lots of sites out there that have a fullscreen button but why? What's the need in seeing a web site in fullscreen? It's understandable having something like a presentation or a video go fullscreen, but when it comes to web sites, I think there's no need really. Firstly, most of the time people have their windows maximised across their screen, so going fullscreen will allow them to gain about 40px left and right and maybe 100px or so top and bottom. For those people who don't maximise their windows, like me, I think that the designers and developers need to be slick enough to understand why I don't want a web site to fill up all 1920x1600px of my display. This isn't meant to be a rant, more of a point that you should think about next time you're going fullscreen, make sure... 
+
+  * There's a purpose to go fullscreen
+  * That the UI acknowledges it's now fullscreen and does some more magic
+  * That you're not just scaling the UI
+  * That it doesn't take too long for your application to adjust
+I've come to this, well, post by looking at what's going to change when the video player I'm creating for [1Click2Fame.com](http://1Click2Fame.com) goes live. It's got a fullscreen button, and for a good purpose, because people may want to see the video fullscreen. The player does have a complex UI, as it allows for voting, authentication and so on, and it also has a frame around the video, but this is where one should think about what can be lost when going fullscreen. For example, the frame isn't needed when the player has expanded to your monitor as it serves no purpose - why keep a big prominent frame there when the user has expressed that they want the video bigger? Nevertheless, I then think it's important to adopt a resizing strategy whereby your application keeps tabs on whether it's fullscreen or not and adjusts itself accordingly, here's some example code: ` package { import flash.display.Sprite; public class FullscreenTest extends Sprite { private var isFullscreen:Boolean = false; public function FullscreenTest() { stage.scaleMode = StageScaleMode.NO_SCALE; stage.align = StageAlign.TOP_LEFT; stage.addEventListener( Event.RESIZE, handleResize ); } private function handleFullscreenToggle(e:*):void { if ( !stage.hasEventListener( FullScreenEvent.FULL_SCREEN ) ) { stage.addEventListener( FullScreenEvent.FULL_SCREEN, handleFullscreen ); } if ( stage.displayState === StageDisplayState.NORMAL ) { stage.displayState = StageDisplayState.FULL_SCREEN; } else { stage.displayState = StageDisplayState.NORMAL; } } private function handleFullscreen(e:FullScreenEvent):void { if ( e.fullScreen ) { isFullscreen = true; } else { isFullscreen = false; } stage.dispatchEvent( new Event( Event.RESIZE ) ); } private function handleResize(e:Event):void { // use the 'isFullscreen' to determine what to show and how to resize } } } ` With this sample code, sort of a mini framework, you can see how the private var "isFullscreen" allows your functions to test the state of the player and do something useful, by that I mean adjust accordingly to the current view. Just making your application go fullscreen without thinking about the UI is, I think, just a bit lazy. Think about what special stuff you can do, at the end of the day it's a user interaction and if you don't make the most of it, they why should the user do it in the first place? Tell me what you think!

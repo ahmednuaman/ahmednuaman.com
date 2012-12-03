@@ -1,0 +1,19 @@
+title: It's Been a Good Long Week
+link: http://www.ahmednuaman.com/blog/its-been-a-good-long-week/
+creator: ahmed
+description: 
+post_id: 171
+post_date: 2009-06-11 21:06:50
+post_date_gmt: 2009-06-11 21:06:50
+comment_status: open
+post_name: its-been-a-good-long-week
+status: publish
+post_type: post
+
+# It's Been a Good Long Week
+
+And it's not quite over, yet! This week I started a new contract at [ESP](http://www.enrichproductions.net/) (also known as Enrich Productions) working primarily on their main project called [1Click2Fame.com](http://www.1click2fame.com/). It's a really beautiful concept and one that I hope to help as much as I can in. If you're not quite sure what the site's about, here's a quick blurb: 
+
+> "The online talent contest where the UKâ€™s best battle it out to win prizes and fame.You watch, you vote, you decide who wins our weekly prizes to take talent to the next stage."
+
+Yep, that was copy and pasted from the front page! The idea behind the site is sort of like a YouTube contest, but much deeper than that. Where YouTube is simply a collection of videos and brands come along, pay lots of money and run contests, 1Click2Fame.com is a continuous contest and there's already been winners (like [Lucie Evans](http://www.1click2fame.com/members/1769)). So people upload their videos online to be judged and also have the ability to judge others. Those videos go into the next round, and so on. Then the winners are whittled down to a select few where a winner will be crowned and given lots of opportunities in their selected talent. It's as if you can enter Britons Got Talent over the internet and be the judge yourself! So since this is a new concept, I've started the week helping the guys skin some back end stuff where I've also had the chance to work with some Ruby on Rails. Now RoR isn't my preferred language, but I am starting to grow to it, I mean look at how easy it is to use Rail's scaffolding: Let's assume you've installed Rails with all the gems needed, so we'll create a new rails project in a "work" directory: ` $ rails work -d mysql ` So we then we assume that we've configured the database using the "config/database.yml" file: ` development: adapter: mysql encoding: utf8 database: work_development pool: 5 username: root password: socket: /tmp/mysql.sock ` We then use a tool called "Rake" to bind the database with our application: ` $ rake db:create ` And then we can create our controller: ` $ script/generate controller home index ` And in the same way use the scaffolding tool: ` $ script/generate scaffold Stuff name:string title:string content:text ` It may look like lots, but it does save a lot of time! [You can read up about more of this on the "Getting Started with Rails" page](http://guides.rubyonrails.org/getting_started.html). Now I'm not saying I'm the RoR guru yet, but I am starting to like it. It's also made me think about a lot of the unused features in frameworks I may use, especially scaffolding. But that's not where all the fun stops, tomorrow is going to be some hardcore Actionscripting as I've been tasked with building the site's most prized asset: the video player. There was a long meeting today where we discussed different ideas and concepts for the chromes of the player, for example the ability to vote, what happens when the video stops and so on. We've honed those ideas and tomorrow should see the start of a positive product that will carry the identity of the brand as well as being easy to use, nice to look at and simple to share and embed. It's all very exciting, working on a part of the site that's so important is defiantly challenging and a privilege! Let's hope it all goes smoothly.

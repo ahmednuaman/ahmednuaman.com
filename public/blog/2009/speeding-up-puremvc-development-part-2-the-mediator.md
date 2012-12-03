@@ -1,0 +1,15 @@
+title: Speeding Up PureMVC Development, Part 2: The Mediator
+link: http://www.ahmednuaman.com/blog/speeding-up-puremvc-development-part-2-the-mediator/
+creator: ahmed
+description: 
+post_id: 245
+post_date: 2009-07-02 09:19:10
+post_date_gmt: 2009-07-02 09:19:10
+comment_status: open
+post_name: speeding-up-puremvc-development-part-2-the-mediator
+status: publish
+post_type: post
+
+# Speeding Up PureMVC Development, Part 2: The Mediator
+
+**Update: I've updated the mediator class now, here's the post: [Speeding Up PureMVC Development, Part 2.1: The Mediator (2)](http://ahmednuaman.com/blog/2009/07/09/speeding-up-puremvc-development-part-2-1-the-mediator-2/)** Following my post about [speeding up PureMVC development regarding the view](/blog/2009/06/29/speeding-up-puremvc-development-part-1-the-view/), I'm now moving on to part two of my series on [PureMVC](http://puremvc.org): The Mediator. It's handy if you understand and/or have used [PureMVC](http://puremvc.org) before, if not, have a read of [my tutorial on using and understanding PureMVC](http://active.tutsplus.com/tutorials/workflow/understanding-the-puremvc-open-source-framework/). **Extending the Mediator** As we know the mediator is very important, without it our views couldn't interact with or be updated by our application. However, there are times when I do find that I'm just rewriting code between every mediator class, for example, when it came to handling events from the view, I found it annoying that sometimes I had to create handlers where all I wanted to do was just bubble the event via the mediator. The solution is simple, just create a function that takes the event from the view and bubbles it up, much like: ` public function sendEvent(event:SpriteEvent):void { sendNotification( event.type, event.data ); } ` Piece of pie eh? But then I found myself wanting to write this in ever mediator, but there's no point to that, so I just extended the mediator class and then extend my class when writing a new mediator, here it is: ` package com.firestartermedia.lib.puremvc.patterns { import com.firestartermedia.lib.puremvc.events.SpriteEvent; import org.puremvc.as3.patterns.mediator.Mediator; public class Mediator extends org.puremvc.as3.patterns.mediator.Mediator { public function Mediator(name:String=null, viewComponent:Object=null) { super( name, viewComponent ); } public function sendEvent(event:SpriteEvent):void { sendNotification( event.type, event.data ); } } } ` It's not much of an extension, but it does help with the old coding. There are also further changes that I'm planning to make to the mediator class, for example, why do we have to use "listNotificationInterests()" and then duplicate code when setting "handleNotification()"? It'll be much easier if we could combine these in a nice function, something I'll hope to code up soon. Tell me what you think.

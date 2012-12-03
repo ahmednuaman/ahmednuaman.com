@@ -1,0 +1,15 @@
+title: Compressing and Caching Static Text-based Assets with PHP
+link: http://www.ahmednuaman.com/blog/compressing-and-caching-static-text-based-assets-with-php/
+creator: ahmed
+description: 
+post_id: 258
+post_date: 2009-07-10 13:35:04
+post_date_gmt: 2009-07-10 13:35:04
+comment_status: open
+post_name: compressing-and-caching-static-text-based-assets-with-php
+status: publish
+post_type: post
+
+# Compressing and Caching Static Text-based Assets with PHP
+
+So recently I've been playing around with [GZIP](http://www.gzip.org/) compression on [Apache](http://apache.org) and [PHP](http://php.net) to see how fast I can get my assets to load. Now I've written a post already on [how to compress sites with GZIP](/blog/2009/05/28/speeding-up-sites-with-gzip/). Now I've taken my script to a new level, that is the asset loader script that compresses text-based assets using GZIP. I'm not using any sort of code compressor on the assets, yet, as I've already compressed the scripts using [YUI](http://developer.yahoo.com/yui/). More importantly, I've now added the ability for me to cache a number of files into one rather than loading several, as we all know: less HTTP request = more fun. So the concept is quite simple: pass a list of files, separated by a comma, to the script and it will then combine the files, compress with GZIP and cache the file for future use. Before I had something like this: ` ` So you see that we're loading files separately, they are already compressed and the GZIP'ed, but we're not caching them, so there's always some latency, so with the new script I do this: ` ` Now for the PHP script: ` < ?php /** * @author Ahmed Nuaman (http://www.ahmednuaman.com) * @langversion 5 * * This work is licenced under the Creative Commons Attribution-Share Alike 2.0 UK: England & Wales License. * To view a copy of this licence, visit http://creativecommons.org/licenses/by-sa/2.0/uk/ or send a letter * to Creative Commons, 171 Second Street, Suite 300, San Francisco, California 94105, USA. */ if ( substr_count( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip' ) ) { ob_start( 'ob_gzhandler' ); } else { ob_start(); } $dir = '/path/to/public_html/'; $test_file = $dir . 'cache/' . md5( $_GET['f'] ); $files = explode( ',', $_GET['f'] ); if ( strstr( $files[ 0 ], '.js' ) ) { $content_type = 'javascript'; } elseif ( strstr( $files[ 0 ], '.css' ) ) { $content_type = 'css'; } elseif ( strstr( $files[ 0 ], '.xml' ) ) { $content_type = 'xml'; } header( 'Content-type: text/' . $content_type ); if ( !file_exists( $test_file ) ) { foreach ( $files as $file ) { $feeds .= file_get_contents( $dir . $file ); } file_put_contents( $test_file, $feeds ); } echo file_get_contents( $test_file ); ?> ` So it's a pretty simple script to dissect. The only thing you need to worry about is changing the "$dir" and "$test_file" to specify what the base directory is (so people don't steal your GZIP'ing service) and where you want the files to be cached. Tell me what you think.

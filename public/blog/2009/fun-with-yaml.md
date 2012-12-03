@@ -1,0 +1,15 @@
+title: Fun With YAML
+link: http://www.ahmednuaman.com/blog/fun-with-yaml/
+creator: ahmed
+description: 
+post_id: 461
+post_date: 2009-10-20 15:48:27
+post_date_gmt: 2009-10-20 15:48:27
+comment_status: open
+post_name: fun-with-yaml
+status: publish
+post_type: post
+
+# Fun With YAML
+
+Yes indeedy, [YAML](http://www.google.com/search?client=safari&rls=en&q=YAML&ie=UTF-8&oe=UTF-8) is fun. A project that I've been working on required that I set up a simple fault and tracking hook in the Flash application that then notified a bug tracking service, in this case it's [Hoptoad](http://hoptoad.com). Apart from being a dyslexic's nightmare to pronounce, it's actually a really nice and simple service that keeps track of any faults that <del>may</del> appear in your code from time to time. So back to YAML: Hoptoad has a nice service whereby you can post any errors to its [API](http://help.hoptoadapp.com/faqs/api-2/api-overview), the problem there is that those errors had to be posted in a YAML format, and I wasn't coding in Ruby. So, I used my ingenuity and created a simple YAML helper: ` package com.firestartermedia.lib.as3.utils { import flash.utils.describeType; public class YAMLUtil { public static function formatArray(array:Array, tab:String):String { var result:String = ''; for each ( var item:Object in array ) { result += '\n' + tab + '- "' + item.toString() + '"'; } return result; } public static function formatHash(hash:Object, tab:String, depth:Number=1):String { var hashInfo:XML = describeType( hash ); var result:String = ''; var item:*; var itemInfo:XML; if ( hashInfo.@name == 'Object' ) { for ( var key:String in hash ) { item = hash[ key ]; itemInfo = describeType( item ); result += '\n' + StringUtil.multiply( tab, depth ) + key +': ' + ( itemInfo.@name == 'String' ? item : '' ) + ''; if ( itemInfo.@name != 'String' ) { result += formatHash( item, tab, depth + 1 ); } } } else { for each ( var v:XML in hashInfo..*.( name() == 'variable' || name() == 'accessor' ) ) { item = hash[ v.@name ]; result += '\n' + StringUtil.multiply( tab, depth ) + v.@name +': ' + item + ''; } } return result; } } } ` It's all up on my [github](http://github.com/ahmednuaman) too, and it's quite simple to use, for example: ` public function sendFault(text:String):void { var request:URLRequest = new URLRequest( vo.url ); var loader:URLLoader = new URLLoader(); request.method = URLRequestMethod.POST; request.data = getYAMLData( text ); request.contentType = 'application/x-yaml'; if ( CurrentEnvironment.isProduction ) { try { loader.load( request ); } catch (e:*) { } } vo.faults.push( text ); } private function getYAMLData(text:String):String { var yamlData:String = 'notice: \n' + ' api_key: ' + vo.apiKey + '\n' + ' error_message: "' + text + '"\n' + ' backtrace: ' + YAMLUtil.formatArray( trackBacksArray, ' ' ) + '\n' + ' request: ' + YAMLUtil.formatHash( requestHash, ' ', 2 ) + '\n' + ' session: ' + YAMLUtil.formatHash( sessionHash, ' ', 2 ) + '\n' + ' environment: \n' + ' RAILS_ENV: production\n'; return yamlData; } ` So it'll take an array or hash (object) and format it correctly for YAML. Enjoy and tell me what you think!
