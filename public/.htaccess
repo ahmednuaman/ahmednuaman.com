@@ -91,9 +91,9 @@ FileETag None
 
 DirectoryIndex index.php
 
-ErrorDocument 403 /index.php?error=403
-ErrorDocument 404 /index.php?error=404
+ErrorDocument 403 /index.php?route=error&error=403
+ErrorDocument 404 /index.php?route=error&error=404
 
 RewriteEngine on
-RewriteCond $1 !^(index\.php|error\.php|assets|robots\.txt)
-RewriteRule ^blog/(.*)$ /index.php?blog=$1 [L,QSA]
+RewriteCond $1 !^(index\.php|assets|robots\.txt)
+RewriteRule ^blog/(.*)$ /index.php?route=blog&blog=$1 [L,QSA]

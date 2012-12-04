@@ -14,4 +14,24 @@
             <?php echo $title; ?>
         </title>
     </head>
-    <body>
+    <body class="<?php echo $route; ?>">
+        <div id="container" class="relative">
+            <div id="header" class="row">
+                <h1><span>Ahmed</span> <span>Nuaman</span></h1>
+                <ul id="hero">
+                    <?php foreach (array(
+                        'Wrestles dachshunds',
+                        'Problem solves',
+                        'Changes nappies',
+                        'Writes great code',
+                        'Relishes TTD',
+                        'Enjoys a bike ride',
+                        'Devours mexican food'
+                    ) as $value): ?>
+                    <li>
+                        <?php echo $value; ?>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div id="content" class="row">
