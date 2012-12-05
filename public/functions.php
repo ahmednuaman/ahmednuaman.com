@@ -26,6 +26,20 @@ class BlogEntry
     }
 }
 
+class WorkEntry
+{
+    var $link;
+    var $thumb;
+    var $title;
+
+    public function __construct($title, $link)
+    {
+        $this->link = $link;
+        $this->thumb = str_replace('/\W+/', '_', $title) . '.jpg';
+        $this->title = $title;
+    }
+}
+
 function get_assets($ext, $template)
 {
     $folders = array(
@@ -70,6 +84,19 @@ function get_latest_blog_entries($num=5)
                 $count++;
             }
         }
+    }
+
+    return $entries;
+}
+
+function get_work_entries()
+{
+    $data = json_decode(file_get_contents('work.json'));
+    $entries = array();
+
+    foreach ($data as $value)
+    {
+        array_push($entries, new WorkEntry($value->title, $value->link));
     }
 
     return $entries;

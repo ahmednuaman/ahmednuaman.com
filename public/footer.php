@@ -1,5 +1,4 @@
 <?php if (!defined('ENV')) { die('*sneaky sneaky*'); } ?>
-            </div>
             <div id="footer" class="row">
                 <div id="twitter-feed" class="span1">
                     <a href="http://twitter.com/ahmednuaman" class="sprite banner banner-twitter"></a>
