@@ -1,5 +1,5 @@
 /* Modernizr 2.6.2 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-csstransitions-svg-touch-shiv-cssclasses-teststyles-testprop-testallprops-prefixes-domprefixes
+ * Build: http://modernizr.com/download/#-cssanimations-csstransitions-svg-touch-shiv-cssclasses-teststyles-testprop-testallprops-prefixes-domprefixes
  */
 ;
 
@@ -208,6 +208,9 @@ window.Modernizr = (function( window, document, undefined ) {
         }
 
         return bool;
+    };
+    tests['cssanimations'] = function() {
+        return testPropsAll('animationName');
     };
 
 

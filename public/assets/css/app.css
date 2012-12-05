@@ -101,6 +101,18 @@ h1 span::first-letter {
 #contact:hover {
   margin-top: 0;
 }
+#header #hero {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#header #hero li {
+  list-style: none;
+  text-align: center;
+  text-transform: capitalize;
+  line-height: normal;
+  font-weight: lighter;
+}
 @media screen and (min-width: 960px) {
   h1 {
     font-size: 23pt;
@@ -113,6 +125,14 @@ h1 span::first-letter {
   #container {
     margin: 10em auto;
     width: 60em;
+  }
+  #header #hero {
+    height: 15em;
+  }
+  #header #hero li {
+    font-size: 54pt;
+    letter-spacing: -4px;
+    padding: .6em 0;
   }
   #contact {
     margin-top: -7.6em;
