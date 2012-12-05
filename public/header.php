@@ -1,4 +1,4 @@
-<?php if (!ENV) { die('*sneaky sneaky*'); } ?>
+<?php if (!defined('ENV')) { die('*sneaky sneaky*'); } ?>
 <!DOCTYPE html>
 <html class="no-js">
     <head>

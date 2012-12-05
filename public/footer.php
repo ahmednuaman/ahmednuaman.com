@@ -1,4 +1,4 @@
-<?php if (!ENV) { die('*sneaky sneaky*'); } ?>
+<?php if (!defined('ENV')) { die('*sneaky sneaky*'); } ?>
             </div>
             <div id="footer" class="row">
                 <div id="twitter-feed" class="span1">
