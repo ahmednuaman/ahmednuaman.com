@@ -16,21 +16,6 @@ $(function()
 
         switch (data.type)
         {
-            case 'CreateEvent':
-            case 'DeleteEvent':
-            case 'ForkEvent':
-            case 'WatchEvent':
-                var action = data.type.replace('Event', '');
-
-                if (action.length < 6)
-                {
-                    action += 'e';
-                }
-
-                str = action + 'd ';
-
-            break;
-
             case 'GistEvent':
                 str = data.payload.action + 'd a gist called <a href="' + data.url + '">\'' + data.payload.desc + '\'</a>';
 
@@ -43,6 +28,18 @@ $(function()
 
             case 'PushEvent':
                 str = 'Pushed to ';
+
+            break;
+
+            default:
+                var action = data.type.replace('Event', '');
+
+                if (action.length < 6)
+                {
+                    action += 'e';
+                }
+
+                str = action + 'd ';
 
             break;
         }
