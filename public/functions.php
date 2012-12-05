@@ -35,7 +35,7 @@ class WorkEntry
     public function __construct($title, $link)
     {
         $this->link = $link;
-        $this->thumb = PATH_ASSETS . 'img/work/' . str_replace('/\W+/', '_', $title) . '.jpg';
+        $this->thumb = PATH_ASSETS . 'img/work/' . str_replace(' ', '_', strtolower($title)) . '.jpg';
         $this->title = $title;
     }
 }
