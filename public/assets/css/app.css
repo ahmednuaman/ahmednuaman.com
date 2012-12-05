@@ -1,0 +1,81 @@
+.absolute {
+  display: block;
+  position: absolute;
+}
+.block {
+  display: block;
+}
+.fixed {
+  display: block;
+  position: fixed;
+}
+.georgia {
+  font-family: Georgia, Times, serif;
+  font-style: italic;
+  font-weight: lighter;
+}
+.left {
+  display: block;
+  float: left;
+}
+.relative {
+  display: block;
+  position: relative;
+}
+.right {
+  display: block;
+  float: right !important;
+}
+.row {
+  width: 100%;
+  clear: both;
+  margin: 0;
+}
+.span1 {
+  display: block;
+  float: left;
+  width: 25%;
+}
+.span2 {
+  display: block;
+  float: left;
+  width: 50%;
+}
+body,
+p,
+li {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #333;
+  font-size: 9pt;
+  line-height: 14pt;
+}
+html,
+body {
+  background-color: #f8f3f1;
+}
+h1 {
+  font-family: Georgia, Times, serif;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 41pt;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+h1 span {
+  display: inline-block;
+}
+h1 span:first-letter,
+h1 span::first-letter {
+  font-size: 65pt;
+  text-transform: lowercase;
+  font-weight: lighter;
+  letter-spacing: -3px;
+}
+.svg .sprite {
+  background-image: url(/assets/img/sprite.svgz);
+  background-size: 10.3125em 12.375em;
+}
+.no-svg .sprite {
+  background-image: url(/assets/img/sprite.png);
+  background-size: 165px 198px;
+}
