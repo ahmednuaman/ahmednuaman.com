@@ -12,11 +12,9 @@
                 <div id="blog-feed" class="span1">
                     <div class="sprite banner banner-blog"></div>
                     <ul>
-                        <?php foreach (get_latest_blog_entries() as $blog_entry): ?>
-                            <li>
-                                <a href="<?php echo $blog_entry->link; ?>" title="<?php echo $blog_entry->title; ?>"><?php echo $blog_entry->title; ?></a>
-                            </li>
-                        <?php endforeach; ?>
+                        <li>
+                            Loading Ahmed's blog feed...
+                        </li>
                     </ul>
                 </div>
                 <div id="github-feed" class="span1">

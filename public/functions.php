@@ -17,9 +17,9 @@ class BlogEntry
 
     private function read_file()
     {
-        $f = fopen($this->file, 'r');
+        $f = file($this->file);
 
-        $this->title = str_replace('title: ', '', fgets($f));
+        $this->title = str_replace('title: ', '', $f[0]);
         $this->link = str_replace(array('link: ', 'http://www.ahmednuaman.com'), '', fgets($f));
 
         fclose($f);
