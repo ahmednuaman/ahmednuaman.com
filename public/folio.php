@@ -22,5 +22,11 @@ $work = get_work_entries();
     </ul>
 </div>
 <div id="content" class="row">
-
+    <?php foreach ($work as $item): ?>
+        <a href="http://<?php echo $item->link; ?>" title="<?php echo $item->title; ?>" style="background-image: url(<?php echo $item->thumb; ?>);">
+            <span>
+                <?php echo $item->title; ?>
+            </span>
+        </a>
+    <?php endforeach; ?>
 </div>
