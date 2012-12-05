@@ -1,10 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911&text=%26);
+
 .absolute {
     .block;
     position: absolute;
 }
 
+.amp {
+    font-family: 'Goudy Bookletter 1911', Times, serif !important;
+}
+
 .block {
     display: block;
+}
+
+.centre {
+    margin: 0 auto;
+}
+
+.ease-out(@prop: all, @time: 500ms)
+{
+    -webkit-transition: @prop @time cubic-bezier(0.000, 0.000, 0.000, 0.995);
+       -moz-transition: @prop @time cubic-bezier(0.000, 0.000, 0.000, 0.995);
+        -ms-transition: @prop @time cubic-bezier(0.000, 0.000, 0.000, 0.995);
+         -o-transition: @prop @time cubic-bezier(0.000, 0.000, 0.000, 0.995);
+            transition: @prop @time cubic-bezier(0.000, 0.000, 0.000, 0.995); /* custom */
 }
 
 .fixed {
@@ -81,12 +100,74 @@ h1 {
     }
 }
 
-.svg .sprite {
-    background-image: url(/assets/img/sprite.svgz);
-    background-size: 10.3125em 12.375em;
+#contact {
+    top: 0;
+    left: 0;
+    background: #333333;
+    width: 100%;
+    margin-top: -7.6em;
+
+    > a {
+        .absolute;
+        bottom: -3.5em;
+        right: 20em;
+        width: 7em;
+        height: 3.5em;
+    }
+    #contain-details {
+        padding: 1em 0 0.6em;
+        height: 6em;
+        width: 41em;
+
+        * {
+            .georgia;
+            color: #ffffff;
+            font-size: 14pt;
+            line-height: 22pt;
+            text-decoration: none;
+        }
+        h3 {
+            display: none;
+        }
+    }
+    &:hover {
+        margin-top: 0;
+    }
+}
+
+.csstransitions {
+    #contact {
+        .ease-out(margin-top);
+    }
+}
+
+.svg {
+    .icon {
+        display: inline-block;
+        padding-left: 1.75em;
+        height: 2em;
+
+        &.icon-phone {
+            background-position: -27em -4em;
+        }
+        &.icon-pin {
+            background-position: -27em -2em;
+        }
+        &.icon-twitter {
+            background-position: -27em -0em;
+        }
+        &.icon-email {
+            background-position: -27em -6em;
+        }
+    }
+
+    .sprite {
+        background-image: url(/assets/img/sprite.svg);
+        background-size: 40em 10em;
+    }
 }
 
 .no-svg .sprite {
     background-image: url(/assets/img/sprite.png);
-    background-size: 165px 198px;
+    background-size: 640px 160px;
 }

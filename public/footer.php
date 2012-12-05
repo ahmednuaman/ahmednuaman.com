@@ -36,12 +36,20 @@
             <div id="contain-details" class="relative centre">
                 <h3>Contact me</h3>
                 <div class="span2">
-                    <span class="sprite icon icon-phone"></span> 07811 184 436<br />
-                    <span class="sprite icon icon-pin"></span> London <span class="amp">&amp;</span> Kent, UK
+                    <span class="sprite icon icon-phone">07811 184 436</span><br />
+                    <span class="sprite icon icon-pin">London <span class="amp">&amp;</span> Kent, UK</span>
                 </div>
                 <div class="span2">
-                    <span class="sprite icon icon-twitter"></span> <a href="http://twitter.com/ahmednuaman" title="Ahmed's twitter feed">@ahmednuaman</a><br />
-                    <span class="sprite icon icon-email"></span> <a href="mailto:ahmed@nuaman.co.uk?subject=<?php echo urlencode('Enquiry from the site...'); ?>" title="Email Ahmed">ahmed@nuaman.co.uk</a>
+                    <span class="sprite icon icon-twitter">
+                        <a href="http://twitter.com/ahmednuaman" title="Ahmed's twitter feed">
+                            @ahmednuaman
+                        </a>
+                    </span><br />
+                    <span class="sprite icon icon-email">
+                        <a href="mailto:ahmed@nuaman.co.uk?subject=<?php echo urlencode('Enquiry from the site...'); ?>" title="Email Ahmed">
+                            ahmed@nuaman.co.uk
+                        </a>
+                    </span>
                 </div>
             </div>
             <a href="#contact" class="sprite banner banner-contact"></a>
