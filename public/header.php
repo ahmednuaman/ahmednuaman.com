@@ -15,4 +15,4 @@
         </title>
     </head>
     <body class="<?php echo $route; ?>">
-        <div id="container" class="relative">
+        <div id="container" class="relative centre">

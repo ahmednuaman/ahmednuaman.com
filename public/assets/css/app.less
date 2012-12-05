@@ -19,11 +19,11 @@
 
 .ease-out(@prop: all, @time: 500ms)
 {
-    -webkit-transition: @prop @time cubic-bezier(0.000, 0.000, 0.000, 0.995);
-       -moz-transition: @prop @time cubic-bezier(0.000, 0.000, 0.000, 0.995);
-        -ms-transition: @prop @time cubic-bezier(0.000, 0.000, 0.000, 0.995);
-         -o-transition: @prop @time cubic-bezier(0.000, 0.000, 0.000, 0.995);
-            transition: @prop @time cubic-bezier(0.000, 0.000, 0.000, 0.995); /* custom */
+    -webkit-transition: @prop @time cubic-bezier(.000, .000, .000, .995);
+       -moz-transition: @prop @time cubic-bezier(.000, .000, .000, .995);
+        -ms-transition: @prop @time cubic-bezier(.000, .000, .000, .995);
+         -o-transition: @prop @time cubic-bezier(.000, .000, .000, .995);
+            transition: @prop @time cubic-bezier(.000, .000, .000, .995); /* custom */
 }
 
 .fixed {
@@ -105,25 +105,14 @@ h1 {
     left: 0;
     background: #333333;
     width: 100%;
-    margin-top: -7.6em;
 
     > a {
         .absolute;
-        bottom: -3.5em;
-        right: 20em;
-        width: 7em;
-        height: 3.5em;
     }
     #contain-details {
-        padding: 1em 0 0.6em;
-        height: 6em;
-        width: 41em;
-
         * {
             .georgia;
             color: #ffffff;
-            font-size: 14pt;
-            line-height: 22pt;
             text-decoration: none;
         }
         h3 {
@@ -132,6 +121,44 @@ h1 {
     }
     &:hover {
         margin-top: 0;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    h1 {
+        font-size: 23pt;
+
+        span:first-letter,
+        span::first-letter {
+            font-size: 44pt;
+            letter-spacing: -2px;
+        }
+    }
+
+    #container {
+        margin: 10em auto;
+        width: 60em;
+    }
+
+    #contact {
+        margin-top: -7.6em;
+
+        > a {
+            bottom: -3.5em;
+            right: 20em;
+            width: 7em;
+            height: 3.5em;
+        }
+        #contain-details {
+            padding: 1em 0 .6em;
+            height: 6em;
+            width: 41em;
+
+            * {
+                font-size: 14pt;
+                line-height: 22pt;
+            }
+        }
     }
 }
 
@@ -162,7 +189,7 @@ h1 {
     }
 
     .sprite {
-        background-image: url(/assets/img/sprite.svg);
+        background-image: url(/assets/img/sprite.svgz);
         background-size: 40em 10em;
     }
 }

@@ -83,28 +83,16 @@ h1 span::first-letter {
   left: 0;
   background: #333333;
   width: 100%;
-  margin-top: -7.6em;
 }
 #contact > a {
   display: block;
   position: absolute;
-  bottom: -3.5em;
-  right: 20em;
-  width: 7em;
-  height: 3.5em;
-}
-#contact #contain-details {
-  padding: 1em 0 0.6em;
-  height: 6em;
-  width: 41em;
 }
 #contact #contain-details * {
   font-family: Georgia, Times, serif;
   font-style: italic;
   font-weight: lighter;
   color: #ffffff;
-  font-size: 14pt;
-  line-height: 22pt;
   text-decoration: none;
 }
 #contact #contain-details h3 {
@@ -112,6 +100,38 @@ h1 span::first-letter {
 }
 #contact:hover {
   margin-top: 0;
+}
+@media screen and (min-width: 960px) {
+  h1 {
+    font-size: 23pt;
+  }
+  h1 span:first-letter,
+  h1 span::first-letter {
+    font-size: 44pt;
+    letter-spacing: -2px;
+  }
+  #container {
+    margin: 10em auto;
+    width: 60em;
+  }
+  #contact {
+    margin-top: -7.6em;
+  }
+  #contact > a {
+    bottom: -3.5em;
+    right: 20em;
+    width: 7em;
+    height: 3.5em;
+  }
+  #contact #contain-details {
+    padding: 1em 0 .6em;
+    height: 6em;
+    width: 41em;
+  }
+  #contact #contain-details * {
+    font-size: 14pt;
+    line-height: 22pt;
+  }
 }
 .csstransitions #contact {
   -webkit-transition: margin-top 500ms cubic-bezier(0, 0, 0, 0.995);
@@ -140,7 +160,7 @@ h1 span::first-letter {
   background-position: -27em -6em;
 }
 .svg .sprite {
-  background-image: url(/assets/img/sprite.svg);
+  background-image: url(/assets/img/sprite.svgz);
   background-size: 40em 10em;
 }
 .no-svg .sprite {
