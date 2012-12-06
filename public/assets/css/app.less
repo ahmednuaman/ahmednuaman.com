@@ -9,6 +9,15 @@
     font-family: 'Goudy Bookletter 1911', Times, serif !important;
 }
 
+.animate(@name, @time: 500ms, @delay: 0s, @iteration: 1)
+{
+    -webkit-animation: @name @time cubic-bezier(.000, .000, .000, .995) @delay @iteration normal none;
+       -moz-animation: @name @time cubic-bezier(.000, .000, .000, .995) @delay @iteration normal none;
+        -ms-animation: @name @time cubic-bezier(.000, .000, .000, .995) @delay @iteration normal none;
+         -o-animation: @name @time cubic-bezier(.000, .000, .000, .995) @delay @iteration normal none;
+            animation: @name @time cubic-bezier(.000, .000, .000, .995) @delay @iteration normal none; /* custom */
+}
+
 .block {
     display: block;
 }
@@ -183,6 +192,107 @@ h1 {
                 line-height: 22pt;
             }
         }
+    }
+}
+
+.cssanimations {
+    @-webkit-keyframes hero-move {
+        77% { margin-top: -11.75em; }
+        7% { margin-top: 0em; }
+        49% { margin-top: -7.05em; }
+        91% { margin-top: -14.1em; }
+        42% { margin-top: -7.05em; }
+        100% { margin-top: 0em; }
+        28% { margin-top: -4.7em; }
+        35% { margin-top: -4.7em; }
+        21% { margin-top: -2.35em; }
+        84% { margin-top: -14.1em; }
+        14% { margin-top: -2.35em; }
+        63% { margin-top: -9.4em; }
+        0% { margin-top: 0em; }
+        70% { margin-top: -11.75em; }
+        56% { margin-top: -9.4em; }
+        98% { margin-top: 0em; }
+    }
+
+    @-moz-keyframes hero-move {
+        77% { margin-top: -11.75em; }
+        7% { margin-top: 0em; }
+        49% { margin-top: -7.05em; }
+        91% { margin-top: -14.1em; }
+        42% { margin-top: -7.05em; }
+        100% { margin-top: 0em; }
+        28% { margin-top: -4.7em; }
+        35% { margin-top: -4.7em; }
+        21% { margin-top: -2.35em; }
+        84% { margin-top: -14.1em; }
+        14% { margin-top: -2.35em; }
+        63% { margin-top: -9.4em; }
+        0% { margin-top: 0em; }
+        70% { margin-top: -11.75em; }
+        56% { margin-top: -9.4em; }
+        98% { margin-top: 0em; }
+    }
+
+    @-ms-keyframes hero-move {
+        77% { margin-top: -11.75em; }
+        7% { margin-top: 0em; }
+        49% { margin-top: -7.05em; }
+        91% { margin-top: -14.1em; }
+        42% { margin-top: -7.05em; }
+        100% { margin-top: 0em; }
+        28% { margin-top: -4.7em; }
+        35% { margin-top: -4.7em; }
+        21% { margin-top: -2.35em; }
+        84% { margin-top: -14.1em; }
+        14% { margin-top: -2.35em; }
+        63% { margin-top: -9.4em; }
+        0% { margin-top: 0em; }
+        70% { margin-top: -11.75em; }
+        56% { margin-top: -9.4em; }
+        98% { margin-top: 0em; }
+    }
+
+    @-o-keyframes hero-move {
+        77% { margin-top: -11.75em; }
+        7% { margin-top: 0em; }
+        49% { margin-top: -7.05em; }
+        91% { margin-top: -14.1em; }
+        42% { margin-top: -7.05em; }
+        100% { margin-top: 0em; }
+        28% { margin-top: -4.7em; }
+        35% { margin-top: -4.7em; }
+        21% { margin-top: -2.35em; }
+        84% { margin-top: -14.1em; }
+        14% { margin-top: -2.35em; }
+        63% { margin-top: -9.4em; }
+        0% { margin-top: 0em; }
+        70% { margin-top: -11.75em; }
+        56% { margin-top: -9.4em; }
+        98% { margin-top: 0em; }
+    }
+
+    @keyframes hero-move {
+        77% { margin-top: -11.75em; }
+        7% { margin-top: 0em; }
+        49% { margin-top: -7.05em; }
+        91% { margin-top: -14.1em; }
+        42% { margin-top: -7.05em; }
+        100% { margin-top: 0em; }
+        28% { margin-top: -4.7em; }
+        35% { margin-top: -4.7em; }
+        21% { margin-top: -2.35em; }
+        84% { margin-top: -14.1em; }
+        14% { margin-top: -2.35em; }
+        63% { margin-top: -9.4em; }
+        0% { margin-top: 0em; }
+        70% { margin-top: -11.75em; }
+        56% { margin-top: -9.4em; }
+        98% { margin-top: 0em; }
+    }
+
+    #header #hero li:first-child {
+        .animate(hero-move, 15s, 1s, infinite);
     }
 }
 

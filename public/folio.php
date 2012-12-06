@@ -34,7 +34,7 @@ $work = get_work_entries();
     <div id="bio" class="row">
         <div class="span2">
             <p>
-                I'm Ahmed, a freelance developer and designer. I graduated from Ravensbourne College in 2007 with a 1st class degree in Interaction Design. Since then I've worked for small and large agencies and clients including Google and YouTube, BBH, Unilever, Samsung, Johnson &amp; Johnson, TUI, BBC and may more.
+                I'm Ahmed, a freelance developer and designer. I graduated from Ravensbourne College in 2007 with a 1st class degree in Interaction Design. Since then I've worked for small and large agencies and clients including Google and YouTube, BBH, Unilever, Samsung, Johnson &amp; Johnson, TUI, BBC, and many more.
             </p>
             <p>
                 My core development skills are in...
