@@ -107,6 +107,7 @@ h1 span::first-letter {
   overflow: hidden;
 }
 #header #hero li {
+  display: block;
   list-style: none;
   text-align: center;
   text-transform: capitalize;
@@ -127,12 +128,14 @@ h1 span::first-letter {
     width: 60em;
   }
   #header #hero {
-    height: 15em;
+    height: 190px;
   }
   #header #hero li {
-    font-size: 54pt;
+    font-size: 71px;
+    height: 71px;
     letter-spacing: -4px;
-    padding: .6em 0;
+    padding: 60px 0;
+    line-height: 71px;
   }
   #contact {
     margin-top: -7.6em;
@@ -155,252 +158,252 @@ h1 span::first-letter {
 }
 @-webkit-keyframes hero-move {
   77% {
-    margin-top: -11.75em;
+    margin-top: -955px;
   }
   7% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   49% {
-    margin-top: -7.05em;
+    margin-top: -573px;
   }
   91% {
-    margin-top: -14.1em;
+    margin-top: -1146px;
   }
   42% {
-    margin-top: -7.05em;
+    margin-top: -573px;
   }
   100% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   28% {
-    margin-top: -4.7em;
+    margin-top: -382px;
   }
   35% {
-    margin-top: -4.7em;
+    margin-top: -382px;
   }
   21% {
-    margin-top: -2.35em;
+    margin-top: -191px;
   }
   84% {
-    margin-top: -14.1em;
+    margin-top: -1146px;
   }
   14% {
-    margin-top: -2.35em;
+    margin-top: -191px;
   }
   63% {
-    margin-top: -9.4em;
+    margin-top: -764px;
   }
   0% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   70% {
-    margin-top: -11.75em;
+    margin-top: -955px;
   }
   56% {
-    margin-top: -9.4em;
+    margin-top: -764px;
   }
   98% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
 }
 @-moz-keyframes hero-move {
   77% {
-    margin-top: -11.75em;
+    margin-top: -955px;
   }
   7% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   49% {
-    margin-top: -7.05em;
+    margin-top: -573px;
   }
   91% {
-    margin-top: -14.1em;
+    margin-top: -1146px;
   }
   42% {
-    margin-top: -7.05em;
+    margin-top: -573px;
   }
   100% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   28% {
-    margin-top: -4.7em;
+    margin-top: -382px;
   }
   35% {
-    margin-top: -4.7em;
+    margin-top: -382px;
   }
   21% {
-    margin-top: -2.35em;
+    margin-top: -191px;
   }
   84% {
-    margin-top: -14.1em;
+    margin-top: -1146px;
   }
   14% {
-    margin-top: -2.35em;
+    margin-top: -191px;
   }
   63% {
-    margin-top: -9.4em;
+    margin-top: -764px;
   }
   0% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   70% {
-    margin-top: -11.75em;
+    margin-top: -955px;
   }
   56% {
-    margin-top: -9.4em;
+    margin-top: -764px;
   }
   98% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
 }
 @-ms-keyframes hero-move {
   77% {
-    margin-top: -11.75em;
+    margin-top: -955px;
   }
   7% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   49% {
-    margin-top: -7.05em;
+    margin-top: -573px;
   }
   91% {
-    margin-top: -14.1em;
+    margin-top: -1146px;
   }
   42% {
-    margin-top: -7.05em;
+    margin-top: -573px;
   }
   100% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   28% {
-    margin-top: -4.7em;
+    margin-top: -382px;
   }
   35% {
-    margin-top: -4.7em;
+    margin-top: -382px;
   }
   21% {
-    margin-top: -2.35em;
+    margin-top: -191px;
   }
   84% {
-    margin-top: -14.1em;
+    margin-top: -1146px;
   }
   14% {
-    margin-top: -2.35em;
+    margin-top: -191px;
   }
   63% {
-    margin-top: -9.4em;
+    margin-top: -764px;
   }
   0% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   70% {
-    margin-top: -11.75em;
+    margin-top: -955px;
   }
   56% {
-    margin-top: -9.4em;
+    margin-top: -764px;
   }
   98% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
 }
 @-o-keyframes hero-move {
   77% {
-    margin-top: -11.75em;
+    margin-top: -955px;
   }
   7% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   49% {
-    margin-top: -7.05em;
+    margin-top: -573px;
   }
   91% {
-    margin-top: -14.1em;
+    margin-top: -1146px;
   }
   42% {
-    margin-top: -7.05em;
+    margin-top: -573px;
   }
   100% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   28% {
-    margin-top: -4.7em;
+    margin-top: -382px;
   }
   35% {
-    margin-top: -4.7em;
+    margin-top: -382px;
   }
   21% {
-    margin-top: -2.35em;
+    margin-top: -191px;
   }
   84% {
-    margin-top: -14.1em;
+    margin-top: -1146px;
   }
   14% {
-    margin-top: -2.35em;
+    margin-top: -191px;
   }
   63% {
-    margin-top: -9.4em;
+    margin-top: -764px;
   }
   0% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   70% {
-    margin-top: -11.75em;
+    margin-top: -955px;
   }
   56% {
-    margin-top: -9.4em;
+    margin-top: -764px;
   }
   98% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
 }
 @keyframes hero-move {
   77% {
-    margin-top: -11.75em;
+    margin-top: -955px;
   }
   7% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   49% {
-    margin-top: -7.05em;
+    margin-top: -573px;
   }
   91% {
-    margin-top: -14.1em;
+    margin-top: -1146px;
   }
   42% {
-    margin-top: -7.05em;
+    margin-top: -573px;
   }
   100% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   28% {
-    margin-top: -4.7em;
+    margin-top: -382px;
   }
   35% {
-    margin-top: -4.7em;
+    margin-top: -382px;
   }
   21% {
-    margin-top: -2.35em;
+    margin-top: -191px;
   }
   84% {
-    margin-top: -14.1em;
+    margin-top: -1146px;
   }
   14% {
-    margin-top: -2.35em;
+    margin-top: -191px;
   }
   63% {
-    margin-top: -9.4em;
+    margin-top: -764px;
   }
   0% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
   70% {
-    margin-top: -11.75em;
+    margin-top: -955px;
   }
   56% {
-    margin-top: -9.4em;
+    margin-top: -764px;
   }
   98% {
-    margin-top: 0em;
+    margin-top: 0px;
   }
 }
 .cssanimations #header #hero li:first-child {
