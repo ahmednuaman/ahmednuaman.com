@@ -77,9 +77,14 @@
     width: 50%;
 }
 
+.sprite {
+    background-repeat: no-repeat;
+}
+
 body,
 p,
-li {
+li,
+a {
     font-family: Helvetica, Arial, sans-serif;
     color: #333;
     font-size: 9pt;
@@ -109,13 +114,32 @@ h1 {
     }
 }
 
+#header #hero {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    li {
+        display: block;
+        list-style: none;
+        text-align: center;
+        text-transform: capitalize;
+        line-height: normal;
+        font-weight: lighter;
+    }
+}
+
+#content {
+    border-top: 1px solid #333333;
+}
+
 #contact {
     top: 0;
     left: 0;
     background: #333333;
     width: 100%;
 
-    > a {
+    a.banner-contact {
         .absolute;
     }
     #contain-details {
@@ -133,21 +157,6 @@ h1 {
     }
 }
 
-#header #hero {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-
-    li {
-        display: block;
-        list-style: none;
-        text-align: center;
-        text-transform: capitalize;
-        line-height: normal;
-        font-weight: lighter;
-    }
-}
-
 @media screen and (min-width: 960px) {
     h1 {
         font-size: 23pt;
@@ -160,8 +169,8 @@ h1 {
     }
 
     #container {
-        margin: 10em auto;
-        width: 60em;
+        margin: 150px auto;
+        width: 960px;
     }
 
     #header #hero {
@@ -176,23 +185,25 @@ h1 {
         }
     }
 
-    #contact {
-        margin-top: -7.6em;
+    #content {
+        width: 940px;
+        padding: 0 10px;
+    }
 
-        > a {
-            bottom: -3.5em;
-            right: 20em;
-            width: 7em;
-            height: 3.5em;
-        }
+    #contact {
+        /*margin-top: -86px;*/
+
         #contain-details {
-            padding: 1em 0 .6em;
-            height: 6em;
-            width: 41em;
+            padding: 15px 0;
+            height: 30px;
+            width: 600px;
 
             * {
                 font-size: 14pt;
                 line-height: 22pt;
+            }
+            .sprite {
+                box-sizing: background-box;
             }
         }
     }
@@ -321,13 +332,20 @@ h1 {
             background-position: -27em -0em;
         }
         &.icon-email {
-            background-position: -27em -6em;
+            background-position: -27em -6.2em;
         }
     }
 
     .sprite {
         background-image: url(/assets/img/sprite.svgz);
         background-size: 40em 10em;
+    }
+
+    #contact a.banner-contact {
+        bottom: -4.6em;
+        right: -7em;
+        width: 7em;
+        height: 3.5em;
     }
 }
 

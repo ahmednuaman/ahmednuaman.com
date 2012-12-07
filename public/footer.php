@@ -51,8 +51,8 @@
                         </a>
                     </span>
                 </div>
+                <a href="#contact" class="sprite banner banner-contact"></a>
             </div>
-            <a href="#contact" class="sprite banner banner-contact"></a>
         </div>
         <?php if (ENV === 'production'): ?>
             <script src="/<?php echo PATH_ASSETS; ?>js/<?php echo PATH_DIST; ?>/packaged-min.js?<?php echo VERSION; ?>"></script>
