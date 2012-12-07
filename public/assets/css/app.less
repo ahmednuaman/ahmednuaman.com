@@ -161,6 +161,10 @@ h1 {
     li {
         margin: 0 0 5px 0;
         list-style: none;
+
+        &:before {
+            content: '– ';
+        }
     }
     a.instagram-pic {
         display: block;
@@ -204,7 +208,15 @@ h1 {
     }
 }
 
-@media screen and (min-width: 960px) {
+@media (max-width: 480px) {
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+@media (min-width: 768px) {
     h1 {
         font-size: 23pt;
 
@@ -216,8 +228,8 @@ h1 {
     }
 
     #container {
-        margin: 100px auto;
-        width: 960px;
+        margin: 100px 10px;
+        width: auto;
     }
 
     #header #hero {
@@ -233,33 +245,30 @@ h1 {
     }
 
     #work {
-        width: 940px;
-        padding: 0 10px 40px;
+        width: 100%;
 
         a {
-            width: 470px;
-            height: 300px;
+            width: 50%;
+            height: 250px;
+            background-size: cover;
 
             span {
-                font-size: 40px;
+                font-size: 30px;
                 letter-spacing: -2px;
-                width: 470px;
-                height: 40px;
-                line-height: 40px;
-                padding: 130px 0;
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                padding: 110px 0;
             }
         }
     }
 
     #bio {
-        padding: 20px 10px;
+        margin: 20px 10px;
 
         .span2 {
-            margin-left: 40px;
-            width: 450px;
-        }
-        .span2:first-child {
-            margin: 0;
+            margin-right: 5%;
+            width: 45%;
         }
     }
 
@@ -268,11 +277,12 @@ h1 {
         margin-bottom: 30px;
 
         .span1 {
-            padding: 0 25px 0 0;
-            width: 220px;
+            margin-right: 3%;
+            width: 30%;
+            height: 180px;
         }
         .span1:last-child {
-            padding-right: 0;
+            display: none;
         }
     }
 
@@ -295,6 +305,53 @@ h1 {
             .sprite {
                 box-sizing: background-box;
             }
+        }
+    }
+}
+
+@media (min-width: 960px) {
+    #container {
+        margin: 100px auto;
+        width: 960px;
+    }
+
+    #work {
+        width: 940px;
+
+        a {
+            width: 470px;
+            height: 300px;
+
+            span {
+                font-size: 40px;
+                letter-spacing: -2px;
+                width: 470px;
+                height: 40px;
+                line-height: 40px;
+                padding: 130px 0;
+            }
+        }
+    }
+
+    #bio {
+        .span2 {
+            margin-right: 40px;
+            width: 440px;
+        }
+    }
+
+    #footer {
+        padding: 0 10px 20px;
+        margin-bottom: 30px;
+
+        .span1 {
+            padding: 0 25px 0 0;
+            margin: 0;
+            width: 220px;
+        }
+        .span1:last-child {
+            display: block;
+            padding-right: 0;
         }
     }
 }
@@ -456,7 +513,7 @@ h1 {
 
     #contact a.banner-contact {
         bottom: -4.6em;
-        right: -7em;
+        right: -4em;
         width: 7em;
         height: 3.5em;
     }
@@ -509,7 +566,7 @@ h1 {
 
     #contact a.banner-contact {
         bottom: -81px;
-        right: -112px;
+        right: -64px;
         width: 112px;
         height: 56px;
     }

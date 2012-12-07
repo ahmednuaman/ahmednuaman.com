@@ -99,7 +99,7 @@ $(function()
             var ul = $('#twitter-feed').find('ul').empty();
             var tweet;
 
-            for (var i = 0; i < 5; i++)
+            for (var i = 0; i < data.length; i++)
             {
                 tweet = data[i];
 
