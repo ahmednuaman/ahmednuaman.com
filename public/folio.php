@@ -24,7 +24,7 @@ $work = get_work_entries();
 <div id="content" class="row">
     <div id="work" class="row">
         <?php foreach ($work as $item): ?>
-            <a href="http://<?php echo $item->link; ?>" title="<?php echo $item->title; ?>" style="background-image: url(<?php echo $item->thumb; ?>);">
+            <a href="http://<?php echo $item->link; ?>" title="<?php echo $item->title; ?>" class="span2" style="background-image: url(<?php echo $item->thumb; ?>);">
                 <span>
                     <?php echo $item->title; ?>
                 </span>

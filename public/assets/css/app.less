@@ -131,6 +131,21 @@ h1 {
 
 #content {
     border-top: 1px solid #333333;
+
+    #work a {
+        text-decoration: none;
+
+        span {
+            display: block;
+            background-color: rgba(255, 255, 255, .7);
+            text-align: center;
+            font-weight: lighter;
+            opacity: 0;
+        }
+        &:hover span {
+            opacity: 1;
+        }
+    }
 }
 
 #contact {
@@ -169,12 +184,12 @@ h1 {
     }
 
     #container {
-        margin: 150px auto;
+        margin: 110px auto;
         width: 960px;
     }
 
     #header #hero {
-        height: 190px;
+        height: 210px;
 
         li {
             font-size: 71px;
@@ -188,10 +203,24 @@ h1 {
     #content {
         width: 940px;
         padding: 0 10px;
+
+        #work a {
+            width: 470px;
+            height: 300px;
+
+            span {
+                font-size: 40px;
+                letter-spacing: -2px;
+                width: 470px;
+                height: 40px;
+                line-height: 40px;
+                padding: 130px 0;
+            }
+        }
     }
 
     #contact {
-        /*margin-top: -86px;*/
+        margin-top: -86px;
 
         #contain-details {
             padding: 15px 0;
@@ -311,6 +340,10 @@ h1 {
 }
 
 .csstransitions {
+    #content #work a span {
+        .ease-out(opacity);
+    }
+
     #contact {
         .ease-out(margin-top);
     }
