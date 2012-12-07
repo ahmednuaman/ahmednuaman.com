@@ -34,6 +34,8 @@
   float: right !important;
 }
 .row {
+  display: block;
+  float: left;
   width: 100%;
   clear: both;
   margin: 0;
@@ -97,6 +99,10 @@ h1 span::first-letter {
 }
 #content {
   border-top: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+}
+#content #work {
+  border-bottom: 1px solid #333333;
 }
 #content #work a {
   text-decoration: none;
@@ -144,7 +150,7 @@ h1 span::first-letter {
     letter-spacing: -2px;
   }
   #container {
-    margin: 110px auto;
+    margin: 100px auto;
     width: 960px;
   }
   #header #hero {
@@ -157,21 +163,32 @@ h1 span::first-letter {
     padding: 60px 0;
     line-height: 71px;
   }
-  #content {
+  #work {
     width: 940px;
-    padding: 0 10px;
+    padding: 0 10px 40px;
   }
-  #content #work a {
+  #work a {
     width: 470px;
     height: 300px;
   }
-  #content #work a span {
+  #work a span {
     font-size: 40px;
     letter-spacing: -2px;
     width: 470px;
     height: 40px;
     line-height: 40px;
     padding: 130px 0;
+  }
+  #bio .span2 {
+    margin-left: 40px;
+    width: 450px;
+  }
+  #bio .span2:first-child {
+    margin: 0;
+  }
+  #bio,
+  #footer {
+    padding: 20px 10px;
   }
   #contact {
     margin-top: -86px;
