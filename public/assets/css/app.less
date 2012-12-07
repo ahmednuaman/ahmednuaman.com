@@ -154,6 +154,16 @@ h1 {
     }
 }
 
+#footer {
+    ul {
+        padding: 0;
+    }
+    li {
+        margin: 0 0 5px 0;
+        list-style: none;
+    }
+}
+
 #contact {
     top: 0;
     left: 0;
@@ -226,6 +236,8 @@ h1 {
     }
 
     #bio {
+        padding: 20px 10px;
+
         .span2 {
             margin-left: 40px;
             width: 450px;
@@ -235,9 +247,16 @@ h1 {
         }
     }
 
-    #bio,
     #footer {
-        padding: 20px 10px;
+        padding: 0 10px 20px;
+
+        .span1 {
+            padding: 0 25px 0 0;
+            width: 220px;
+        }
+        .span1:last-child {
+            padding-right: 0;
+        }
     }
 
     #contact {
@@ -387,6 +406,25 @@ h1 {
         }
         &.icon-email {
             background-position: -27em -6.2em;
+        }
+    }
+
+    .banner {
+        display: block;
+        width: 5em;
+        height: 2.5em;
+
+        &.banner-twitter {
+            background-position: -12em 0;
+        }
+        &.banner-blog {
+            background-position: -17em 0;
+        }
+        &.banner-github {
+            background-position: -7em 0;
+        }
+        &.banner-instagram {
+            background-position: -22em 0;
         }
     }
 

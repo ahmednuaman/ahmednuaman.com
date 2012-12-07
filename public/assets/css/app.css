@@ -117,6 +117,13 @@ h1 span::first-letter {
 #content #work a:hover span {
   opacity: 1;
 }
+#footer ul {
+  padding: 0;
+}
+#footer li {
+  margin: 0 0 5px 0;
+  list-style: none;
+}
 #contact {
   top: 0;
   left: 0;
@@ -179,6 +186,9 @@ h1 span::first-letter {
     line-height: 40px;
     padding: 130px 0;
   }
+  #bio {
+    padding: 20px 10px;
+  }
   #bio .span2 {
     margin-left: 40px;
     width: 450px;
@@ -186,9 +196,15 @@ h1 span::first-letter {
   #bio .span2:first-child {
     margin: 0;
   }
-  #bio,
   #footer {
-    padding: 20px 10px;
+    padding: 0 10px 20px;
+  }
+  #footer .span1 {
+    padding: 0 25px 0 0;
+    width: 220px;
+  }
+  #footer .span1:last-child {
+    padding-right: 0;
   }
   #contact {
     margin-top: -86px;
@@ -499,6 +515,23 @@ h1 span::first-letter {
 }
 .svg .icon.icon-email {
   background-position: -27em -6.2em;
+}
+.svg .banner {
+  display: block;
+  width: 5em;
+  height: 2.5em;
+}
+.svg .banner.banner-twitter {
+  background-position: -12em 0;
+}
+.svg .banner.banner-blog {
+  background-position: -17em 0;
+}
+.svg .banner.banner-github {
+  background-position: -7em 0;
+}
+.svg .banner.banner-instagram {
+  background-position: -22em 0;
 }
 .svg .sprite {
   background-image: url(/assets/img/sprite.svgz);
