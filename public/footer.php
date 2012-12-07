@@ -26,10 +26,15 @@
                 </div>
                 <div id="instagram-feed" class="span1">
                     <a href="http://instagram.com/ahmednuaman" class="sprite banner banner-instagram"></a>
-                    <a href="http://instagram.com/ahmednuaman" title="View Ahmed's instagrams" style="background-image: url(http://distilleryimage7.s3.amazonaws.com/547e64303c9111e2b74c22000a9f1427_5.jpg);">
+                    <a href="http://instagram.com/ahmednuaman" title="View Ahmed's instagrams" class="instagram-pic" style="background-image: url(http://distilleryimage7.s3.amazonaws.com/547e64303c9111e2b74c22000a9f1427_5.jpg);">
                         <span>View Ahmed's instagrams</span>
                     </a>
                 </div>
+            </div>
+            <div id="footnote" class="row">
+                <p>
+                    &copy; Ahmed Nuaman, all of my code and stuff is available under a '<a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike 3.0 Unported</a>' license, however my clients own their respective copyrights.
+                </p>
             </div>
         </div>
         <div id="contact" class="fixed">
