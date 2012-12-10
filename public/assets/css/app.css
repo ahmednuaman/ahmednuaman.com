@@ -65,6 +65,7 @@ a {
 html,
 body {
   background-color: #f8f3f1;
+  overflow-x: hidden;
 }
 h1,
 h1 a,
@@ -228,8 +229,8 @@ h1 a span::first-letter {
     width: auto;
   }
   #contact #contact-details * {
-    font-size: 10pt;
-    line-height: 18pt;
+    font-size: 8pt;
+    line-height: 14pt;
   }
   #contact a.banner-contact {
     display: none;
