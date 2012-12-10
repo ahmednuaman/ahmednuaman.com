@@ -9,7 +9,7 @@
                     </ul>
                 </div>
                 <div id="blog-feed" class="span1">
-                    <div class="sprite banner banner-blog"></div>
+                    <a href="/blog/" class="sprite banner banner-blog"></a>
                     <ul>
                         <li>
                             Loading Ahmed's blog feed...

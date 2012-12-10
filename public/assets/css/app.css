@@ -118,6 +118,12 @@ h1 span::first-letter {
 #content #work a:hover span {
   opacity: 1;
 }
+#content .blog-entry-content {
+  padding: 0 10px;
+}
+#content .blog-entry-content img {
+  display: block;
+}
 #footer ul {
   padding: 0;
 }

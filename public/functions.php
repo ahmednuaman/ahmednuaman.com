@@ -77,9 +77,38 @@ function get_assets($ext, $template)
     }
 }
 
+function get_blog_entry($name)
+{
+    $entry = null;
+    $name = str_replace(array('/', '\\'), '', $name);
+    $years = scandir(PATH_BLOG, SCANDIR_SORT_DESCENDING);
+
+    foreach ($years as $year)
+    {
+        $dir = PATH_BLOG . '/' . $year;
+        $file = $name . '.md';
+
+        if (is_dir($dir))
+        {
+            if (in_array($file, scandir($dir)))
+            {
+                $entry = new BlogEntry($dir . '/' . $file);
+
+                break;
+            }
+        }
+    }
+
+    if (!$entry)
+    {
+        throw new Exception('Couldn\'t find blog entry: ' . $name);
+    }
+
+    return $entry;
+}
+
 function get_latest_blog_entries($num=5, $offset=0)
 {
-    $count = 0;
     $entries = array();
     $years = scandir(PATH_BLOG, SCANDIR_SORT_DESCENDING);
     $files = array();
