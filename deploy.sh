@@ -9,7 +9,7 @@ echo 'Exporting GIT to archive'
 cp -R public $DIR
 
 echo 'Updating version.php'
-sed -i.bak "s/define('VERSION', '1')/define('VERSION', '$(git show -s --pretty=format:%T)')/g" $DIR/version.php
+sed -i.bak "s/define('VERSION', 1)/define('VERSION', '$(git show -s --pretty=format:%T)')/g" $DIR/version.php
 rm $DIR/version.php.bak
 
 echo 'Compressing files'
