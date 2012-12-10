@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 DIR='deploy'
-TAR='site.tar'
+
+if [[ -d "$DIR" ]]; then
+    rm -rf $DIR
+fi
 
 echo 'Exporting GIT to archive'
 cp -R public $DIR
@@ -42,10 +45,3 @@ done
 
 echo 'Cleaning up'
 rm $DIR/assets/css/*.less
-
-echo 'Uploading files'
-tar -cf $TAR $DIR/*
-scp $TAR 134045@console.dc0.gpaas.net:~/web/vhosts/www.ahmednuaman.com/
-
-echo 'Deleting tmp shiz'
-rm -rf $DIR $TAR

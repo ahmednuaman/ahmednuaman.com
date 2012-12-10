@@ -60,7 +60,7 @@
             </div>
         </div>
         <?php if (ENV === 'production'): ?>
-            <script src="/<?php echo PATH_ASSETS; ?>js/<?php echo PATH_DIST; ?>/packaged-min.js?<?php echo VERSION; ?>"></script>
+            <script src="/<?php echo PATH_ASSETS; ?>js/packaged-min.js?<?php echo VERSION; ?>"></script>
         <?php else: ?>
             <?php get_assets('js', '<script src="%s?' . VERSION . '"></script>'); ?>
         <?php endif; ?>
