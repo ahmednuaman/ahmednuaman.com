@@ -3,13 +3,20 @@ if (!ENV) { die('*sneaky sneaky*'); }
 
 class BlogEntry
 {
+    private $props = array();
+
     private $file;
 
+    var $id;
     var $link;
+    var $post;
+    var $timestamp;
     var $title;
 
     public function __construct($file)
     {
+        include_once 'markdown.php';
+
         $this->file = $file;
 
         $this->read_file();
@@ -17,12 +24,21 @@ class BlogEntry
 
     private function read_file()
     {
-        $f = file($this->file);
+        $f = explode("\n\n#", file_get_contents($this->file));
 
-        $this->title = str_replace('title: ', '', $f[0]);
-        $this->link = str_replace(array('link: ', 'http://www.ahmednuaman.com'), '', fgets($f));
+        foreach (explode("\n", trim($f[0])) as $line)
+        {
+            $prop = explode(': ', $line);
 
-        fclose($f);
+            $this->props[$prop[0]] = $prop[1];
+        }
+
+        $this->id = $this->props['post_name'];
+        $this->link = str_replace('http://www.ahmednuaman.com', '', $this->props['link']);
+        $this->timestamp = strtotime($this->props['post_date_gmt']);
+        $this->title = $this->props['title'];
+
+        $this->post = Markdown('#' . $f[1]);
     }
 }
 
@@ -61,32 +77,37 @@ function get_assets($ext, $template)
     }
 }
 
-function get_latest_blog_entries($num=5)
+function get_latest_blog_entries($num=5, $offset=0)
 {
     $count = 0;
     $entries = array();
     $years = scandir(PATH_BLOG, SCANDIR_SORT_DESCENDING);
+    $files = array();
+    $max = $num * ($offset + 1);
 
-    while ($num > $count)
+    foreach ($years as $year)
     {
-        $dir = PATH_BLOG . '/' . array_shift($years);
-        $files = scandir($dir);
-        $i = 0;
+        $dir = PATH_BLOG . '/' . $year;
 
-        while ($num > $count)
+        foreach (scandir($dir) as $file)
         {
-            $file = $files[$i++];
-
-            if ($file !== '.' && $file !== '..')
+            if ($file !== '.' && $file !== '..' && strpos($file, '.') !== 0)
             {
-                array_push($entries, new BlogEntry($dir . '/' . $file));
+                $entry = new BlogEntry($dir . '/' . $file);
 
-                $count++;
+                $entries[$entry->timestamp] = $entry;
             }
+        }
+
+        if (count($entries) >= $max)
+        {
+            break;
         }
     }
 
-    return $entries;
+    krsort($entries);
+
+    return array_slice($entries, $offset, $num);
 }
 
 function get_work_entries()
