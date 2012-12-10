@@ -282,6 +282,13 @@ h1 a span::first-letter {
     font-size: 44pt;
     letter-spacing: -2px;
   }
+  #bio {
+    margin: 20px 10px;
+  }
+  #bio .span2 {
+    margin-right: 5%;
+    width: 45%;
+  }
   .blog #content h2 {
     padding-left: 10px;
     font-size: 16pt;
@@ -351,13 +358,6 @@ h1 a span::first-letter {
     height: 20px;
     line-height: 20px;
     padding: 90px 0;
-  }
-  #bio {
-    margin: 20px 10px;
-  }
-  #bio .span2 {
-    margin-right: 5%;
-    width: 45%;
   }
   #footer {
     padding: 0 10px 20px;
