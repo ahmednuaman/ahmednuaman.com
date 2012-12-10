@@ -38,7 +38,7 @@ if (!$blog_entry_name || $is_feed)
     else
     {
         ?>
-            <?php echo '<?xml version="1.0" encoding="ISO-8859-1"?>'; ?>
+            <?php echo '<?xml version="1.0" encoding="UTF–8" ?>'; ?>
             <rss version="2.0">
                 <channel>
                     <title><?php echo $title; ?></title>
