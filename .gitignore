@@ -1,17 +1,1 @@
-# *
-# !wp-config.php
-# !wp-content/
-# wp-content/*
-# !wp-content/plugins/
-# wp-content/plugins/*
-# !wp-content/plugins/ahmednuaman/
-# !wp-content/themes/
-# wp-content/themes/*
-# !wp-content/themes/ahmednuaman/
-# !wp-content/themes/ahmednuaman/*
-# !wp-content/themes/ahmednuaman/assets/*
-# !wp-content/themes/ahmednuaman/assets/image/*
-# wp-content/themes/ahmednuaman/assets/css/styles.css
-# !wp-content/themes/ahmednuaman/assets/css/*
-# wp-content/themes/ahmednuaman/assets/js/packaged.js
-# !wp-content/themes/ahmednuaman/assets/js/*
+deploy/
