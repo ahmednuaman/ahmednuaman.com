@@ -24,11 +24,11 @@ class BlogEntry
 
     private function read_file()
     {
-        $f = explode("\n\n#", file_get_contents($this->file));
+        $f = explode("\n\n", file_get_contents($this->file), 3);
 
         foreach (explode("\n", trim($f[0])) as $line)
         {
-            $prop = explode(': ', $line);
+            $prop = explode(': ', $line, 2);
 
             $this->props[$prop[0]] = $prop[1];
         }
@@ -38,7 +38,7 @@ class BlogEntry
         $this->timestamp = strtotime($this->props['post_date_gmt']);
         $this->title = $this->props['title'];
 
-        $this->post = Markdown('#' . $f[1]);
+        $this->post = Markdown($f[2]);
     }
 }
 

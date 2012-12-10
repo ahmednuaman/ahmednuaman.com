@@ -11,8 +11,8 @@ $blog_entries = get_latest_blog_entries(5);
         <?php foreach ($blog_entries as $blog_entry): ?>
             <article id="<?php echo $blog_entry->id; ?>" class="row blog-entry">
                 <h3><?php echo $blog_entry->title; ?></h3>
-                <div id="" class="">
-
+                <div class="blog-entry-content">
+                    <?php echo $blog_entry->post; ?>
                 </div>
             </article>
         <?php endforeach; ?>
