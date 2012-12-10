@@ -98,14 +98,17 @@ body {
 }
 
 h1,
+h1 a,
 h2,
 h3 {
     .georgia;
 }
 
-h1 {
+h1,
+h1 a {
     font-weight: bold;
     padding-left: 10px;
+    text-decoration: none;
 
     span {
         display: inline-block;
@@ -230,7 +233,7 @@ h1 {
 }
 
 @media (max-width: 480px) {
-    h1 {
+    h1 a {
         font-size: 18pt;
 
         span:first-letter,
@@ -340,7 +343,7 @@ h1 {
 }
 
 @media (min-width: 481px) {
-    h1 {
+    h1 a {
         font-size: 23pt;
 
         span:first-letter,

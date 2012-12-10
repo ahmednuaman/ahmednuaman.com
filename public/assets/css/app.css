@@ -67,21 +67,27 @@ body {
   background-color: #f8f3f1;
 }
 h1,
+h1 a,
 h2,
 h3 {
   font-family: Georgia, Times, serif;
   font-style: italic;
   font-weight: lighter;
 }
-h1 {
+h1,
+h1 a {
   font-weight: bold;
   padding-left: 10px;
+  text-decoration: none;
 }
-h1 span {
+h1 span,
+h1 a span {
   display: inline-block;
 }
 h1 span:first-letter,
-h1 span::first-letter {
+h1 a span:first-letter,
+h1 span::first-letter,
+h1 a span::first-letter {
   text-transform: lowercase;
   font-weight: lighter;
 }
@@ -175,11 +181,11 @@ h1 span::first-letter {
   margin-top: 0;
 }
 @media (max-width: 480px) {
-  h1 {
+  h1 a {
     font-size: 18pt;
   }
-  h1 span:first-letter,
-  h1 span::first-letter {
+  h1 a span:first-letter,
+  h1 a span::first-letter {
     font-size: 28pt;
     letter-spacing: -2px;
   }
@@ -267,11 +273,11 @@ h1 span::first-letter {
   }
 }
 @media (min-width: 481px) {
-  h1 {
+  h1 a {
     font-size: 23pt;
   }
-  h1 span:first-letter,
-  h1 span::first-letter {
+  h1 a span:first-letter,
+  h1 a span::first-letter {
     font-size: 44pt;
     letter-spacing: -2px;
   }

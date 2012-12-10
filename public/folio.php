@@ -4,7 +4,11 @@ $title = 'Ahmed Nuaman, the world famous dachshund tamer and freelance developer
 $work = get_work_entries();
 ?>
 <div id="header" class="row">
-    <h1><span>Ahmed</span> <span>Nuaman</span></h1>
+    <h1>
+        <a href="/" title="Ahmed Nuaman">
+            <span>Ahmed</span> <span>Nuaman</span>
+        </a>
+    </h1>
     <ul id="hero">
         <?php foreach (array(
             'Wrestles dachshunds',
