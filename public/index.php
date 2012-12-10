@@ -3,6 +3,8 @@ require 'config.php';
 require 'functions.php';
 require 'version.php';
 
+$is_feed = false;
+
 $route = @$_GET['route'];
 $routes = array(
     'folio',
@@ -23,7 +25,7 @@ $body = ob_get_contents();
 
 ob_end_clean();
 
-if ($route === 'blog' && $is_feed === false)
+if (!$is_feed)
 {
     require 'header.php';
 

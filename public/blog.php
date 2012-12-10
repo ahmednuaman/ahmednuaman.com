@@ -12,7 +12,11 @@ if (!$blog_entry_name || $is_feed)
     {
         ?>
         <div id="header" class="row">
-            <h1><span>Ahmed</span> <span>Nuaman</span></h1>
+            <h1>
+                <a href="/" title="Ahmed Nuaman">
+                    <span>Ahmed</span> <span>Nuaman</span>
+                </a>
+            </h1>
         </div>
         <div id="content" class="row">
             <h2>Blog archieve</h2>
@@ -59,7 +63,11 @@ else
     $title = $blog_entry->title . ', by Ahmed Nuaman';
     ?>
     <div id="header" class="row">
-        <h1><span>Ahmed</span> <span>Nuaman</span></h1>
+        <h1>
+            <a href="/" title="Ahmed Nuaman">
+                <span>Ahmed</span> <span>Nuaman</span>
+            </a>
+        </h1>
     </div>
     <div id="content" class="blog-entry row">
         <h2><?php echo $blog_entry->title; ?></h2>
