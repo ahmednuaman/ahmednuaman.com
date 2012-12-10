@@ -771,3 +771,798 @@ window['Rainbow'] = (function() {
 // still be referenced from outside this library.
 Rainbow["onHighlight"] = Rainbow.onHighlight;
 Rainbow["addClass"] = Rainbow.addClass;
+
+/**
+ * Coffeescript patterns
+ *
+ * @author Craig Campbell
+ * @version 1.0
+ */
+Rainbow.extend('coffeescript', [
+    {
+        'name': 'comment.block',
+        'pattern': /(\#{3})[\s\S]*\1/gm
+    },
+    {
+        'name': 'string.block',
+        'pattern': /('{3}|"{3})[\s\S]*\1/gm
+    },
+
+    /**
+     * multiline regex with comments
+     */
+    {
+        'name': 'string.regex',
+        'matches': {
+            2: {
+                'name': 'comment',
+                'pattern': /\#(.*?)\n/g
+            }
+        },
+        'pattern': /(\/{3})([\s\S]*)\1/gm
+    },
+    {
+        'matches': {
+            1: 'keyword'
+        },
+        'pattern': /\b(in|when|is|isnt|of|not|unless|until|super)(?=\b)/gi
+    },
+    {
+        'name': 'keyword.operator',
+        'pattern': /\?/g
+    },
+    {
+        'name': 'constant.language',
+        'pattern': /\b(undefined|yes|on|no|off)\b/g
+    },
+    {
+        'name': 'keyword.variable.coffee',
+        'pattern': /@(\w+)/gi
+    },
+
+    /**
+     * reset global keywards from generic
+     */
+    {
+        'name': 'reset',
+        'pattern': /object|class|print/gi
+    },
+
+    /**
+     * named function
+     */
+    {
+        'matches' : {
+            1: 'entity.name.function',
+            2: 'keyword.operator',
+            3: {
+                    'name': 'function.argument.coffee',
+                    'pattern': /([\@\w]+)/g
+            },
+            4: 'keyword.function'
+        },
+        'pattern': /(\w+)\s{0,}(=|:)\s{0,}\((.*?)((-|=)&gt;)/gi
+    },
+
+    /**
+     * anonymous function
+     */
+    {
+        'matches': {
+            1: {
+                    'name': 'function.argument.coffee',
+                    'pattern': /([\@\w]+)/g
+            },
+            2: 'keyword.function'
+        },
+        'pattern': /\s\((.*?)\)\s{0,}((-|=)&gt;)/gi
+    },
+
+    /**
+     * direct function no arguments
+     */
+    {
+        'matches' : {
+            1: 'entity.name.function',
+            2: 'keyword.operator',
+            3: 'keyword.function'
+        },
+        'pattern': /(\w+)\s{0,}(=|:)\s{0,}((-|=)&gt;)/gi
+    },
+
+    /**
+     * class definitions
+     */
+    {
+        'matches': {
+            1: 'storage.class',
+            2: 'entity.name.class',
+            3: 'storage.modifier.extends',
+            4: 'entity.other.inherited-class'
+        },
+        'pattern': /\b(class)\s(\w+)(\sextends\s)?([\w\\]*)?\b/g
+    },
+
+    /**
+     * object instantiation
+     */
+    {
+        'matches': {
+            1: 'keyword.new',
+            2: {
+                'name': 'support.class',
+                'pattern': /\w+/g
+            }
+        },
+        'pattern': /\b(new)\s(.*?)(?=\s)/g
+    }
+]);
+
+/**
+ * CSS patterns
+ *
+ * @author Craig Campbell
+ * @version 1.0.7
+ */
+Rainbow.extend('css', [
+    {
+        'name': 'comment',
+        'pattern': /\/\*[\s\S]*?\*\//gm
+    },
+    {
+        'name': 'constant.hex-color',
+        'pattern': /#([a-f0-9]{3}|[a-f0-9]{6})(?=;|\s)/gi
+    },
+    {
+        'matches': {
+            1: 'constant.numeric',
+            2: 'keyword.unit'
+        },
+        'pattern': /(\d+)(px|em|cm|s|%)?/g
+    },
+    {
+        'name': 'string',
+        'pattern': /('|")(.*?)\1/g
+    },
+    {
+        'name': 'support.css-property',
+        'matches': {
+            1: 'support.vendor-prefix'
+        },
+        'pattern': /(-o-|-moz-|-webkit-|-ms-)?[\w-]+(?=\s?:)(?!.*\{)/g
+    },
+    {
+        'matches': {
+            1: [
+                {
+                    'name': 'entity.name.sass',
+                    'pattern': /&amp;/g
+                },
+                {
+                    'name': 'direct-descendant',
+                    'pattern': /&gt;/g
+                },
+                {
+                    'name': 'entity.name.class',
+                    'pattern': /\.[\w\-_]+/g
+                },
+                {
+                    'name': 'entity.name.id',
+                    'pattern': /\#[\w\-_]+/g
+                },
+                {
+                    'name': 'entity.name.pseudo',
+                    'pattern': /:[\w\-_]+/g
+                },
+                {
+                    'name': 'entity.name.tag',
+                    'pattern': /\w+/g
+                }
+            ]
+        },
+        'pattern': /([\w\ ,:\.\#\&\;\-_]+)(?=.*\{)/g
+    },
+    {
+        'matches': {
+            2: 'support.vendor-prefix',
+            3: 'support.css-value'
+        },
+        'pattern': /(:|,)\s?(-o-|-moz-|-webkit-|-ms-)?([a-zA-Z-]*)(?=\b)(?!.*\{)/g
+    },
+    {
+        'matches': {
+            1: 'support.tag.style',
+            2: [
+                {
+                    'name': 'string',
+                    'pattern': /('|")(.*?)(\1)/g
+                },
+                {
+                    'name': 'entity.tag.style',
+                    'pattern': /(\w+)/g
+                }
+            ],
+            3: 'support.tag.style'
+        },
+        'pattern': /(&lt;\/?)(style.*?)(&gt;)/g
+    }
+], true);
+
+/**
+ * Generic language patterns
+ *
+ * @author Craig Campbell
+ * @version 1.0.9
+ */
+Rainbow.extend([
+    {
+        'matches': {
+            1: {
+                'name': 'keyword.operator',
+                'pattern': /\=/g
+            },
+            2: {
+                'name': 'string',
+                'matches': {
+                    'name': 'constant.character.escape',
+                    'pattern': /\\('|"){1}/g
+                }
+            }
+        },
+        'pattern': /(\(|\s|\[|\=|:)(('|")([^\\\1]|\\.)*?(\3))/gm
+    },
+    {
+        'name': 'comment',
+        'pattern': /\/\*[\s\S]*?\*\/|(\/\/|\#)[\s\S]*?$/gm
+    },
+    {
+        'name': 'constant.numeric',
+        'pattern': /\b(\d+(\.\d+)?(e(\+|\-)?\d+)?(f|d)?|0x[\da-f]+)\b/gi
+    },
+    {
+        'matches': {
+            1: 'keyword'
+        },
+        'pattern': /\b(and|array|as|bool(ean)?|c(atch|har|lass|onst)|d(ef|elete|o(uble)?)|e(cho|lse(if)?|xit|xtends|xcept)|f(inally|loat|or(each)?|unction)|global|if|import|int(eger)?|long|new|object|or|pr(int|ivate|otected)|public|return|self|st(ring|ruct|atic)|switch|th(en|is|row)|try|(un)?signed|var|void|while)(?=\(|\b)/gi
+    },
+    {
+        'name': 'constant.language',
+        'pattern': /true|false|null/g
+    },
+    {
+        'name': 'keyword.operator',
+        'pattern': /\+|\!|\-|&(gt|lt|amp);|\||\*|\=/g
+    },
+    {
+        'matches': {
+            1: 'function.call'
+        },
+        'pattern': /(\w+?)(?=\()/g
+    },
+    {
+        'matches': {
+            1: 'storage.function',
+            2: 'entity.name.function'
+        },
+        'pattern': /(function)\s(.*?)(?=\()/g
+    }
+]);
+
+/**
+ * HTML patterns
+ *
+ * @author Craig Campbell
+ * @version 1.0.7
+ */
+Rainbow.extend('html', [
+    {
+        'name': 'source.php.embedded',
+        'matches': {
+            2: {
+                'language': 'php'
+            }
+        },
+        'pattern': /&lt;\?=?(?!xml)(php)?([\s\S]*?)(\?&gt;)/gm
+    },
+    {
+        'name': 'source.css.embedded',
+        'matches': {
+            0: {
+                'language': 'css'
+            }
+        },
+        'pattern': /&lt;style(.*?)&gt;([\s\S]*?)&lt;\/style&gt;/gm
+    },
+    {
+        'name': 'source.js.embedded',
+        'matches': {
+            0: {
+                'language': 'javascript'
+            }
+        },
+        'pattern': /&lt;script(?! src)(.*?)&gt;([\s\S]*?)&lt;\/script&gt;/gm
+    },
+    {
+        'name': 'comment.html',
+        'pattern': /&lt;\!--[\S\s]*?--&gt;/g
+    },
+    {
+        'matches': {
+            1: 'support.tag.open',
+            2: 'support.tag.close'
+        },
+        'pattern': /(&lt;)|(\/?\??&gt;)/g
+    },
+    {
+        'name': 'support.tag',
+        'matches': {
+            1: 'support.tag',
+            2: 'support.tag.special',
+            3: 'support.tag-name'
+        },
+        'pattern': /(&lt;\??)(\/|\!?)(\w+)/g
+    },
+    {
+        'matches': {
+            1: 'support.attribute'
+        },
+        'pattern': /([a-z-]+)(?=\=)/gi
+    },
+    {
+        'matches': {
+            1: 'support.operator',
+            2: 'string.quote',
+            3: 'string.value',
+            4: 'string.quote'
+        },
+        'pattern': /(=)('|")(.*?)(\2)/g
+    },
+    {
+        'matches': {
+            1: 'support.operator',
+            2: 'support.value'
+        },
+        'pattern': /(=)([a-zA-Z\-0-9]*)\b/g
+    },
+    {
+        'matches': {
+            1: 'support.attribute'
+        },
+        'pattern': /\s(\w+)(?=\s|&gt;)(?![\s\S]*&lt;)/g
+    }
+], true);
+
+/**
+* Java patterns
+*
+* @author Leo Accend
+* @version 1.0.0
+*/
+Rainbow.extend( "java", [
+  {
+    name: "constant",
+    pattern: /\b(false|null|true|[A-Z_]+)\b/g
+  },
+  {
+    matches: {
+      1: "keyword",
+      2: "support.namespace"
+    },
+    pattern: /(import|package)\s(.+)/g
+  },
+  {
+    // see http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
+    name: "keyword",
+    pattern: /\b(abstract|assert|boolean|break|byte|case|catch|char|class|const|continue|default|do|double|else|enum|extends|final|finally|float|for|goto|if|implements|import|instanceof|int|interface|long|native|new|package|private|protected|public|return|short|static|strictfp|super|switch|synchronized|this|throw|throws|transient|try|void|volatile|while)\b/g
+  },
+  {
+    name: "string",
+    pattern: /(".*?")/g
+  },
+  {
+    name: "char",
+    pattern: /(')(.|\\.|\\u[\dA-Fa-f]{4})\1/g
+  },
+  {
+    name: "integer",
+    pattern: /\b(0x[\da-f]+|\d+)L?\b/g
+  },
+  {
+    name: "comment",
+    pattern: /\/\*[\s\S]*?\*\/|(\/\/).*?$/gm
+  },
+  {
+    name: "support.annotation",
+    pattern: /@\w+/g
+  },
+  {
+    matches: {
+      1: "entity.function"
+    },
+    pattern: /([^@\.\s]+)\(/g
+  },
+  {
+    name: "entity.class",
+    pattern: /\b([A-Z]\w*)\b/g
+  },
+  {
+    // see http://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
+    name: "operator",
+    pattern: /(\+{1,2}|-{1,2}|~|!|\*|\/|%|(?:&lt;){1,2}|(?:&gt;){1,3}|instanceof|(?:&amp;){1,2}|\^|\|{1,2}|\?|:|(?:=|!|\+|-|\*|\/|%|\^|\||(?:&lt;){1,2}|(?:&gt;){1,3})?=)/g
+  }
+], true );
+
+/**
+ * Javascript patterns
+ *
+ * @author Craig Campbell
+ * @version 1.0.7
+ */
+Rainbow.extend('javascript', [
+
+    /**
+     * matches $. or $(
+     */
+    {
+        'name': 'selector',
+        'pattern': /(\s|^)\$(?=\.|\()/g
+    },
+    {
+        'name': 'support',
+        'pattern': /\b(window|document)\b/g
+    },
+    {
+        'matches': {
+            1: 'support.property'
+        },
+        'pattern': /\.(length|node(Name|Value))\b/g
+    },
+    {
+        'matches': {
+            1: 'support.function'
+        },
+        'pattern': /(setTimeout|setInterval)(?=\()/g
+
+    },
+    {
+        'matches': {
+            1: 'support.method'
+        },
+        'pattern': /\.(getAttribute|push|getElementById|getElementsByClassName|log|setTimeout|setInterval)(?=\()/g
+    },
+    {
+        'matches': {
+            1: 'support.tag.script',
+            2: [
+                {
+                    'name': 'string',
+                    'pattern': /('|")(.*?)(\1)/g
+                },
+                {
+                    'name': 'entity.tag.script',
+                    'pattern': /(\w+)/g
+                }
+            ],
+            3: 'support.tag.script'
+        },
+        'pattern': /(&lt;\/?)(script.*?)(&gt;)/g
+    },
+
+    /**
+     * matches any escaped characters inside of a js regex pattern
+     *
+     * @see https://github.com/ccampbell/rainbow/issues/22
+     *
+     * this was causing single line comments to fail so it now makes sure
+     * the opening / is not directly followed by a *
+     *
+     * @todo check that there is valid regex in match group 1
+     */
+    {
+        'name': 'string.regexp',
+        'matches': {
+            1: 'string.regexp.open',
+            2: {
+                'name': 'constant.regexp.escape',
+                'pattern': /\\(.){1}/g
+            },
+            3: 'string.regexp.close',
+            4: 'string.regexp.modifier'
+        },
+        'pattern': /(\/)(?!\*)(.+)(\/)([igm]{0,3})/g
+    },
+
+    /**
+     * matches runtime function declarations
+     */
+    {
+        'matches': {
+            1: 'storage',
+            3: 'entity.function'
+        },
+        'pattern': /(var)?(\s|^)(.*)(?=\s?=\s?function\()/g
+    },
+
+    /**
+     * matches constructor call
+     */
+    {
+        'matches': {
+            1: 'keyword',
+            2: 'entity.function'
+        },
+        'pattern': /(new)\s+(.*)(?=\()/g
+    },
+
+    /**
+     * matches any function call in the style functionName: function()
+     */
+    {
+        'name': 'entity.function',
+        'pattern': /(\w+)(?=:\s{0,}function)/g
+    }
+]);
+
+/**
+ * PHP patterns
+ *
+ * @author Craig Campbell
+ * @version 1.0.6
+ */
+Rainbow.extend('php', [
+    {
+        'name': 'support',
+        'pattern': /\becho\b/g
+    },
+    {
+        'matches': {
+            1: 'variable.dollar-sign',
+            2: 'variable'
+        },
+        'pattern': /(\$)(\w+)\b/g
+    },
+    {
+        'name': 'constant.language',
+        'pattern': /true|false|null/ig
+    },
+    {
+        'name': 'constant',
+        'pattern': /\b[A-Z0-9_]{2,}\b/g
+    },
+    {
+        'name': 'keyword.dot',
+        'pattern': /\./g
+    },
+    {
+        'name': 'keyword',
+        'pattern': /\b(continue|break|die|end(for(each)?|switch|if)|case|require(_once)?|include(_once)?)(?=\(|\b)/g
+    },
+    {
+        'matches': {
+            1: 'keyword',
+            2: {
+                'name': 'support.class',
+                'pattern': /\w+/g
+            }
+        },
+        'pattern': /(instanceof)\s([^\$].*?)(\)|;)/g
+    },
+
+    /**
+     * these are the top 50 most used PHP functions
+     * found from running a script and checking the frequency of each function
+     * over a bunch of popular PHP frameworks then combining the results
+     */
+    {
+        'matches': {
+            1: 'support.function'
+        },
+        'pattern': /\b(array(_key_exists|_merge|_keys|_shift)?|isset|count|empty|unset|printf|is_(array|string|numeric|object)|sprintf|each|date|time|substr|pos|str(len|pos|tolower|_replace|totime)?|ord|trim|in_array|implode|end|preg_match|explode|fmod|define|link|list|get_class|serialize|file|sort|mail|dir|idate|log|intval|header|chr|function_exists|dirname|preg_replace|file_exists)(?=\()/g
+    },
+    {
+        'name': 'variable.language.php-tag',
+        'pattern': /(&lt;\?(php)?|\?&gt;)/g
+    },
+    {
+        'matches': {
+            1: 'keyword.namespace',
+            2: {
+                'name': 'support.namespace',
+                'pattern': /\w+/g
+            }
+        },
+        'pattern': /\b(namespace)\s(.*?);/g
+    },
+    {
+        'matches': {
+            1: 'storage.modifier',
+            2: 'storage.class',
+            3: 'entity.name.class',
+            4: 'storage.modifier.extends',
+            5: 'entity.other.inherited-class'
+        },
+        'pattern': /\b(abstract|final)?\s?(class)\s(\w+)(\sextends\s)?([\w\\]*)?\s?\{?(\n|\})/g
+    },
+    {
+        'name': 'keyword.static',
+        'pattern': /self::|static::/g
+    },
+    {
+        'matches': {
+            1: 'storage.function',
+            2: 'support.magic'
+        },
+        'pattern': /(function)\s(__.*?)(?=\()/g
+    },
+    {
+        'matches': {
+            1: 'keyword.new',
+            2: {
+                'name': 'support.class',
+                'pattern': /\w+/g
+            }
+        },
+        'pattern': /\b(new)\s([^\$].*?)(?=\)|\(|;)/g
+    },
+    {
+        'matches': {
+            1: {
+                'name': 'support.class',
+                'pattern': /\w+/g
+            },
+            2: 'keyword.static'
+        },
+        'pattern': /([\w\\]*?)(::)(?=\b|\$)/g
+    },
+    {
+        'matches': {
+            2: {
+                'name': 'support.class',
+                'pattern': /\w+/g
+            }
+        },
+        'pattern': /(\(|,\s?)([\w\\]*?)(?=\s\$)/g
+    }
+]);
+
+/**
+ * Python patterns
+ *
+ * @author Craig Campbell
+ * @version 1.0.6
+ */
+Rainbow.extend('python', [
+    /**
+     * don't highlight self as a keyword
+     */
+    {
+        'name': 'variable.self',
+        'pattern': /self/g
+    },
+    {
+        'name': 'constant.language',
+        'pattern': /None|True|False/g
+    },
+    {
+        'name': 'support.object',
+        'pattern': /object/g
+    },
+
+    /**
+     * built in python functions
+     *
+     * this entire list is 580 bytes minified / 379 bytes gzipped
+     *
+     * @see http://docs.python.org/library/functions.html
+     *
+     * @todo strip some out or consolidate the regexes with matching patterns?
+     */
+    {
+        'name': 'support.function.python',
+        'pattern': /\b(bs|divmod|input|open|staticmethod|all|enumerate|int|ord|str|any|eval|isinstance|pow|sum|basestring|execfile|issubclass|print|super|bin|file|iter|property|tuple|bool|filter|len|range|type|bytearray|float|list|raw_input|unichr|callable|format|locals|reduce|unicode|chr|frozenset|long|reload|vars|classmethod|getattr|map|repr|xrange|cmp|globals|max|reversed|zip|compile|hasattr|memoryview|round|__import__|complex|hash|min|set|apply|delattr|help|next|setattr|buffer|dict|hex|object|slice|coerce|dir|id|oct|sorted|intern)(?=\()/g
+    },
+    {
+        'matches': {
+            1: 'keyword'
+        },
+        'pattern': /\b(pass|lambda|with|is|not|in|from|elif)(?=\(|\b)/g
+    },
+    {
+        'matches': {
+            1: 'storage.class',
+            2: 'entity.name.class',
+            3: 'entity.other.inherited-class'
+        },
+        'pattern': /(class)\s+(\w+)\((\w+?)\)/g
+    },
+    {
+        'matches': {
+            1: 'storage.function',
+            2: 'support.magic'
+        },
+        'pattern': /(def)\s+(__\w+)(?=\()/g
+    },
+    {
+        'name': 'support.magic',
+        'pattern': /__(name)__/g
+    },
+    {
+        'matches': {
+            1: 'keyword.control',
+            2: 'support.exception.type'
+        },
+        'pattern': /(except) (\w+):/g
+    },
+    {
+        'matches': {
+            1: 'storage.function',
+            2: 'entity.name.function'
+        },
+        'pattern': /(def)\s+(\w+)(?=\()/g
+    },
+    {
+        'name': 'entity.name.function.decorator',
+        'pattern': /@(\w+)/g
+    },
+    {
+        'name': 'comment.docstring',
+        'pattern': /('{3}|"{3})[\s\S]*\1/gm
+    }
+]);
+
+/**
+ * Shell patterns
+ *
+ * @author Matthew King
+ * @author Craig Campbell
+ * @version 1.0.3
+ */
+Rainbow.extend('shell', [
+    /**
+     * This handles the case where subshells contain quotes.
+     * For example: `"$(resolve_link "$name" || true)"`.
+     *
+     * Caveat: This really should match balanced parentheses, but cannot.
+     * @see http://stackoverflow.com/questions/133601/can-regular-expressions-be-used-to-match-nested-patterns
+     */
+    {
+        'name': 'shell',
+        'matches': {
+            1: {
+                'language': 'shell'
+            }
+        },
+        'pattern': /\$\(([\s\S]*?)\)/gm
+    },
+    {
+        'matches': {
+            2: 'string'
+        },
+        'pattern': /(\(|\s|\[|\=)(('|")[\s\S]*?(\3))/gm
+    },
+    {
+        'name': 'keyword.operator',
+        'pattern': /&lt;|&gt;|&amp;/g
+    },
+    {
+        'name': 'comment',
+        'pattern': /\#[\s\S]*?$/gm
+    },
+    {
+        'name': 'storage.function',
+        'pattern': /(.+?)(?=\(\)\s{0,}\{)/g
+    },
+    /**
+     * Environment variables
+     */
+    {
+        'name': 'support.command',
+        'pattern': /\b(echo|rm|ls|(mk|rm)dir|cd|find|cp|exit|pwd|exec|trap|source|shift|unset)/g
+    },
+    {
+        'matches': {
+            1: 'keyword'
+        },
+        'pattern': /\b(break|case|continue|do|done|elif|else|esac|eval|export|fi|for|function|if|in|local|return|set|then|unset|until|while)(?=\(|\b)/g
+    }
+], true);
