@@ -97,8 +97,13 @@ body {
     background-color: #f8f3f1;
 }
 
-h1 {
+h1,
+h2,
+h3 {
     .georgia;
+}
+
+h1 {
     font-weight: bold;
     padding-left: 10px;
 
@@ -199,7 +204,7 @@ h1 {
         .absolute;
     }
 
-    #contain-details {
+    #contact-details {
         * {
             .georgia;
             color: #ffffff;
@@ -269,7 +274,7 @@ h1 {
     }
 
     #contact {
-        #contain-details {
+        #contact-details {
             padding: 6px 0;
             height: 30px;
             width: 80%;
@@ -360,7 +365,7 @@ h1 {
     }
 
     #contact {
-        #contain-details {
+        #contact-details {
             padding: 6px 0;
             height: 30px;
             width: 80%;
@@ -516,7 +521,7 @@ h1 {
     #contact {
         margin-top: -86px;
 
-        #contain-details {
+        #contact-details {
             padding: 15px 0;
             height: 30px;
             width: 600px;
@@ -659,6 +664,46 @@ h1 {
         .span2 {
             margin-right: 40px;
             width: 440px;
+        }
+    }
+
+    .blog {
+        #content {
+            h2 {
+                padding-left: 10px;
+                font-size: 24pt;
+                line-height: normal;
+            }
+
+            #blog-entries {
+                margin: 0 0 30px;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    margin: 15px 0;
+
+                    a {
+                        .left;
+                        .ease-out(background);
+                        width: 420px;
+                        height: 130px;
+                        padding: 10px;
+                        text-decoration: none;
+                        background: transparent;
+
+                        h3 {
+                            font-size: 18pt;
+                            line-height: 24pt;
+                            margin-top: 0;
+                        }
+                    }
+
+                    a:hover {
+                        background: #ffffff;
+                    }
+                }
+            }
         }
     }
 

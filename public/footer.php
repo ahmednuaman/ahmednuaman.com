@@ -38,7 +38,7 @@
             </div>
         </div>
         <div id="contact" class="fixed">
-            <div id="contain-details" class="relative centre">
+            <div id="contact-details" class="relative centre">
                 <h3>Contact me</h3>
                 <div class="span2">
                     <span class="sprite icon icon-phone">07811 184 436</span><br />

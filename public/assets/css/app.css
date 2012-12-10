@@ -66,10 +66,14 @@ html,
 body {
   background-color: #f8f3f1;
 }
-h1 {
+h1,
+h2,
+h3 {
   font-family: Georgia, Times, serif;
   font-style: italic;
   font-weight: lighter;
+}
+h1 {
   font-weight: bold;
   padding-left: 10px;
 }
@@ -151,14 +155,14 @@ h1 span::first-letter {
   display: block;
   position: absolute;
 }
-#contact #contain-details * {
+#contact #contact-details * {
   font-family: Georgia, Times, serif;
   font-style: italic;
   font-weight: lighter;
   color: #ffffff;
   text-decoration: none;
 }
-#contact #contain-details h3 {
+#contact #contact-details h3 {
   display: none;
 }
 #contact:hover {
@@ -206,12 +210,12 @@ h1 span::first-letter {
   #footer {
     display: none;
   }
-  #contact #contain-details {
+  #contact #contact-details {
     padding: 6px 0;
     height: 30px;
     width: 80%;
   }
-  #contact #contain-details * {
+  #contact #contact-details * {
     font-size: 10pt;
     line-height: 18pt;
   }
@@ -279,12 +283,12 @@ h1 span::first-letter {
   #footer .span1:last-child {
     display: none;
   }
-  #contact #contain-details {
+  #contact #contact-details {
     padding: 6px 0;
     height: 30px;
     width: 80%;
   }
-  #contact #contain-details * {
+  #contact #contact-details * {
     font-size: 12pt;
     line-height: 20pt;
   }
@@ -583,12 +587,12 @@ h1 span::first-letter {
   #contact {
     margin-top: -86px;
   }
-  #contact #contain-details {
+  #contact #contact-details {
     padding: 15px 0;
     height: 30px;
     width: 600px;
   }
-  #contact #contain-details * {
+  #contact #contact-details * {
     font-size: 14pt;
     line-height: 22pt;
   }
@@ -876,6 +880,43 @@ h1 span::first-letter {
   #bio .span2 {
     margin-right: 40px;
     width: 440px;
+  }
+  .blog #content h2 {
+    padding-left: 10px;
+    font-size: 24pt;
+    line-height: normal;
+  }
+  .blog #content #blog-entries {
+    margin: 0 0 30px;
+    padding: 0;
+  }
+  .blog #content #blog-entries li {
+    list-style: none;
+    margin: 15px 0;
+  }
+  .blog #content #blog-entries li a {
+    display: block;
+    float: left;
+    -webkit-transition: background 500ms cubic-bezier(0, 0, 0, 0.995);
+    -moz-transition: background 500ms cubic-bezier(0, 0, 0, 0.995);
+    -ms-transition: background 500ms cubic-bezier(0, 0, 0, 0.995);
+    -o-transition: background 500ms cubic-bezier(0, 0, 0, 0.995);
+    transition: background 500ms cubic-bezier(0, 0, 0, 0.995);
+    /* custom */
+  
+    width: 420px;
+    height: 130px;
+    padding: 10px;
+    text-decoration: none;
+    background: transparent;
+  }
+  .blog #content #blog-entries li a h3 {
+    font-size: 18pt;
+    line-height: 24pt;
+    margin-top: 0;
+  }
+  .blog #content #blog-entries li a:hover {
+    background: #ffffff;
   }
   #footer {
     padding: 0 10px 20px;
