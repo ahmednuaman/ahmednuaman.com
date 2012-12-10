@@ -59,7 +59,7 @@ $work = get_work_entries();
                 </li>
                 <li>
                     <strong>Platforms and systems:</strong>
-                    Google App Engine, Heroku, Django, WordPress, CodeIgniter, Mocha TDD, Backbone, and PureMVC
+                    Google App Engine, Heroku, Django, WordPress, CodeIgniter, PhoneGap, Mocha TDD, Backbone, and PureMVC
                 </li>
             </ul>
         </div>

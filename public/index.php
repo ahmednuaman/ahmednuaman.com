@@ -23,8 +23,15 @@ $body = ob_get_contents();
 
 ob_end_clean();
 
-require 'header.php';
+if ($route === 'blog' && $is_feed === false)
+{
+    require 'header.php';
 
-echo $body;
+    echo $body;
 
-require 'footer.php';
+    require 'footer.php';
+}
+else
+{
+    echo $body;
+}

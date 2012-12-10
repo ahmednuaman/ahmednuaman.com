@@ -10,6 +10,7 @@ class BlogEntry
     var $id;
     var $link;
     var $post;
+    var $post_date;
     var $timestamp;
     var $title;
 
@@ -35,6 +36,7 @@ class BlogEntry
 
         $this->id = $this->props['post_name'];
         $this->link = str_replace('http://www.ahmednuaman.com', '', $this->props['link']);
+        $this->post_date = $this->props['post_date_gmt'];
         $this->timestamp = strtotime($this->props['post_date_gmt']);
         $this->title = $this->props['title'];
 
