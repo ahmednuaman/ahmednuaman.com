@@ -25,9 +25,9 @@
                     </ul>
                 </div>
                 <div id="instagram-feed" class="span1">
-                    <a href="http://instagram.com/ahmednuaman" class="sprite banner banner-instagram"></a>
-                    <a href="http://instagram.com/ahmednuaman" title="View Ahmed's instagrams" class="instagram-pic" style="background-image: url(http://distilleryimage7.s3.amazonaws.com/547e64303c9111e2b74c22000a9f1427_5.jpg);">
-                        <span>View Ahmed's instagrams</span>
+                    <a href="https://www.facebook.com/media/set/?set=a.515144012890.9254.277900029&amp;type=1&amp;l=9c22e3b60b" class="sprite banner banner-instagram"></a>
+                    <a href="https://www.facebook.com/media/set/?set=a.515144012890.9254.277900029&amp;type=1&amp;l=9c22e3b60b" title="View Ahmed's photos" class="instagram-pic" style="background-image: url(assets/img/zak.jpg);">
+                        <span>View Ahmed's photos</span>
                     </a>
                 </div>
             </div>
