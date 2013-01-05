@@ -17,7 +17,7 @@
                     </ul>
                 </div>
                 <div id="github-feed" class="span1">
-                    <a href="http://github.com/ahmednuaman" class="sprite banner banner-github"></a>
+                    <a href="http://ahmednuaman.github.com/" class="sprite banner banner-github"></a>
                     <ul>
                         <li>
                             Loading Ahmed's github feed...
