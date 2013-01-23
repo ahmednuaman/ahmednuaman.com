@@ -15,7 +15,7 @@ $work = get_work_entries();
             'Problem solves',
             'Changes nappies',
             'Writes great code',
-            'Relishes TTD',
+            'Relishes TDD',
             'Enjoys a bike ride',
             'Devours mexican food'
         ) as $value): ?>
