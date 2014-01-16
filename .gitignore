@@ -1,2 +1,4 @@
 *.map
 .sass-*
+node_modules
+assets/vendor
