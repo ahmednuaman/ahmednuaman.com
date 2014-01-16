@@ -1,0 +1,7 @@
+{
+  "version": "2014.1.16",
+  "name": "ahmednuaman.com",
+  "dependencies": {
+    "normalize-css": "2.1.3"
+  }
+}

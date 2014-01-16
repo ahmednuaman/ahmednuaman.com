@@ -1,0 +1,39 @@
+{
+  "name": "ahmednuaman.com",
+  "description": "Ahmed Nuaman's EPIC folio",
+  "version": "2014.1.16",
+  "homepage": "https://github.com/ahmednuaman/ahmednuaman.com",
+  "author": {
+    "name": "Ahmed Nuaman",
+    "email": "ahmed@ahmednuaman.com",
+    "url": "http://ahmednuaman.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ahmednuaman/ahmednuaman.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmednuaman/ahmednuaman.com/issues"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "express": "3.4.7",
+    "grunt": "0.4.2",
+    "grunt-combine-media-queries": "1.0.9",
+    "grunt-contrib-clean": "0.5.0",
+    "grunt-contrib-compass": "0.7.0",
+    "grunt-contrib-cssmin": "0.7.0",
+    "grunt-contrib-imagemin": "0.4.0",
+    "grunt-contrib-watch": "0.5.3",
+    "grunt-express-server": "0.4.11",
+    "grunt-jade": "0.4.0",
+    "grunt-text-replace": "0.3.10",
+    "marked": "0.3.0"
+  },
+  "peerDependencies": {
+    "express": "3.4.7",
+    "grunt": "0.4.2"
+  }
+}
