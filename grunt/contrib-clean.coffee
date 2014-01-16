@@ -2,6 +2,7 @@ module.exports = (grunt) ->
   grunt.config 'clean',
     all: [
       'assets/css'
+      'assets/js'
       '*.html'
     ]
 

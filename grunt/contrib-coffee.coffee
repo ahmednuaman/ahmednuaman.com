@@ -9,7 +9,6 @@ module.exports = (grunt) ->
         '**/*.coffee'
       ]
       options:
-        bare: true
         sourceMap: true
     prod:
       expand: '<%= coffee.dev.expand %>'
