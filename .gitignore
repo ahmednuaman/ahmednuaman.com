@@ -1,5 +1,6 @@
 *.css
 *.html
+*.js
 *.map
 .sass-*
 node_modules

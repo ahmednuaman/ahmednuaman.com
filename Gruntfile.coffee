@@ -42,3 +42,16 @@ module.exports = (grunt) ->
     'express'
     'watch'
   ]
+
+  grunt.registerTask 'build', 'compress and build the site', [
+    'clean'
+    'githash'
+    'install'
+    'compass:prod'
+    'cmq'
+    'cssmin'
+    'jade:prod'
+    'imagemin'
+    'uglify'
+    'replace'
+  ]

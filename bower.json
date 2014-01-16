@@ -2,6 +2,7 @@
   "version": "2014.1.16",
   "name": "ahmednuaman.com",
   "dependencies": {
+    "fittext": "*",
     "normalize-css": "2.1.3"
   }
 }
