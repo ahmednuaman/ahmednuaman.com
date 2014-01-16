@@ -4,6 +4,9 @@ module.exports = (grunt) ->
       src: ['*.html']
       overwrite: true
       replacements: [
+          from: 'scripts.js'
+          to: 'scripts-<%= grunt.config("git-commit") %>.js'
+        ,
           from: 'styles.css'
           to: 'styles-<%= grunt.config("git-commit") %>.css'
         ,

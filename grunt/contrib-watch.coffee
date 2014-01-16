@@ -7,6 +7,13 @@ module.exports = (grunt) ->
       tasks: [
         'compass:dev'
       ]
+    coffee:
+      files: [
+        '<%= coffee.dev.cwd + coffee.dev.src[0] %>'
+      ]
+      tasks: [
+        'coffee:dev'
+      ]
     css:
       files: [
         'assets/css/*.css'
