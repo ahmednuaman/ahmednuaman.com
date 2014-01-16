@@ -9,12 +9,14 @@ module.exports = (grunt) ->
       ]
     coffee:
       files: [
-        '<%= coffee.dev.cwd + coffee.dev.src[0] %>'
+        '<%= coffee.dev.cwd %>/**/*.coffee'
       ]
       tasks: [
         'coffee:dev'
         'uglify:dev'
       ]
+      options:
+        livereload: true
     css:
       files: [
         'assets/css/*.css'

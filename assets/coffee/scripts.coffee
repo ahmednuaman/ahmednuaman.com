@@ -1,0 +1,1 @@
+window.fitText document.getElementsByTagName 'h1'

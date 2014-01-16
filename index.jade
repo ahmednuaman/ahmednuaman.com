@@ -8,5 +8,23 @@ html(lang='en', data-ng-controller='AppController')
     title(data-ng-bind='pageTitle') Ahmed Nuaman, a freelance developer, husband, father and dachshund wrestler
   body
     div#container
-      div.row
+      :markdown
+        # Hi, I'm Ahmed
+        # Freelance developer
+        # Husband & Father
+        # Dachshund Wrestler
+
+        ## I write great code
+        I love what I do and I love writing good, well tested code. I'm partically fond (at the moment) of doing a lot
+        of frontend development and have worked this last year maily using the awesome AngularJS. I even wrote my own
+        framework on top of it called [Radian](http://radian.io).
+
+        ## I've been around
+        I've worked in agencies, corporations, start ups and open source projects. All these different scenes have
+        helped me become a better collegue and leader as well as providing me with plenty of challenges, not just code
+        based problems.
+
+        ## Language stats
+
+      div#language.chart
     script(src='assets/js/scripts.js')
