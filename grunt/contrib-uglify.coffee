@@ -8,6 +8,9 @@ module.exports = (grunt) ->
     dev:
       files:
         'assets/js/scripts.js': files
+      options:
+        beautify: true
+        sourceMap: 'assets/js/scripts.map'
     prod:
       files:
         'assets/js/scripts-<%= grunt.config("git-commit") %>.js': files
