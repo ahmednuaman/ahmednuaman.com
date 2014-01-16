@@ -1,6 +1,40 @@
 .amp
   font-family: Vidaloka
 
+.stats
+  display: block
+  float: left
+  width: 100%
+  margin-bottom: 2em
+
+  .stat
+    display: block
+    float: left
+    height: 150px
+    padding-right: 75px
+    width: 33.3%
+
+    &.stat-middle
+      opacity: .8
+
+    &.stat-light
+      opacity: .6
+
+    h4
+      font-style: italic
+
+      &:before
+        content: 'Exp: '
+        font-style: normal
+
+    +small
+      width: 50%
+      height: 100px
+
+    +xsmall
+      width: 100%
+      height: auto
+
 *
   +box-sizing(border-box)
   color: #333
@@ -18,7 +52,9 @@ h2
   color: #000
 
 h2
+  display: block
   margin-top: 2em
+  width: 100%
 
   &:first-of-type
     margin-top: 0
@@ -38,7 +74,8 @@ p
 #container
   display: block
   position: relative
-  max-width: 760px
+  max-width: 780px
+  padding: 0 10px
   margin: 40px auto
 
   +small

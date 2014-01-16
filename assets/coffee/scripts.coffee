@@ -4,6 +4,9 @@ addFitText = () ->
     .5
     1.03
     1.7
+    .66
+    .293
+    .52
   ]
 
   for h1, i in h1s
