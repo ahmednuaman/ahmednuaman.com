@@ -13,6 +13,7 @@ module.exports = (grunt) ->
       ]
       tasks: [
         'coffee:dev'
+        'uglify:dev'
       ]
     css:
       files: [

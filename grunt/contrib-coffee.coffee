@@ -3,7 +3,7 @@ module.exports = (grunt) ->
     dev:
       expand: true
       cwd: 'assets/coffee/'
-      dest: 'assets/js/'
+      dest: 'assets/js/src/'
       ext: '.js'
       src: [
         '**/*.coffee'
