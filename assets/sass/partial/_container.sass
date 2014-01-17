@@ -40,11 +40,15 @@
 
 .works
   .work
+    +transition(width 250ms)
     @extend .left
     width: 50%
     height: 180px
     border: none
     overflow: hidden
+
+    +xsmall
+      width: 100%
 
     .holder
       display: block
