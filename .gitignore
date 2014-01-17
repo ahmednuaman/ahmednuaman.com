@@ -1,7 +1,12 @@
-*.css
-*.html
-*.js
+*.coffee
+*.jade
+*.json
 *.map
+*.sass
+.bowerrc
 .sass-*
 node_modules
+assets/css/styles.css
+assets/js/src
 assets/vendor
+grunt
