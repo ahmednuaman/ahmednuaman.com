@@ -9,6 +9,7 @@ module.exports = (grunt) ->
           noLineComments: false
           imagesDir: 'assets/img'
           debugInfo: true
+          relativeAssets: true
       prod:
         options:
           sassDir: '<%= compass.dev.options.sassDir %>'
@@ -16,6 +17,7 @@ module.exports = (grunt) ->
           fontsDir: '<%= compass.dev.options.fontsDir %>'
           environment: 'production'
           imagesDir: '<%= compass.dev.options.imagesDir %>'
+          relativeAssets: '<%= compass.dev.options.relativeAssets %>'
           force: true
 
   grunt.loadNpmTasks 'grunt-contrib-compass'
