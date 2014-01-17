@@ -13,4 +13,4 @@ addFitText = () ->
   for h1, i in h1s
     window.fitText h1, koms[i]
 
-addFitText()
+# addFitText()

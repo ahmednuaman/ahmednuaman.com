@@ -8,6 +8,7 @@
   margin-bottom: 2em
 
   .stat
+    +transition(width 250ms, height 250ms)
     display: block
     float: left
     height: 150px
@@ -76,6 +77,27 @@ h1
   &:hover
     opacity: 1
 
+  &:nth-child(1)
+    font-size: 153px
+
+  &:nth-child(2)
+    font-size: 74px
+
+  &:nth-child(3)
+    font-size: 66px
+
+  &:nth-child(4)
+    font-size: 82px
+
+  &:nth-child(5)
+    font-size: 80px
+
+  &:nth-child(6)
+    font-size: 67px
+
+  &:nth-child(7)
+    font-size: 40px
+
   a
     border: 0 !important
 
@@ -89,6 +111,7 @@ h2
     margin-top: 0
 
 hr
+  +transition(margin 250ms)
   display: block
   border: 0
   border-top: 1px solid #fff
@@ -96,6 +119,9 @@ hr
   opacity: .25
 
   +small
+    margin: 40px auto
+
+  +xsmall
     margin: 20px auto
 
 p,
@@ -103,11 +129,12 @@ li
   line-height: 1.5em
 
 #container
+  +transition(margin 250ms)
   display: block
   position: relative
   max-width: 780px
   padding: 0 10px
   margin: 40px auto
 
-  +small
+  +xsmall
     margin: 20px auto
