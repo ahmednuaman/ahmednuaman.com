@@ -10,7 +10,7 @@ module.exports = (grunt) ->
           from: 'styles.css'
           to: 'styles-<%= grunt.config("git-commit") %>.css'
         ,
-          from: '/assets/vendor/normalize-css/normalize.css'
+          from: 'assets/vendor/normalize-css/normalize.css'
           to: '//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css'
       ]
 
