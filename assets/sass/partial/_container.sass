@@ -23,8 +23,12 @@
     &.stat-light
       opacity: .7
 
+    h3
+      margin-top: 0
+
     h4
       font-style: italic
+      font-weight: lighter
 
       &:before
         content: 'Exp: '
@@ -63,22 +67,23 @@
       position: absolute
       width: 100%
       height: 100%
+      background-position: center
 
     &.work-radian
       .bg
-        background: image-url('radian.jpg')
+        background-image: image-url('radian.jpg')
 
     &.work-pandora
       .bg
-        background: image-url('pandora.jpg')
+        background-image: image-url('pandora.jpg')
 
     &.work-skystore
       .bg
-        background: image-url('skystore.jpg')
+        background-image: image-url('skystore.jpg')
 
     &.work-bbh
       .bg
-        background: image-url('bbh.jpg')
+        background-image: image-url('bbh.jpg')
 
     .hover
       +transition(opacity 250ms, transform 200ms)
@@ -191,8 +196,8 @@ h1
 h2
   @extend .left
   color: #fff
-  margin-top: 2em
   width: 100%
+  letter-spacing: 0
 
   &:first-of-type
     margin-top: 0
@@ -202,11 +207,11 @@ hr
   display: block
   border: 0
   border-top: 1px solid #fff
-  margin: 60px auto
+  margin: 50px auto
   opacity: .25
 
   +small
-    margin: 40px auto
+    margin: 30px auto
 
   +xsmall
     margin: 20px auto
