@@ -6,7 +6,7 @@ module.exports = (grunt) ->
         cwd: 'assets/img/'
         dest: '<%= imagemin.prod.files[0].cwd %>'
         src: [
-          '*.{gif,png,svg}'
+          '*.jpg'
         ]
       ]
 
