@@ -37,18 +37,49 @@
 
 *
   +box-sizing(border-box)
-  color: #333
+  color: #f8f8f8
   font-family: Helvetica, sans-serif
 
+html,
+body
+  background: #222
+
+a
+  +transition(color 100ms)
+  text-decoration: none
+
+  &:link,
+  &:visited
+    border-bottom: 1px solid #fff
+
+  &:hover,
+  &:active
+    border: 0
+    color: #0066C1
+
 h1
+  +transition(opacity 100ms)
   display: block
   letter-spacing: -2px
   line-height: normal
   margin: 0
   width: 100%
+  opacity: .85
+
+  &:first-child
+    opacity: 1
+
+  &:last-of-type
+    opacity: .75
+
+  &:hover
+    opacity: 1
+
+  a
+    border: 0 !important
 
 h2
-  color: #000
+  color: #fff
   display: block
   margin-top: 2em
   width: 100%
@@ -59,7 +90,7 @@ h2
 hr
   display: block
   border: 0
-  border-top: 1px solid #000
+  border-top: 1px solid #fff
   margin: 60px auto
   opacity: .25
 
