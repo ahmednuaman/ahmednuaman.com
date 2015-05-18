@@ -8,7 +8,7 @@
     "url": "git+https://github.com/ahmednuaman/ahmednuaman.com.git"
   },
   "scripts": {
-    "start": "browser-sync start --index 'index.html' --exclude 'node_modules, .git' --files '**/*' --server"
+    "start": "browser-sync start --index 'index.html' --files '*.html, *.css, *.js, *.svg' --server"
   },
   "keywords": [
     "ahmed",
