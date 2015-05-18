@@ -37,7 +37,7 @@
             <img src="logo.svg" alt="Ahmed Nuaman">
           </a>
           <div id="links">
-            <a target="_blank" href="http://ahmednuaman.com"><span class="fa fa-globe fa-fw"></span></a>
+            <a href="mailto:ahmed+folio@ahmednuaman.com?body=Hi%20Ahmed!"><span class="fa fa-envelope-o fa-fw"></span></a>
             <a target="_blank" href="http://linkedin.com/in/ahmednuaman"><span class="fa fa-linkedin fa-fw"></span></a>
             <a target="_blank" href="http://twitter.com/ahmednuaman"><span class="fa fa-twitter fa-fw"></span></a>
             <a target="_blank" href="http://github.com/ahmednuaman"><span class="fa fa-github fa-fw"></span></a>
@@ -47,15 +47,45 @@
         </div>
       </aside>
       <section id="main">
-        <div id="cards"></div>
+        <div id="cards">
+          <div class="card">
+            <em>Hello, I'm Ahmed</em>
+            <p>Someone once said I'm a great example of a <a href="http://innocuous.org/articles/2015/03/28/identify-manage-honey-badger-developer/" target="_blank">"honey-badger developer"</a>; simply put I'll take on anything. I believe that challenging myself is how I become a better developer and I love working on projects that'll push me.</p>
+            <p>My previous work includes:</p> 
+            <ul>
+              <li>Building generators and frameworks</li>
+              <li>Setting up build systems for CI and TDD</li>
+              <li>Scaling up exisiting applications and training developers to think in scale</li>
+              <li>Building UIs for big data (1mm rows for eg)</li>
+              <li>Targetting multiple screens (wearable, mobile, TV/STBs, etc)</li>
+              <li>Provisioning systems using Ansible, bash, docker and vagrant</li>
+              <li>And writing nice code</li>
+            </ul>
+            <p>What I'm looking for in my next gig another challenge. I've had great fun at <a href="http://thisisnoble.com" target="_blank">Noble Group</a> solving a lot of problems that exist in the financial and commodities space (<em>very</em> big data, low latency high frequency, etc...) and showing that a browser-based solution can work across multiple screens and platforms.</p>
+          </div>
+          <div class="card">
+            <em>Availability</em>
+            <p><b>Free from end of June</b>; I'm looking for mainly frontend based work, but am happy to dive deep into Python, PHP, and Ruby projects (I'm <em>still</em> learning Scala and Go).</p>
+            <p>I prefer to work from home and am available to pop up to London for a cheeky Nandos.</p>
+          </div>
+        </div>
       </section>
     </div>
     <script id="cards-template" type="text/x-handlebars-template">
-      {{#each data}}
-        <a href="{{html_url}}" title="{{name}}" class="card">
-          <em>{{name}}</em> &mdash; {{description}}
-        </a>
-      {{/each}}
+      <div class="card">
+        <a href="{{url}}" title="{{name}}"><em><i class="fa fa-{{id}}"></i> {{name}}</em></a> 
+        {{{description}}}
+      </div>
+    </script>
+    <script id="github-card-description" type="text/x-handlebars-template">
+      <a href="{{followers_url}}" target="_blank"><i class="fa fa-users"></i> {{followers}}</a> 
+      &mdash; 
+      <a href="{{repos_url}}" target="_blank"><i class="fa fa-code-fork"></i> {{public_repos}}</a>
+    </script>
+    <script id="stackoverflow-card-description" type="text/x-handlebars-template">
+      <a href="{{followers_url}}" target="_blank"><i class="fa fa-certificate"></i> {{reputation}}</a> 
+      &mdash; 
+      <a href="{{repos_url}}" target="_blank"><i class="fa fa-trophy"></i> {{badge_counts.gold}}/{{badge_counts.silver}}/{{badge_counts.bronze}}</a>
     </script>
   </div>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -65,8 +95,27 @@
       var cards = $('#cards'),
           template = Handlebars.compile($('#cards-template').remove().html());
 
-      $.getJSON('https://api.github.com/users/ahmednuaman/repos?type=all&sort=updated&callback=?', function (data) {
-        cards.html(template(data));
+      function addCard (data) {
+        cards.append(template(data));
+      }
+
+      $.getJSON('https://api.github.com/users/ahmednuaman?callback=?', function (response) {
+        addCard({
+          description: Handlebars.compile($('#github-card-description').remove().html())(response.data),
+          name: 'Github stats',
+          id: 'github',
+          url: response.data.html_url 
+        });
+      });
+
+      $.getJSON('https://api.stackexchange.com/2.2/users/398939?order=desc&sort=reputation&site=stackoverflow&callback=?', function (response) {
+        var profile = response.items[0];
+        addCard({
+          description: Handlebars.compile($('#stackoverflow-card-description').remove().html())(profile),
+          name: 'SO stats',
+          id: 'stack-overflow',
+          url: profile.link
+        });
       });
     });
   </script>
