@@ -3,9 +3,6 @@
   "version": "2015.0.0",
   "description": "My portfolio",
   "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ahmednuaman/ahmednuaman.com.git"
@@ -16,16 +13,5 @@
     "portfolio"
   ],
   "author": "Ahmed Nuaman (ahmed@ahmednuaman.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ahmednuaman/ahmednuaman.com/issues"
-  },
-  "homepage": "https://github.com/ahmednuaman/ahmednuaman.com#readme",
-  "devDependencies": {
-    "browser-sync": "^2.7.1",
-    "gulp": "^3.8.11",
-    "gulp-sass": "^2.0.1",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-webpack": "^1.4.0"
-  }
+  "license": "MIT"
 }
