@@ -7,11 +7,17 @@
     "type": "git",
     "url": "git+https://github.com/ahmednuaman/ahmednuaman.com.git"
   },
+  "scripts": {
+    "start": "browser-sync start --server --index 'index.html' --exclude 'node_modules/**/*' --files '**/*'"
+  },
   "keywords": [
     "ahmed",
     "nuaman",
     "portfolio"
   ],
   "author": "Ahmed Nuaman (ahmed@ahmednuaman.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.7.1"
+  }
 }
